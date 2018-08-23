@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dplyr on Journalism with R</title>
+    <link>/en/tags/dplyr/</link>
+    <description>Recent content in Dplyr on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/dplyr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tidying and joining data</title>
+      <link>/en/wrangling/tidyr_joins/tidyr-joins/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/tidyr_joins/tidyr-joins/</guid>
+      <description>We’re going to learn a couple new concepts while digging through this murders database: tidyr and joins. I’ve mentioned tidy data before briefly, and we’re going to get into it in this section.
+Do you still have the murders data frame in the environment?
+If not, run the command below:
+source(&amp;quot;import_murders.R&amp;quot;) tidyr Data can be messy but there’s an ideal structure for how to stack your data.</description>
+    </item>
+    
+    <item>
+      <title>Transforming and analyzing data</title>
+      <link>/en/wrangling/dplyr/dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/dplyr/</guid>
+      <description>Why use dplyr?
+ Designed to work with data frames, which is what journalists are used to Great for data exploration and transformation Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes  Five basic verbs  filter() select() arrange() mutate() summarize() plus group_by()   Our data We’re going to be wrangling some pretty big data– murders over decades across the country.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,389 @@
+---
+title: "Traffic stops case study"
+description: "Looking for racial profiling in traffic stops"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "rgdal"]
+weight: 3
+slug: traffic-stops
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/kYK2bDH2czk?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>We’re going to take what we’ve learned so far and do some spatial analysis of traffic stops.</p>
+<p><strong>Goal:</strong> We’ll figure out which town and census tract each stop occurred in and then pull in demographic data from the Census to determine what types of neighborhoods police tend to pull people over more often.</p>
+<p>You could conduct this analysis using software like ArcGIS or QGIS, but we’re going to be doing it all in R.</p>
+<p>It is better to stay in a single environment from data importing, to analysis, to exporting visualizations because the produced scripts make it easier for others (including your future self) to replicate and verify your work in the future.</p>
+<p>Start with the data. It’s raw traffic stops between 2013 and 2014. It includes race, reasons for the stop, and many other factors. The state of Connecticut collects this information from all police departments but only a handful of them included location-specific information. Researchers at Central Connecticut State University’s Center for Municipal and Regional Policy geolocated as many as possible, focusing on eight departments that showed signs of racial profiling.</p>
+<p>About 34,000 stops were geolocated.</p>
+<p>We’re looking specifically at Hamden for this case study— so about 5,500 stops. We’ll revisit the other towns later.</p>
+<p>Let’s load the packages and data we’ll need.</p>
+<pre class="r"><code># if you don&#39;t have any of these packages installed yet, uncomment and run the lines below
+#install.packages(&quot;tidycensus&quot;, &quot;ggplot2&quot;, &quot;dplyr&quot;, &quot;sf&quot;, &quot;readr&quot;)
+
+library(tidycensus)
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(readr)
+
+stops &lt;- read_csv(&quot;data/hamden_stops.csv&quot;)</code></pre>
+<pre class="r"><code>View(stops)</code></pre>
+<div class="figure">
+<img src="/mapping/case_study/images/stops_view.png" />
+
+</div>
+<p>Let’s get rid of some of the bad data– where there was no latitude or longitude data (Don’t worry, that’s only about two percent of the data).</p>
+<pre class="r"><code>stops &lt;- filter(stops, InterventionLocationLatitude!=0)</code></pre>
+<p>Let’s map what we’ve got. Let’s download the Census tract shape files in Hamden’s county– New Haven County– with <strong>tigris</strong>.</p>
+<pre class="r"><code># If you don&#39;t have tigris installed yet, uncomment the line below and run
+#install.packages(&quot;tigris&quot;)
+
+library(tigris)
+
+# set sf option
+
+options(tigris_class = &quot;sf&quot;)
+
+new_haven &lt;- tracts(state=&quot;CT&quot;, county=&quot;New Haven&quot;, cb=T)
+
+#If cb is set to TRUE, download a generalized (1:500k) counties file. Defaults to FALSE (the most detailed TIGER file).</code></pre>
+<pre class="r"><code>ggplot(new_haven) + 
+  geom_sf(color=&quot;white&quot;) +
+  geom_point(data=stops, aes(x=InterventionLocationLongitude, y=InterventionLocationLatitude), color=&quot;red&quot;, alpha=0.05) +
+  #geom_point(data=stops_spatial, aes(x=lon, y=lat), color=&quot;blue&quot;) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+  labs(title=&quot;Traffic stops in Hamden&quot;)</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/map1-1.png" width="864" /></p>
+<p>Alright, it’s a start.</p>
+<div id="deeper-analysis" class="section level3">
+<h3>Deeper analysis</h3>
+<p>If you have a data set with latitude and longitude information, it’s easy to just throw it on a map with a dot for every instance.</p>
+<p>But what would that tell you? You see the intensity of the cluster of dots over the area but that’s it.</p>
+<p>If there’s no context or explanation it’s a flashy visualization and that’s it.</p>
+</div>
+<div id="heat-map" class="section level3">
+<h3>Heat map</h3>
+<p>One way is to visualize the distribution of stops.</p>
+<p>We’ll use the <code>stat_density2d()</code> function within ggplot2 and use <code>coord_map()</code> and <code>xlim</code> and <code>ylim</code> to set the boundaries on the map so it’s zoomed in more.</p>
+<p>{{% notice tip %}} When you’re stacking ggplots or dplyr commands, the line can’t end with a + or a %&gt;% normally, right? Well, if you stick a NULL at the last line, you can have the + or %&gt;% precede it. This is kind of an advanced tip for folks who play around with scripts and are tired of commenting out before the + or %&gt;%. {{% /notice %}}</p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data=new_haven, color = &quot;#777777&quot;, fill=NA, size=0.2) +
+  stat_density2d(data=stops, show.legend=F, aes(x=InterventionLocationLongitude, y=InterventionLocationLatitude, fill=..level.., alpha=..level..), geom=&quot;polygon&quot;, size=4, bins=10) +
+  scale_fill_gradient(low=&quot;deepskyblue2&quot;, high=&quot;firebrick1&quot;, name=&quot;Distribution&quot;) +
+  coord_sf(xlim=c(-73.067649, -72.743739), ylim=c(41.280972, 41.485011)) +
+  labs(x=NULL, y=NULL, 
+                  title=&quot;Traffic stops distribution around Hamden&quot;,
+                  subtitle=NULL,
+                  caption=&quot;Source: data.ct.gov&quot;) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;))</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/heatmap1-1.png" width="672" /></p>
+<p>That’s interesting.</p>
+<p>What’s nice about ggplot2, is the functionality called <code>facets</code>, which allows the construction of small multiples based on factors.</p>
+<p>Let’s try this again but faceted by race.</p>
+<pre class="r"><code># Creating a race column
+stops$race &lt;- ifelse(stops$SubjectEthnicityCode==&quot;H&quot;, &quot;H&quot;, stops$SubjectRaceCode)
+stops &lt;- stops %&gt;% 
+  mutate(race=case_when(
+    race==&quot;A&quot; ~ &quot;Asian&quot;,
+    race==&quot;B&quot; ~ &quot;Black&quot;,
+    race==&quot;H&quot; ~ &quot;Hispanic&quot;,
+    race==&quot;W&quot; ~ &quot;White&quot;
+  ))
+
+
+ggplot() +
+  geom_sf(data=new_haven, color = &quot;black&quot;, fill=NA, size=0.5) +
+  stat_density2d(data=stops, show.legend=F, aes(x=InterventionLocationLongitude, y=InterventionLocationLatitude, fill=..level.., alpha=..level..), geom=&quot;polygon&quot;, size=4, bins=10) +
+  scale_fill_gradient(low=&quot;deepskyblue2&quot;, high=&quot;firebrick1&quot;, name=&quot;Distribution&quot;) +
+  coord_sf(xlim=c(-73.067649, -72.743739), ylim=c(41.280972, 41.485011)) +
+  #This is the new line being added
+  facet_wrap(~race) +
+  labs(x=NULL, y=NULL, 
+                  title=&quot;Traffic stops distribution around Hamden by race&quot;,
+                  subtitle=NULL,
+                  caption=&quot;Source: data.ct.gov&quot;) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;))</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/faceted_heatmap-1.png" width="672" /></p>
+<p>Interesting.</p>
+<p>But it still doesn’t tell the full story because it’s still a bit misleading.</p>
+<p>Here’s what I mean.</p>
+<pre class="r"><code>stops %&gt;% 
+  group_by(race) %&gt;% 
+  count()</code></pre>
+<pre><code>## # A tibble: 4 x 2
+## # Groups:   race [4]
+##   race         n
+##   &lt;chr&gt;    &lt;int&gt;
+## 1 Asian       71
+## 2 Black     2035
+## 3 Hispanic   444
+## 4 White     2808</code></pre>
+<p>The distribution is comparative to its own group and not as a whole.</p>
+<p>Gotta go deeper.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/Wg6lNcwgCxo?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Let’s look at which neighborhoods police tend to pull people over more often and compare it to demographic data from the Census.</p>
+<p>So we need to count up the instances with the <code>st_join()</code> function from the <strong>sf</strong> package.</p>
+</div>
+<div id="points-in-a-polygon" class="section level3">
+<h3>Points in a Polygon</h3>
+<p>We already have the shape file of Census tracts in Hamden.</p>
+<p>We just need to count up how many times a traffic stop occurred in each tract.</p>
+<p>First, let’s make sure it will match the correct coordinate reference system (CRS) as the shape file we’ve just downloaded. We’ll use the <code>st_as_sf()</code> function to create a new geometry with the latitude and longitude data from the <strong>stops</strong> data frame. And we’ll transform the CRS so it matches the CRS from the <strong>new_haven</strong> shape file we downloaded.</p>
+<pre class="r"><code>stops_spatial &lt;- stops %&gt;% 
+  st_as_sf(coords=c(&quot;InterventionLocationLongitude&quot;, &quot;InterventionLocationLatitude&quot;), crs = &quot;+proj=longlat&quot;) %&gt;% 
+  st_transform(crs=st_crs(new_haven))</code></pre>
+<p>Now we use the <code>spatial_join()</code> function that sees where the geometries we’ve set in <strong>stops_spatial</strong> fall into which polygon in <strong>new_haven</strong>.</p>
+<pre class="r"><code>points_in &lt;- st_join(new_haven, stops_spatial, left=T)</code></pre>
+<pre class="r"><code>View(points_in)</code></pre>
+<div class="figure">
+<img src="/mapping/case_study/images/joined_spots.png" />
+
+</div>
+<p>This is great.</p>
+<p>What just happened: Every point in the original <strong>stops</strong> data frame now has a corresponding census tract and has been saved in the <strong>points_in</strong> data frame.</p>
+<p>Now, we can summarize the data by count and merge it back to the shape file and visualize it.</p>
+<pre class="r"><code>by_tract &lt;- points_in %&gt;%
+  filter(!is.na(X)) %&gt;% 
+  group_by(GEOID) %&gt;%
+  summarise(total=n())
+
+head(by_tract)</code></pre>
+<pre><code>## Simple feature collection with 6 features and 2 fields
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -72.97291 ymin: 41.31282 xmax: -72.9033 ymax: 41.35039
+## epsg (SRID):    4269
+## proj4string:    +proj=longlat +datum=NAD83 +no_defs
+## # A tibble: 6 x 3
+##   GEOID       total                                               geometry
+##   &lt;chr&gt;       &lt;int&gt;                                          &lt;POLYGON [°]&gt;
+## 1 09009141300     6 ((-72.97291 41.3474, -72.96833 41.34797, -72.96767 41…
+## 2 09009141400     3 ((-72.95252 41.3228, -72.95084 41.32394, -72.94852 41…
+## 3 09009141500    97 ((-72.94236 41.32899, -72.9397 41.33203, -72.93923 41…
+## 4 09009141600     1 ((-72.94043 41.31991, -72.94131 41.32058, -72.94048 4…
+## 5 09009141800     6 ((-72.92738 41.32651, -72.92708 41.32729, -72.92654 4…
+## 6 09009141900     9 ((-72.91891 41.31964, -72.91649 41.32468, -72.91579 4…</code></pre>
+<p>We have enough here to visualize it.</p>
+<pre class="r"><code># If you don&#39;t have viridis installed yet, uncomment and runt he line below
+#install.packages(&quot;viridis&quot;)
+
+library(viridis)
+
+ggplot(by_tract) +
+  geom_sf(aes(fill = total), color=NA) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Total traffic stops by Hamden police&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;,
+       fill = &quot;Total stops&quot;) +
+  scale_fill_viridis(option=&quot;magma&quot;, direction=-1)</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/viz_aggregate-1.png" width="864" /></p>
+<p>Pretty, but we’re unclear which part is Hamden and which are parts of other towns.</p>
+<p>That’s fine because we can layer in a tract of Hamden only with <strong>tigris</strong>.</p>
+<pre class="r"><code>new_haven_towns &lt;- county_subdivisions(state=&quot;CT&quot;, county=&quot;New Haven&quot;, cb=T)
+hamden_town &lt;- filter(new_haven_towns, NAME==&quot;Hamden&quot;)</code></pre>
+<p>We’ve got a single polygon for Hamden now. Let’s place it on top of our other map layers with a second <code>geom_sf()</code>.</p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data=by_tract, aes(fill = total), color=NA) +
+  geom_sf(data=hamden_town, fill=NA, color=&quot;black&quot;) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Total traffic stops by Hamden police&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;,
+       fill = &quot;Total stops&quot;) +
+  scale_fill_viridis(option=&quot;magma&quot;, direction=-1) +
+NULL</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/hamden_and-1.png" width="864" /></p>
+<p>Alright, excellent.</p>
+<p>It’s much clearer now that the bulk of the traffic stops occur at the southern border of Hamden.</p>
+<p>We can go deeper by going to our joined data frame and summarize by race and adding more variables to <code>group_by()</code></p>
+<pre class="r"><code>by_tract_race &lt;- points_in %&gt;%
+  filter(!is.na(X)) %&gt;% 
+  group_by(GEOID, race) %&gt;%
+  summarise(total=n())
+
+head(by_tract_race)</code></pre>
+<pre><code>## Simple feature collection with 6 features and 3 fields
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -72.97291 ymin: 41.31666 xmax: -72.9249 ymax: 41.35039
+## epsg (SRID):    4269
+## proj4string:    +proj=longlat +datum=NAD83 +no_defs
+## # A tibble: 6 x 4
+## # Groups:   GEOID [3]
+##   GEOID       race     total                                      geometry
+##   &lt;chr&gt;       &lt;chr&gt;    &lt;int&gt;                                 &lt;POLYGON [°]&gt;
+## 1 09009141300 Black        5 ((-72.97291 41.3474, -72.96833 41.34797, -72…
+## 2 09009141300 White        1 ((-72.97291 41.3474, -72.96833 41.34797, -72…
+## 3 09009141400 Black        2 ((-72.95252 41.3228, -72.95084 41.32394, -72…
+## 4 09009141400 White        1 ((-72.95252 41.3228, -72.95084 41.32394, -72…
+## 5 09009141500 Black       73 ((-72.94236 41.32899, -72.9397 41.33203, -72…
+## 6 09009141500 Hispanic     7 ((-72.94236 41.32899, -72.9397 41.33203, -72…</code></pre>
+<p>Very tidy data frame!</p>
+<p>We can repurpose the map code above and add a single line of code to facet it.</p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data=by_tract_race, aes(fill = total), color=NA) +
+  geom_sf(data=hamden_town, fill=NA, color=&quot;black&quot;) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Total traffic stops by Hamden police&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;,
+       fill = &quot;Total stops&quot;) +
+  scale_fill_viridis(option=&quot;magma&quot;, direction=-1) +
+  facet_wrap(~race)</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/hamden_and_facet-1.png" width="864" /></p>
+<p>Well, that’s pretty revealing.</p>
+<p>So these are raw numbers. Let’s try to figure out the percent breakdown of drivers who are White versus those who aren’t per Census tract. We just have to wrangle <em>by_tract_race</em> data frame a little bit. We’ve done this before in previous sections.</p>
+<pre class="r"><code>by_tract_race_percent &lt;- by_tract_race %&gt;% 
+  mutate(type=case_when(
+    race==&quot;White&quot; ~ &quot;White&quot;,
+    TRUE ~ &quot;Minority&quot;)) %&gt;% 
+  group_by(GEOID, type) %&gt;% 
+  summarize(total=sum(total)) %&gt;% 
+  mutate(percent=round(total/sum(total, na.rm=T)*100,2)) 
+
+head(by_tract_race_percent)</code></pre>
+<pre><code>## Simple feature collection with 6 features and 4 fields
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -72.97291 ymin: 41.31666 xmax: -72.9249 ymax: 41.35039
+## epsg (SRID):    4269
+## proj4string:    +proj=longlat +datum=NAD83 +no_defs
+## # A tibble: 6 x 5
+## # Groups:   GEOID [3]
+##   GEOID       type     total percent                              geometry
+##   &lt;chr&gt;       &lt;chr&gt;    &lt;int&gt;   &lt;dbl&gt;                         &lt;POLYGON [°]&gt;
+## 1 09009141300 Minority     5    83.3 ((-72.97291 41.3474, -72.96833 41.34…
+## 2 09009141300 White        1    16.7 ((-72.97291 41.3474, -72.96833 41.34…
+## 3 09009141400 Minority     2    66.7 ((-72.95252 41.3228, -72.95084 41.32…
+## 4 09009141400 White        1    33.3 ((-72.95252 41.3228, -72.95084 41.32…
+## 5 09009141500 Minority    80    82.5 ((-72.94236 41.32899, -72.9397 41.33…
+## 6 09009141500 White       17    17.5 ((-72.94236 41.32899, -72.9397 41.33…</code></pre>
+<p>We can easily plot this.</p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data=by_tract_race_percent, aes(fill = percent), color=NA) +
+  geom_sf(data=hamden_town, fill=NA, color=&quot;black&quot;) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Total traffic stops by Hamden police&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;,
+       fill = &quot;Percent of all stops&quot;) +
+  scale_fill_viridis(option=&quot;magma&quot;, direction=-1) +
+  facet_wrap(~type)</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/hamden_min_facet-1.png" width="864" /></p>
+<p>So that’s even more stark difference.</p>
+<p>What’s it tell us? Most of the stops up north are White drivers.</p>
+<p>Most of the stops in the southern part of the town, particularly by the town border, are Minority drivers.</p>
+<p>What’s one argument that could explain this?</p>
+<p>“Well, maybe that’s where minorities live.”</p>
+<p>Perhaps. But we can measure that thanks to the Census.</p>
+<p>We know the percent make up of traffic steps in Hamden.</p>
+<p>Let’s calculate the percent make up of residents in those neighborhoods and compare them.</p>
+<p>Ideally, the rate of traffic stops should match the rate of residents, right?</p>
+<p>We’ll use the <strong>tidycensus</strong> package.</p>
+<p>Don’t forget to load your Census API key.</p>
+<pre class="r"><code>census_api_key(&quot;YOUR API KEY GOES HERE&quot;)</code></pre>
+<pre><code>## To install your API key for use in future sessions, run this function with `install = TRUE`.</code></pre>
+<pre class="r"><code>racevars &lt;- c(Total_Pop = &quot;B02001_001E&quot;, 
+              White_Pop = &quot;B02001_002E&quot;)
+
+hamden_pop &lt;- get_acs(geography = &quot;tract&quot;, variables = racevars, 
+                  state = &quot;CT&quot;, county = &quot;New Haven County&quot;) 
+head(hamden_pop)</code></pre>
+<p>Great, we have total population and white population per tract.</p>
+<p>Let’s summarize this data by <em>GEOID</em>.</p>
+<pre class="r"><code>library(tidyr)
+
+hamden_pop_perc &lt;- hamden_pop %&gt;% 
+  mutate(variable=case_when(
+    variable==&quot;B02001_001&quot; ~ &quot;Total&quot;,
+    variable==&quot;B02001_002&quot; ~ &quot;White&quot;)) %&gt;% 
+  # dropping Margin of Error-- I know this is not ideal but for this purpose, we&#39;ll get rid of it for now
+  select(-moe) %&gt;% 
+  spread(variable, estimate) %&gt;% 
+  mutate(white_residents=round(White/Total*100,2), minority_residents=100-white_residents)
+
+head(hamden_pop_perc)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   GEOID       NAME            Total White white_residents minority_reside…
+##   &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt;
+## 1 09009120100 Census Tract 1…  6189  4762            76.9             23.1
+## 2 09009120200 Census Tract 1…  6566  5112            77.9             22.1
+## 3 09009125100 Census Tract 1…  4557  3880            85.1             14.9
+## 4 09009125200 Census Tract 1…  6002  4933            82.2             17.8
+## 5 09009125300 Census Tract 1…  4932  3103            62.9             37.1
+## 6 09009125400 Census Tract 1…  3459  2612            75.5             24.5</code></pre>
+<p>Nice. Let’s join it back to the <em>by_tract_race_percent</em> dataframe so we can calculate the gap.</p>
+<pre class="r"><code>by_tract_race_percent_spread &lt;- by_tract_race_percent %&gt;% 
+  select(-total) %&gt;% 
+  spread(type, percent) %&gt;% 
+  rename(minority_stopped=Minority, white_stopped=White) %&gt;% 
+  filter(!is.na(minority_stopped) &amp; !is.na(white_stopped))
+
+stops_population &lt;- left_join(by_tract_race_percent_spread, hamden_pop_perc) </code></pre>
+<div class="figure">
+<img src="/mapping/case_study/images/gap_df.png" />
+
+</div>
+<p>Great. Let’s do some math real quick and visualize what we have with a diverging color palette from the <strong>scales</strong> package.</p>
+<pre class="r"><code># If you don&#39;t have scales installed yet, uncomment and run the line below
+#install.packages(&quot;scales&quot;)
+
+library(scales)
+
+stops_population$gap &lt;- (stops_population$minority_stopped - stops_population$minority_residents)/100
+
+ggplot() +
+  geom_sf(data=stops_population, aes(fill = gap), color=&quot;white&quot;, size=.25) +
+  geom_sf(data=hamden_town, fill=NA, color=&quot;black&quot;) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Hamden: Minority traffic stops versus population&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;) +
+  scale_fill_distiller(type=&quot;seq&quot;, trans=&quot;reverse&quot;, palette = &quot;PuOr&quot;, label=percent, breaks=pretty_breaks(n=10), name=&quot;Gap&quot;) +
+  #continuous_scale(limits=c(-30, 30)) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+NULL</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/gap_map-1.png" width="864" /></p>
+</div>
+<div id="add-annotations-to-graphic" class="section level3">
+<h3>Add annotations to graphic</h3>
+<p>We’ll use the annotate() function with a combination of segments, points, and text.</p>
+<pre class="r"><code>stops_population$gap &lt;- (stops_population$minority_stopped - stops_population$minority_residents)/100
+
+ggplot() +
+  geom_sf(data=stops_population, aes(fill = gap), color=&quot;white&quot;, size=.25) +
+  geom_sf(data=hamden_town, fill=NA, color=&quot;black&quot;) +
+  coord_sf(datum=NA) +
+  labs(title = &quot;Hamden: Minority traffic stops versus population&quot;,
+       subtitle = &quot;In 2013 and 2014&quot;,
+       caption = &quot;Source: data.ct.gov&quot;) +
+  scale_fill_distiller(type=&quot;seq&quot;, trans=&quot;reverse&quot;, palette = &quot;PuOr&quot;, label=percent, breaks=pretty_breaks(n=10), name=&quot;Gap&quot;) +
+  #continuous_scale(limits=c(-30, 30)) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+  # NEW CODE HERE
+  annotate(&quot;segment&quot;, x = -72.93, xend = -72.87, y = 41.325, yend = 41.325, colour = &quot;lightblue&quot;, size=.5) +
+  annotate(&quot;point&quot;, x = -72.93, y = 41.325, colour = &quot;lightblue&quot;, size = 2) +
+  annotate(&quot;text&quot;, x = -72.85, y = 41.325, label = &quot;New Haven&quot;, size=5, colour=&quot;gray30&quot;) +
+  annotate(&quot;segment&quot;, x = -72.89, xend = -72.86, y = 41.375, yend = 41.375, colour = &quot;lightblue&quot;, size=.5) +
+  annotate(&quot;point&quot;, x = -72.89, y = 41.375, colour = &quot;lightblue&quot;, size = 2) +
+  annotate(&quot;text&quot;, x = -72.845, y = 41.375, label = &quot;North Haven&quot;, size=5, colour=&quot;gray30&quot;) +
+  annotate(&quot;point&quot;, x = -72.83, y = 41.375, colour=&quot;white&quot;, size=.2) +
+
+NULL</code></pre>
+<p><img src="/mapping/case_study/2018-05-27-traffic-stops_files/figure-html/annotations-1.png" width="864" /></p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

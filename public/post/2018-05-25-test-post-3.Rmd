@@ -1,0 +1,15 @@
+---
+title: test post 3
+author: ~
+date: '2018-05-25'
+slug: test-post-3
+categories: []
+tags: []
+weight: 5
+---
+
+Lorem Ipsum.
+
+{{% notice tip %}}
+A tip disclaimer
+{{% /notice %}}

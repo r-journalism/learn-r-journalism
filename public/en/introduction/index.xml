@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Journalism with R</title>
+    <link>/en/introduction/</link>
+    <description>Recent content in Getting started on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Evolve from Excel to R</title>
+      <link>/en/introduction/from_excel/from-excel-to-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/from_excel/from-excel-to-r/</guid>
+      <description>R is excellent for those who already are used to working with data in spreadsheets.
+Switching from Excel or Google Sheets to R for data analysis can seem daunting. Over time, the open-source statistical programming language has consistently grown in popularity among those who work with numbers, with thousands of user-created libraries to expand on its power.
+Though it was first created primarily to make it easier to create statistical models and output very basic visuals to explore data, it’s expanded to the point that people can use R to do so many advanced processes such as scrape websites, communicate with APIs, and publish beautiful interactive charts and maps.</description>
+    </item>
+    
+    <item>
+      <title>What is R</title>
+      <link>/en/introduction/what_is_r/what-is-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/what_is_r/what-is-r/</guid>
+      <description>What is R?  A language and environment for statistical computing and graphics Based on “S” Language developed at Bell Labs R was created by Ross Ihaka and Robert Gentleman at the Univ. of Aukland in 1993   R has  Exploded in popularity over the past 10 years Used by data analysts across many fields Been behind many journalism projects from quick to complex   Why use R?</description>
+    </item>
+    
+    <item>
+      <title>Installing R</title>
+      <link>/en/introduction/installing_r/installing-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_r/installing-r/</guid>
+      <description>Downloading R  R homepage - http://www.r-project.org CRAN Mirrors - http://cran.r-project.org  You can also install via command line package manager Homebrew.
+ Default R Console This is what the default R app looks like.
+It’s very simple but things have advanced to the point that we don’t need to settle for this.
+Now that we have the basic code installed, we can move on to a much better interface for working with R.</description>
+    </item>
+    
+    <item>
+      <title>Installing RStudio</title>
+      <link>/en/introduction/installing_rstudio/installing-rstudio/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_rstudio/installing-rstudio/</guid>
+      <description>Downloading RStudio  RStudio Desktop - http://www.rstudio.com   RStudio Integrated Development Environment (IDE)  RStudio is an IDE that consolidates everything you need to write R code and work with data in a single app.
+It allows you to browse help files, plots, and keep track of objects in your environment easily.
+© Copyright 2018, Andrew Ba Tran
+ </description>
+    </item>
+    
+  </channel>
+</rss>

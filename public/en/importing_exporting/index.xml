@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Importing/Exporting data on Journalism with R</title>
+    <link>/en/importing_exporting/</link>
+    <description>Recent content in Importing/Exporting data on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/importing_exporting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSV files</title>
+      <link>/en/importing_exporting/csv/csv-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/csv/csv-files/</guid>
+      <description>{{%attachments title=“Files for this section” style=“grey” /%}}
+Comma separated files are the most common way to save spreadsheets that doesn’t require a paid program from Microsoft to open.
+What a csv file looks like CSV file names end with a .csv
+  What a csv file looks like on the inside This explains the values separated with commas part of the file name.
+  Importing CSV files  Importing CSV is part of base R, no package needed But we’re going to use a package anyway, readr  Two ways to get data  If you have the URL address  If the csv file exists on the internet, you don’t have to download it to your local machine and then import it, you can import it to R directly from the web using the link  If you have the file on your computer   Get the URL If you have the link to a CSV file, right click the link of the data and click Copy Link Address.</description>
+    </item>
+    
+    <item>
+      <title>Excel files</title>
+      <link>/en/importing_exporting/excel/excel-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/excel/excel-files/</guid>
+      <description>Excel spreadsheets are unique in that they can contain multiple spreadsheets as a workbook.
+What an Excel file looks like Excel file names end with a .xls or .xlsx
+  What an Excel file looks like on the inside Weird, right? Definitely difficult to parse.
+ What I do sometimes (often) is save a sheet from Excel as a .csv file.
+That’s a short cut. But if you want to be transparent and really deal with the raw data then:</description>
+    </item>
+    
+    <item>
+      <title>Delimited Text</title>
+      <link>/en/importing_exporting/delimited_text/delimited-text/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/delimited_text/delimited-text/</guid>
+      <description>Sometimes you’ll encounter data with values that are delimited (separated) by characters other than commas. For example, I once received a spreadsheet delimited with emojis.
+Why does this happen? This means the data was exported from a database and the user chose this option. Not all data can be the way we ideally want it but as far as this data structure goes, at least we’re dealing with PDFs (which is possible but we won’t be going over that process in this course)</description>
+    </item>
+    
+    <item>
+      <title>JSON data</title>
+      <link>/en/importing_exporting/json/json-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/json/json-files/</guid>
+      <description>JSON stands for JavaScript Object Notation and is the data structure behind many website features like maps.
+Let’s say theoretically you were interested in compiling a list of all Sinclair Broadcast TV stations and their locations.
+You’d first visit their web site.
+ And then you might find they have a map!
+ Look at the developer tools in your browser and click over to Network you could sort by size and see there’s a json file being called by the map.</description>
+    </item>
+    
+    <item>
+      <title>SPSS data</title>
+      <link>/en/importing_exporting/spss/spss-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/spss/spss-files/</guid>
+      <description>SPSS is similar to Excel in that it’s proprietary software that stores data in a very specific format and provides a graphical interface useful for even deeper analysis.
+It stands for Statistical Package for the Social Sciences and is owned by IBM. It’s also very expensive and usually only large businesses or organizations own licenses.
+But it’s possible to bring in data saved from SPSS into R.
+In this example, we’ll be working with case-level data from the FBI’s Supplementary Homicide Report.</description>
+    </item>
+    
+    <item>
+      <title>Copying and pasting data</title>
+      <link>/en/importing_exporting/copying_pasting/copying-pasting/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/copying_pasting/copying-pasting/</guid>
+      <description>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.
+I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.
+Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</description>
+    </item>
+    
+    <item>
+      <title>Folder of files</title>
+      <link>/en/importing_exporting/folder_of_files/bulk-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/folder_of_files/bulk-files/</guid>
+      <description>Have you ever dealt with a large folder of spreadsheets that you need to combine into one?
+With spreadsheets, you have to copy and paste over and over again.
+But with R, you can script that process.
+In fact, I’ve created a function for you that simplifies the process.
+You have to download my muckrakr package off of GitHub with the devtools package.
+# If you don&amp;#39;t have devtools installed yet, uncomment and run the line below #install.</description>
+    </item>
+    
+  </channel>
+</rss>

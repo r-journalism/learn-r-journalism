@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Learn R Journalism">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Copying and pasting data :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1531061498" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1531061498" rel="stylesheet">
+    <link href="/css/hybrid.css?1531061498" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1531061498" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1531061498" rel="stylesheet">
+    <link href="/css/auto-complete.css?1531061498" rel="stylesheet">
+    <link href="/css/theme.css?1531061498" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1531061498" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1531061498" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1531061498"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/importing_exporting/copying_pasting/datapasta/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/datapasta/" title="Copying and pasting data" class="dd-item active">
+        <a href="/en/importing_exporting/copying_pasting/datapasta/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item ">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item ">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/andrewbtran/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/andrewbtran/learn-r-journalism/edit/master/content/importing_exporting/copying_pasting/2018-05-27-copying-pasting.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/importing_exporting/'>Importing/Exporting data</a> > Copying and pasting data
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Copying and pasting data</h1>
+          
+
+        
+
+
+<p>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.</p>
+<p>I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.</p>
+<p>Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</p>
+<p>Datapasta skips those steps and lets users copy data structured in a table from somewhere else and paste it directly into RStudio.</p>
+<p><strong>Sometimes you just want to play around with the data right away.</strong></p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta.gif" alt="Datapasta in action" />
+<p class="caption">Datapasta in action</p>
+</div>
+<div class="notices note" ><p>I’m going to show you how to use <strong>datapasta</strong> but <em>only</em> because I’m assuming you’ll go back and bring the data in correctly later on as you’re adding documentation to your project.</p>
+</div>
+
+<p>What is <code>tribble()</code>? It’s a new package that lets you build dataframes in a more human-readable way. <a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html">Check out tibble</a>.</p>
+<p>Datapasta depends on keyboard shortcuts and using RStudio. That’s why you’ll see things magically appear in the GIF above without any clear commands. I’ll explain below.</p>
+<div id="install-and-load-the-packages-below" class="section level3">
+<h3>Install and load the packages below</h3>
+<pre class="r"><code># install.packages(&quot;datapasta&quot;)
+library(datapasta)
+
+# install.packages(&quot;tibble&quot;)
+library(tibble)</code></pre>
+<p>Now go to <strong>Tools &gt; Addins &gt; Browse Addins…</strong></p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta1.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Next, click the <strong>Keyboard Shortcuts</strong> button.</p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta2.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Now, click add the keyboard shorts for each type of data you’re creating in the <strong>Shortcuts</strong> column.</p>
+<p>Those are the recommended shortcut commands, but create your own custom one if you want.</p>
+<p>Let’s go to the Internet Broadway Database and look up some <a href="https://www.ibdb.com/grosses-production/hamilton-499521/1">Hamilton statistics</a>.</p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta4.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Select the data in the table and go over to RStudio and use your shortcut to bring in the tibble (for me, it was shift+cmd+T).</p>
+<p>You’ll get something like this.</p>
+<pre class="r"><code>tribble(
+    ~Week.Ending,       ~Gross, ~X..Gross.Pot., ~Attendance, ~X..Capacity, ~X..Previews, ~X..Perf.,
+  &quot;May 22, 2016&quot;, &quot;$1,764,808&quot;,         &quot;132%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;May 15, 2016&quot;, &quot;$1,686,168&quot;,         &quot;126%&quot;,    &quot;10,736&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 8, 2016&quot;, &quot;$1,833,473&quot;,         &quot;137%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 1, 2016&quot;, &quot;$1,818,758&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 24, 2016&quot;, &quot;$1,813,024&quot;,         &quot;136%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 17, 2016&quot;, &quot;$1,678,620&quot;,         &quot;126%&quot;,    &quot;10,732&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 10, 2016&quot;, &quot;$1,813,655&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Apr 3, 2016&quot;, &quot;$1,822,594&quot;,         &quot;137%&quot;,    &quot;10,752&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 27, 2016&quot;, &quot;$1,719,570&quot;,         &quot;129%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 20, 2016&quot;, &quot;$1,740,104&quot;,         &quot;130%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 13, 2016&quot;, &quot;$1,758,555&quot;,         &quot;132%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Mar 6, 2016&quot;, &quot;$1,766,223&quot;,         &quot;132%&quot;,    &quot;10,751&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 28, 2016&quot;, &quot;$1,755,010&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 21, 2016&quot;, &quot;$1,750,924&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8
+  )</code></pre>
+<p>Don’t forget to assign it to an object</p>
+<pre class="r"><code>new_table &lt;- tribble(
+    ~Week.Ending,       ~Gross, ~X..Gross.Pot., ~Attendance, ~X..Capacity, ~X..Previews, ~X..Perf.,
+  &quot;May 22, 2016&quot;, &quot;$1,764,808&quot;,         &quot;132%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;May 15, 2016&quot;, &quot;$1,686,168&quot;,         &quot;126%&quot;,    &quot;10,736&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 8, 2016&quot;, &quot;$1,833,473&quot;,         &quot;137%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 1, 2016&quot;, &quot;$1,818,758&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 24, 2016&quot;, &quot;$1,813,024&quot;,         &quot;136%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 17, 2016&quot;, &quot;$1,678,620&quot;,         &quot;126%&quot;,    &quot;10,732&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 10, 2016&quot;, &quot;$1,813,655&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Apr 3, 2016&quot;, &quot;$1,822,594&quot;,         &quot;137%&quot;,    &quot;10,752&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 27, 2016&quot;, &quot;$1,719,570&quot;,         &quot;129%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 20, 2016&quot;, &quot;$1,740,104&quot;,         &quot;130%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 13, 2016&quot;, &quot;$1,758,555&quot;,         &quot;132%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Mar 6, 2016&quot;, &quot;$1,766,223&quot;,         &quot;132%&quot;,    &quot;10,751&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 28, 2016&quot;, &quot;$1,755,010&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 21, 2016&quot;, &quot;$1,750,924&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8
+  )</code></pre>
+<p>How’s it look?</p>
+<pre><code>View(new_table)
+</code></pre>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/new_table.png" />
+
+</div>
+<p>Simple!</p>
+<p>Now you can now clean up the column names and up by taking out commas, dollar signs, percent signs, etc, so you can do some analysis or visualization of the data. (We’ll get into that later)</p>
+<p>Why did we use tibble instead of the shortcut to build a dataframe? Well, the tibble package is more forgiving of bringing in information with odd characters. If you used the shortcut to bring in the data frame via <strong>shift+cmd+D</strong>, RStudio would’ve given you an error.</p>
+</div>
+<div id="using-datapasta-with-vectors" class="section level2">
+<h2>Using datapasta with vectors</h2>
+<p>Sometimes you don’t want a whole dataframe and just want a an array.</p>
+<p>Use the shortcut to paste as vector <strong>(shift+cmd+V)</strong> would turn a single copied row of that Hamilton data into</p>
+<pre class="r"><code>c(&quot;May 22&quot;, &quot; 2016&quot;, &quot;$1&quot;, &quot;764&quot;, &quot;808&quot;, &quot;132%&quot;, &quot;10&quot;, &quot;755&quot;, &quot;102%&quot;, &quot;0&quot;, &quot;8&quot;)</code></pre>
+<pre><code>##  [1] &quot;May 22&quot; &quot; 2016&quot;  &quot;$1&quot;     &quot;764&quot;    &quot;808&quot;    &quot;132%&quot;   &quot;10&quot;    
+##  [8] &quot;755&quot;    &quot;102%&quot;   &quot;0&quot;      &quot;8&quot;</code></pre>
+<p>An alternate way to do it is to paste each element on its own separate line, which is nice if you have an extremely long list of data and don’t want to have to scroll right to find an element. The shortcut I recommend you setting up is <strong>shift+cmd+alt+V</strong></p>
+<pre class="r"><code>c(&quot;May 22&quot;,
+  &quot; 2016&quot;,
+  &quot;$1&quot;,
+  &quot;764&quot;,
+  &quot;808&quot;,
+  &quot;132%&quot;,
+  &quot;10&quot;,
+  &quot;755&quot;,
+  &quot;102%&quot;,
+  &quot;0&quot;,
+  &quot;8&quot;)</code></pre>
+<pre><code>##  [1] &quot;May 22&quot; &quot; 2016&quot;  &quot;$1&quot;     &quot;764&quot;    &quot;808&quot;    &quot;132%&quot;   &quot;10&quot;    
+##  [8] &quot;755&quot;    &quot;102%&quot;   &quot;0&quot;      &quot;8&quot;</code></pre>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/importing_exporting/json/json-files/" title="JSON data"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/importing_exporting/spss/spss-files/" title="SPSS data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1531061498"></script>
+    <script src="/js/perfect-scrollbar.min.js?1531061498"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1531061498"></script>
+    <script src="/js/jquery.sticky.js?1531061498"></script>
+    <script src="/js/featherlight.min.js?1531061498"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1531061498"></script>
+    <script src="/js/highlight.pack.js?1531061498"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1531061498"></script>
+    <script src="/js/learn.js?1531061498"></script>
+    <script src="/js/hugo-learn.js?1531061498"></script>
+
+    <link href="/mermaid/mermaid.css?1531061498" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1531061498"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

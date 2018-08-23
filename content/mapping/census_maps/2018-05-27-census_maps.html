@@ -1,0 +1,292 @@
+---
+title: "Interactive choropleth maps"
+description: "With Starbucks and Census data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "census"]
+weight: 5
+slug: census-maps
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/M1AQ7ri7AfE?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Sometimes there are just too many dots on a map. If the point of your map is to know the location of every single data point <a href="https://www.washingtonpost.com/graphics/2018/national/migrant-child-shelters/">because of its significance</a>, then fine. Dots can also demonstrate the distribution of data geographically <a href="https://www.washingtonpost.com/graphics/2018/national/segregation-us-cities/">very effectively</a>.</p>
+<p>Choropleth or thematic maps are an effective and popular way to show geographic data.</p>
+<p>And if it’s interactive, it’s useful for exploratory purposes because it can surface information that can’t be expressed visually easily (Interactive maps for reader purposes need carefully considered, though, because readers will usually not click around).</p>
+<div id="making-choropleths" class="section level3">
+<h3>Making choropleths</h3>
+<p>To make a choropleth map, you first need a shape file or geojson of the polygons that you’re filling in.</p>
+</div>
+<div id="importing-shapefiles-from-the-census" class="section level3">
+<h3>Importing shapefiles from the Census</h3>
+<p>You could download and import the shape file into R <a href="/mapping/static_maps/static-maps/index.html">yourself</a>, but there’s a package that brings in Census shape files for you called <a href="https://github.com/walkerke/tigris"><strong>Tigris</strong></a>.</p>
+<p>This is what the U.S. states looks like on in leaflet R.</p>
+<pre class="r"><code># If you don&#39;t have the following packages installed yet, uncomment and run the lines below
+#install.packages(&quot;tigris&quot;)
+#install.packages(&quot;dplyr&quot;)
+#install.packages(&quot;leaflet&quot;)
+
+library(tigris)
+library(dplyr)
+library(leaflet)
+
+# Downloading the shapefiles for states at the lowest resolution
+states &lt;- states(cb=T)</code></pre>
+<p>We can use <strong>dplyr</strong> <code>&gt;%&gt;</code> pipes because the <strong>leaflet</strong> package developers incorporated its function structure. We need three functions starting out:</p>
+<ul>
+<li><code>leaflet()</code> - initializes the leaflet function</li>
+<li><code>addTiles()</code> - the underlying map tiles</li>
+<li><code>addPolygons()</code> - instead of dots, we’re adding Polygons, or shapes
+<ul>
+<li>Passing the argument <code>popup</code> to the function with the variable <em>NAME</em> from the shape file</li>
+</ul></li>
+</ul>
+<pre class="r"><code>states %&gt;% 
+  leaflet() %&gt;% 
+  addTiles() %&gt;% 
+  addPolygons(popup=~NAME)</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/choro1.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>This is how it looks raw. The Census shape files also include territories, like Guam and Puerto Rico.</p>
+<p>When mapping, we’ll have to remember to exclude them if they show up.</p>
+</div>
+<div id="joining-data-to-a-shapefile" class="section level2">
+<h2>Joining data to a shapefile</h2>
+<p><strong>Let’s make a choropleth map based on number of Starbucks per state.</strong></p>
+<p>We’ll use the same data as the previous section where we mapped every location in Massachusetts.</p>
+<pre class="r"><code>starbucks &lt;- read.csv(&quot;data/starbucks.csv&quot;, stringsAsFactors=F)
+
+# First, we&#39;ll use dplyr to summarize the data
+# count by state
+sb_state &lt;- starbucks %&gt;%
+  group_by(Province) %&gt;%
+  summarize(total=n()) %&gt;% 
+# Some quick adjustments to the the dataframe to clean up names
+  mutate(type = &quot;Starbucks&quot;) %&gt;%  
+  rename(state=Province)</code></pre>
+<p>Alright, we’ve summarized the the Starbucks data by state and we can now join it to the downloaded data frame.</p>
+<p><strong>Tigris</strong> includes a useful function called <code>geo_join()</code> to bring together shape files and data frames. Though we’ve used <strong>dplyr</strong> joins before, <code>geo_join()</code> lets you join to non dataframe shape files.</p>
+<p>We’ll also use a <strong>leaflet</strong> function called <code>colorNumeric()</code> that will turn the continuous variable of numbers of stores into a categorical variable by dividing it into bins and assigning it a hue of color we want. In this instance: Greens. Because, obviously.</p>
+<p>Also setting up a separate array of pop up text for the map.</p>
+<pre class="r"><code># Now we use the Tigris function geo_join to bring together 
+# the states shapefile and the sb_states dataframe -- STUSPS and state 
+# are the two columns they&#39;ll be joined by
+
+states_merged_sb &lt;- geo_join(states, sb_state, &quot;STUSPS&quot;, &quot;state&quot;)
+
+# Creating a color palette based on the number range in the total column
+pal &lt;- colorNumeric(&quot;Greens&quot;, domain=states_merged_sb$total)
+
+# Getting rid of rows with NA values
+# Using the Base R method of filtering subset() because we&#39;re dealing with a SpatialPolygonsDataFrame and not a normal data frame, thus filter() wouldn&#39;t work
+
+states_merged_sb &lt;- subset(states_merged_sb, !is.na(total))
+
+# Setting up the pop up text
+popup_sb &lt;- paste0(&quot;Total: &quot;, as.character(states_merged_sb$total))</code></pre>
+<p>Next, the map.</p>
+<p>We’re adding a few more <strong>leaflet</strong> functions.</p>
+<ul>
+<li><code>addProviderTiles()</code> - instead of <code>addTiles()</code>
+<ul>
+<li>Uses the Leaflet Providers plugin to add <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">different tiles</a> to map</li>
+</ul></li>
+<li><code>setView()</code> - sets the starting position of the map
+<ul>
+<li>Centers it on defined coordinates with a specific zoom level</li>
+</ul></li>
+<li>Lots of arguments passed to <code>addPolygons()</code>
+<ul>
+<li><code>fillColor()</code></li>
+<li><code>fillOpacity()</code></li>
+<li><code>weight</code></li>
+<li><code>smoothFactor()</code></li>
+</ul></li>
+<li><code>addLegend()</code> - same as in the previous section but with more customization</li>
+</ul>
+<pre class="r"><code># Mapping it with the new tiles CartoDB.Positron
+leaflet() %&gt;%
+  addProviderTiles(&quot;CartoDB.Positron&quot;) %&gt;%
+  setView(-98.483330, 38.712046, zoom = 4) %&gt;% 
+  addPolygons(data = states_merged_sb , 
+              fillColor = ~pal(states_merged_sb$total), 
+              fillOpacity = 0.7, 
+              weight = 0.2, 
+              smoothFactor = 0.2, 
+              popup = ~popup_sb) %&gt;%
+  addLegend(pal = pal, 
+            values = states_merged_sb$total, 
+            position = &quot;bottomright&quot;, 
+            title = &quot;Starbucks&quot;)</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/choro2.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Hmm… Not that interesting, right?</p>
+<p>What’s the problem here. <em>Deep down, you know what’s wrong.</em></p>
+<p>This is essentially a population map.</p>
+<p>So we need to adjust for population.</p>
+<p>And that’s easy to do using the Census API.</p>
+</div>
+<div id="bringing-in-census-data-via-api" class="section level2">
+<h2>Bringing in Census data via API</h2>
+<p>We’ll use the <a href="https://github.com/hrecht/censusapi">censusapi</a> package created by journalist Hannah Recht.</p>
+<pre class="r"><code># If you don&#39;t have censusapi installed yet, uncomment the line below and run
+#install.packages(&quot;censusapi&quot;)
+
+library(censusapi)</code></pre>
+<p>Don’t forget your <a href="https://api.census.gov/data/key_signup.html">census key</a>.</p>
+<pre class="r"><code># Add key to .Renviron
+Sys.setenv(CENSUS_KEY=&quot;YOURKEYHERE&quot;)
+# Reload .Renviron
+readRenviron(&quot;~/.Renviron&quot;)
+# Check to see that the expected key is output in your R console
+Sys.getenv(&quot;CENSUS_KEY&quot;)</code></pre>
+<p>We’ve already gone in some detail into how to use this package in the previous section.</p>
+<p>But let’s get the latest set of information on population from the ACS 5-year 2015 Census.</p>
+<pre class="r"><code># Alright, getting total population by state from the API
+state_pop &lt;-  getCensus(name=&quot;acs5&quot;, 
+                        vintage=2015,
+                        key=census_key, 
+                        vars=c(&quot;NAME&quot;, &quot;B01003_001E&quot;), 
+                        region=&quot;state:*&quot;)
+
+head(state_pop)</code></pre>
+<pre><code>##   state       NAME B01003_001E
+## 1    02     Alaska      733375
+## 2    01    Alabama     4830620
+## 3    05   Arkansas     2958208
+## 4    04    Arizona     6641928
+## 5    06 California    38421464
+## 6    08   Colorado     5278906</code></pre>
+<p>We now have the data set to be paired with the shape file.</p>
+<p>We need to prep them so they can join without issue.</p>
+<p>Did you notice that the names of states in the downloaded data frame are fully spelled out? In the shape file, states are abbreviated.</p>
+<p>We need to deal with that. Did you know that R has arrays of state names and state abbreviations just built in? Just type <code>state.name</code> or <code>state.abb</code> and they just appear! That’s pretty cool. We can build a dataframe of that and use that as a relationship file between the population data set and the shape file.</p>
+<pre class="r"><code># Cleaning up the column names
+colnames(state_pop) &lt;- c(&quot;state_id&quot;, &quot;NAME&quot;, &quot;population&quot;)
+state_pop$state_id &lt;- as.numeric(state_pop$state_id)
+# Hm, data comes in numbers of fully spelled out, not abbreviations
+
+# Did you know R has its own built in list of State names and State abbreviations?
+# Just pull it in this way to create a dataframe for reference
+
+state_off &lt;- data.frame(state.abb, state.name)
+head(state_off)</code></pre>
+<pre><code>##   state.abb state.name
+## 1        AL    Alabama
+## 2        AK     Alaska
+## 3        AZ    Arizona
+## 4        AR   Arkansas
+## 5        CA California
+## 6        CO   Colorado</code></pre>
+<pre class="r"><code># So I needed to create the dataframe above because the Census API data 
+# gave me states with full names while the Starbucks data came with abbreviated state names
+# So I needed a relationship dataframe so I could join the two
+
+# Cleaning up the names for easier joining
+colnames(state_off) &lt;- c(&quot;state&quot;, &quot;NAME&quot;)
+
+# Joining state population dataframe to relationship file
+state_pop &lt;- left_join(state_pop, state_off)
+
+# The relationship dataframe didnt have DC or Puerto Rico, so I&#39;m manually putting those in
+state_pop$state &lt;- ifelse(state_pop$NAME==&quot;District of Columbia&quot;, &quot;DC&quot;, as.character(state_pop$state))
+state_pop$state &lt;- ifelse(state_pop$NAME==&quot;Puerto Rico&quot;, &quot;PR&quot;, as.character(state_pop$state))
+
+# Joining Starbucks dataframe to adjusted state population dataframe
+sb_state_pop &lt;- left_join(sb_state, state_pop)
+
+# Calculating per Starbucks stores 100,000 residents and rounding to 2 digits
+sb_state_pop$per_capita &lt;- round(sb_state_pop$total/sb_state_pop$population*100000,2)
+
+# Eliminating rows with NA
+sb_state_pop &lt;- filter(sb_state_pop, !is.na(per_capita))
+head(sb_state_pop)</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   state total type      state_id NAME       population per_capita
+##   &lt;chr&gt; &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;
+## 1 AK       42 Starbucks        2 Alaska         733375       5.73
+## 2 AL       65 Starbucks        1 Alabama       4830620       1.35
+## 3 AR       37 Starbucks        5 Arkansas      2958208       1.25
+## 4 AZ      391 Starbucks        4 Arizona       6641928       5.89
+## 5 CA     2456 Starbucks        6 California   38421464       6.39
+## 6 CO      421 Starbucks        8 Colorado      5278906       7.98</code></pre>
+</div>
+<div id="final-map-i" class="section level2">
+<h2>Final map I</h2>
+<p>We’re going to use the same process code as the previous map but with the <code>per_capita</code> variable we’ve created. Reproducibility!</p>
+<p>We’ll be changing the pop up so it shows more data. It can take in HTML, so we’ll pass an HTML string based on state name, total, and per capita data.</p>
+<pre class="r"><code>states_merged_sb_pc &lt;- geo_join(states, sb_state_pop, &quot;STUSPS&quot;, &quot;state&quot;)
+
+pal_sb &lt;- colorNumeric(&quot;Greens&quot;, domain=states_merged_sb_pc$per_capita)
+states_merged_sb_pc &lt;- subset(states_merged_sb_pc, !is.na(per_capita))
+
+# Here&#39;s the pop up
+popup_sb &lt;- paste0(&quot;&lt;strong&gt;&quot;, states_merged_sb_pc$NAME, 
+                   &quot;&lt;/strong&gt;&lt;br /&gt;Total: &quot;, states_merged_sb_pc$total,
+                   &quot;&lt;br /&gt;Per capita: &quot;, 
+                   as.character(states_merged_sb_pc$per_capita))
+head(popup_sb)</code></pre>
+<pre><code>## [1] &quot;&lt;strong&gt;Alabama&lt;/strong&gt;&lt;br /&gt;Total: 65&lt;br /&gt;Per capita: 1.35&quot;     
+## [2] &quot;&lt;strong&gt;Alaska&lt;/strong&gt;&lt;br /&gt;Total: 42&lt;br /&gt;Per capita: 5.73&quot;      
+## [3] &quot;&lt;strong&gt;Arizona&lt;/strong&gt;&lt;br /&gt;Total: 391&lt;br /&gt;Per capita: 5.89&quot;    
+## [4] &quot;&lt;strong&gt;Arkansas&lt;/strong&gt;&lt;br /&gt;Total: 37&lt;br /&gt;Per capita: 1.25&quot;    
+## [5] &quot;&lt;strong&gt;California&lt;/strong&gt;&lt;br /&gt;Total: 2456&lt;br /&gt;Per capita: 6.39&quot;
+## [6] &quot;&lt;strong&gt;Colorado&lt;/strong&gt;&lt;br /&gt;Total: 421&lt;br /&gt;Per capita: 7.98&quot;</code></pre>
+<p>And now the map.</p>
+<pre class="r"><code>leaflet() %&gt;%
+  addProviderTiles(providers$CartoDB.Positron) %&gt;%
+  setView(-98.483330, 38.712046, zoom = 4) %&gt;% 
+  addPolygons(data = states_merged_sb_pc , 
+              fillColor = ~pal_sb(states_merged_sb_pc$per_capita), 
+              fillOpacity = 0.9, 
+              weight = 0.2, 
+              smoothFactor = 0.2, 
+              popup = ~popup_sb) %&gt;%
+  addLegend(pal = pal_sb, 
+            values = states_merged_sb_pc$per_capita, 
+            position = &quot;bottomright&quot;, 
+            title = &quot;Starbucks&lt;br /&gt;per 100,000&lt;br/&gt;residents&quot;)</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/choro3.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Pretty nice. An easy way to display data one way and offer more data after a click.</p>
+<hr />
+</div>
+<div id="final-map-ii" class="section level2">
+<h2>Final map II</h2>
+<p>You can also set it up so the choropleth maps surface data on hover.</p>
+<p>We use the <code>highlight()</code> and <code>labelOptions()</code> as sub functions to <code>addPolygons()</code>.</p>
+<p><a href="https://rstudio.github.io/leaflet/choropleths.html">Read more</a> at rstudio.</p>
+<p>The downside is that it hover pop ups don’t display HTML, so it limits the strings passed to it.</p>
+<pre class="r"><code>popup_sb &lt;- paste0(&quot;Per capita: &quot;, as.character(states_merged_sb_pc$per_capita))
+
+leaflet() %&gt;%
+  addProviderTiles(providers$CartoDB.Positron) %&gt;%
+  setView(-98.483330, 38.712046, zoom = 4) %&gt;% 
+  addPolygons(data = states_merged_sb_pc , 
+              fillColor = ~pal_sb(states_merged_sb_pc$per_capita), 
+              fillOpacity = 0.9, 
+              weight = 0.2, 
+              smoothFactor = 0.2,
+              highlight = highlightOptions(
+                  weight = 5,
+                  color = &quot;#666&quot;,
+                  fillOpacity = 0.7,
+                   bringToFront = TRUE),
+              label=popup_sb,
+              labelOptions = labelOptions(
+    style = list(&quot;font-weight&quot; = &quot;normal&quot;, padding = &quot;3px 8px&quot;),
+    textsize = &quot;15px&quot;,
+    direction = &quot;auto&quot;)) %&gt;%
+  addLegend(pal = pal_sb, 
+            values = states_merged_sb_pc$per_capita, 
+            position = &quot;bottomright&quot;, 
+            title = &quot;Starbucks&lt;br /&gt;per 100,000&lt;br/&gt;residents&quot;)</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/choro4.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

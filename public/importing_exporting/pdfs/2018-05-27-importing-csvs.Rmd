@@ -1,0 +1,95 @@
+---
+title: "CSV files"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "csv"]
+weight: 1
+slug: csv-files
+---
+
+
+# What a csv file looks like
+
+file name ends with a **.csv**
+
+![](/importing_exporting/csv/images/csv1.png?classes=shadow)
+
+
+# What a csv file looks like on the inside
+
+file name ends with a **.csv**
+
+![](/importing_exporting/csv/images/csv2.png?classes=shadow)
+
+# What an Excel file looks like
+
+file name ends with a **.xls** or **.xlsx**
+
+![](/importing_exporting/csv/images/excel1.png?classes=shadow)
+
+# What an Excel file looks like on the inside
+
+file name ends with a **.xls** or **.xlsx**
+
+![](/importing_exporting/csv/images/excel2.png?classes=shadow)
+
+# Importing CSV files
+
+- Importing CSV is part of base R, no package needed
+- But we're going to use a package anyway, readr
+
+# Two ways to get data
+
+- If you have the URL address
+- If you have the file on your computer
+
+## Get the URL
+
+Right click [the link](https://data.ct.gov/Health-and-Human-Services/Admissions-to-DMHAS-Addiction-Treatment-by-Town-Ye/iyru-82zq/data) of the data and click **Copy Link Address**
+
+![](/importing_exporting/csv/images/rightclick.png?classes=shadow)
+
+## read.csv()
+
+The function is `read.csv()` and put the URL address in "" and add the `stringsAsFactors=F`
+```{r segment1}
+df_csv <- read.csv("https://data.ct.gov/api/views/iyru-82zq/rows.csv?accessType=DOWNLOAD", stringsAsFactors=F)
+```
+
+## stringsAsFactors=F
+
+Why? 
+
+Blame statisticians.
+
+Back when R was created the users weren't using it as we use it now, with all these different strings.
+
+## The other way to import the data: Download it
+
+When you right click on the link, instead of clicking **Copy Link Address**-- this time, click **Save Link As...**
+
+![](/importing_exporting/csv/images/downloading.png?classes=shadow)
+
+Save to the directory you're working in
+
+After saving to the directory, click on the circle arrow on the right to refresh the files to make sure it's there.
+
+![](/importing_exporting/csv/images/directory.png?classes=shadow)
+
+# Note: How to change directories in RStudio
+
+Either by typing `setwd("/directory/where/you/want")` or by clicking in the menu up top **Session > Set Working Directory > Choose Directory...**
+
+![](/importing_exporting/csv/images/setwd.png?classes=shadow)
+
+# Importing local csv data
+
+Just like before, except instead of the URL, it's the name of the file.
+
+**Note:** This will only work if the working directory is set to where the csv file is.
+```{r segment2}
+df_csv <- read.csv("data/Admissions_to_DMHAS_Addiction_Treatment_by_Town__Year__and_Month.csv", stringsAsFactors=F)
+```
+
+

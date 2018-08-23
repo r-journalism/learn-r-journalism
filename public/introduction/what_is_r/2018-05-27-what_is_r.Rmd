@@ -1,0 +1,53 @@
+---
+title: "What is R"
+description: "What dReams are made of"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "introduction"]
+weight: 2
+slug: what-is-r
+---
+
+## What is R?
+
+* A language and environment for statistical computing and graphics
+* Based on "S" Language developed at Bell Labs
+* R was created by **R**oss Ihaka and **R**obert Gentleman at the Univ. of Aukland in 1993
+
+## R has
+
+* Exploded in popularity over the past 10 years
+* Used by data analysts across many fields
+* Been behind many journalism projects from quick to complex
+
+## Why use R?
+
+* Free
+* Open source
+* State-of-the-art-graphics and data analysis
+* Runs on Windows, Linux, Mac OS X
+* Enormous user base, community
+
+## Examples of investigative stories
+
+* [Gun Deaths in America](https://fivethirtyeight.com/features/gun-deaths/)
+* [More than 215,000 students have experienced gun violence at school since Columbine](https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/?utm_term=.6bdb501a1e81)
+* [Spies in the Skies](https://www.buzzfeed.com/peteraldhous/spies-in-the-skies?utm_term=.ufYW814Den#.iyOnAg13qy)
+
+
+## Interfaces for programming with R
+
+* R by itself (Everything below requires Base R)
+* RStudio (We'll be using this exclusively in this course)
+* Other 
+	* Eclipse StatET
+	* Microsoft Visual Studio
+	* R Commander
+	* Rattle
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

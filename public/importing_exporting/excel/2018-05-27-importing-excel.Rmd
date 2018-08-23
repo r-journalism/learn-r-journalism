@@ -1,0 +1,254 @@
+---
+title: "Excel files"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "Excel"]
+weight: 2
+slug: excel-files
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/B5iKikPvdBk?t=4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+Excel spreadsheets are unique in that they can contain multiple spreadsheets as a workbook.
+
+## What an Excel file looks like
+
+Excel file names end with a **.xls** or **.xlsx**
+
+![](/importing_exporting/csv/images/excel1.png?classes=shadow)
+
+## What an Excel file looks like on the inside
+
+Weird, right? Definitely difficult to parse.
+
+![](/importing_exporting/csv/images/excel2.png?classes=shadow)
+
+What I do sometimes (often) is save a sheet from Excel as a .csv file.
+
+That's a short cut. But if you want to be transparent and really deal with the raw data then:
+
+## Importing Excel files
+- Importing Excel is complicated, **readxl package** is needed
+- There are more other packages that handle Excel files and can build extra sheets, but we won't be needing them for this instance
+
+## Importing Excel files
+
+First, install the `readxl` package if you have not yet done so. 
+
+That will have `readxl` as part of the group of packages.
+
+```{r segment3}
+## If you don't have readxl installed, uncomment the line below and run it 
+#install.packages("readxl")
+library(readxl)
+```
+
+Unlike a csv, you can't just copy and paste the URL for an Excel sheet. 
+
+You gotta download the file first.
+
+Right click the link of the [Excel data link](http://www.ct.gov/ocme/cwp/view.asp?a=2165&Q=295128&ocmeNav=|) and click **Save File As...**
+
+![](/importing_exporting/csv/images/saveexcel.png?classes=shadow)
+
+## read_excel()
+
+Excel spreadsheets have multiple sheets and it's best to explore what it looks like in Excel first because `read_excel()` requires specific sheets to be referred to when importing.
+
+Give it a shot with the first sheet.
+
+```
+df_xl <- read_excel("data/StatisticsSummary.xls", sheet=1)
+```
+
+Check it
+
+```
+View(df_xl)
+```
+
+![](/importing_exporting/csv/images/excel_imported.png?classes=shadow)
+
+
+**This isn't right**. 
+
+The problem with Excel files is that people love to format it in ways that make it look nice in Excel but makes no sense in R.
+
+## read_excel() again
+
+
+But this time we'll add `skip=2` so it skips the first rows when bringing in the data.
+
+```{r skip}
+df_xl <- read_excel("data/StatisticsSummary.xls", sheet=1, skip=2)
+```
+
+Much better
+
+```
+View(df_xl)
+```
+
+![](/importing_exporting/csv/images/excel_imported2.png?classes=shadow)
+
+{{% notice warning %}}
+Notice that the column names are preserved with spaces and symbols.
+{{% /notice %}}
+
+
+
+```{r df_xl}
+# the colnames() function lists the column names of the dataframe
+colnames(df_xl)
+```
+
+So how would one refer to the data in the columns with spaces
+
+If we did it like normal with the `$` to pull the column we'd try
+
+```{r df_xl_col_fail, error=T}
+head(df_xl$Other Cases)
+```
+
+See, spaces won't work. This is how to deal with columns with spaces-- add the back tick next to the 1 button on your keyboard.
+
+```{r df_xl_col_pass, error=T}
+head(df_xl$`Other Cases`)
+```
+
+It's some extra finger work that you might be okay with if it was in a limited basis.
+
+However, in anticipation of the work we're going to be doing, we should go ahead and simplify the column names so there are no characters or spaces. Here's how
+
+## Cleaning (part 1)
+
+We'll use the `make.names()` function on the column names. This function makes syntactically valid names out of character vectors (as in in strips out the spaces and replaces them with periods)
+
+```{r next}
+colnames(df_xl) <- make.names(colnames(df_xl))
+```
+
+Check it
+
+```
+View(df_xl)
+```
+
+![](/importing_exporting/csv/images/makenames.png?classes=shadow)
+
+```{r new_colnames}
+colnames(df_xl)
+```
+
+Alright, that's a bit better. 
+
+Still, there's some oddness in the names but that's because enters were replaced with periods.
+
+Check out the first column: `Fiscal.Year......7.1.6.30`
+
+Let's change that so it's easier to type later on.
+
+## Change the name of a single column
+
+I'll show you how to do it in Base R and using the dplyr package
+
+Copy `Fiscal.Year......7.1.6.30` and paste it into 
+`colnames(dataframe_name)[colnames(dataframe_name) == 'ColumnNameToBeChanged'] <- 'NewColumnName'
+
+```{r colrename, eval=F}
+# Don't run this, I just want to show you the process
+colnames(df_xl)[colnames(df_xl) == 'Fiscal.Year......7.1.6.30'] <- 'Year'
+```
+
+Here's how to do it with dplyr: By using the `rename()` function.
+
+```{r colrename2}
+## If you don't have dplyr installed yet, uncomment the line below and run it
+# install.packages("dplyr")
+
+library(dplyr)
+df_xl <- rename(df_xl, Year=Fiscal.Year......7.1.6.30)
+```
+
+It's slightly different-- there are less parentheses and brackets and equal signs.
+
+And you don't need to add quotation marks.
+
+Check it
+
+```{r colnames_again}
+colnames(df_xl)
+```
+
+Fix the other names if you want. I'm going to leave them as is for now.
+
+
+## Is the df_xl sheet clean enough to work with?
+
+Scroll down to the bottom of the data.
+
+![](/importing_exporting/csv/images/nas.png?classes=shadow)
+
+
+Not clean yet. There are a bunch of `NA`s. 
+
+That might give us some issues later on so let's take care of it now.
+
+# Eliminating NAs
+
+Easiest way to get rid of NAs is to subset or filter out the `NA`s based on one column.
+
+Let's use the `Year` column.
+
+There are two ways: `subset()` or `filter()`
+
+1. Base R
+```{r base}
+df_xl <- subset(df_xl, !is.na(Year))
+```
+
+2. dplyr
+```{r dplyr}
+## If you don't have dplyr installed yet, uncomment the line below and run it
+# install.packages("dplyr")
+library(dplyr)
+df_xl <- filter(df_xl, !is.na(Year))
+```
+
+What's the difference? dplyr is part of the tidyverse suite of packages that we'll be getting into later on in the course. Go ahead and use that.
+
+## Check it
+
+![](/importing_exporting/csv/images/no.nas.png?classes=shadow)
+
+No `NAs` at the bottom.
+
+It took a few lines of code but the data has been cleaned up enough to analyze or visualize with.
+
+# Exporting to Excel
+
+It's preferable to save data frames as CSVs because it's more open and doesn't require a paid program for others to open.
+
+But if you must, there are some decent walkthroughs:
+
+* [Using the xlsx package](http://www.sthda.com/english/wiki/writing-data-from-r-to-excel-files-xls-xlsx)
+* [Reading and importing Excel files into R](https://www.datacamp.com/community/tutorials/r-tutorial-read-excel-into-r)
+
+
+
+## Your turn
+
+Challenge yourself with [these exercises](http://code.r-journalism.com/chapter-2/#section-excel) so you'll retain the knowledge of this section.
+
+Instructions on how to run the exercise app are on the [intro page](http://learn.r-journalism.com/en/importing_exporting/) to this section.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

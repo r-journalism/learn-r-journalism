@@ -1,0 +1,66 @@
+---
+title: "Setting up, using Git"
+description: "Time to crack open that console"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "version control"]
+weight: 2
+slug: git
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/UNnUPfEc944?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Alright, let’s get to git.</p>
+<p>After you’ve installed git, then you can convert a directory on your computer into a <a href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a>.</p>
+<p>This means its contents and changes can be tracked after this point.</p>
+<p>So go back to your terminal.</p>
+<div id="creating-a-new-repository" class="section level3">
+<h3>Creating a new repository</h3>
+<p>Navigate to the project folder you want to track with git.</p>
+<p>Here’s a <a href="https://www.digitalcitizen.life/command-prompt-how-use-basic-commands">good guide</a> for using the command prompt to navigate to folders on your PC. And a <a href="https://www.macworld.com/article/2042378/master-the-command-line-navigating-files-and-folders.html">guide for Macs</a>. One shortcut is to drag the folder from Finder onto the terminal icon in the menu and it will go to that folder in terminal.</p>
+<p>Once you’re in the right folder, type:</p>
+<pre><code>git init .</code></pre>
+<p>This tells git to initialize a new repository in the current folder and everything in it, represented by the <code>.</code> in the command.</p>
+<p>Did you configure git with your name and email yet?</p>
+<pre><code>git config --global user.email &quot;your@email.com&quot;
+git config --global user.name &quot;your name&quot;</code></pre>
+</div>
+<div id="committing-your-work" class="section level3">
+<h3>Committing your work</h3>
+<p>Now that you’ve initialized the folder as a repository, you can start logging your work.</p>
+<p>This is called “commits”.</p>
+<p>Though it’s not required, a useful first step before committing your work is to check the status of your git with the command:</p>
+<pre><code>git status</code></pre>
+<p>You’ll probably get a big list of files under “untracked”.</p>
+<p>This means that git recognizes that these files exist but isn’t tracking them for changes.</p>
+<p>You have to use the <code>add</code> <a href="https://git-scm.com/docs/git-add">command</a>.</p>
+<pre><code>git add .</code></pre>
+<p>This will add everything in the directory to be tracked.</p>
+<p>You can add specific files by typing it out instead of using the <code>.</code> period to represent all files.</p>
+<p>To be safe, run the add command before every commit to make sure you’re not leaving any files behind.</p>
+<p>After adding the files, run the status command again.</p>
+<pre><code>git status</code></pre>
+<p>Git will tell you that your files have been staged and are ready to commit.</p>
+<p>Now, you can log this change with the <code>commit</code> <a href="https://git-scm.com/docs/git-commit">command</a>.</p>
+<p>You have to include a personalized message, which you add by passing the <code>-m</code> command with the string for the message.</p>
+<pre><code>git commit -m &quot;first commit&quot;</code></pre>
+<p>That’s it!</p>
+<p>For future commits, try to communicate what changes were made.</p>
+<p>This is good for documentation for if you need to revert back to a previous version.</p>
+<p>{{% notice note %}} Get into the good habit of adding and committing frequently. {{% /notice %}}</p>
+<p>Great!</p>
+<p>It can seem like a lot of work and typing at first but it’s the best practice for doing this.</p>
+<ol style="list-style-type: decimal">
+<li>add files</li>
+<li>commit files with a message</li>
+<li>repeat</li>
+</ol>
+<p>You’ll get used to it.</p>
+<p>Next, we can push these changes online to GitHub for sharing.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

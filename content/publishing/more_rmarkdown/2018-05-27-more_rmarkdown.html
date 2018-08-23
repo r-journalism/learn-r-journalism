@@ -1,0 +1,151 @@
+---
+title: "More R Markdown"
+description: "Extra features that will enhance your reports"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "rmarkdown", "publishing"]
+weight: 2
+slug: more-rmarkdown
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/uOh9A1JW_wA?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Let’s create some R Markdown files.</p>
+<p>Make sure your working directory is set.</p>
+<p>If you’re not working with the learn-chapter-6-master <a href="https://github.com/r-journalism/learn-chapter-6">folder</a> you downloaded with <strong>usethis</strong>, download your files to a folder called <em>data</em>.</p>
+<p>If you get lost, the .Rmd files can be found in the <a href="https://github.com/r-journalism/learn-chapter-6">lesson repo</a>.</p>
+<p>We’ll start out by generating a report with Boston city payroll data.</p>
+<div id="datatables" class="section level3">
+<h3>Datatables</h3>
+<ol style="list-style-type: decimal">
+<li>Create a new R Markdown file and call it <strong>Chunk 1</strong>.
+<ul>
+<li>Leave author blank for these exercises</li>
+</ul></li>
+</ol>
+<p>The top of your file (currently called <em>Untitled 1</em>) should look like this:</p>
+<pre><code>---
+title: &quot;Chunk 1&quot;
+output: html_document
+---</code></pre>
+<p>and then that will be followed by the dummy code.</p>
+<p>Delete everything beneath the YAML code.</p>
+<p>Replace it with <a href="https://gist.github.com/andrewbtran/1af1ad6a9059e2521de53976e4934a1c">this code</a>:</p>
+<script src="https://gist.github.com/andrewbtran/1af1ad6a9059e2521de53976e4934a1c.js"></script>
+<p>Save the file as 01_chunk.Rmd and click the knit button.</p>
+<p>{{% notice warning %}} Note that you need to save this in <code>learn-chapter-6-master</code> not (as you might have gotten into the habit of doing <code>learn-chapter-6-master/more_rmarkdown</code> {{% /notice %}}</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/warnings.png" />
+
+</div>
+<p>Yikes, okay, that’s way too much.</p>
+</div>
+<div id="hide-warnings-messages" class="section level3">
+<h3>Hide warnings, messages</h3>
+<p>We can hide those console messages adding <code>warning=F</code> and <code>message=F</code> by the R code chunk labels.</p>
+<p>Create a new R Markdown file and call it <strong>Chunk 2</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/fb45ca115207549ce6d136917bf8d24c">the code</a> in below.</p>
+<p>The new code can be found on lines 6 and 16.</p>
+<script src="https://gist.github.com/andrewbtran/fb45ca115207549ce6d136917bf8d24c.js"></script>
+<p>Save the file as 02_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk2.png" />
+
+</div>
+<p>Now that’s much more readable and gets to the data quicker.</p>
+</div>
+<div id="hide-code" class="section level3">
+<h3>Hide code</h3>
+<p>If the person you’re sharing this with has no interest in the code and only the quick results, use <code>echo=F</code> to hide the chunk of code and just display the output. It’s on line 8.</p>
+<p>We’ll also narrow down the variables selected so the table isn’t way too wide.</p>
+<p>Create a new R Markdown file and call it <strong>Chunk 3</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/8784cf26ad18309a17687d3e416541ed">the code</a> in below.</p>
+<p>The new code can be found on 8 and 17.</p>
+<script src="https://gist.github.com/andrewbtran/8784cf26ad18309a17687d3e416541ed.js"></script>
+<p>Save the file as 03_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk3.png" />
+
+</div>
+</div>
+<div id="inline-r-code" class="section level3">
+<h3>Inline R code</h3>
+<p>Embed lines of R code within the markdown narrative with</p>
+<div style="width:50%; margin-left:auto; margin-right:auto;">
+<img src="/publishing/rmarkdown/images/inline.png">
+</div>
+<p>Create a new R Markdown file and call it <strong>Chunk 4</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/cad0673cdd4cf527f6781a94f597bd0c">the code</a> in below.</p>
+<p>The new code can be found on line 29 and 31.</p>
+<script src="https://gist.github.com/andrewbtran/cad0673cdd4cf527f6781a94f597bd0c.js"></script>
+<p>Save the file as 04_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk4.png" />
+
+</div>
+<p>This type of self-generating analysis is important because if you get the next year of payroll data, running this report will sub in the new city employee who makes the most money automatically.</p>
+</div>
+<div id="pretty-tables" class="section level3">
+<h3>Pretty tables</h3>
+<p>Make pretty tables with the <strong>knitr</strong> package and the <code>kable()</code> function.</p>
+<p>Create a new R Markdown file and call it <strong>Chunk 5</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/1751cc2e09acae6f1778f481b86b9a17">the code</a> in below.</p>
+<p>The new code can be found all the way down on line 60 and 61.</p>
+<script src="https://gist.github.com/andrewbtran/1751cc2e09acae6f1778f481b86b9a17.js"></script>
+<p>Save the file as 05_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk5.png" />
+
+</div>
+</div>
+<div id="change-theme-and-style" class="section level3">
+<h3>Change theme and style</h3>
+<p>Change the appearance and style of the HTML document by changing the theme up top.</p>
+<p>Options from the <a href="http://bootswatch.com/">Bootswatch</a> theme library includes:</p>
+<ul>
+<li><code>default</code></li>
+<li><code>cerulean</code></li>
+<li><code>journal</code></li>
+<li><code>cosmo</code></li>
+</ul>
+<p>highlights (for the code syntax)</p>
+<ul>
+<li><code>tango</code></li>
+<li><code>pygments</code></li>
+<li><code>kate</code></li>
+</ul>
+<p>Create a new R Markdown file and call it <strong>Chunk 6</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/ccbdf93edfbf2d700aafa2eaea39e6f3">the code</a> in below.</p>
+<p>The new code is at the top in the YAML section.</p>
+<script src="https://gist.github.com/andrewbtran/ccbdf93edfbf2d700aafa2eaea39e6f3.js"></script>
+<p>Save the file as 06_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk6.png" />
+
+</div>
+</div>
+<div id="table-of-contents" class="section level3">
+<h3>Table of contents</h3>
+<p>Add a floating table of contents by changing <code>html_document</code> to <code>toc: true</code> and <code>toc_float: true</code>.</p>
+<p>Create a new R Markdown file and call it <strong>Chunk 7</strong>.</p>
+<p>Type <a href="https://gist.github.com/andrewbtran/59cebe7576e99a7773f3e694b0f0bb3b">the code</a> in below.</p>
+<p>The new code is at the top in the YAML section.</p>
+<script src="https://gist.github.com/andrewbtran/59cebe7576e99a7773f3e694b0f0bb3b.js"></script>
+<p>Save the file as 07_chunk.Rmd and click the knit button.</p>
+<div class="figure">
+<img src="/publishing/more_rmarkdown/images/chunk7.png" />
+
+</div>
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next steps?</h2>
+<p>Exporting as a PDF will require LaTex installed first * Get it from <a href="https://www.latex-project.org/get/">latex-project.org</a> or <a href="http://www.tug.org/mactex/">MacTex</a></p>
+<p>Check out <a href="http://rmarkdown.rstudio.com/html_document_format.html#overview">all the features</a> of R Markdown at RStudio</p>
+<p><strong>Publish your results to Github pages</strong></p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

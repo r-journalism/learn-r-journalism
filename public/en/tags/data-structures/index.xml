@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Structures on Journalism with R</title>
+    <link>/en/tags/data-structures/</link>
+    <description>Recent content in Data Structures on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/data-structures/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data structures in R</title>
+      <link>/en/how_to_use_r/initial_exploration/data-structures/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/initial_exploration/data-structures/</guid>
+      <description>Vectors A vector is a sequence of data elements of the same basic type. The parts that consist of a vector are called components or elements.
+vec1 &amp;lt;- c(1,4,6,8,10) vec1 ## [1] 1 4 6 8 10 A vector vec is explicitly constructed by the concatenation function c().
+vec1[5] ## [1] 10 Elements in vectors can be addressed by standard [i] indexing
+vec1[3] &amp;lt;- 12 vec1 ## [1] 1 4 12 8 10 One of the elements in the array is replaced with a new number.</description>
+    </item>
+    
+  </channel>
+</rss>

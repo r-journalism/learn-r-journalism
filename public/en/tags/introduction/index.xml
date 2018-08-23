@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Journalism with R</title>
+    <link>/en/tags/introduction/</link>
+    <description>Recent content in Introduction on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to R</title>
+      <link>/en/how_to_use_r/intro_to_r/intro-to-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/intro_to_r/intro-to-r/</guid>
+      <description>Syntax You must follow pretty specific syntax rules for it to work. R won’t guess for you.
+  R is case-sensitive (unlike SQL) intepreted language (unlike C) Can enter commands at prompt &amp;gt; or in batch Comments are preceded by #  This is important to use often in your code for documentation You’ll see it often in this course  Statements are lines of code such as functions and object assignments  Enters in code (as in a new line) or semi-colons will separate statements    Working directories Your working directory is the folder on your computer in which you are currently working.</description>
+    </item>
+    
+    <item>
+      <title>What is R</title>
+      <link>/en/introduction/what_is_r/what-is-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/what_is_r/what-is-r/</guid>
+      <description>What is R?  A language and environment for statistical computing and graphics Based on “S” Language developed at Bell Labs R was created by Ross Ihaka and Robert Gentleman at the Univ. of Aukland in 1993   R has  Exploded in popularity over the past 10 years Used by data analysts across many fields Been behind many journalism projects from quick to complex   Why use R?</description>
+    </item>
+    
+  </channel>
+</rss>

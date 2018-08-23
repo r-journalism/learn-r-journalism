@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi-langue et i18n on Documentation du thème Hugo Learn</title>
+    <link>/fr/cont/i18n/</link>
+    <description>Recent content in Multi-langue et i18n on Documentation du thème Hugo Learn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="/fr/cont/i18n/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

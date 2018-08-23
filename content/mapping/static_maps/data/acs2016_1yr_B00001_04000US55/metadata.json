@@ -1,0 +1,20 @@
+{
+    "release": {
+        "id": "acs2016_1yr",
+        "name": "ACS 2016 1-year",
+        "years": "2016"
+    },
+    "tables": {
+        "B00001": {
+            "title": "Unweighted Sample Count of the Population",
+            "universe": "Total Population",
+            "denominator_column_id": null,
+            "columns": {
+                "B00001001": {
+                    "name": "Total",
+                    "indent": 0
+                }
+            }
+        }
+    }
+}

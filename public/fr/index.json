@@ -1,0 +1,85 @@
+[
+{
+	"uri": "/fr/git/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/importing_exporting/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/introduction/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/mapping/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/publishing/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/visualizing/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/workflow/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/wrangling/",
+	"title": "Démarrage",
+	"tags": [],
+	"description": "",
+	"content": " Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts\n"
+},
+{
+	"uri": "/fr/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/fr/about/",
+	"title": "Crédits",
+	"tags": [],
+	"description": "",
+	"content": " Contributeurs Merci à eux  de rendre le monde Open Source meilleur !\n.ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @matcornic 133 commits   @lierdakil 16 commits   @gwleclerc 13 commits   @mdavids 9 commits   @Xipas 5 commits   @mreithub 3 commits   @denisvm 2 commits   @gpospelov 2 commits   @lfalin 2 commits   @alexvargasbenamburg 1 commits   @MrMoio 1 commits   @giuliov 1 commits   @haitch 1 commits   @RealOrangeOne 1 commits   @tanzaho 1 commits   @JohnBlood 1 commits   @kamilchm 1 commits   @sykesm 1 commits   @ripienaar 1 commits   @EnigmaCurry 1 commits   @Thiht 1 commits   @kamar535 1 commits   @proelbtn 1 commits   Et un grand merci à @vjeantet pour son travail sur docdock, un fork de hugo-theme-learn. La v2.0.0 du thème est en grande partie inspirée de son travail.\nPackages et librairies  mermaid - géneration de diagrames et graphiques à partir de texte similaire à Markdown font awesome - Le framework de polices iconiques jQuery - La plus connue des librairies Javascript lunr - Lunr fournit des fonctions de recherche sans service externe horsey - Autocomplétion de composants (utiliser pour les suggestions de recherche) clipboard.js - Copier le texte dans le presse-papier highlight.js - Mise en valeur de syntaxes modernizr - Une boite à outil Javascript qui permet aux développeurs d\u0026rsquo;utiliser les dernières fonctionnalités de CSS et HTML5, même sur de vieux navigateurs.  Outils  Netlify - Déploiement continue et hébergement de cette documentation Hugo  "
+},
+{
+	"uri": "/fr/",
+	"title": "Learn Theme for Hugo",
+	"tags": [],
+	"description": "",
+	"content": " Thème Hugo learn Hugo-theme-learn est un thème pour Hugo, un générateur de site statique, rapide et modern, écrit en Go. Tandis que Hugo est souvent utilisé pour des blogs, ce thème multi-langue est entièrement conçu pour la documentation.\nCe thème est un portage partiel du thème Learn de Grav, un CMS modern écrit en PHP.\nLe thème Learn fonctionne grâce à la structure de page aborescentes pour organiser le contenu: tous les contenus sont des pages qui appartiennent à d\u0026rsquo;autres pages. [Plus d\u0026rsquo;infos]()\n Fonctionnalités principales  Recherche automatique Mode multi-langue Nombre de niveau infini dans le menu Boutons suivant/précédent automatiquement générés pour naviguer entre les items du menu Taille d\u0026rsquo;image, ombres\u0026hellip; Fichiers joints Lister les pages filles Diagrammes Mermaid (flowchart, sequence, gantt) Style configurable and variantes de couleurs Boutons, Messages Astuce/Note/Info/Attention, Expand  Contribuer à cette documentation N\u0026rsquo;hésitez pas à mettre à jour ce contenu en cliquant sur le lien Modifier cette page en haut de chaque page, et créer la Pull Request associée.\nVotre modification sera déployée automatiquement quand elle sera mergée.\n Site de documentation Cette documentation statique a été générée avec Hugo avec une simple commande : hugo -t hugo-theme-learn \u0026ndash; le code source est disponible sur Github\nLe site est auomatiquement publié et hébergé par Netlify. Plus d\u0026rsquo;infos sur le déploiement de site Hugo avec Netlify(En anglais)\n "
+},
+{
+	"uri": "/fr/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

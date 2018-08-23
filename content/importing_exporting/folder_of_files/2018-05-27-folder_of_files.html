@@ -1,0 +1,120 @@
+---
+title: "Folder of files"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "bulk"]
+weight: 7
+slug: bulk-files
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/SNtzR9ZOJO4?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Have you ever dealt with a large folder of spreadsheets that you need to combine into one?</p>
+<p>With spreadsheets, you have to copy and paste over and over again.</p>
+<p>But with R, you can script that process.</p>
+<p>In fact, I’ve created a function for you that simplifies the process.</p>
+<p>You have to download my <strong>muckrakr</strong> package off of GitHub with the <strong>devtools</strong> package.</p>
+<pre class="r"><code># If you don&#39;t have devtools installed yet, uncomment and run the line below
+#install.packages(&quot;devtools&quot;)
+
+devtools::install_github(&quot;andrewbtran/muckrakr&quot;)
+library(muckrakr)</code></pre>
+<div id="bulk-csv-files" class="section level3">
+<h3>Bulk CSV files</h3>
+<p>The function we want to use is called <code>bulk_csv()</code>.</p>
+<p>It looks like this (<strong>Don’t run this command, it’s theoretical</strong>):</p>
+<pre class="r"><code>bulk_csv(folder = &quot;DEFAULTBULKCSV2017&quot;, export = &quot;filenamedefaultbulkcsv2018.csv&quot;&quot;)</code></pre>
+<p>Two arguments:</p>
+<ul>
+<li>folder - The folder in relation to your working directory where the csv files exist. Default folder is the current working directory.</li>
+<li>export - File name to export csv file as, if wanted.</li>
+</ul>
+<p>Alright, so within this project folder is a sub folder full of CSVs.</p>
+<div class="figure">
+<img src="/importing_exporting/folder_of_files/images/csvs.png?classes=shadow" />
+
+</div>
+<p>It’s in <code>data/csvs</code></p>
+<p>{{% notice note %}} This package is based on readr, so passing on variables from read_csv will work in bulk_csv. These variables will apply to the import of each CSV sheet. {{% /notice %}}</p>
+<p>To create a new dataframe with all the data sets combined, the command would be:</p>
+<pre class="r"><code>combined_data &lt;- bulk_csv(folder=&quot;data/csvs&quot;)</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |================                                                 |  25%
+  |                                                                       
+  |================================                                 |  50%
+  |                                                                       
+  |=================================================                |  75%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<p>To simply export the data as a new combined CSV file, the command would be:</p>
+<pre class="r"><code>bulk_csv(folder=&quot;data/csvs&quot;, export=&quot;combined_data.csv&quot;)</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |================                                                 |  25%
+  |                                                                       
+  |================================                                 |  50%
+  |                                                                       
+  |=================================================                |  75%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre><code>## # A tibble: 3,558 x 11
+##    STATEFP COUNTYFP TRACTCE   GEOID   NAME NAMELSAD subid.GEOID subid.NAME
+##      &lt;int&gt;    &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;     
+##  1       2      198     300  2.20e9 3.00e0 Census …   213039010 Ketchikan 
+##  2       2      198  940100  2.20e9 9.40e3 Census …   219864310 Prince of…
+##  3       2      198     200  2.20e9 2.00e0 Census …   219864310 Prince of…
+##  4       2      198     100  2.20e9 1.00e0 Census …   219864310 Prince of…
+##  5       2      164     100  2.16e9 1.00e0 Census …   215041200 Kodiak Is…
+##  6       2       16     200  2.02e9 2.00e0 Census …   201601615 Aleutians…
+##  7       2       16     100  2.02e9 1.00e0 Census …   201601615 Aleutians…
+##  8       2      170     502  2.17e9 5.02e0 Census …   212238460 Kenai-Coo…
+##  9       2      170     501  2.17e9 5.01e0 Census …   217047440 Matanuska…
+## 10       2      170    1202  2.17e9 1.20e1 Census …   217047440 Matanuska…
+## # ... with 3,548 more rows, and 3 more variables: legit_geo &lt;int&gt;,
+## #   legit_name &lt;chr&gt;, legit_area &lt;dbl&gt;</code></pre>
+<p>This would save the file to the current working directory.</p>
+<p>You can specify the location to download in export as long as you put the folder structure before the CSV file name, like:</p>
+<pre class="r"><code>bulk_csv(folder=&quot;data/csvs&quot;, export=&quot;data/data_export/combined_data.csv&quot;)</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |================                                                 |  25%
+  |                                                                       
+  |================================                                 |  50%
+  |                                                                       
+  |=================================================                |  75%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre><code>## # A tibble: 3,558 x 11
+##    STATEFP COUNTYFP TRACTCE   GEOID   NAME NAMELSAD subid.GEOID subid.NAME
+##      &lt;int&gt;    &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;     
+##  1       2      198     300  2.20e9 3.00e0 Census …   213039010 Ketchikan 
+##  2       2      198  940100  2.20e9 9.40e3 Census …   219864310 Prince of…
+##  3       2      198     200  2.20e9 2.00e0 Census …   219864310 Prince of…
+##  4       2      198     100  2.20e9 1.00e0 Census …   219864310 Prince of…
+##  5       2      164     100  2.16e9 1.00e0 Census …   215041200 Kodiak Is…
+##  6       2       16     200  2.02e9 2.00e0 Census …   201601615 Aleutians…
+##  7       2       16     100  2.02e9 1.00e0 Census …   201601615 Aleutians…
+##  8       2      170     502  2.17e9 5.02e0 Census …   212238460 Kenai-Coo…
+##  9       2      170     501  2.17e9 5.01e0 Census …   217047440 Matanuska…
+## 10       2      170    1202  2.17e9 1.20e1 Census …   217047440 Matanuska…
+## # ... with 3,548 more rows, and 3 more variables: legit_geo &lt;int&gt;,
+## #   legit_name &lt;chr&gt;, legit_area &lt;dbl&gt;</code></pre>
+</div>
+<div id="bulk-excel-files" class="section level3">
+<h3>Bulk Excel files</h3>
+<p>Same concept as above, but the function name is <code>bulk_excel()</code>.</p>
+<p>Read more about the <a href="https://andrewbtran.github.io/muckrakr/bulk_excel.html">function</a> on the <a href="https://github.com/andrewbtran/muckrakr"><strong>muckrakr</strong> github repo</a>.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

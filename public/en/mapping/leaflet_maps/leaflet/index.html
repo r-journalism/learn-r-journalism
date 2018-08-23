@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Locator maps and geolocating addresses">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Interactive maps with Leaflet :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1535033655" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1535033655" rel="stylesheet">
+    <link href="/css/hybrid.css?1535033655" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1535033655" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1535033655" rel="stylesheet">
+    <link href="/css/auto-complete.css?1535033655" rel="stylesheet">
+    <link href="/css/theme.css?1535033655" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1535033655" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1535033655" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1535033655"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/mapping/leaflet_maps/leaflet/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/copying-pasting/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/copying-pasting/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/folder_of_files/bulk-files/" title="Folder of files" class="dd-item ">
+        <a href="/en/importing_exporting/folder_of_files/bulk-files/">
+        Folder of files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item ">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item ">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item active">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More R Markdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More R Markdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/publishing/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/installing_git/installing-git/" title="Installing git" class="dd-item ">
+        <a href="/en/git/installing_git/installing-git/">
+        Installing git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Connecting to GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Connecting to GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Best practices for GitHub" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Best practices for GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/r-journalism/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/r-journalism/learn-r-journalism/edit/master/content/mapping/leaflet_maps/2018-05-27-leaflet-maps.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/mapping/'>Spatial analysis</a> > Interactive maps with Leaflet
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Interactive maps with Leaflet</h1>
+          
+
+        
+
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/279WR2zOU90?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Let’s create a locator map like you would when searching for an address on Google Maps.</p>
+<p>Sometimes it’s necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.</p>
+<p>The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource JavaScript library.</p>
+<p>It’s great for journalists who have little knowledge of JavaScript who want to make interesting interactives using R. And there is <a href="https://rstudio.github.io/leaflet/">excellent documentation</a> if you want to dig deeper into its functionality after this introduction.</p>
+<p>Essentially, this package lets you make maps with custom map tiles, markers, polygons, lines, popups, and geojson. Almost any maps you can make in Google Fusion Tables or Carto(DB), you can make in R using the Leaflet package.</p>
+<pre class="r"><code># Uncomment and run &quot;install.packages&quot; functions below if you have not yet installed these packages
+
+#install.packages(&quot;leaflet&quot;)
+
+# IF YOU GET AN ERROR BECAUSE THERE IS NO PACKAGE CALLED httpuv
+#install.packages(&quot;httpuv&quot;)
+#install.packages(&quot;leaflet&quot;)
+
+library(leaflet)
+
+
+
+
+#install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<div id="putting-a-marker-on-a-map" class="section level2">
+<h2>Putting a marker on a map</h2>
+<p>Let’s begin by finding a latitude and longitude to map.</p>
+<p>Go to <a href="https://www.google.com/maps/">Google Maps</a> and search for any address.</p>
+<p>Right click on the map until you get this menu.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/right_map.png" />
+
+</div>
+<p>Select “What’s here?” and at the bottom copy and paste that latitude and longitude.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/lat_lon.png" />
+
+</div>
+<ol style="list-style-type: decimal">
+<li>Create a map widget by calling the <code>leaflet()</code> function</li>
+<li>Add <em>layers</em> (such as features) to the map by using layer functions
+<ul>
+<li>like <code>addTiles</code>, <code>addMarkers</code>, <code>addPolygons</code></li>
+</ul></li>
+<li>Print the map widget</li>
+<li>Customize the view port zoom and center location with <code>setView()</code></li>
+</ol>
+<pre class="r"><code># Insert your latitude and longitude in the code below
+# NOTE: Don&#39;t get them reversed otherwise you&#39;ll end up in the South Pole.
+
+# Initialize and assign m as the leaflet object
+m &lt;- leaflet() %&gt;%
+# Now add tiles to it
+    addTiles() %&gt;%  
+# Setting the middle of where the map should be and the zoom level
+    setView(lng=-77.030137, lat=38.902986, zoom = 16) %&gt;%
+# Now, add a marker with a popup, 
+    addMarkers(lng=-77.030137, lat=38.902986, popup=&quot;&lt;b&gt;Hello&lt;/b&gt;&lt;br&gt;&lt;a href=&#39;https://www.washingtonpost.com&#39;&gt;-Me&lt;/a&gt;&quot;)
+
+m </code></pre>
+<div id="htmlwidget-1" style="width:768px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.902986,-77.030137,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"<b>Hello<\/b><br><a href='https://www.washingtonpost.com'>-Me<\/a>",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.902986,-77.030137],16,[]],"limits":{"lat":[38.902986,38.902986],"lng":[-77.030137,-77.030137]}},"evals":[],"jsHooks":[]}</script>
+<p>Go ahead and click the blue marker.</p>
+<p><strong>Explaining the R code</strong></p>
+<ul>
+<li><code>leaflet()</code> initializes the leaflet work space</li>
+<li><code>addTiles()</code> by itself will bring in the default OpenStreetMap tiles
+<ul>
+<li>Here’s <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">a list</a> of free leaflet tiles you can use</li>
+<li><strong>Note:</strong> OpenStreetMaps is a wonderful and free open-source service. Their only stipulation for using their tiles is to be sure to credit and link to them in the map.</li>
+</ul></li>
+<li><code>setView()</code> is pretty self-explanatory but is simpler to implement</li>
+<li><code>addMarkers()</code> with some specific parameters.</li>
+</ul>
+<p><strong>Note:</strong> The order of commands is important. A view can’t be set unless there are tiles established first.</p>
+</div>
+<div id="how-to-put-the-map-online" class="section level2">
+<h2>How to put the map online</h2>
+<p>Run the code in your RStudio console and it will appear in your Viewer tab.</p>
+<p>Click on <strong>Export &gt; Save as Web page</strong>.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/export.png" alt="Export" />
+<p class="caption">Export</p>
+</div>
+<p>Give it a file name and click save.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/filename.png" alt="Save as" />
+<p class="caption">Save as</p>
+</div>
+<p>You have the map now as a full screen html file.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/file.png" alt="File" />
+<p class="caption">File</p>
+</div>
+<p>You can upload the file wherever you like and then iframe to it if you want to embed it into website like the code below.</p>
+<p><code>&lt;iframe src=&quot;leaflet_map.html&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;300px&quot;&gt;&lt;/iframe&gt;</code></p>
+<p>Or you can leave it embedded in an R Markdown file as the raw R code, like I have in this file.</p>
+<div class="notices note" ><p>When comparing the size of the HTML files, the R-produced version of the map is larger in size because it is bringing all the JavaScript and CSS inline into the HTML. However, when looking at how much data is actually downloaded to load the map html, the differences aren’t as drastic.</p>
+</div>
+
+</div>
+<div id="multiple-locations-from-a-csv" class="section level2">
+<h2>Multiple locations from a csv</h2>
+<p>Let’s bring in some new data.</p>
+<pre class="r"><code>library(readr)
+dunkin &lt;- read_csv(&quot;data/dunkin.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   id = col_integer(),
+##   address = col_character(),
+##   city = col_character(),
+##   state = col_character(),
+##   zip = col_integer(),
+##   country = col_character(),
+##   lat = col_double(),
+##   lon = col_double(),
+##   type = col_character()
+## )</code></pre>
+<pre class="r"><code>glimpse(dunkin)</code></pre>
+<pre><code>## Observations: 7,794
+## Variables: 9
+## $ id      &lt;int&gt; 300176, 300178, 300179, 300202, 300204, 300205, 300208...
+## $ address &lt;chr&gt; &quot;1752B Route 9&quot;, &quot;99 High St&quot;, &quot;17 Railroad Ave&quot;, &quot;411...
+## $ city    &lt;chr&gt; &quot;Clifton Park&quot;, &quot;Danvers&quot;, &quot;Rockport&quot;, &quot;Holbrook&quot;, &quot;Ea...
+## $ state   &lt;chr&gt; &quot;NY&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;NY&quot;, &quot;NJ&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, ...
+## $ zip     &lt;int&gt; 12065, 1923, 1966, 11741, 7018, 2021, 2301, 2188, 2145...
+## $ country &lt;chr&gt; &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, ...
+## $ lat     &lt;dbl&gt; 42.87174, 42.55958, 42.65634, 40.80692, 40.75238, 42.1...
+## $ lon     &lt;dbl&gt; -73.77414, -70.93124, -70.62621, -73.07295, -74.20798,...
+## $ type    &lt;chr&gt; &quot;Dunkin Donuts&quot;, &quot;Dunkin Donuts&quot;, &quot;Dunkin Donuts&quot;, &quot;Du...</code></pre>
+<p>We’ve imported nearly 8,000 rows of Dunkin’ Donuts store location data.</p>
+<p>Let’s limit it a bit because 8,000 dots on a slippy map is taxing on a browser.</p>
+<pre class="r"><code># Pick a state, any state.
+# I&#39;ll use Massachusetts here because that&#39;s where Dunkin started
+
+dd_state &lt;- dunkin %&gt;% 
+  filter(state==&quot;MA&quot;)</code></pre>
+<p>Let’s make a map with a new tile set. Instead of leaving <code>addTiles()</code> empty, we’ll pass on some new data to some third-party tiles with the <code>addProviderTiles()</code> function. Check out all the neat <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html">tile options</a>.</p>
+<p>Some options to use with <code>addCircles</code> includes the data to pull in for <code>popup</code> and <code>color</code>, which we’ve made bright orange. We’ve also set <code>radius</code> and <code>weight</code> and <code>fillOpacity</code>.</p>
+<p>If we wanted to change the radius of the circle based on some data point, you could replace <code>40</code> with some column with numeric values in it.</p>
+<pre class="r"><code>m &lt;- leaflet(dd_state) %&gt;% addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircles(~lon, ~lat, popup=dunkin$type, weight = 3, radius=40, 
+                 color=&quot;#ffa500&quot;, stroke = TRUE, fillOpacity = 0.8) 
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map1.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Why stop there?</p>
+<p>Let’s bring in some competition.</p>
+<pre class="r"><code>starbucks &lt;- read_csv(&quot;data/starbucks.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   `Store Number` = col_integer(),
+##   `Store Name` = col_character(),
+##   Address = col_character(),
+##   `Address Line2` = col_character(),
+##   City = col_character(),
+##   Province = col_character(),
+##   `Postal Code` = col_character(),
+##   `Phone Number` = col_character(),
+##   `Store Hours` = col_character(),
+##   `Wireless?` = col_character(),
+##   lat = col_double(),
+##   lon = col_double(),
+##   type = col_character()
+## )</code></pre>
+<pre class="r"><code>glimpse(starbucks)</code></pre>
+<pre><code>## Observations: 11,135
+## Variables: 13
+## $ `Store Number`  &lt;int&gt; 79797, 79796, 79795, 79794, 79793, 79789, 7978...
+## $ `Store Name`    &lt;chr&gt; &quot;Dominick&#39;s-Chicago #1100&quot;, &quot;Safeway - Chandle...
+## $ Address         &lt;chr&gt; &quot;3145 S Ashland Ave&quot;, &quot;1159 W Chandler Blvd&quot;, ...
+## $ `Address Line2` &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA...
+## $ City            &lt;chr&gt; &quot;Chicago&quot;, &quot;Chandler&quot;, &quot;Mansfield&quot;, &quot;Bothell&quot;,...
+## $ Province        &lt;chr&gt; &quot;IL&quot;, &quot;AZ&quot;, &quot;TX&quot;, &quot;WA&quot;, &quot;WA&quot;, &quot;CA&quot;, &quot;CA&quot;, &quot;SC&quot;...
+## $ `Postal Code`   &lt;chr&gt; &quot;60608-6251&quot;, &quot;85224-5202&quot;, &quot;76063-2602&quot;, &quot;980...
+## $ `Phone Number`  &lt;chr&gt; &quot;773-247-2633&quot;, &quot;480-726-7776&quot;, &quot;817-453-6770&quot;...
+## $ `Store Hours`   &lt;chr&gt; &quot;Mon: 6:00 AM-8:00 PM Tue: 6:00 AM-8:00 PM Wed...
+## $ `Wireless?`     &lt;chr&gt; NA, NA, NA, &quot;Wireless Hotspot&quot;, &quot;Wireless Hots...
+## $ lat             &lt;dbl&gt; 41.83619, 33.30424, 32.58408, 47.78450, 47.269...
+## $ lon             &lt;dbl&gt; -87.66409, -111.86316, -97.13298, -122.21282, ...
+## $ type            &lt;chr&gt; &quot;Starbucks&quot;, &quot;Starbucks&quot;, &quot;Starbucks&quot;, &quot;Starbu...</code></pre>
+<p>We should filter it so it’s only the state for which we already filtered for Dunkin data.</p>
+<pre class="r"><code>sb_state &lt;- starbucks %&gt;% 
+  filter(Province==&quot;MA&quot;)</code></pre>
+<p>The data is structured a bit differently, but at least it has <code>type</code> and location data.</p>
+<p>Also, let’s switch from <code>addCircles</code> to <code>addCircleMarkers</code>.</p>
+<pre class="r"><code># isolating just the 3 columns we&#39;re interested in-- type, lat, and lon
+sb_loc &lt;- select(sb_state, type, lat, lon)
+dd_loc &lt;- select(dd_state, type, lat, lon)
+
+# joining the two data frames together
+ddsb &lt;- rbind(sb_loc, dd_loc)
+
+# creating a coffee color palette
+
+cof &lt;- colorFactor(c(&quot;#ffa500&quot;, &quot;#13ED3F&quot;), domain=c(&quot;Dunkin Donuts&quot;, &quot;Starbucks&quot;))
+# mapping based on type
+m &lt;- leaflet(ddsb) %&gt;% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5) 
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map2.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Play around with the slippy map. Interesting, right?</p>
+<p>The file size is only 1.3 m even though there are more than 1,300 points on the map.</p>
+<p>Still, that’s a lot of points to process. I don’t recommend more.</p>
+</div>
+<div id="add-a-legend" class="section level1">
+<h1>Add a legend</h1>
+<p>Let’s add a legend with the function <code>addLegend()</code> and options for where to place it and colors and labels.</p>
+<pre class="r"><code>m &lt;- leaflet(ddsb)  %&gt;% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5)  %&gt;%
+  addLegend(&quot;bottomright&quot;, colors= c(&quot;#ffa500&quot;, &quot;#13ED3F&quot;), labels=c(&quot;Dunkin&#39;&quot;, &quot;Starbucks&quot;), title=&quot;Coffee places&quot;) 
+
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map3.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1535033655"></script>
+    <script src="/js/jquery.sticky.js?1535033655"></script>
+    <script src="/js/featherlight.min.js?1535033655"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1535033655"></script>
+    <script src="/js/highlight.pack.js?1535033655"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1535033655"></script>
+    <script src="/js/learn.js?1535033655"></script>
+    <script src="/js/hugo-learn.js?1535033655"></script>
+
+    <link href="/mermaid/mermaid.css?1535033655" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1535033655"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <p>© Copyright 2018, Andrew Tran</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

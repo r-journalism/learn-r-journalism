@@ -1,0 +1,98 @@
+---
+title: "JSON data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "json"]
+weight: 3
+slug: json-files
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/y_WYTUeYiSU?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+JSON stands for JavaScript Object Notation and is the data structure behind many website features like maps.
+
+Let's say theoretically you were interested in compiling a list of all [Sinclair Broadcast](http://sbgi.net/) TV stations and their locations.
+
+You'd first visit their web site.
+
+![](/importing_exporting/json/images/sinclair1.png)
+
+And then you might find they have [a map](http://sbgi.net/tv-stations/)!
+
+![](/importing_exporting/json/images/sinclair2.png)
+
+Look at the developer tools in your browser and click over to **Network** you could sort by size and see there's a **json** file being called by the map.
+
+![](/importing_exporting/json/images/sinclair3.png)
+
+If you click into the JSON link you'll see this data structure that includes affiliation, call letters, and latitude and longitude.
+
+![](/importing_exporting/json/images/sinclair4.png)
+
+Here's a close up.
+
+It looks like it could be transformed into rectangular data frame so we can analyze it.
+
+![](/importing_exporting/json/images/sinclair5.png)
+## jsonlite package
+
+We're going to use the [**jsonlite** ](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html)
+
+First, install and load the package.
+
+```{r import}
+#install.packages("jsonlite")
+library(jsonlite)
+```
+
+Then point to where the JSON file is. You can use the URL or the local path to it if you've downloaded it. I recommend downloading it as a backup in case the website is restructured.
+
+Use the `fromJSON()` function.
+
+```{r json_address}
+json_url <-"http://sbgi.net/resources/assets/sbgi/MetaverseStationData.json"
+
+## If the url above doesn't exist anymore uncomment the line below and run it
+# json_url <- "data/MetaverseStationData.json"
+
+stations <- fromJSON(json_url)
+```
+
+Let's look at the structure of what we've imported.
+
+```{r structure}
+str(stations)
+```
+
+And how's it now look as a data frame?
+
+```
+View(stations)
+```
+
+![](/importing_exporting/json/images/json_example.png)
+
+Alright, this is a great start.
+
+We can proceed to analyzing it and maybe visualizing it ourselves on a map.
+
+But we'll get to that in later chapters.
+
+Also, it should be noted that JSON is rarely ever this clean. 
+
+I forget where this metaphor came from but consider your computer's folder structure right now. How would you communicate the structure of your folders in a spreadsheet? 
+
+Tough, right? But possible when necesary.
+
+So JSON is usually nested and messy. But there are ways of [dealing with that](https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89).
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

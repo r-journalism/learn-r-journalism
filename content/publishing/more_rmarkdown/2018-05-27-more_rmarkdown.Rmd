@@ -1,0 +1,197 @@
+---
+title: "More R Markdown"
+description: "Extra features that will enhance your reports"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "rmarkdown", "publishing"]
+weight: 2
+slug: more-rmarkdown
+---
+
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/uOh9A1JW_wA?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+Let's create some R Markdown files.
+
+Make sure your working directory is set.
+
+If you're not working with the learn-chapter-6-master [folder](https://github.com/r-journalism/learn-chapter-6) you downloaded with **usethis**, download your files to a folder called *data*.
+
+If you get lost, the .Rmd files can be found in the [lesson repo](https://github.com/r-journalism/learn-chapter-6).
+
+We'll start out by generating a report with Boston city payroll data.
+
+### Datatables
+
+1. Create a new R Markdown file and call it **Chunk 1**.
+    * Leave author blank for these exercises
+
+The top of your file (currently called *Untitled 1*) should look like this:
+
+```
+---
+title: "Chunk 1"
+output: html_document
+---
+```
+
+and then that will be followed by the dummy code.
+
+Delete everything beneath the YAML code.
+
+Replace it with [this code](https://gist.github.com/andrewbtran/1af1ad6a9059e2521de53976e4934a1c):
+
+<script src="https://gist.github.com/andrewbtran/1af1ad6a9059e2521de53976e4934a1c.js"></script>
+
+Save the file as 01_chunk.Rmd and click the knit button.
+
+
+{{% notice warning %}}
+Note that you need to save this in `learn-chapter-6-master` not (as you might have gotten into the habit of doing `learn-chapter-6-master/more_rmarkdown`
+{{% /notice %}}
+
+
+
+![](/publishing/more_rmarkdown/images/warnings.png)
+
+Yikes, okay, that's way too much. 
+
+### Hide warnings, messages
+
+We can hide those console messages adding `warning=F` and `message=F` by the R code chunk labels.
+
+Create a new R Markdown file and call it **Chunk 2**.
+
+Type [the code](https://gist.github.com/andrewbtran/fb45ca115207549ce6d136917bf8d24c) in below.
+
+The new code can be found on lines 6 and 16.
+
+<script src="https://gist.github.com/andrewbtran/fb45ca115207549ce6d136917bf8d24c.js"></script>
+
+Save the file as 02_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk2.png)
+
+Now that's much more readable and gets to the data quicker.
+
+### Hide code
+
+If the person you're sharing this with has no interest in the code and only the quick results, use `echo=F` to hide the chunk of code and just display the output. It's on line 8.
+
+We'll also narrow down the variables selected so the table isn't way too wide.
+
+Create a new R Markdown file and call it **Chunk 3**.
+
+Type [the code](https://gist.github.com/andrewbtran/8784cf26ad18309a17687d3e416541ed) in below.
+
+The new code can be found on 8 and 17.
+
+<script src="https://gist.github.com/andrewbtran/8784cf26ad18309a17687d3e416541ed.js"></script>
+
+Save the file as 03_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk3.png)
+
+### Inline R code
+
+Embed lines of R code within the markdown narrative with
+
+<div style="width:50%; margin-left:auto; margin-right:auto;"><img src="/publishing/rmarkdown/images/inline.png"></div>
+
+Create a new R Markdown file and call it **Chunk 4**.
+
+Type [the code](https://gist.github.com/andrewbtran/cad0673cdd4cf527f6781a94f597bd0c) in below.
+
+The new code can be found on line 29 and 31.
+
+<script src="https://gist.github.com/andrewbtran/cad0673cdd4cf527f6781a94f597bd0c.js"></script>
+
+Save the file as 04_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk4.png)
+
+This type of self-generating analysis is important because if you get the next year of payroll data, running this report will sub in the new city employee who makes the most money automatically.
+
+### Pretty tables
+
+Make pretty tables with the **knitr** package and the `kable()` function.
+
+
+Create a new R Markdown file and call it **Chunk 5**.
+
+Type [the code](https://gist.github.com/andrewbtran/1751cc2e09acae6f1778f481b86b9a17) in below.
+
+The new code can be found all the way down on line 60 and 61.
+
+<script src="https://gist.github.com/andrewbtran/1751cc2e09acae6f1778f481b86b9a17.js"></script>
+
+Save the file as 05_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk5.png)
+
+### Change theme and style
+
+Change the appearance and style of the HTML document by changing the theme up top.
+
+Options from the [Bootswatch](http://bootswatch.com/) theme library includes:
+
+- `default`
+- `cerulean`
+- `journal`
+- `cosmo`
+
+highlights (for the code syntax)
+
+- `tango`
+- `pygments`
+- `kate`
+
+Create a new R Markdown file and call it **Chunk 6**.
+
+Type [the code](https://gist.github.com/andrewbtran/ccbdf93edfbf2d700aafa2eaea39e6f3) in below.
+
+The new code is at the top in the YAML section.
+
+<script src="https://gist.github.com/andrewbtran/ccbdf93edfbf2d700aafa2eaea39e6f3.js"></script>
+
+Save the file as 06_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk6.png)
+
+
+### Table of contents
+
+Add a floating table of contents by changing `html_document` to `toc: true` and `toc_float: true`.
+
+Create a new R Markdown file and call it **Chunk 7**.
+
+Type [the code](https://gist.github.com/andrewbtran/59cebe7576e99a7773f3e694b0f0bb3b) in below.
+
+The new code is at the top in the YAML section.
+
+
+<script src="https://gist.github.com/andrewbtran/59cebe7576e99a7773f3e694b0f0bb3b.js"></script>
+
+Save the file as 07_chunk.Rmd and click the knit button.
+
+![](/publishing/more_rmarkdown/images/chunk7.png)
+
+## Next steps?
+
+Exporting as a PDF will require LaTex installed first
+  * Get it from [latex-project.org](https://www.latex-project.org/get/) or [MacTex](http://www.tug.org/mactex/)
+
+Check out [all the features](http://rmarkdown.rstudio.com/html_document_format.html#overview) of R Markdown at RStudio
+
+**Publish your results to Github pages**
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

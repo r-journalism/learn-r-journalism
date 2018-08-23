@@ -1,0 +1,75 @@
+Movie,Genre,actor,actor_age,actress,actress_age,budget
+Mo' Better Blues,drama,Denzel Washington,35,Joie Lee,28,10
+Malcolm X,drama,Denzel Washington,37,Angela Bassett,34,34
+The Preacher's Wife,drama,Denzel Washington,41,Whitney Houston,33,40
+He Got Game,drama,Denzel Washington,43,Milla Jovovich,22,25
+Remember the Titans,drama,Denzel Washington,45,Micole Ari Parker,29,30
+Training Day,drama,Denzel Washington,46,Eva Mendes,27,45
+John Q,drama,Denzel Washington,47,Kimberly Elise,34,36
+Out of Time,drama,Denzel Washington,48,Sanaa Lathan,32,50
+DejaVu,sci-fi,Denzel Washington,51,Paula Patton,30,75
+American Ganster,drama,Denzel Washington,52,Lymari Nadal,29,100
+Flight,drama,Denzel Washington,57,Kelly Reilly,35,31
+Empire Strikes Back,sci-fi,Harrison Ford,37,Carrie Fisher,23,18
+Raiders of the Lost Ark,adventure,Harrison Ford,38,Karen Allen,29,20
+Blade Runner,sci-fi,Harrison Ford,39,Sean Young,22,28
+Witness,drama,Harrison Ford,42,Kelly McGillis,27,12
+Working Girl,comedy,Harrison Ford,46,Melanie Griffith,31,28.6
+Regarding Henry,drama,Harrison Ford,48,Annette Bening,33,25
+Sabrina,romance,Harrison Ford,53,Julia Ormond,30,58
+Six Days Seven Nights,romance,Harrison Ford,55,Anne Heche,29,70
+Random Hearts,drama,Harrison Ford,57,Kristin Scott Thomas,39,64
+What Lies Beneath,drama,Harrison Ford,58,Michelle Pfeiffer,42,90
+Firewall,drama,Harrison Ford,63,Virginia Madsen,44,50
+Edward Scissorhands,fantasy,Johnny Depp,27,Winona Ryder,19,20
+What's Eating Gilbert Grape,drama,Johnny Depp,30,Juliette Lewis,20,11
+Sleepy Hollow,fantasy,Johnny Depp,36,Christina Ricci,19,70
+Chocolat,romance,Johnny Depp,37,Juliette Binoche,36,25
+Blow,drama,Johnny Depp,37,Penelope Cruz,26,53
+Pirates of the Caribbean,fantasy,Johnny Depp,43,Keira Knightly,21,140
+The Tourist,drama,Johnny Depp,47,Angelina Jolie,35,100
+The Rum Diary,drama,Johnny Depp,48,Amber Heard,25,65
+Dark Shadows,fantasy,Johnny Depp,48,Bella Heathcote,24,150
+Transcendence,drama,Johnny Depp,49,Rebecca Hall,30,100
+Losin It,romance,Tom Cruise,20,Shelley Long,33,7
+Risky Business,drama,Tom Cruise,21,Rebecca De Mornay,23,6.2
+Top Gun,drama,Tom Cruise,23,Kelly McGillis,28,15
+Far and Away,drama,Tom Cruise,29,Nicole Kidman,24,30
+Jerry Maguire,drama,Tom Cruise,34,Renee Zellweger,28,50
+Vanilla Sky,drama,Tom Cruise,39,Penelope Cruz,27,68
+Mission Impossible III,adventure,Tom Cruise,43,Michelle Monaghan,30,150
+Knight and Day,adventure,Tom Cruise,47,Camaron Diaz,37,117
+Rock of Ages,comedy,Tom Cruise,50,Malin Akerman,34,75
+Oblivion,sci-fi,Tom Cruise,50,Olga Kurylenka,33,160
+One Fine Day,drama,George Clooney,35,Michelle Pfeiffer,38,30
+Batman & Robin,adventure,George Clooney,36,Elle Macpherson,33,125
+Out of Sight,comedy,George Clooney,37,Jennifer Lopez,28,48
+"O Brother, Where Art Thou?",comedy,George Clooney,39,Holly Hunter,42,26
+Ocean's Eleven,comedy,George Clooney,40,Julia Roberts,34,85
+Solaris,sci-fi,George Clooney,41,Natasha McElhone,32,47
+Intolerable Cruelty,comedy,George Clooney,42,Catherine Zeta-Jones,34,60
+The Good German,drama,George Clooney,45,Cate Blanchett,37,32
+Leatherheads,comedy,George Clooney,46,Renee Zellweger,38,58
+Up in the Air,drama,George Clooney,48,Vera Farmiga,36,30
+The American,drama,George Clooney,49,Violante Placido,34,20
+An Officer and a Gentleman,drama,Richard Gere,32,Debra Winger,27,6
+Pretty Woman,romance,Richard Gere,40,Julia Roberts,22,14
+Sommersby,romance,Richard Gere,43,Jodie Foster,30,30
+First Knight,romance,Richard Gere,45,Julia Ormond,30,75
+Autumn in New York,romance,Richard Gere,50,Winona Ryder,28,60
+Shall We Dance,romance,Richard Gere,55,Susan Sarandon,58,50
+Bee Season,drama,Richard Gere,56,Juliette Binoche,41,14
+The Hoax,drama,Richard Gere,57,Julie Delpy,36,25
+Nights in Rodanthe,romance,Richard Gere,59,Diane Lane,43,30
+Amelia,romance,Richard Gere,60,Hilary Swank,35,40
+Arbitrage,drama,Richard Gere,63,Laetitia Casta,34,12
+Splash,comedy,Tom Hanks,27,Daryl Hannah,23,8
+The Money Pit,comedy,Tom Hanks,29,Shelley Long,36,10
+Sleepless in Seattle,romance,Tom Hanks,36,Meg Ryan,31,21
+Forrest Gump,drama,Tom Hanks,37,Robin Wright,28,55
+Apollo 13,drama,Tom Hanks,38,Kathleen Quinlan,40,62
+Cast Away,drama,Tom Hanks,44,Helen Hunt,37,90
+Charlie Wilson's War,drama,Tom Hanks,51,Julia Roberts,41,75
+Extremely Loud & Incredibly Close,drama,Tom Hanks,55,Sandra Bullock,47,40
+Cloud Atlas,sci-fi,Tom Hanks,56,Halle Berry,46,128.5
+Captain Phillips,drama,Tom Hanks,57,Catherine Keener,54,55

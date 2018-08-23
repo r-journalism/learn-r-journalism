@@ -1,0 +1,145 @@
+---
+title: "Connecting to GitHub"
+description: "Show your work"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "github"]
+weight: 3
+slug: github
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/A07QI3_Ie34?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+Github is one of web-based hosting services for sharing and collaborating with code and data.
+
+It [all depends](https://medium.com/flow-ci/github-vs-bitbucket-vs-gitlab-vs-coding-7cf2b43888a1) on your needs and preferences. Each are pretty similar.
+
+**Options**
+
+- [Github](http://www.github.com)
+- [BitBucket](https://bitbucket.org/)
+- [GitLab](https://about.gitlab.com/)
+
+We're going to publish a folder to Github because it offers free hosting to open-source software projects.
+
+It's already where most R packages are hosted when they're being developed.
+
+{{% notice warning %}}
+If you're using two-factor authentication in Github, you'll need to go through [some more steps](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) for generating an SSH key to connect. This shouldn't concern you if you're using Github after just creating a new account. 
+{{% /notice %}}
+
+### Creating a Github respository
+
+Go to Github.com and [create a new account](https://github.com/join) if you haven't yet. Use the same username and email address that you set up with your git global option.
+
+For this example, we're going to upload our folder of chunks that we created in the Publishing chapter.
+
+In Github, [create a new](https://github.com/new) public repository called "chunks". 
+
+Do NOT check "Initialize with README". You want a blank repository.
+
+![](/git/github/images/chunks.png)
+
+This will create a new repository page, which needs to be synchronized with the local repository we're about to create.
+
+Create a folder somewhere (Remember good workflow. Maybe move it to your Documents folder or a new folder for Projects?) and also call it "chunks".
+
+Copy and paste the files, including 01_chunk.html and 01_chunk.rmd files into that "chunks" folder.
+
+![](/git/github/images/chunk_files.png)
+
+Open up your CMD/terminal and navigate to the folder.
+
+For me, that would look like:
+
+![](/git/github/images/navigate.png)
+
+Type in the git commands we [learned before](http://learn.r-journalism.com/en/git/git/git/) to initialize, add, and commit.
+
+```
+git init
+git add .
+git commit -m "first commit"
+```
+
+![](/git/github/images/git_execute.png)
+
+Now we need to connect this repository on the local computer to the repository on Github.
+
+The lines were provided when you created the repository on Github:
+
+![](/git/github/images/push_existing.png)
+
+Type the equivalent of that into your terminal/cmd:
+
+```
+git remote add origin git@github.com:YOURUSERNAME/chunks.git
+git push -u origin master
+```
+
+![](/git/github/images/git_pushed.png)
+
+Refresh your Github repo and all your files should be there:
+
+![](/git/github/images/github_yay.png)
+
+Now you can get those HTML files hosted.
+
+### Hosting with Github Pages
+
+Turn [http://github.com/username/reponame/index.html](http://github.com/username/reponame/index.html) ->
+
+Into [http://username.github.io/reponame/index.html](http://username.github.io/reponame/index.html)
+
+github.io is the address for hosted files. Can you spot what to swap?
+
+First we need to set up Github to host the files.
+
+### Setting up GH Pages
+
+After uploading your repo, click on **Settings** on the top right.
+
+![](/git/github/images/settings.png)
+
+Scroll down to the **GitHub Pages** section of Settings.
+
+Change the *Source* from `None` to `master branch` and click save.
+
+![](/git/github/images/master_branch.png)
+
+
+For future projects, you can organize your files so that all output HTML are stored in a `docs` folder. Then the option `master branch\docs` will host those files and ignore everything in the root folder.
+
+
+
+Now go to https://YOURUSERNAME.github.io/chunks/06_chunk.html and you should have your hosted file!
+
+![](/git/github/images/chunk6.png)
+
+
+That's it!
+
+What if you get some new data and wanted to update this?
+
+1. Change the data imported in the local project
+2. Generate a new HTML from the .Rmd file
+3. git add the files in the terminal/cmd
+4. git commit -m with the message "new data" or whatever
+5. git push -u origin master to move the new file changes to Github
+6. Refresh the URL address and the changes should be reflected!
+
+
+And that is that! 
+
+With this published repo, you're now part of the reproducible journalism community.
+
+Last thing we'll go over are some tips and best practices.
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

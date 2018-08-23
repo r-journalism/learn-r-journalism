@@ -1,0 +1,228 @@
+---
+title: "Interactive maps with Leaflet"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "leaflet"]
+weight: 2
+slug: leaflet
+---
+
+
+This tutorial is an introduction to analyzing spatial data in R, specifically through making interactive locator and choropleth maps using the Leaflet package. You'll be introduced to the basics of using R as a fast and powerful command-line Geographical Information System (GIS).
+
+No prior knowledge is necessary to follow along, but an understanding of how pipes (%>%) and dplyr works will help.
+
+**Other mapping tutorials**
+
+* Programatically generating maps and GIFs with shape files [[link](shapes-and-gifs.html)]
+* Mapping with Census data [[link](mapping-census-data.html)]
+
+# Getting started with R Leaflet
+
+Sometimes it's necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.
+
+The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource Javascript library. 
+
+It’s great for journalists who have little knowledge of Javascript who want to make interesting interactives using R. And there is [excellent documentation](https://rstudio.github.io/leaflet/) if you want to dig deeper into its functionality after this introduction.
+
+Essentially, this package lets you make maps with custom map tiles, markers, polygons, lines, popups, and geojson. Almost any maps you can make in Google Fusion Tables or Carto(DB), you can make in R using the Leaflet package.
+
+```{r loading_packages, warning=F, message=F}
+# Uncomment and run "install.packages" functions below if you have not yet installed these packages
+
+#install.packages("leaflet")
+library(leaflet)
+
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+# Putting a marker on a map
+
+1. Create a map widget by calling the `leaflet()` function
+2. Add *layers* (such as features) to the map by using layer functions
+    * like `addTiles`, `addMarkers`, `addPolygons`
+3. Print the map widget
+
+```{r first_map, fig.width=8, fig.height=4, warning=F, message=F}
+# Initialize and assign m as the leaflet object
+m <- leaflet()
+# Now add tiles to it
+m <- addTiles(m)
+# Now, add a marker with a popup
+m <- addMarkers(m, lng=-81.655210, lat=30.324303, popup="<b>Hello</b><br><a href='http://ire.org/conferences/nicar2017/'>-NICAR 2017</a>")
+
+# Print out the map
+m
+```
+
+Simple.
+
+But we're going to add another function to customize the viewport zoom and center location (`setView`).
+
+And we're going to switch to using the *magrittr* pipe operator (`%>%`) from now on to simplify our code.
+
+```{r aside1} 
+# It’s easier to wrap your head around it if you think of coding grammatically. 
+
+# Normal coding in R is rigid declarative sentences: “Bob is 32. Nancy is 4 years younger than Bob.” 
+
+# Coding with the pipe operator: “Nancy is 4 years younger than Bob, who is 32.” 
+
+# Pipes are a comma (or a semi-colon, if you want) that lets you create one long, run-on sentence.
+```
+
+### This is the same code as above but using pipes
+
+```{r first_map_simplified,  fig.width=8, fig.height=4, warning=F, message=F}
+m <- leaflet() %>%
+  addTiles() %>%  
+  setView(-81.655210, 30.324303, zoom = 16) %>%
+  addMarkers(lng=-81.655210, lat=30.324303, popup="<b>Hello</b><br><a href='http://ire.org/conferences/nicar2017/'>-NICAR 2017</a>")
+
+# See how the m object is no longer needed to be included in every line except the first? It's just assumed now.
+
+m 
+```
+
+Explaining the R code
+
+* `leaflet()` initializes the leaflet workspace
+* `addTiles()` by itself will bring in the default OpenStreetMap tiles
+    * Here's [a list](http://leaflet-extras.github.io/leaflet-providers/preview/) of free leaflet tiles you can use
+    * **Note:** OpenStreetMaps is a wonderful and free open-source service. Their only stipulation for using their tiles is to be sure to credit and link to them in the map.
+* `setView()` is pretty self-explanatory but is simpler to implement
+* `addMarkers()` with some specific parameters.
+
+**Note:** The order of commands is important. A view can’t be set unless there are tiles established first.
+
+
+# How to put the map online
+
+Run the code in your RStudio console and it will appear in your Viewer tab.
+
+Click on **Export > Save as Web page**.
+
+![Export](images/export.png)
+
+Give it a filename and click save.
+
+![Save as](images/filename.png)
+
+You have the map now as a full screen html file.
+
+
+![File](images/file.png)
+
+You can upload the file wherever you like and then iframe to it if you want to embed it into website like the code below.
+
+`<iframe src="nicarmap.html" frameborder="0" width="100%" height="300px"></iframe>`
+
+Would produce this:
+
+<iframe src="nicarmap.html" frameborder="0" width="100%" height="300px"></iframe>
+
+Or you can leave it embedded in an RMarkdown file as the raw R code.
+
+### A note about file sizes
+
+When comparing the size of the HTML files, the R-produced version of the map is larger in size because it is bringing all the Javascript and CSS inline into the HTML.
+
+However, when looking at how much data is actually downloaded to load the map html, the differences aren’t as drastic.
+
+![Comparison](images/filesize.png)
+
+It’s just something to keep in mind.
+
+# Multiple locations from a csv
+
+Let's bring in some new data.
+
+```{r import1}
+dunkin <- read.csv("data/dunkin.csv", stringsAsFactors=F)
+
+# Bringing in the DataTables package to display the data in a nice format
+library(DT)
+
+# Using the datatable function from the DT package to see the first 6 rows of data
+datatable(head(dunkin))
+```
+
+We've imported nearly 8,000 rows of Dunkin' Donuts store location data.
+
+Let's make a map with a new tile set.
+
+And this time, we'll use `addCircles` instead of `addMarkers`.
+
+Some options to use with `addCircles` includes the data to pull in for `popup` and `color`, which we've made bright orange. We've also set `radius` and `weight` and `fillOpacity`.
+
+If we wanted to change the radius of the circle based on some datapoint, you could replace `40` with some column with numeric values in it.
+
+```{r dunk_map1, fig.width=8, fig.height=4, warning=F, messag=F}
+m <- leaflet(dunkin) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', 
+	attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') %>% 
+  setView(-81.655210, 30.324303, zoom = 8) %>% 
+  addCircles(~lon, ~lat, popup=dunkin$type, weight = 3, radius=40, 
+                 color="#ffa500", stroke = TRUE, fillOpacity = 0.8) 
+
+m
+```
+
+Why stop there?
+
+Let's bring in some competition.
+
+```{r import2}
+starbucks <- read.csv("data/starbucks.csv", stringsAsFactors=F)
+
+datatable(head(starbucks))
+```
+
+The data is structured a bit differently, but at least it has `type` and location data.
+
+Also, let's switch from `addCircles` to `addCircleMarkers`.
+
+```{r dunk_map2, fig.width=8, fig.height=4, warning=F, message=F}
+# isolating just the 3 columns we're interested in-- type, lat, and lon
+sb_loc <- select(starbucks, type, lat, lon)
+dd_loc <- select(dunkin, type, lat, lon)
+
+# joining the two data frames together
+ddsb <- rbind(sb_loc, dd_loc)
+
+# creating a coffee color palette
+
+cof <- colorFactor(c("#ffa500", "#13ED3F"), domain=c("Dunkin Donuts", "Starbucks"))
+# mapping based on type
+m <- leaflet(ddsb) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', 
+	attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') %>% 
+  setView(-81.655210, 30.324303, zoom = 8) %>% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5) 
+
+m
+```
+
+Play around with the slippy map. Interesting, right?
+
+The file size is only 1.3 m even though there are nearly 19,000 points on the map.
+
+Still, that's a lot of points to process. It's probably making your computer fan spin.
+
+# Add a legend
+
+Let's add a legend with the function `addLegend()` and options for where to place it and colors and labels.
+
+```{r add_legend, fig.width=8, fig.height=4, warning=F, message=F}
+m <- leaflet(ddsb) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', 
+	attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') %>% 
+  setView(-81.655210, 30.324303, zoom = 8) %>% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5)  %>%
+  addLegend("bottomright", colors= c("#ffa500", "#13ED3F"), labels=c("Dunkin'", "Starbucks"), title="Coffee places")
+
+
+m
+
+```

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lubridate on Journalism with R</title>
+    <link>/en/tags/lubridate/</link>
+    <description>Recent content in Lubridate on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/lubridate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dealing with dates</title>
+      <link>/en/wrangling/dates/dates/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dates/dates/</guid>
+      <description>Dates come in as characters, most of the time.
+You’ll need to convert them into a date variable
+We’ll be using the lubridate package.
+Here’s an example of a character variable that might be in a data frame.
+some_date &amp;lt;- &amp;quot;12-31-1999&amp;quot; Convert that date into a date variable with the function mdy()
+# If you don&amp;#39;t have lubridate installed yet uncomment the line below and run it #install.packages(&amp;quot;lubridate&amp;quot;) # NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi # UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE #install.</description>
+    </item>
+    
+  </channel>
+</rss>

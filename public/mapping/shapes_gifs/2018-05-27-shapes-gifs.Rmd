@@ -1,0 +1,11 @@
+---
+title: "Shapes and GIFs"
+description: "Maybe this isn't necessary"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "rgdal"]
+weight: 4
+slug: map-gifs
+---
+

@@ -1,0 +1,163 @@
+---
+title: "SPSS data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "spss"]
+weight: 4
+slug: spss-files
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/q3p6_v_6g9c?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>SPSS is similar to Excel in that it’s proprietary software that stores data in a very specific format and provides a graphical interface useful for even deeper analysis.</p>
+<p>It stands for Statistical Package for the Social Sciences and is owned by IBM. It’s also very expensive and usually only large businesses or organizations own licenses.</p>
+<p>But it’s possible to bring in data saved from SPSS into R.</p>
+<p>In this example, we’ll be working with case-level data from the FBI’s Supplementary Homicide Report. It has data on more than 27,000 homicides and was obtained via Freedom of Information Act by the <a href="http://www.murderdata.org/p/data-docs.html">Murder Accountability Project</a>.</p>
+<p>{{% notice note %}} Here’s a <a href="https://www.newyorker.com/magazine/2017/11/27/the-serial-killer-detector">New Yorker article</a> about the Murder Accountability Project and its founder Thomas Hargrove, a journalist who tries to find serial killers with data and algorithms. We’ll be digging through the data and applying the algorithm ourselves in the next chapter. {{% /notice %}}</p>
+<p>The data zipped is 30 megabytes. Unzipped, the file is almost 200 MB (Good luck opening that in Excel).</p>
+<p>But R can handle big data (to an extent). Data is saved to the computer’s memory. If your computer’s memory is 16 gigabytes then that’s the max file size you can import. I don’t recommend pushing it to that point because it still takes a lot of memory to run R’s functions. If get to the point of working with big data, then there are strategies like putting data into a MySQL database.</p>
+<p>First download the data. And unzip it into the “data”&quot; sub directory of this working directory.</p>
+<p>If you’re working with the local data from downloaded from this course’s repo, just run the line of code below.</p>
+<pre><code>temp &lt;- tempfile()
+unzip(&quot;data/SHR76_16.sav.zip&quot;, exdir=&quot;data&quot;, overwrite=T)
+unlink(temp)</code></pre>
+<p>If you have the <strong>SHR76_16.sav</strong> file in your <em>data</em> directory, we can now use the <code>read.spss()</code> function from the <strong>foreign</strong> package to import the data.</p>
+<p>Here’s the thing about SPSS files.</p>
+<p>It’s <strong>layered</strong>.</p>
+<p>There’s a label for the data and the value for the data.</p>
+<p>So you need to anticipate that when working with R.</p>
+<pre class="r"><code>## If you don&#39;t have foreign yet installed, uncomment and run the line below
+
+#install.packages(&quot;foreign&quot;)
+library(foreign)
+data_labels &lt;- read.spss(&quot;data/SHR76_16.sav&quot;, to.data.frame=TRUE)</code></pre>
+<p>Check out what the data frame looks like and scroll all the way to the right of it.</p>
+<pre><code>View(data_labels)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/spss/images/data_labels.png" />
+
+</div>
+<pre class="r"><code>data_only &lt;- read.spss(&quot;data/SHR76_16.sav&quot;, to.data.frame=TRUE, use.value.labels=F)</code></pre>
+<p>Check out this data frame and scroll all the way to the right.</p>
+<pre><code>View(data_only)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/spss/images/data_only.png" />
+
+</div>
+<p><strong>Can you spot the difference?</strong></p>
+<p>The data_labels dataframe has the states and metropolitan area columns in the far right spelled out.</p>
+<p>The data_only dataframe has states and metropolitan area columns represented as numbers.</p>
+<p>This is a big deal because we need both sets of data for our analysis later on.</p>
+<p>These are duplicate data frames but sometimes there’s a sort of mirror to the data in the other one.</p>
+<div id="combine-data-frames" class="section level2">
+<h2>Combine data frames</h2>
+<p>This is what we need to do.</p>
+<ol style="list-style-type: decimal">
+<li>Bring in the <strong>dplyr</strong> package</li>
+<li>Rename the columns that are duplicated but have different data</li>
+<li>Drop the columns in one data set that are duplicated but are the same in the other</li>
+<li>Bring them together (join) as one big happy data frame</li>
+</ol>
+<p>{{% notice disclaimer %}} This is the first time you will be introduced to the concept of joining data sets, which is one of the most powerful and important things you can do in data analysis. We’ll go over it in the <a href="http://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/">next chapter</a> in more detail. {{% /notice %}}</p>
+<p>We’ll use the <code>select()</code> function from the <strong>dplyr</strong> package that lets you pick and rename specific columns.</p>
+<pre class="r"><code>library(dplyr)
+
+## OK, we&#39;re keeping ID, CNTYFIPS, Ori, State, Agency, and AGENCY_A columns
+## And we&#39;re going to rename the other ones so that we know they&#39;re labels
+
+new_labels &lt;- select(data_labels,
+               ID, CNTYFIPS, Ori, State, Agency, AGENCY_A,
+               Agentype_label=Agentype,
+               Source_label=Source,
+               Solved_label=Solved,
+               Year,
+               Month_label=Month,
+               Incident, ActionType,
+               Homicide_label=Homicide,
+               Situation_label=Situation,
+               VicAge,
+               VicSex_label=VicSex,
+               VicRace_label=VicRace,
+               VicEthnic, OffAge,
+               OffSex_label=OffSex,
+               OffRace_label=OffRace,
+               OffEthnic,
+               Weapon_label=Weapon,
+               Relationship_label=Relationship,
+               Circumstance_label=Circumstance,
+               Subcircum, VicCount, OffCount, FileDate,
+               fstate_label=fstate,
+               MSA_label=MSA)
+
+## OK, we&#39;re dropping ID, CNTYFIPS, Ori, State, Agency, and AGENCY_A columns
+## And we&#39;re going to rename the other ones so that we know they&#39;re specifically values
+
+
+new_data_only &lt;- select(data_only,
+               Agentype_value=Agentype,
+               Source_value=Source,
+               Solved_value=Solved,
+               Month_value=Month,
+               Homicide_value=Homicide,
+               Situation_value=Situation,
+               VicSex_value=VicSex,
+               VicRace_value=VicRace,
+               OffSex_value=OffSex,
+               OffRace_value=OffRace,
+               Weapon_value=Weapon,
+               Relationship_value=Relationship,
+               Circumstance_value=Circumstance,
+               fstate_value=fstate,
+               MSA_value=MSA)
+
+# cbind() means column binding-- it only works if the number of rows are the same
+
+new_data &lt;- cbind(new_labels, new_data_only)
+ 
+# Now we&#39;re going to use the select() function to reorder the columns so labels and values are next to each other
+
+new_data &lt;- select(new_data,
+                ID, CNTYFIPS, Ori, State, Agency, AGENCY_A,
+                Agentype_label, Agentype_value,
+                Source_label, Source_value,
+                Solved_label, Solved_value,
+                Year,
+                Month_label, Month_value,
+                Incident, ActionType,
+                Homicide_label,Homicide_value,
+                Situation_label,Situation_value,
+                VicAge,
+                VicSex_label,VicSex_value,
+                VicRace_label,VicRace_value,
+                VicEthnic, OffAge,
+                OffSex_label,OffSex_value,
+                OffRace_label,OffRace_value,
+                OffEthnic,
+                Weapon_label,Weapon_value,
+                Relationship_label,Relationship_value,
+                Circumstance_label,Circumstance_value,
+                Subcircum, VicCount, OffCount, FileDate,
+                fstate_label,fstate_value,
+                MSA_label,MSA_value)
+
+# remove the old data frames because they&#39;re huge and we want to free up memory
+rm(data_labels)
+rm(data_only)
+rm(new_labels)
+rm(new_data_only)</code></pre>
+<p>How’s it look at the end of the data frame now?</p>
+<pre><code>View(new_data)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/spss/images/new_data.png" />
+
+</div>
+<p>There are now 47 columns total and it looks like the values are next to labels.</p>
+<p>Wonderful.</p>
+<p>Let’s move on to the next chapter so we can start wrangling this data.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

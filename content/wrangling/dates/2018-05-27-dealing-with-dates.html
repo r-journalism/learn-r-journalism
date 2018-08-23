@@ -1,0 +1,203 @@
+---
+title: "Dealing with dates"
+description: "Introduction on how to deal with dates"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dates", "lubridate"]
+weight: 5
+slug: dates
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/yt9x6PNYvlw?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Dates come in as characters, most of the time.</p>
+<p>You’ll need to convert them into a date variable</p>
+<p>We’ll be using the <strong>lubridate</strong> package.</p>
+<p>Here’s an example of a <strong>character variable</strong> that might be in a data frame.</p>
+<pre class="r"><code>some_date &lt;- &quot;12-31-1999&quot;</code></pre>
+<p>Convert that date into a <strong>date variable</strong> with the function <strong>mdy()</strong></p>
+<pre class="r"><code># If you don&#39;t have lubridate installed yet uncomment the line below and run it
+#install.packages(&quot;lubridate&quot;)
+
+# NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE
+
+#install.packages(&quot;glue&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;stringi&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;stringr&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;lubridate&quot;, type=&quot;win.binary&quot;)
+
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A MAC MACHINE
+
+#install.packages(&quot;glue&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;stringi&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;stringr&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;lubridate&quot;, type=&quot;mac.binary&quot;)
+
+library(lubridate)
+
+mdy(some_date)</code></pre>
+<pre><code>## [1] &quot;1999-12-31&quot;</code></pre>
+<p>The <code>mdy()</code> function is very versatile. It stand for month-date-year.</p>
+<p>And it’ll be able to parse any version of that (with slashes or commas, or dashes) as long as that’s the order of the information.</p>
+<p>Check it out:</p>
+<pre class="r"><code>data &lt;- data.frame(First=c(&quot;Charlie&quot;, &quot;Lucy&quot;, &quot;Peppermint&quot;),
+                   Last=c(&quot;Brown&quot;, &quot;van Pelt&quot;, &quot;Patty&quot;),
+                   birthday=c(&quot;10-31-06&quot;, &quot;2/4/2007&quot;, &quot;June 1, 2005&quot;))
+
+data$DOB &lt;- mdy(data$birthday)
+
+data</code></pre>
+<pre><code>##        First     Last     birthday        DOB
+## 1    Charlie    Brown     10-31-06 2006-10-31
+## 2       Lucy van Pelt     2/4/2007 2007-02-04
+## 3 Peppermint    Patty June 1, 2005 2005-06-01</code></pre>
+<div id="reading-dates" class="section level2">
+<h2>Reading dates</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Order of elements in date-time</th>
+<th>Parse function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>year, month, day</td>
+<td><code>ymd()</code></td>
+</tr>
+<tr class="even">
+<td>year, day, month</td>
+<td><code>ydm()</code></td>
+</tr>
+<tr class="odd">
+<td>month, day, year</td>
+<td><code>mdy()</code></td>
+</tr>
+<tr class="even">
+<td>day, month, year</td>
+<td><code>dmy()</code></td>
+</tr>
+<tr class="odd">
+<td>hour, minute</td>
+<td><code>hm()</code></td>
+</tr>
+<tr class="even">
+<td>hour, minute, second</td>
+<td><code>hms()</code></td>
+</tr>
+<tr class="odd">
+<td>year, month, day, hour, minute, second</td>
+<td><code>ymd_hms()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="accessing-date-parts" class="section level2">
+<h2>Accessing date parts</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Date component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Year</td>
+<td><code>year()</code></td>
+</tr>
+<tr class="even">
+<td>Month</td>
+<td><code>month()</code></td>
+</tr>
+<tr class="odd">
+<td>Week</td>
+<td><code>week()</code></td>
+</tr>
+<tr class="even">
+<td>Day of year</td>
+<td><code>yday()</code></td>
+</tr>
+<tr class="odd">
+<td>Day of month</td>
+<td><code>mday()</code></td>
+</tr>
+<tr class="even">
+<td>Day of week</td>
+<td><code>wday()</code></td>
+</tr>
+<tr class="odd">
+<td>Hour</td>
+<td><code>hour()</code></td>
+</tr>
+<tr class="even">
+<td>Minute</td>
+<td><code>minute()</code></td>
+</tr>
+<tr class="odd">
+<td>Second</td>
+<td><code>ymd_hms()</code></td>
+</tr>
+<tr class="even">
+<td>Time zone</td>
+<td><code>ymd_hms()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Now that we have the date in the right format, we can extract data from it with the functions above.</p>
+<pre class="r"><code>data$year &lt;- year(data$DOB)
+data$month &lt;- month(data$DOB, label=TRUE)
+data$day &lt;- day(data$DOB)
+data$weekday &lt;- wday(data$DOB, label=TRUE, abbr=FALSE)
+
+data</code></pre>
+<pre><code>##        First     Last     birthday        DOB year month day   weekday
+## 1    Charlie    Brown     10-31-06 2006-10-31 2006   Oct  31   Tuesday
+## 2       Lucy van Pelt     2/4/2007 2007-02-04 2007   Feb   4    Sunday
+## 3 Peppermint    Patty June 1, 2005 2005-06-01 2005   Jun   1 Wednesday</code></pre>
+</div>
+<div id="date-arithmetic" class="section level2">
+<h2>Date arithmetic</h2>
+<p>The function <code>difftime()</code> extracts the number of days between two dates that are passed to it</p>
+<pre class="r"><code># We&#39;re going to use the now() function which brings in the date for today
+
+today &lt;- now()
+data$age &lt;- difftime(today, data$DOB)
+
+data</code></pre>
+<pre><code>##        First     Last     birthday        DOB year month day   weekday
+## 1    Charlie    Brown     10-31-06 2006-10-31 2006   Oct  31   Tuesday
+## 2       Lucy van Pelt     2/4/2007 2007-02-04 2007   Feb   4    Sunday
+## 3 Peppermint    Patty June 1, 2005 2005-06-01 2005   Jun   1 Wednesday
+##             age
+## 1 4314.591 days
+## 2 4218.591 days
+## 3 4831.591 days</code></pre>
+<p>And how does that translate into years?</p>
+<p>With some math. We’ll have to turn the column into a number, first.</p>
+<pre class="r"><code>data$age_years &lt;- as.numeric(data$age) / 365.25 #.25 because of leap years
+
+data</code></pre>
+<pre><code>##        First     Last     birthday        DOB year month day   weekday
+## 1    Charlie    Brown     10-31-06 2006-10-31 2006   Oct  31   Tuesday
+## 2       Lucy van Pelt     2/4/2007 2007-02-04 2007   Feb   4    Sunday
+## 3 Peppermint    Patty June 1, 2005 2005-06-01 2005   Jun   1 Wednesday
+##             age age_years
+## 1 4314.591 days  11.81271
+## 2 4218.591 days  11.54987
+## 3 4831.591 days  13.22818</code></pre>
+<p>That’s a pretty good start for now. To see more functions and examples, check out <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">the vignette</a> for <strong>lubridate</strong>.</p>
+<hr />
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-3/#section-dealing-with-dates">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are on the <a href="https://learn.r-journalism.com/en/wrangling/">intro page</a> to this section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

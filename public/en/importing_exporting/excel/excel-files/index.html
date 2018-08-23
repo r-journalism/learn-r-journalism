@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Learn R Journalism">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Excel files :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1535033654" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1535033654" rel="stylesheet">
+    <link href="/css/hybrid.css?1535033654" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1535033654" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1535033654" rel="stylesheet">
+    <link href="/css/auto-complete.css?1535033654" rel="stylesheet">
+    <link href="/css/theme.css?1535033654" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1535033654" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1535033654" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1535033654"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/importing_exporting/excel/excel-files/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item active">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/copying-pasting/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/copying-pasting/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/folder_of_files/bulk-files/" title="Folder of files" class="dd-item ">
+        <a href="/en/importing_exporting/folder_of_files/bulk-files/">
+        Folder of files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item ">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item ">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More R Markdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More R Markdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/publishing/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/installing_git/installing-git/" title="Installing git" class="dd-item ">
+        <a href="/en/git/installing_git/installing-git/">
+        Installing git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Connecting to GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Connecting to GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Best practices for GitHub" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Best practices for GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/r-journalism/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/r-journalism/learn-r-journalism/edit/master/content/importing_exporting/excel/2018-05-27-importing-excel.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/importing_exporting/'>Importing/Exporting data</a> > Excel files
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Excel files</h1>
+          
+
+        
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/B5iKikPvdBk?t=4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Excel spreadsheets are unique in that they can contain multiple spreadsheets as a workbook.</p>
+<div id="what-an-excel-file-looks-like" class="section level2">
+<h2>What an Excel file looks like</h2>
+<p>Excel file names end with a <strong>.xls</strong> or <strong>.xlsx</strong></p>
+<div class="figure">
+<img src="/importing_exporting/csv/images/excel1.png?classes=shadow" />
+
+</div>
+</div>
+<div id="what-an-excel-file-looks-like-on-the-inside" class="section level2">
+<h2>What an Excel file looks like on the inside</h2>
+<p>Weird, right? Definitely difficult to parse.</p>
+<div class="figure">
+<img src="/importing_exporting/csv/images/excel2.png?classes=shadow" />
+
+</div>
+<p>What I do sometimes (often) is save a sheet from Excel as a .csv file.</p>
+<p>That’s a short cut. But if you want to be transparent and really deal with the raw data then:</p>
+</div>
+<div id="importing-excel-files" class="section level2">
+<h2>Importing Excel files</h2>
+<ul>
+<li>Importing Excel is complicated, <strong>readxl package</strong> is needed</li>
+<li>There are more other packages that handle Excel files and can build extra sheets, but we won’t be needing them for this instance</li>
+</ul>
+</div>
+<div id="importing-excel-files-1" class="section level2">
+<h2>Importing Excel files</h2>
+<p>First, install the <code>readxl</code> package if you have not yet done so.</p>
+<p>That will have <code>readxl</code> as part of the group of packages.</p>
+<pre class="r"><code>## If you don&#39;t have readxl installed, uncomment the line below and run it 
+#install.packages(&quot;readxl&quot;)
+library(readxl)</code></pre>
+<p>Unlike a csv, you can’t just copy and paste the URL for an Excel sheet.</p>
+<p>You gotta download the file first.</p>
+<p>Right click the link of the <a href="http://www.ct.gov/ocme/cwp/view.asp?a=2165&amp;Q=295128&amp;ocmeNav=%7C">Excel data link</a> and click <strong>Save File As…</strong></p>
+<div class="figure">
+<img src="/importing_exporting/csv/images/saveexcel.png?classes=shadow" />
+
+</div>
+</div>
+<div id="read_excel" class="section level2">
+<h2>read_excel()</h2>
+<p>Excel spreadsheets have multiple sheets and it’s best to explore what it looks like in Excel first because <code>read_excel()</code> requires specific sheets to be referred to when importing.</p>
+<p>Give it a shot with the first sheet.</p>
+<pre><code>df_xl &lt;- read_excel(&quot;data/StatisticsSummary.xls&quot;, sheet=1)</code></pre>
+<p>Check it</p>
+<pre><code>View(df_xl)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/csv/images/excel_imported.png?classes=shadow" />
+
+</div>
+<p><strong>This isn’t right</strong>.</p>
+<p>The problem with Excel files is that people love to format it in ways that make it look nice in Excel but makes no sense in R.</p>
+</div>
+<div id="read_excel-again" class="section level2">
+<h2>read_excel() again</h2>
+<p>But this time we’ll add <code>skip=2</code> so it skips the first rows when bringing in the data.</p>
+<pre class="r"><code>df_xl &lt;- read_excel(&quot;data/StatisticsSummary.xls&quot;, sheet=1, skip=2)</code></pre>
+<p>Much better</p>
+<pre><code>View(df_xl)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/csv/images/excel_imported2.png?classes=shadow" />
+
+</div>
+<div class="notices warning" ><p>Notice that the column names are preserved with spaces and symbols.</p>
+</div>
+
+<pre class="r"><code># the colnames() function lists the column names of the dataframe
+colnames(df_xl)</code></pre>
+<pre><code>##  [1] &quot;Fiscal Year      7/1-6/30&quot; &quot;Accessions&quot;               
+##  [3] &quot;Autopsies&quot;                 &quot;Exam-inations&quot;            
+##  [5] &quot;Other Cases&quot;               &quot;TOTAL&quot;                    
+##  [7] &quot;Cremations&quot;                &quot;% incl crem&quot;              
+##  [9] &quot;Homicides&quot;                 &quot;Suicide&quot;                  
+## [11] &quot;Accidents&quot;                 &quot;Undetermined&quot;             
+## [13] &quot;ALL&quot;                       &quot;U 20&quot;                     
+## [15] &quot;U 17&quot;                      &quot;SIDS&quot;                     
+## [17] &quot;Clinicals&quot;</code></pre>
+<p>So how would one refer to the data in the columns with spaces</p>
+<p>If we did it like normal with the <code>$</code> to pull the column we’d try</p>
+<pre class="r"><code>head(df_xl$Other Cases)</code></pre>
+<pre><code>## Error: &lt;text&gt;:1:18: unexpected symbol
+## 1: head(df_xl$Other Cases
+##                      ^</code></pre>
+<p>See, spaces won’t work. This is how to deal with columns with spaces– add the back tick next to the 1 button on your keyboard.</p>
+<pre class="r"><code>head(df_xl$`Other Cases`)</code></pre>
+<pre><code>## [1] 39 17 40 40 40 37</code></pre>
+<p>It’s some extra finger work that you might be okay with if it was in a limited basis.</p>
+<p>However, in anticipation of the work we’re going to be doing, we should go ahead and simplify the column names so there are no characters or spaces. Here’s how</p>
+</div>
+<div id="cleaning-part-1" class="section level2">
+<h2>Cleaning (part 1)</h2>
+<p>We’ll use the <code>make.names()</code> function on the column names. This function makes syntactically valid names out of character vectors (as in in strips out the spaces and replaces them with periods)</p>
+<pre class="r"><code>colnames(df_xl) &lt;- make.names(colnames(df_xl))</code></pre>
+<p>Check it</p>
+<pre><code>View(df_xl)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/csv/images/makenames.png?classes=shadow" />
+
+</div>
+<pre class="r"><code>colnames(df_xl)</code></pre>
+<pre><code>##  [1] &quot;Fiscal.Year......7.1.6.30&quot; &quot;Accessions&quot;               
+##  [3] &quot;Autopsies&quot;                 &quot;Exam.inations&quot;            
+##  [5] &quot;Other.Cases&quot;               &quot;TOTAL&quot;                    
+##  [7] &quot;Cremations&quot;                &quot;X..incl.crem&quot;             
+##  [9] &quot;Homicides&quot;                 &quot;Suicide&quot;                  
+## [11] &quot;Accidents&quot;                 &quot;Undetermined&quot;             
+## [13] &quot;ALL&quot;                       &quot;U.20&quot;                     
+## [15] &quot;U.17&quot;                      &quot;SIDS&quot;                     
+## [17] &quot;Clinicals&quot;</code></pre>
+<p>Alright, that’s a bit better.</p>
+<p>Still, there’s some oddness in the names but that’s because enters were replaced with periods.</p>
+<p>Check out the first column: <code>Fiscal.Year......7.1.6.30</code></p>
+<p>Let’s change that so it’s easier to type later on.</p>
+</div>
+<div id="change-the-name-of-a-single-column" class="section level2">
+<h2>Change the name of a single column</h2>
+<p>I’ll show you how to do it in Base R and using the dplyr package</p>
+<p>Copy <code>Fiscal.Year......7.1.6.30</code> and paste it into `colnames(dataframe_name)[colnames(dataframe_name) == ‘ColumnNameToBeChanged’] &lt;- ‘NewColumnName’</p>
+<pre class="r"><code># Don&#39;t run this, I just want to show you the process
+colnames(df_xl)[colnames(df_xl) == &#39;Fiscal.Year......7.1.6.30&#39;] &lt;- &#39;Year&#39;</code></pre>
+<p>Here’s how to do it with dplyr: By using the <code>rename()</code> function.</p>
+<pre class="r"><code>## If you don&#39;t have dplyr installed yet, uncomment the line below and run it
+# install.packages(&quot;dplyr&quot;)
+
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>df_xl &lt;- rename(df_xl, Year=Fiscal.Year......7.1.6.30)</code></pre>
+<p>It’s slightly different– there are less parentheses and brackets and equal signs.</p>
+<p>And you don’t need to add quotation marks.</p>
+<p>Check it</p>
+<pre class="r"><code>colnames(df_xl)</code></pre>
+<pre><code>##  [1] &quot;Year&quot;          &quot;Accessions&quot;    &quot;Autopsies&quot;     &quot;Exam.inations&quot;
+##  [5] &quot;Other.Cases&quot;   &quot;TOTAL&quot;         &quot;Cremations&quot;    &quot;X..incl.crem&quot; 
+##  [9] &quot;Homicides&quot;     &quot;Suicide&quot;       &quot;Accidents&quot;     &quot;Undetermined&quot; 
+## [13] &quot;ALL&quot;           &quot;U.20&quot;          &quot;U.17&quot;          &quot;SIDS&quot;         
+## [17] &quot;Clinicals&quot;</code></pre>
+<p>Fix the other names if you want. I’m going to leave them as is for now.</p>
+</div>
+<div id="is-the-df_xl-sheet-clean-enough-to-work-with" class="section level2">
+<h2>Is the df_xl sheet clean enough to work with?</h2>
+<p>Scroll down to the bottom of the data.</p>
+<div class="figure">
+<img src="/importing_exporting/csv/images/nas.png?classes=shadow" />
+
+</div>
+<p>Not clean yet. There are a bunch of <code>NA</code>s.</p>
+<p>That might give us some issues later on so let’s take care of it now.</p>
+</div>
+<div id="eliminating-nas" class="section level1">
+<h1>Eliminating NAs</h1>
+<p>Easiest way to get rid of NAs is to subset or filter out the <code>NA</code>s based on one column.</p>
+<p>Let’s use the <code>Year</code> column.</p>
+<p>There are two ways: <code>subset()</code> or <code>filter()</code></p>
+<ol style="list-style-type: decimal">
+<li>Base R</li>
+</ol>
+<pre class="r"><code>df_xl &lt;- subset(df_xl, !is.na(Year))</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>dplyr</li>
+</ol>
+<pre class="r"><code>## If you don&#39;t have dplyr installed yet, uncomment the line below and run it
+# install.packages(&quot;dplyr&quot;)
+library(dplyr)
+df_xl &lt;- filter(df_xl, !is.na(Year))</code></pre>
+<p>What’s the difference? dplyr is part of the tidyverse suite of packages that we’ll be getting into later on in the course. Go ahead and use that.</p>
+<div id="check-it" class="section level2">
+<h2>Check it</h2>
+<div class="figure">
+<img src="/importing_exporting/csv/images/no.nas.png?classes=shadow" />
+
+</div>
+<p>No <code>NAs</code> at the bottom.</p>
+<p>It took a few lines of code but the data has been cleaned up enough to analyze or visualize with.</p>
+</div>
+</div>
+<div id="exporting-to-excel" class="section level1">
+<h1>Exporting to Excel</h1>
+<p>It’s preferable to save data frames as CSVs because it’s more open and doesn’t require a paid program for others to open.</p>
+<p>But if you must, there are some decent walkthroughs:</p>
+<ul>
+<li><a href="http://www.sthda.com/english/wiki/writing-data-from-r-to-excel-files-xls-xlsx">Using the xlsx package</a></li>
+<li><a href="https://www.datacamp.com/community/tutorials/r-tutorial-read-excel-into-r">Reading and importing Excel files into R</a></li>
+</ul>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-2/#section-excel">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are on the <a href="http://learn.r-journalism.com/en/importing_exporting/">intro page</a> to this section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/importing_exporting/csv/csv-files/" title="CSV files"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1535033655"></script>
+    <script src="/js/jquery.sticky.js?1535033655"></script>
+    <script src="/js/featherlight.min.js?1535033655"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1535033655"></script>
+    <script src="/js/highlight.pack.js?1535033655"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1535033655"></script>
+    <script src="/js/learn.js?1535033655"></script>
+    <script src="/js/hugo-learn.js?1535033655"></script>
+
+    <link href="/mermaid/mermaid.css?1535033655" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1535033655"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <p>© Copyright 2018, Andrew Tran</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

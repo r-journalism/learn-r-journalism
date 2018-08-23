@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bulk on Journalism with R</title>
+    <link>/en/tags/bulk/</link>
+    <description>Recent content in Bulk on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/bulk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Folder of files</title>
+      <link>/en/importing_exporting/folder_of_files/bulk-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/folder_of_files/bulk-files/</guid>
+      <description>Have you ever dealt with a large folder of spreadsheets that you need to combine into one?
+With spreadsheets, you have to copy and paste over and over again.
+But with R, you can script that process.
+In fact, I’ve created a function for you that simplifies the process.
+You have to download my muckrakr package off of GitHub with the devtools package.
+# If you don&amp;#39;t have devtools installed yet, uncomment and run the line below #install.</description>
+    </item>
+    
+  </channel>
+</rss>

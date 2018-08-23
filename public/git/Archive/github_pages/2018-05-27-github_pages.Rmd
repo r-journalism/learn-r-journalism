@@ -1,0 +1,30 @@
+---
+title: "Publishing on Github Pages"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "github", "github pages", "publishing"]
+weight: 3
+slug: github-pages
+---
+
+
+# Hosting with Github Pages
+
+**Turn [http://github.com/username/reponame/index.html](http://github.com/username/reponame/index.html)**
+
+**Into [http://username.github.io/reponame/index.html](http://username.github.io/reponame/index.html)**
+
+<img src="/git/github/images/gh2.png">
+
+<img src="/git/github/images/gh1.png">
+
+# Setting up GH Pages
+
+After uploading your repo, click on **Settings**
+
+<img src="/git/github/images/settings.png">
+
+Change the *Source* from `None` to `master branch` or `master branch\docs` (depending on where you want your root to be)
+
+<img src="/git/github/images/gh_pages_docs.png" height="400">

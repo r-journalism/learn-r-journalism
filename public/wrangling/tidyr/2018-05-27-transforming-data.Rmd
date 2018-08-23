@@ -1,0 +1,9 @@
+---
+title: "Tidying data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dplyr"]
+weight: 2
+slug: tidyr
+---

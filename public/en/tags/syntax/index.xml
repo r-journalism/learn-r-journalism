@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Syntax on Journalism with R</title>
+    <link>/en/tags/syntax/</link>
+    <description>Recent content in Syntax on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R basics</title>
+      <link>/en/how_to_use_r/syntax/r-syntax/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/syntax/r-syntax/</guid>
+      <description>Some R code basics  &amp;lt;- is known as an “assignment operator” – it means “Make the object named to the left equal to the output of the code to the right” &amp;amp; means AND, in Boolean logic | means OR, in Boolean logic ! means NOT, in Boolean logic When referring to values entered as text, or to dates, put them in quote marks like this: &amp;quot;United States&amp;quot;, or &amp;quot;2016-07-26&amp;quot;.</description>
+    </item>
+    
+  </channel>
+</rss>

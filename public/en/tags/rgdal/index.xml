@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rgdal on Journalism with R</title>
+    <link>/en/tags/rgdal/</link>
+    <description>Recent content in Rgdal on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/rgdal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Geolocating data</title>
+      <link>/en/mapping/geolocating/geolocating/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/geolocating/geolocating/</guid>
+      <description>Geolocating addresses in R 
+ We’re going to start with geolocating municipal police stations in Connecticut.
+We’ll be using the ggmap package for a lot of functions, starting with geolocating addresses with Google Maps.
+# if you don&amp;#39;t have the following packages installed, uncomment and run the lines below #install.packages(c(&amp;quot;dplyr&amp;quot;, &amp;quot;ggplot2&amp;quot;, &amp;quot;tidyr&amp;quot;, &amp;quot;ggmap&amp;quot;, &amp;quot;DT&amp;quot;, &amp;quot;knitr&amp;quot;, &amp;quot;readr&amp;quot;)) library(readr) library(dplyr) library(ggplot2) library(tidyr) library(ggmap) library(DT) library(knitr) After we import the data, let’s use the glimpse() function which lists out the variables for the data frame.</description>
+    </item>
+    
+    <item>
+      <title>Traffic stops case study</title>
+      <link>/en/mapping/case_study/traffic-stops/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/case_study/traffic-stops/</guid>
+      <description>We’re going to take what we’ve learned so far and do some spatial analysis of traffic stops.
+Goal: We’ll figure out which town and census tract each stop occurred in and then pull in demographic data from the Census to determine what types of neighborhoods police tend to pull people over more often.
+You could conduct this analysis using software like ArcGIS or QGIS, but we’re going to be doing it all in R.</description>
+    </item>
+    
+  </channel>
+</rss>

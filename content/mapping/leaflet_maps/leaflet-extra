@@ -1,0 +1,324 @@
+
+----
+
+## Mapping the end of the universe
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/Mb7qDfIzQRk" frameborder="0" allowfullscreen></iframe>
+
+According to comedian Lewis Black, the End of the Universe is in Houston, where there's a Starbucks across the street from another Starbucks.
+
+Let's see if this is true and let's look for 10 in all.
+
+Here's another loop and instead of comparing SB locations to Dunkin locations, we'll compare SB locations to other SB locations.
+
+Like before, the code to do so is below, but you can skip ahead to the next chunk if you don't want to wait ~2 hours for the data to process and loop.
+
+```{r looper2, eval=F}
+# Creating a loop to go through the Starbucks dataframe and compare it itself
+# Going through each row of SB lat and lon and finding/keeping the SB lat/lon with the shortest distance to it
+
+# First, set up some temp columns
+sb_loc$sb_lat <- 0
+sb_loc$sb_lon <- 0
+sb_loc$feet <- 0
+sb_loc$string_check <- paste(sb_loc$lat, sb_loc$lon)
+
+# Now the loop
+for (i in 1:nrow(sb_loc)) {
+  print(paste0(i, " of ", nrow(sb_loc)))
+# Looping through the SB dataframe
+
+  # slicing out each row
+  sb_loc_row <- subset(sb_loc[i,])
+  
+  # Filtering out the sliced out row so it doesn't measure against itself
+  sb_loc_compare <- subset(sb_loc, string_check!=sb_loc_row$string_check[1])
+  
+  # Looping through the new SB dataframe
+  for (x in 1:nrow(sb_loc_compare)) {
+
+    # Using the spDistsN1 function which is a little weird because it
+    #  only works if the lat lon pairs being measured are in a matrix
+    to_measure_sb <- matrix(c(sb_loc_row$lon[1], sb_loc_compare$lon[x], sb_loc_row$lat[1], sb_loc_compare$lat[x]), ncol=2)
+    # Comparing the entire matrix to a single row in the matrix
+    km <- spDistsN1(to_measure_sb, to_measure_sb[1,], longlat=TRUE)
+    # We only care about the second result sine the first result is always zero
+    km <- km[2]
+    
+    # Converting kilometers to feet
+    feet <- round(km*1000/.3048,2)
+    
+    # These if statements replace the current SB lat and lon and feet variables 
+    #  with the first results but replaces that if
+    #  the feet value is smaller than what's currently in it
+    if (x==1) {
+      sb_loc_row$sb_lat <- sb_loc_compare$lat[x]
+      sb_loc_row$sb_lon <- sb_loc_compare$lon[x]
+      sb_loc_row$feet <- feet
+      sb_loc_row$sb_name <- sb_loc_compare$string_check[x]
+    } else {
+      if (feet < sb_loc_row$feet) {
+        sb_loc_row$sb_lat <- sb_loc_compare$lat[x]
+        sb_loc_row$sb_lon <- sb_loc_compare$lon[x]
+        sb_loc_row$feet <- feet
+        sb_loc_row$sb_name <- sb_loc_compare$string_check[x]
+        }
+    }
+  }
+  
+  # This is rebuilding the dataframe row by row with the new SB dataframe values
+  if (i==1) {
+    sb_distances <- sb_loc_row
+  } else {
+    sb_distances <- rbind(sb_distances, sb_loc_row)
+  }
+}
+
+# sb_distances <- unique...
+write.csv(sb_distances, "data/sb_distances.csv")
+```
+
+Alright, map it.
+
+
+
+```{r filter_and_map2, fig.width=8, fig.height=5, message=F, warning=F}
+# Bringing in the dataframe because I don't want to make you wait through a loop
+sb_distances <- read.csv("data/sb_distances.csv")
+
+# Arranging and filtering just the 10 locations with the shortest distances
+sb_10 <- sb_distances %>%
+  arrange(feet) %>%
+  filter(feet > 60) %>%
+  head(40)
+
+sb_solo <- select(sb_10, lat, lon, feet)
+sb_solo2 <- select(sb_10, sb_lat, sb_lon, feet)
+colnames(sb_solo2) <- c("lat", "lon", "feet")
+
+sb_again <- rbind(sb_solo, sb_solo2)
+
+# Mapping it
+m <- leaflet(sb_again) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', 
+	attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') %>% 
+  setView(-98.483330, 38.712046, zoom = 4) %>% 
+  addCircleMarkers(~lon, ~lat, popup=sb_again$feet, weight = 3, radius=4, 
+                 color="#13ED3F", stroke = F, fillOpacity = 0.5)  %>%
+  addLegend("bottomright", colors= "#13ED3F", labels="Starbucks", title="End of the Universe")
+
+
+m
+```
+
+# Making choropleths
+
+To make a choropleth map, you first need a shapefile or geojson of the polygons that you're filling in. 
+
+# Importing shapefiles from the Census
+
+You could download and import the shapefile into R [yourself](file:///Users/andrewtran/Documents/Github/nicar-2017/maps/mapping-census-data.html), but there's a package that brings in Census shapefiles for you called [**Tigris**](https://github.com/walkerke/tigris).
+
+This is what the U.S. states looks like on in leaflet R.
+
+```{r choropleth1, fig.width=8, fig.height=4, warning=F, message=F}
+# Polygon stuff from shape file
+# install.packages("tigris")
+library(tigris)
+
+states <- states(cb=T)
+
+# Let's quickly map that out
+states %>% leaflet() %>% addTiles() %>% addPolygons(popup=~NAME)
+
+```
+
+This is how it looks raw. The Census shape files also include territories.
+
+When mapping, we'll have to remember to exclude them if they show up.
+
+# Joining data to a shapefile
+
+### Let's make a choropleth map based on number of Starbucks per state
+
+```{r sb_chor, fig.width=8, fig.height=4, warning=F, message=F}
+# First, we'll use dplyr to summarize the data
+# count by state
+sb_state <- starbucks %>%
+  group_by(Province) %>%
+  summarize(total=n())
+
+# Some quick adjustments to the the dataframe to clean up names
+sb_state$type <- "Starbucks"
+colnames(sb_state) <- c("state", "total", "type")
+
+# Now we use the Tigris function geo_join to bring together 
+# the states shapefile and the sb_states dataframe -- STUSPS and state 
+# are the two columns they'll be joined by
+states_merged_sb <- geo_join(states, sb_state, "STUSPS", "state")
+
+# Creating a color palette based on the number range in the total column
+pal <- colorNumeric("Greens", domain=states_merged_sb$total)
+
+# Getting rid of rows with NA values
+states_merged_sb <- subset(states_merged_sb, !is.na(total))
+
+# Setting up the pop up text
+popup_sb <- paste0("Total: ", as.character(states_merged_sb$total))
+
+# Mapping it with the new tiles CartoDB.Positron
+leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(-98.483330, 38.712046, zoom = 4) %>% 
+  addPolygons(data = states_merged_sb , 
+              fillColor = ~pal(states_merged_sb$total), 
+              fillOpacity = 0.7, 
+              weight = 0.2, 
+              smoothFactor = 0.2, 
+              popup = ~popup_sb) %>%
+  addLegend(pal = pal, 
+            values = states_merged_sb$total, 
+            position = "bottomright", 
+            title = "Starbucks")
+
+```
+
+Hmm... Not that interesting, right?
+
+What's the problem here. You know what's wrong.
+
+This is essentially a population map.
+
+So we need to adjust for population.
+
+And that's easy to do using the Census API.
+
+# Bringing in Census data via API
+
+We'll use the [censusapi](https://github.com/hrecht/censusapi) package created by journalist Hannah Recht. 
+
+```{r census_api}
+# install.packages("devtools")
+# devtools::install_github("hrecht/censusapi")
+
+library(censusapi)
+
+# Pulling in the key.R script that has my census api key. 
+# It will be disabled after this weekend so get your own
+# http://api.census.gov/data/key_signup.html
+
+source("key.R") 
+
+# We won't go over all the functions, but uncomment the lines below to see 
+# the available variables 
+# vars2015 <- listCensusMetadata(name="acs5", vintage=2015, "v")
+# View(vars2015)
+
+# Alright, getting total population by state from the API
+state_pop <-  getCensus(name="acs5", 
+                        vintage=2015,
+                        key=census_key, 
+                        vars=c("NAME", "B01003_001E"), 
+                        region="state:*")
+
+datatable(head(state_pop))
+
+# Cleaning up the column names
+colnames(state_pop) <- c("NAME", "state_id", "population")
+state_pop$state_id <- as.numeric(state_pop$state_id)
+# Hm, data comes in numbers of fully spelled out, not abbreviations
+
+# Did you know R has its own built in list of State names and State abbreviations?
+# Just pull it in this way to create a dataframe for reference
+
+state_off <- data.frame(state.abb, state.name)
+
+# So I needed to create the dataframe above because the Census API data 
+# gave me states with full names while the Starbucks data came with abbreviated state names
+# So I needed a relationship dataframe so I could join the two
+
+# Cleaning up the names for easier joining
+colnames(state_off) <- c("state", "NAME")
+
+# Joining state population dataframe to relationship file
+state_pop <- left_join(state_pop, state_off)
+
+# The relationship dataframe didnt have DC or Puerto Rico, so I'm manually putting those in
+state_pop$state <- ifelse(state_pop$NAME=="District of Columbia", "DC", as.character(state_pop$state))
+state_pop$state <- ifelse(state_pop$NAME=="Puerto Rico", "PR", as.character(state_pop$state))
+
+# Joining Starbucks dataframe to adjusted state population dataframe
+sb_state_pop <- left_join(sb_state, state_pop)
+
+# Calculating per Starbucks stores 100,000 residents and rounding to 2 digits
+sb_state_pop$per_capita <- round(sb_state_pop$total/sb_state_pop$population*100000,2)
+
+# Eliminating rows with NA
+sb_state_pop <- subset(sb_state_pop, !is.na(per_capita))
+datatable(head(sb_state_pop))
+```
+
+# Final map
+
+```{r leaflet_choropleth, fig.width=8, fig.height=4, warning=F, message=F}
+states_merged_sb_pc <- geo_join(states, sb_state_pop, "STUSPS", "state")
+
+pal_sb <- colorNumeric("Greens", domain=states_merged_sb_pc$per_capita)
+states_merged_sb_pc <- subset(states_merged_sb_pc, !is.na(per_capita))
+
+popup_sb <- paste0("Per capita: ", as.character(states_merged_sb_pc$per_capita))
+
+leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(-98.483330, 38.712046, zoom = 4) %>% 
+  addPolygons(data = states_merged_sb_pc , 
+              fillColor = ~pal_sb(states_merged_sb_pc$per_capita), 
+              fillOpacity = 0.9, 
+              weight = 0.2, 
+              smoothFactor = 0.2, 
+              popup = ~popup_sb) %>%
+  addLegend(pal = pal_sb, 
+            values = states_merged_sb_pc$per_capita, 
+            position = "bottomright", 
+            title = "Starbucks<br />per 100,000<br/>residents")
+```
+
+---
+
+# Final map II
+
+The Leaflet for R package was recently updated, adding functionality like highlighting polygons and labels on hover.
+
+This options include `highlight` and `labelOptions `. [Read more](https://rstudio.github.io/leaflet/choropleths.html) at rstudio.
+
+```{r leaflet_choropleth2, fig.width=8, fig.height=4, warning=F, message=F}
+states_merged_sb_pc <- geo_join(states, sb_state_pop, "STUSPS", "state")
+
+pal_sb <- colorNumeric("Greens", domain=states_merged_sb_pc$per_capita)
+states_merged_sb_pc <- subset(states_merged_sb_pc, !is.na(per_capita))
+
+popup_sb <- paste0("Per capita: ", as.character(states_merged_sb_pc$per_capita))
+
+leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  setView(-98.483330, 38.712046, zoom = 4) %>% 
+  addPolygons(data = states_merged_sb_pc , 
+              fillColor = ~pal_sb(states_merged_sb_pc$per_capita), 
+              fillOpacity = 0.9, 
+              weight = 0.2, 
+              smoothFactor = 0.2,
+              highlight = highlightOptions(
+                  weight = 5,
+                  color = "#666",
+                  dashArray = "",
+                  fillOpacity = 0.7,
+                   bringToFront = TRUE),
+              label=popup_sb,
+              labelOptions = labelOptions(
+    style = list("font-weight" = "normal", padding = "3px 8px"),
+    textsize = "15px",
+    direction = "auto")) %>%
+  addLegend(pal = pal_sb, 
+            values = states_merged_sb_pc$per_capita, 
+            position = "bottomright", 
+            title = "Starbucks<br />per 100,000<br/>residents")
+```

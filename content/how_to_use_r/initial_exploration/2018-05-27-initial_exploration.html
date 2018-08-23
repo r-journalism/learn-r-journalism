@@ -1,0 +1,200 @@
+---
+title: "Data structures in R"
+description: "Types of data that you'll be working with in R"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "data structures"]
+weight: 3
+slug: data-structures
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/eXb5ks7lMwQ?t=5s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<div id="vectors" class="section level2">
+<h2>Vectors</h2>
+<p>A <strong>vector</strong> is a sequence of data elements of the same basic type. The parts that consist of a vector are called <strong>components</strong> or <strong>elements</strong>.</p>
+<pre class="r"><code>vec1 &lt;- c(1,4,6,8,10)
+vec1</code></pre>
+<pre><code>## [1]  1  4  6  8 10</code></pre>
+<p>A vector <code>vec</code> is explicitly constructed by the concatenation function <code>c()</code>.</p>
+<pre class="r"><code>vec1[5]</code></pre>
+<pre><code>## [1] 10</code></pre>
+<p>Elements in vectors can be addressed by standard <code>[i]</code> indexing</p>
+<pre class="r"><code>vec1[3] &lt;- 12
+vec1</code></pre>
+<pre><code>## [1]  1  4 12  8 10</code></pre>
+<p>One of the elements in the array is replaced with a new number.</p>
+<pre class="r"><code>vec2 &lt;- seq(from=0, to=1, by=0.25)
+vec2</code></pre>
+<pre><code>## [1] 0.00 0.25 0.50 0.75 1.00</code></pre>
+<p>This shows another useful way of creating a vector: the <code>seq()</code> or sequence function.</p>
+<pre class="r"><code>sum(vec1)</code></pre>
+<pre><code>## [1] 35</code></pre>
+</div>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<p><strong>Matrices</strong> are two-dimensional vectors.</p>
+<p>It looks like this</p>
+<pre class="r"><code>mat &lt;- matrix(data=c(9,2,3,4,5,6), ncol=3)
+mat</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    9    3    5
+## [2,]    2    4    6</code></pre>
+<p>The argument <code>data</code> specifies which numbers should be in the matrix.</p>
+<p>Use either <code>ncol</code> to specify the number of columns or <code>nrow</code> to specify the number of rows.</p>
+<p>Matrix operations are similar to vector operations.</p>
+<pre class="r"><code>mat[1,2]</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p>Elements of a matrix can be addressed in the usual way</p>
+<pre class="r"><code>mat[2,1]</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>When you want to select a whole row, you leave the spot for the column number empty and vice versa for the columns.</p>
+<pre class="r"><code>mat[,3]</code></pre>
+<pre><code>## [1] 5 6</code></pre>
+</div>
+<div id="data-frames" class="section level2">
+<h2>Data frames</h2>
+<p>If you’re used to working with spreadsheets, then <em>data frames</em> will make the most sense to you in R.</p>
+<p>This is how to create a data frame from arrays. You don’t have to fully understand this at this point– the data you’ll be working with will come pre-structured if you’re importing spreadsheets.</p>
+<pre class="r"><code>patientID &lt;- c(111, 208, 113, 408)
+age &lt;- c(25, 34, 28, 52)
+sex &lt;- c(1,2,1,1)
+diabetes &lt;- c(&quot;Type1&quot;, &quot;Type2&quot;, &quot;Type1&quot;, &quot;Type1&quot;)
+status &lt;- c(1,2,3,1)
+
+patientdata &lt;- data.frame(patientID, age, sex, diabetes, status)
+patientdata</code></pre>
+<pre><code>##   patientID age sex diabetes status
+## 1       111  25   1    Type1      1
+## 2       208  34   2    Type2      2
+## 3       113  28   1    Type1      3
+## 4       408  52   1    Type1      1</code></pre>
+<p>But this is what’s happening. A set of arrays are being created and a function called <code>data.frame()</code> joins them together into a data frame structure.</p>
+<p><strong>How to pull elements from a data frame:</strong></p>
+<pre class="r"><code># a : means &quot;through&quot;
+patientdata[1:2]</code></pre>
+<pre><code>##   patientID age
+## 1       111  25
+## 2       208  34
+## 3       113  28
+## 4       408  52</code></pre>
+<pre class="r"><code># So 1:2 means 1 through 2
+
+
+patientdata[c(&quot;diabetes&quot;, &quot;status&quot;)]</code></pre>
+<pre><code>##   diabetes status
+## 1    Type1      1
+## 2    Type2      2
+## 3    Type1      3
+## 4    Type1      1</code></pre>
+<pre class="r"><code>patientdata$age</code></pre>
+<pre><code>## [1] 25 34 28 52</code></pre>
+<pre class="r"><code>patientdata[1:2]</code></pre>
+<pre><code>##   patientID age
+## 1       111  25
+## 2       208  34
+## 3       113  28
+## 4       408  52</code></pre>
+<pre class="r"><code>patientdata[c(1,3),1:2]</code></pre>
+<pre><code>##   patientID age
+## 1       111  25
+## 3       113  28</code></pre>
+<pre class="r"><code>patientdata[2:3, 1:2]</code></pre>
+<pre><code>##   patientID age
+## 2       208  34
+## 3       113  28</code></pre>
+<p>{{% notice tip %}} You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it’s 2, so patientdata[,2] is the equivalent. If you only wanted the third row, then it’d look like patientdata[3,]. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. {{% /notice %}}</p>
+<p>Instead of using <code>mean(patientdata[,2])</code>, you can select the column <code>age</code> from the <code>patientdata</code> data frame with the <code>$</code> sign.</p>
+<pre class="r"><code>mean(patientdata$age)</code></pre>
+<pre><code>## [1] 34.75</code></pre>
+<p>Here’s an alternative way to refer to the <code>age</code> column of the <code>patientdata</code> data frame. But you will rarely use this method.</p>
+<pre class="r"><code>mean(patientdata[[&quot;age&quot;]])</code></pre>
+<pre><code>## [1] 34.75</code></pre>
+</div>
+<div id="lists" class="section level2">
+<h2>Lists</h2>
+<p>Another basic structure in R is a <em>list</em>.</p>
+<p>The main advantage of lists is that the “columns” they’re not really ordered in columns any more, but are more of a collection of vectors) don’t have to be of the same length, unlike matrices and data frames.</p>
+<p>Kind of like JSON files are structured.</p>
+<pre class="r"><code>g &lt;- &quot;My First List&quot;
+h &lt;- c(25, 26, 18, 39)
+# The line below is creating a matrix that&#39;s 5 rows deep of numbers 1 through(&quot;:&quot;) 10
+j &lt;- matrix(1:10, nrow = 5) 
+k &lt;- c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
+mylist &lt;- list(title = g, ages = h, j, k)   </code></pre>
+<p>This is how a list would appear in the work space</p>
+<pre class="r"><code>names(mylist)</code></pre>
+<pre><code>## [1] &quot;title&quot; &quot;ages&quot;  &quot;&quot;      &quot;&quot;</code></pre>
+<p>How to find out what’s in the list</p>
+<pre class="r"><code>mylist[[2]] </code></pre>
+<pre><code>## [1] 25 26 18 39</code></pre>
+<pre class="r"><code>mylist[[&quot;ages&quot;]][[1]]</code></pre>
+<pre><code>## [1] 25</code></pre>
+<p>The code above extracts data from the list</p>
+<pre class="r"><code>mylist$age + 10</code></pre>
+<pre><code>## [1] 35 36 28 49</code></pre>
+<p>How to refer to and use the numbers in the example list</p>
+</div>
+<div id="functions-for-working-with-objects" class="section level2">
+<h2>Functions for working with objects</h2>
+<p>Let’s start with the sample_df dataframe below.</p>
+<pre class="r"><code># Run the lines of code below
+sample_df &lt;- data.frame(id=c(1001,1002,1003,1004), name=c(&quot;Steve&quot;, &quot;Pam&quot;, &quot;Jim&quot;, &quot;Dwight&quot;), age=c(26, 65, 15, 7), race=c(&quot;White&quot;, &quot;Black&quot;, &quot;White&quot;, &quot;Hispanic&quot;))
+sample_df$name &lt;- as.character(sample_df$name)
+sample_df</code></pre>
+<pre><code>##     id   name age     race
+## 1 1001  Steve  26    White
+## 2 1002    Pam  65    Black
+## 3 1003    Jim  15    White
+## 4 1004 Dwight   7 Hispanic</code></pre>
+<p><code>length(x)</code> - Find out how many things there are in an object or array</p>
+<pre class="r"><code>length(sample_df$name)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p><code>nchar(x)</code> - If <strong>x</strong> is a string, finds how how many characters there are</p>
+<pre class="r"><code>sample_df$name[1]</code></pre>
+<pre><code>## [1] &quot;Steve&quot;</code></pre>
+<pre class="r"><code>nchar(sample_df$name[1])</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p><code>dim(x)</code> - Gives the dimensions of <strong>x</strong></p>
+<pre class="r"><code>dim(sample_df)</code></pre>
+<pre><code>## [1] 4 4</code></pre>
+<p><code>ncol(x)</code> - Counts the number of columns</p>
+<pre class="r"><code>ncol(sample_df)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p><code>nrow(x)</code> - Returns the number of rows of <strong>x</strong></p>
+<pre class="r"><code>nrow(sample_df)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p><code>str(x)</code> - Returns the structure of <strong>x</strong></p>
+<pre class="r"><code>str(sample_df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  4 variables:
+##  $ id  : num  1001 1002 1003 1004
+##  $ name: chr  &quot;Steve&quot; &quot;Pam&quot; &quot;Jim&quot; &quot;Dwight&quot;
+##  $ age : num  26 65 15 7
+##  $ race: Factor w/ 3 levels &quot;Black&quot;,&quot;Hispanic&quot;,..: 3 1 3 2</code></pre>
+<p><code>summary(x)</code> - Summarizes the object as understood by R</p>
+<pre class="r"><code>summary(sample_df)</code></pre>
+<pre><code>##        id           name                age              race  
+##  Min.   :1001   Length:4           Min.   : 7.00   Black   :1  
+##  1st Qu.:1002   Class :character   1st Qu.:13.00   Hispanic:1  
+##  Median :1002   Mode  :character   Median :20.50   White   :2  
+##  Mean   :1002                      Mean   :28.25               
+##  3rd Qu.:1003                      3rd Qu.:35.75               
+##  Max.   :1004                      Max.   :65.00</code></pre>
+<p><code>View(x)</code> - A command to open the object to browse in RStudio</p>
+<pre class="r"><code>View(sample_df)</code></pre>
+<p><code>rm(x)</code> - Removes <strong>x</strong></p>
+<pre class="r"><code>rm(sample_df)
+sample_df</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;sample_df&#39; not found</code></pre>
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-1/#section-data-structures-in-r">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are in the <a href="http://learn.r-journalism.com/en/how_to_use_r/">intro page</a> to this section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

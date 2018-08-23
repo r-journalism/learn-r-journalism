@@ -1,0 +1,189 @@
+---
+title: "Setting up an R workflow"
+description: "Best practices for staying organized to promote reproducibility"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "projects", "workflow"]
+weight: 3
+slug: r-projects
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/Ctbyp6JoDJM?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<div id="workflow" class="section level1">
+<h1>Workflow</h1>
+<p>Why a clear data analysis workflow?</p>
+<ul>
+<li>Check analysis and track errors</li>
+<li>Share results with colleagues for stories or editing</li>
+<li>Send methodology to sources for bullet-proofing</li>
+<li>To easily adjust when presented with new data</li>
+<li>Easily switch between work environments (desktop and laptop)</li>
+<li>Scavenge and repurpose code in future projects</li>
+</ul>
+<div id="constraints" class="section level2">
+<h2>Constraints</h2>
+<ul>
+<li>Workflow has to be platform agnostic</li>
+<li>Easy to deploy for yourself and others</li>
+<li>Free open source software</li>
+<li>Input has to be real raw data in whatever format it is (and wherever it is)</li>
+<li>But have a backup for when internet is not accessible</li>
+<li>Output has to work – whether html, PDF, or web app</li>
+<li>IDE agnostic (be able to run it from a command line without RStudio)</li>
+</ul>
+</div>
+<div id="four-components" class="section level2">
+<h2>Four components</h2>
+<ol style="list-style-type: decimal">
+<li>Software
+<ul>
+<li>R</li>
+<li>RStudio</li>
+<li>Git for version control</li>
+</ul></li>
+<li>Clear file organization</li>
+<li>One R script to pull it all together</li>
+<li>Hosting the html output internally or publicly with GitHub pages</li>
+</ol>
+</div>
+<div id="thanks" class="section level2">
+<h2>Thanks</h2>
+<p>These are all things I picked up from browsing other presentations and repos.</p>
+<p>Much thanks to <a href="https://github.com/jennybc">Jenny Bryan</a> and <a href="http://blog.jom.link/">Joris Muller</a> from whom I cobbled many of these ideas and practices from.</p>
+<p>Also to BuzzFeed, FiveThirtyEight, ProPublica, Chicago Tribune, Los Angeles Times, and TrendCT.org</p>
+</div>
+<div id="comment-your-code" class="section level2">
+<h2>Comment your code</h2>
+<p>Anything that appears on a line after <code>#</code> will be treated as a comment. That means it will be ignored when the code in the script is executed.</p>
+<p>Use this to explain what the code does.</p>
+<p>Get into this habit early. Future readers of the code will be grateful for the clear documentation you leave behind– including yourself months from now.</p>
+</div>
+<div id="use-projects-to-organize" class="section level2">
+<h2>Use projects to organize</h2>
+<p><img src="/how_to_use_r/workflow/images/project.png" alt="Projects in RStudio", class="shadow", style="width:70%"></p>
+<div id="do-not-dump-your-scripts-into-a-folder" class="section level4">
+<h4>Do not dump your scripts into a folder</h4>
+<p><img src="/how_to_use_r/workflow/images/folder_rscripts.png" alt="Cut the cord", class="shadow", style="width:70%"></p>
+</div>
+<div id="one-folder-per-project" class="section level4">
+<h4>One folder per project</h4>
+<ul>
+<li>RStudio project</li>
+<li>Git repo</li>
+<li>Can run parallel projects</li>
+</ul>
+<p><img src="/how_to_use_r/workflow/images/multiple_projects.png" alt="Cut the cord", class="shadow", style="width:70%"></p>
+</div>
+</div>
+<div id="use-portable-file-paths" class="section level2">
+<h2>Use portable file paths</h2>
+<p><strong>DO NOT USE</strong> <code>setwd()</code></p>
+<p>Keep everything relative to your project directory and it will work on everyone who downloads your project repo folder.</p>
+<p>{{% notice note %}} Don’t run the lines of code below. This is just to show you how it would work in theory. {{% /notice %}}</p>
+<pre class="r"><code>#install.packages(&quot;here&quot;)
+library(here)
+
+here(&quot;Test&quot;, &quot;Folder&quot;, &quot;text.txt&quot;)
+##&gt; [1] &quot;/Users/IRE/Projects/NICAR/2018/workflow/Test/Folder/test.txt&quot;
+cat(readLines(here(&quot;Test&quot;, &quot;Folder&quot;, &quot;text.txt&quot;)))
+##&gt; You found the text file nested in these subdirectories!</code></pre>
+</div>
+<div id="files-organization" class="section level2">
+<h2>Files organization</h2>
+<div id="at-minimum" class="section level4">
+<h4>At minimum</h4>
+<pre class="r"><code>name_of_project
+|--data
+    |--2017report.csv
+    |--2016report.pdf
+    |--summary2016_2017.csv
+|--docs
+    |--01-analysis.Rmd
+    |--01-analysis.html
+|--scripts
+    |--exploratory_analysis.R
+|--name_of_project.Rproj
+|--run_all.R</code></pre>
+</div>
+<div id="optimal" class="section level4">
+<h4>Optimal</h4>
+<pre class="r"><code>name_of_project
+|--raw_data
+    |--WhateverData.xlsx
+    |--2017report.csv
+    |--2016report.pdf
+|--output_data
+    |--summary2016_2017.csv
+|--rmd
+    |--01-analysis.Rmd
+|--docs
+    |--01-analysis.html
+    |--01-analysis.pdf
+    |--02-deeper.html
+    |--02-deeper.pdf
+|--scripts
+    |--exploratory_analysis.R
+    |--pdf_scraper.R
+|--name_of_project.Rproj
+|--run_all.R</code></pre>
+<p>{{% notice info %}} Everything below is for more advanced users but I’m putting it here for future reference. {{% /notice %}}</p>
+</div>
+<div id="creating-folder-shortcut" class="section level4">
+<h4>Creating folder shortcut</h4>
+<pre class="r"><code>folder_names &lt;- c(&quot;raw_data&quot;, &quot;output_data&quot;, &quot;rmd&quot;, &quot;docs&quot;, &quot;scripts&quot;)
+
+sapply(folder_names, dir.create)</code></pre>
+</div>
+</div>
+<div id="organization-principles" class="section level2">
+<h2>Organization principles</h2>
+<ul>
+<li>Directory names are obvious to anyone looking</li>
+<li>Reports and the script files are not in the same directory</li>
+<li>Reports are sorted using 2-digit numbers. Tell your story clearly.</li>
+</ul>
+</div>
+<div id="source-to-the-online-data" class="section level2">
+<h2>Source to the online data</h2>
+<div id="normal-data-file" class="section level4">
+<h4>Normal data file</h4>
+<pre class="r"><code>if (!file.exists(&quot;data/bostonpayroll2013.csv&quot;)) {
+
+  dir.create(&quot;data&quot;, showWarnings = F)
+  download.file(
+  &quot;https://website.com/data/bostonpayroll2013.csv&quot;,
+  &quot;data/bostonpayroll2013.csv&quot;)
+}
+
+payroll &lt;- read_csv(&quot;data/bostonpayroll2013.csv&quot;)</code></pre>
+</div>
+<div id="dealing-with-a-zip-file" class="section level4">
+<h4>Dealing with a zip file</h4>
+<pre class="r"><code>if (!file.exists(&quot;data/employment/2016-12/FACTDATA_DEC2016.TXT&quot;)) {
+  
+  dir.create(&quot;data&quot;, showWarnings = F)
+  temp &lt;- tempfile()
+  download.file(
+  &quot;https://website.com/data/bostonpayroll2013.zip&quot;,
+  temp)
+  unzip(temp, exdir=&quot;data&quot;, overwrite=T)
+  unlink(temp)
+}
+
+payroll &lt;- read_csv(&quot;data/bostonpayroll2013.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="operate-without-a-net" class="section level2">
+<h2>Operate without a net</h2>
+<p><strong>Never</strong> save work space to .RData on exiting RStudio and uncheck Restore .RData on start up.</p>
+<p>This will make sure you’ve optimized your data ingesting and cleaning process and aren’t working with a misstep in your process.</p>
+<p><img src="/how_to_use_r/workflow/images/cut_the_cord.png" alt="Cut the cord", class="shadow", style="width:70%"></p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+</div>

@@ -1,0 +1,152 @@
+---
+title: "CSV files"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "csv"]
+weight: 1
+slug: csv-files
+---
+
+{{%attachments title="Files for this section" style="grey" /%}}
+
+
+Comma separated files are the most common way to save spreadsheets that doesn't require a paid program from Microsoft to open.
+
+## What a csv file looks like
+
+CSV file names end with a **.csv**
+
+![](/importing_exporting/csv/images/csv1.png?classes=shadow)
+
+
+## What a csv file looks like on the inside
+
+This explains the values separated with commas part of the file name.
+
+![](/importing_exporting/csv/images/csv2.png?classes=shadow)
+
+# Importing CSV files
+
+- Importing CSV is part of base R, no package needed
+- But we're going to use a package anyway, **readr**
+
+## Two ways to get data
+
+* If you have the URL address
+    * If the csv file exists on the internet, you don’t have to download it to your local machine and then import it, you can import it to R directly from the web using the link
+* If you have the file on your computer
+
+## Get the URL
+
+
+
+If you have the link to a CSV file, right click [the link](https://data.ct.gov/Health-and-Human-Services/Admissions-to-DMHAS-Addiction-Treatment-by-Town-Ye/iyru-82zq/data) of the data and click **Copy Link Address**. This data set can be found on the [Connecticut Open Data Portal](https://data.ct.gov/Health-and-Human-Services/Admissions-to-DMHAS-Addiction-Treatment-by-Town-Ye/iyru-82zq/).
+
+![](/importing_exporting/csv/images/rightclick.png?classes=shadow)
+
+## read.csv()
+
+The Base R function to import a CSV file is `read.csv()`. Just put the URL address in quotation marks and add the `stringsAsFactors=F` (In this code we're using the function `head()`-- this returns 6 rows by default, but we want to look at 10, so we’ll specify that when we call the function head(data, 10))
+
+```{r segment1}
+df_csv <- read.csv("https://data.ct.gov/api/views/iyru-82zq/rows.csv?accessType=DOWNLOAD", stringsAsFactors=F)
+head(df_csv, 10)
+```
+
+
+## The other way to import the data: Download it
+
+When you right click on the link, instead of clicking **Copy Link Address**-- this time, click **Save Link As...**
+
+![](/importing_exporting/csv/images/downloading.png?classes=shadow)
+
+Save to your working directory.
+
+After saving to the directory, click on the circle arrow on the right to refresh the files to make sure it's there.
+
+![](/importing_exporting/csv/images/directory.png?classes=shadow)
+
+## Recall: How to change directories in RStudio
+
+Either by typing `setwd("/directory/where/you/want")` or by clicking in the menu up top **Session > Set Working Directory > Choose Directory...**
+
+![](/importing_exporting/csv/images/setwd.png?classes=shadow)
+
+## Importing local csv data
+
+Just like before, except instead of the URL, it's the name of the file.
+
+**Note:** This will only work if the working directory is set to where the csv file is.
+```{r segment2}
+df_csv <- read.csv("data/Admissions_to_DMHAS_Addiction_Treatment_by_Town__Year__and_Month.csv", stringsAsFactors=F)
+```
+
+
+## stringsAsFactors=F
+
+Why? 
+
+Blame statisticians.
+
+Back when R was created the users weren't using it as we use it now, with all these different strings.
+
+**What happens when you don't use `stringsAsFactors=F`**
+
+```{r segment3}
+df_csv <- read.csv("data/Admissions_to_DMHAS_Addiction_Treatment_by_Town__Year__and_Month.csv")
+str(df_csv)
+```
+
+
+
+##Using read_csv() from the readr package
+
+**readr** is a package that read rectangular data quickly and assumes characters are strings and not factors by default.
+
+```{r segment4}
+## If you don't have readr installed yet, uncomment and run the line below
+#install.packages("readr")
+library(readr)
+df_csv <- read_csv("data/Admissions_to_DMHAS_Addiction_Treatment_by_Town__Year__and_Month.csv")
+```
+
+As you can see, the `read_csv()` function interpreted the **MonthYear** and **Town** columns as characters and not as Factors as `read.csv()` did.
+
+# Exporting CSV files
+
+When you're done analyzing or transforming your data, you can save your dataframe as a CSV file with `write_csv()` from the **readr** package.
+
+```{r export1, eval=F}
+# Pass the write_csv() function the name of the dataframe and what you want to call the file
+write_csv(df_csv, "transformed_data.csv")
+```
+
+The file will save to your working directory, but you can specify sub directories with the function.
+
+```{r export2, eval=F}
+# Pass the write_csv() function the name of the dataframe and what you want to call the file
+write_csv(df_csv, "data/transformed_data.csv")
+```
+
+## Exporting data frames with `NA` 
+
+Weird quirk alert: Exported files will include `NA`s so to replace them, pass the variable `na="whatever"`. 
+
+```{r export3, eval=F}
+# This replaces the NAs with blanks
+write_csv(df_csv, "data/transformed_data.csv", na="")
+```
+
+
+## Your turn
+
+Challenge yourself with [these exercises](http://code.r-journalism.com/chapter-2/#section-csvs) so you'll retain the knowledge of this section.
+
+Instructions on how to run the exercise app are on the [intro page](http://learn.r-journalism.com/en/importing_exporting/) to this section.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

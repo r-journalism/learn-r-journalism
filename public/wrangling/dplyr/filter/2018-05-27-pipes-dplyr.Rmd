@@ -1,0 +1,580 @@
+---
+title: "Transforming and analyzing data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dplyr"]
+weight: 1
+slug: dplyr
+---
+
+Why do I use dplyr?
+
+* Works best with dataframes, which is what journalists are used to
+* Great for data exploration and transformation
+* Intuitive to write and easy to read, especially when using the "chaining" syntax of pipes
+* Fast on data frames
+
+## Five basic verbs
+
+* `filter()`
+* `select()`
+* `arrange()`
+* `mutate()`
+* `summarize()` plus `group_by()`
+
+
+## Our data
+
+We're going to be wrangling some pretty big data-- murders over decades across the country. 
+
+This case-level data was acquired by the [Murder Accountability Project](http://www.murderdata.org/p/data-docs.html) from the Justice Department. 
+
+We're going to use the basics of **dplyr** verb functions to analyze the data and see if we can reproduce the Project's [algorithm](https://www.dropbox.com/s/49i2mw0caswn8y0/Algorithm.pdf?dl=0) to identify suspicious clusters of murders that may contain serial killings.
+
+It will require using that huge data set from the importing SPSS data section.
+
+I've written a script that will import it (See, witnessing the upside to creating scripts already!)
+
+Check out what it looks like-- it's about 100 lines long but only 1 line is required to run the script.
+
+{{% notice warning %}}
+Before running the command, make sure the script is in the working directory folder and that the **SHR76_16.sav.zip** file is in the *data* subfolder. For example, on my computer, the *import_murders.R* script is in the *dplyr* folder and **SHR76_16.sav.zip** file is in the *dplyr/data* folder.
+{{% /notice %}}
+
+**This is going to take a few minutes to run.** 
+
+```{r importing_data, warning=F, message=F}
+source("import_murders.R")
+```
+
+Alright, the **import_murders.R** script unzipped data, imported it, and transformed it into a workable dataframe and saved it to our environment as the object **murders** for us to analyze.
+
+```
+View(murders)
+```
+
+![](/wrangling/dplyr/images/murders.png?classes=shadow)
+
+
+Here's the [data dictionary](https://www.dropbox.com/s/lo6tgo8nnbpqeru/MAPdefinitionsSHR.pdf?dl=1).
+
+What are we dealing with here?
+
+## Number of rows (cases)?
+
+```{r rows}
+nrow(murders)
+```
+
+## How many municipalities?
+
+We'll use a couple base R functions: `unique()` and `length()`.
+
+```{r cities}
+# Make a list of cities based on the unique() function
+how_many <- unique(murders$MSA_label)
+
+# Count up how many are in the list
+length(how_many)
+```
+
+Whew, let's not overwhelm ourselves with all this data as we're getting started out.
+
+Let's narrow down our scope by using the `filter()` function.
+
+![](/wrangling/dplyr/images/filter.png?classes=shadow)
+
+Filter works by extracting rows that meet a criteria you set.
+
+![](/wrangling/dplyr/images/filter_specifics.png?classes=shadow)
+
+You pass the dataframe as a variable to `filter()` first and then you add any logical tests.
+
+
+{{% notice warning %}}
+One `=` in R is the same as `<-` in that it assigns a value. Logical tests requires two, so  `==` which tests for equal.
+{{% /notice %}}
+
+```{r filter2}
+df1 <- filter(murders, Relationship_label=="Husband", VicAge > 60, Year==2016)
+
+df2 <- filter(murders, Relationship_label=="Husband" & VicAge > 60 & Year==2016) # same as the line above
+
+df3 <- filter(murders, Relationship_label %in% c("Husband", "Boyfriend") | Circumstance_label=="Lovers triangle")
+```
+
+Check out the new objects in the Environment window of RStudio.
+
+![](/wrangling/dplyr/images/3dfs.png?classes=shadow?width=20pc)
+
+Data frames df1 and df2 are exactly the same (Looking for cases in which Husbands were involved, the victim was older than 60, and occurred in 2016)-- only 25 were found. Meanwhile d3 has nearly 32,000 cases in which a Husband or Boyfriend were involved or it was labeled by investigators as a lover's triangle.
+
+## Logical Operators
+
+| Operator | Description |
+| ------ | ------------------------ |
+| `<` | Less than |
+| `<=` | Less than or equal to |
+| `>`    | Greater than |
+| `>=`    | Greater than or equal to |
+| `==`    | Exactly equal to |
+| `!=`    | Not equal to |
+| `!x`    | Not x |
+| `x | y`    | x or y |
+| `x & y`    | x and y |
+| `%in%`    | Group membership
+| `isTRUE(x)`    | Test if x is TRUE |
+| `is.na(x)`    | Test if x is NA |
+| `!is.na(x)`    | Test if x is not NA |
+
+**Test yourself**
+
+Can you use the logical operators and `filter()` to create **df4** which has all the data for murders: 
+
+1. in the District of Columbia
+2. That were solved in 2015 that involved Black victims
+3. in which Handgun - pistol, revolver, etc was victims between the ages of 18 and 21
+
+----
+
+**Common mistakes**
+
+1. Using `=` instead of `==`
+
+```
+# WRONG
+filter(murders, fstate_label="District of Columbia")
+
+# RIGHT
+filter(murders, fstate_label=="District of Columbia")
+```
+
+2. Forgetting quotes
+
+```
+# WRONG
+filter(murders, fstate_label=District of Columbia)
+
+# RIGHT
+filter(murders, fstate_label="District of Columbia"")
+```
+
+3. Collapsing multiple tests into one
+
+```
+# WRONG
+filter(murders, 1980 < year < 1990)
+
+# RIGHT
+filter(murders, 1980 < year, year < 1990)
+```
+
+4. Stringing together many tests instead of using %in%
+
+```
+# Not WRONG but INEFFICIENT
+filter(murders, VicRace_label=="Black" | VicRace_label="Unknown" | VicRace_label=="Asian or Pacific Islander")
+
+# RIGHT
+filter(murders, VicRace_label %in% c("Black", "Unknown", "Asian or Pacific Islander"))
+```
+
+
+Alright, we've got new data frames narrowed down from 750,000 total to about 25 specific incidents of husbands murdering their partners who were older than 60 in 2016 and about 32,000 cases where either the husband or boyfriend was involved or the victim was involved in a love triangle.
+
+We have 47 variables (aka columns) and we don't need all of them for this basic analysis. Let's narrow that down.
+
+## select()
+
+![](/wrangling/dplyr/images/select.png?classes=shadow)
+
+You simply list the column names after the data frame you want to extract from.
+
+```{r select1}
+df1_narrow <- select(df1, State, Agency, Solved_label, Year)
+```
+
+```
+View(df1_narrow)
+```
+
+You can use a colon between column names if you want all the columns between.
+
+```{r select2}
+df2_narrow <- select(df1, State, OffAge:OffRace_value, Weapon_label)
+```
+
+![](/wrangling/dplyr/images/df1.png?classes=shadow)
+
+```
+View(df2_narrow)
+```
+![](/wrangling/dplyr/images/df2.png?classes=shadow)
+
+
+Use a `-` next to a column name to drop it
+```{r select3}
+# modifying the data frame created above
+df3_narrow <- select(df2_narrow, -Weapon_label)
+```
+
+```
+View(df3_narrow)
+```
+
+![](/wrangling/dplyr/images/df3.png?classes=shadow)
+
+There are so many other functions you can use with `select()` to help make your life easier.
+
+```
+labels_only_columns <- select(murders(contains("_label")))
+str(labels_only_columns)
+```
+
+Check out all the neat `select()` options [here](https://dplyr.tidyverse.org/reference/select_helpers.html).
+
+Great, let's move on to the next verb.
+
+## arrange()
+
+![](/wrangling/dplyr/images/arrange.png?classes=shadow)
+
+You can include more than one variable (column)-- the first one will take priority but subsequent variables will serve as tie breakers.
+
+![](/wrangling/dplyr/images/arrange_syntax.png?classes=shadow)
+
+
+```{r arrange}
+age_df1 <- arrange(murders, VicAge)
+
+age_df2 <- arrange(murders, VicAge, OffAge)
+
+age_df3 <- arrange(murders, VicAge, desc(OffAge))
+
+# Same result as above
+age_df3b <- arrange(murders, VicAge, -OffAge)
+```
+
+This will be very useful. Let's move on to the next verb.
+
+## mutate()
+
+![](/wrangling/dplyr/images/mutate.png?classes=shadow)
+
+We can create new variables (new columns) with the `mutate()` function.
+
+![](/wrangling/dplyr/images/mutate_syntax.png?classes=shadow)
+
+
+```{r mutate1}
+murders_ver2 <- mutate(murders,
+                       age_difference=OffAge-VicAge)
+```
+
+```
+View(murders_ver2)
+```
+
+![](/wrangling/dplyr/images/mutate1.png?classes=shadow)
+
+## Arithmetic Operators
+
+| Operator | Description |
+| ------ | ------------------------ |
+| `+` | Addition |
+| `-` | Subtraction |
+| `*`    | Multiplication |
+| `/`    | Division |
+| `^`    | Exponentiation |
+
+You can do more than just math in the context of `mutate()`.
+
+You can use `case_when()` in `mutate()` to create new values based on other values, kind of like an if_else statement.
+
+
+```{r mutate2}
+# creates an age_difference column
+# and creates a vic_category column that is populated with values depending on the VicRace_label column
+
+murders_ver3 <- mutate(murders,
+                       age_difference=OffAge-VicAge,
+                       vic_category=case_when(
+                         VicRace_label == "White" ~ "White",
+                         VicRace_label != "White" ~ "Non-White"
+                       ))
+```
+
+There are two variables being created in the `mutate()` function separated by commas. 
+
+* one is **age_difference** which just subtracts the values in **OffAge** and **VicAge**.
+* the other is **vic_category** that is either assigned "White" or "Non-White" depending on if the value of the column **VicRace_label** is "White" or *not* "White".
+
+```
+View(murders_ver3)
+```
+
+
+![](/wrangling/dplyr/images/white.png?classes=shadow)
+
+This is an example of a vectorized function in action. There are some really great ones like `lag()` and `lead()` and `rank()` and we might get into them later. In the meantime, here's a neat list.
+
+
+
+## Rename
+
+You can rename variables (columns) easily with the function `rename()`
+
+```{r rename}
+colnames(df3_narrow)
+
+df3_renamed <- rename(df3_narrow, 
+                      offender_gender=OffSex_label,
+                      offender_age=OffAge)
+colnames(df3_renamed)
+```
+
+You can also rename variables (columns) with the `select()` function. This is just a way to cut down on extra lines of code
+
+```{r select_rename}
+colnames(df3_narrow)
+
+# Keeping only the State and offender gender and age columns but renaming the OffSex_label and OffAge columns
+
+df4_renamed <- select(df3_narrow,
+                      State,
+                      offender_gender=OffSex_label,
+                      offender_age=OffAge)
+
+df4_renamed
+```
+
+## summarize()
+
+![](/wrangling/dplyr/images/summarize.png?classes=shadow)
+
+This is the equivalent of creating a pivot table in Excel.
+
+You're aggregating the whole table into something simplified.
+
+```{r summarize1}
+summarize(murders, average_victim_age=mean(VicAge))
+```
+
+You can create a table of summaries.
+
+
+```{r summarize2}
+summarize(murders, 
+          average_victim_age=mean(VicAge), 
+          average_offender_age=mean(OffAge))
+```
+
+Summarize the data frame **murders**
+
+```{r summarize4}
+summarize(murders, 
+          first=min(Year), 
+          last=max(Year),
+          metro_areas=n_distinct(MSA_label),
+          cases=n())
+```
+
+
+## group_by()
+
+You can aggregate data by groups.
+
+![](/wrangling/dplyr/images/groupby.png?classes=shadow)
+
+```{r summarize3}
+murders <- group_by(murders, MSA_label)
+
+summarize(murders, 
+          first=min(Year), 
+          last=max(Year),
+          cases=n())
+```
+
+This might be a tough concept to fully understand at first, but we'll go over a few more examples soon so it will hopefully make more sense.
+
+But let's get over some very useful functionality that comes with the **dplyr** package.
+
+## pipe %>%
+
+Data analysis will always involve more than one step.
+
+We're going to over some options on how to approach multi step processes with this data set and then we'll go over the *best* way to deal with them.
+
+Description of theoretical process:
+
+* **Extract rows** for cases that happened in Washington DC, then
+* **Group** case by year and then
+* **Count** the number of cases
+* **Arrange** the by decreasing cases
+
+**Option 1**
+
+Build out a new dataframe for each step.
+
+```{r multi1}
+dc_annual_murders1 <- filter(murders, State=="District of Columbia")
+dc_annual_murders2 <- group_by(dc_annual_murders1, Year)
+dc_annual_murders3 <- summarize(dc_annual_murders2, total=n())
+dc_annual_murders4 <- arrange(dc_annual_murders3, desc(total))
+
+# looking at the first 6 rows of data
+
+head(dc_annual_murders4)
+```
+
+**Option 2**
+
+Do it all in one line by nesting functions.
+
+```{r multi2}
+dc_annual_murders <- arrange(summarize(group_by(filter(murders, State=="District of Columbia"), Year), total=n()), desc(total))
+
+# looking at the first 6 rows of data
+
+head(dc_annual_murders)
+```
+
+These options aren't great because the first one is just way too much typing, even if it's pretty clear to an outside reader what's happening to the data frame. The second one is no good because, while it's efficient with coding, it's way too difficult to follow what's happening to the data.
+
+Let's talk about the pipe operator `%>%`
+
+You might have noticed that all the functions from **dplyr** all structured similiarly: The first argument is always the data frame.
+
+It takes in a data frame and spits out a data frame.
+
+This structure is what allows for something like the `%` to work.
+
+![](/wrangling/dplyr/images/pipe.png?classes=shadow)
+
+These commands do the same thing. Give it a try.
+
+```{r pipes3}
+filter(murders, OffAge==2)
+
+murders %>% filter(OffAge==2)
+```
+
+
+Again, a description of the theoretical process:
+
+* **Extract rows** for cases that happened in Washington DC, then
+* **Group** case by year and then
+* **Count** the number of cases
+* **Arrange** the by decreasing cases
+
+**Option 3**
+
+Use the `%>%` pipe
+
+```{r pipes4}
+filter(murders, State=="District of Columbia") %>% 
+  group_by(Year) %>% 
+  summarize(total=n()) %>%    
+  arrange(desc(total)) %>% 
+  head()
+```
+
+So readable and simple, right?
+
+Here's the shortcut to type `%` in RStudio:
+
+* Mac: Cmd + Shift + M
+* Windows: Ctrl + Shift + M
+
+Why "M"? I think it's because the pipe was first introduced in the [**magrittr** package](https://cran.r-project.org/web/packages/magrittr/README.html) by Stefan Milton Bache.
+
+## Mutate again
+
+There are a lot of [interesting things](https://dplyr.tidyverse.org/reference/mutate.html#useful-functions) you can do with `mutate()`. 
+
+Let's try out `lag()` within `mutate()` -- it lets you do math based on the previous row of a vector.
+
+For example, in the data frame above we've got the number of murders in DC. With `lag()` and some math to can calculate the difference in the number of murders year over year.
+
+```{r pipes5}
+# We can keep the code from before but now we add a new mutate line
+filter(murders, State=="District of Columbia") %>% 
+  group_by(Year) %>% 
+  summarize(total=n()) %>%
+  mutate(previous_year=lag(total)) %>% 
+  mutate(change=previous_year-total)
+```
+
+So `mutate()` returns a vector the same length as the input.
+
+We summarized the code and then we mutated a new column based on `lag()` and then we mutated a second column based on the new column and the old column.
+
+You can use mutate more than once
+
+
+```{r pipes6}
+# Here's an example of the same code above but with mutate called just once
+# previous_year was able to be referenced a second time because it was created in first
+years <- filter(murders, State=="District of Columbia") %>% 
+  group_by(Year) %>% 
+  summarize(total=n()) %>%
+  mutate(previous_year=lag(total), change=previous_year-total) 
+
+years
+```
+
+So `mutate()` works when the formula you pass it returns a vectorized output. For example, if a vector has 10 instances in it, then the formula needs to output 10 instances, too.
+
+Passing it a formula like `sum()` would confuse it.
+
+```{r pipes7}
+years %>% mutate(all_murders=sum(total))
+```
+
+This is what differentiates `mutate()` from `summarize()`.
+
+## Summary functions
+
+What `summarize()` does is it takes a vector as an input, and returns a single value as output. Like `sum()` did in the previous example.
+
+Here are some examples of summary functions:
+
+
+| Function | Description |
+| ------ | ------------------------ |
+| `mean(x)` | Mean (average). `mean(c(1,10,100,1000))` returns 277.75 |
+| `median(x)` | Median. `median(c(1,10,100,1000))` returns 55 |
+| `sd(x)`    | Standard deviation. `sd(c(1,10,100,1000))` returns 483.57 |
+| `quantile(x, probs)`    | Where x is the numeric vector whose quantiles are desired and probs is a numeric vector with probabilities |
+| `range(x)`    | Range. `range(c(1,10,100,1000))` returns c(1, 1000) and `diff(range(c(1,10,100,1000)))` returns 999|
+| `sum(x)`    | Sum. `sum(c(1,10,100,1000))` returns 1111 |
+| `min(x)`    | Minimum. `min(c(1,10,100,1000))` returns 1 |
+| `max(x)`    | Maximum. `max(c(1,10,100,1000))` returns 1000 |
+| `abs(x)`    | Absolute value. `abs(-8)` returns 8 |
+
+Here are some examples of summary functions specific to **dplyr** and `summarize()` -- Learn about [the others](https://dplyr.tidyverse.org/reference/summarise.html#useful-functions).
+
+
+| Function | Description |
+| ------ | ------------------------ |
+| `n()` | returns the number of values/rows |
+| `n_distinct()` | returns number of uniques |
+| `first()`    | Only returns the first value within an arranged group |
+| `last()`    | Only returns the last value within an arranged group |
+| `nth()`    | Only returns the nth location of a vector |
+
+## group_by() again
+
+Now that we've got the tools, let's do some investigating of the murders data base and look for serial killers.
+
+It's based on the theory from T H that ...
+killers something...
+
+
+Let's look at their algorithm and see if we can recreate it.
+
+
+
+
+

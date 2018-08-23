@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Looking for evidence of serial killers">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Murders case study :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1535033655" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1535033655" rel="stylesheet">
+    <link href="/css/hybrid.css?1535033655" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1535033655" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1535033655" rel="stylesheet">
+    <link href="/css/auto-complete.css?1535033655" rel="stylesheet">
+    <link href="/css/theme.css?1535033655" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1535033655" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1535033655" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1535033655"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/wrangling/case_study/murders-case-study/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/copying-pasting/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/copying-pasting/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/folder_of_files/bulk-files/" title="Folder of files" class="dd-item ">
+        <a href="/en/importing_exporting/folder_of_files/bulk-files/">
+        Folder of files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item ">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item active">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More R Markdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More R Markdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/publishing/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/installing_git/installing-git/" title="Installing git" class="dd-item ">
+        <a href="/en/git/installing_git/installing-git/">
+        Installing git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Connecting to GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Connecting to GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Best practices for GitHub" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Best practices for GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/r-journalism/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/r-journalism/learn-r-journalism/edit/master/content/wrangling/case_study/2018-05-27-case-study.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/wrangling/'>Wrangling data</a> > Murders case study
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Murders case study</h1>
+          
+
+        
+
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/HMJW3JL4WTI?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>The FBI has tracked more than 750,000 murders in 40 years across the country. And that’s not counting the police departments that refuse to send them their homicide statistics.</p>
+<p>Thomas Hargrove was a national correspondent for the Scripps Howard News Service, where he developed an algorithm that uses FBI homicide data to identify areas of murders that had an elevated probability of containing serial killings. His work helped convince officials in Ohio and Indiana to begin investigating specific strangulation cases in 2010. The case lead to the arrest of Darren Deon Vann, who confessed to killing women for decades and took police to abandoned properties in Gary, Indiana to recover undiscovered victims.</p>
+<p>Hargrove has since retired and runs the <a href="http://www.murderdata.org/">Murder Accountability Project</a>.</p>
+<p>We’re going to go over his algorithm and try to reproduce it.</p>
+<div class="notices warning" ><p>This is just an algorithm based on the available variables in the data. The results cannot match good, natural police work. The methodology discussed in this section may produce false results either by making false matches between unrelated cases or by failing to detect known linked cases. Further investigation should be mandatory if reporting on findings to avoid unnecessary <a href="https://www.youtube.com/watch?v=kdpG92dsx1A">overreaction</a>. The ultimate authority on whether homicide cases should be linked rests with the local law enforcement agencies which investigate crimes and with the appropriate courts of criminal law.</p>
+</div>
+
+<p>Let’s start by looking at <a href="https://www.biography.com/people/gary-ridgway-10073409">the case</a> of “Green River Killer” Gary Ridgway.</p>
+<blockquote>
+<p>Ridgway’s slayings began in 1982, when young runaways and prostitutes began disappearing from state Route 99 in south King County, Washington. He brought many of them to his home and strangled them, then left them in woodsy, remote sites. The first few bodies turned up along the now-notorious Green River.</p>
+</blockquote>
+<blockquote>
+<p>Ridgway told investigators he killed as many as 75-80 women along Route 99 in south King County, Washington. He was convicted and received multiple life sentences.</p>
+</blockquote>
+<p>How would we find his victims in our data set?</p>
+<p>There were definitely patterns.</p>
+<ul>
+<li>King County, Washington</li>
+<li>Time span was between 1982 and 2001</li>
+<li>Female victims</li>
+<li>Victims often strangled</li>
+<li>Found in remote locations</li>
+</ul>
+<p>Import the data in first.</p>
+<pre class="r"><code>library(dplyr)
+library(tidyr)
+library(DT)
+source(&quot;import_murders.R&quot;)</code></pre>
+<p>Let’s apply the criteria above to the data set.</p>
+<p>There’s a problem at the moment.</p>
+<p>There’s no county variable. There’s a county FIPS code column, but not one identifying the name of the county.</p>
+<p>I’ve uploaded a relationship file for you.</p>
+<pre class="r"><code># If you don&#39;t have readr installed yet, uncomment and run the line below
+#install.packages(&quot;readr&quot;)
+
+library(readr)
+
+county.fips &lt;- read_csv(&quot;data/fips_counties.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   fips = col_integer(),
+##   name_of_county = col_character(),
+##   state_abbrev = col_character(),
+##   county_state = col_character()
+## )</code></pre>
+<pre class="r"><code>head(county.fips)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##    fips name_of_county state_abbrev county_state
+##   &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;       
+## 1  1001 Autauga        AL           Autauga, AL 
+## 2  1003 Baldwin        AL           Baldwin, AL 
+## 3  1005 Barbour        AL           Barbour, AL 
+## 4  1007 Bibb           AL           Bibb, AL    
+## 5  1009 Blount         AL           Blount, AL  
+## 6  1011 Bullock        AL           Bullock, AL</code></pre>
+<p>Let’s join them with the <code>left_join()</code> function we’ve used before from <strong>dplyr</strong>.</p>
+<pre class="r"><code># FIPS change over time. Data tends to do that when you&#39;ve got decades of stuff
+# We&#39;ll swap out some County Names (most are from Alaska) before we join the data sets
+
+murders  &lt;- murders %&gt;%
+  mutate(CNTYFIPS=as.numeric(as.character(CNTYFIPS))) %&gt;% 
+  mutate(CNTYFIPS=case_when(
+    CNTYFIPS==51560 ~ 51005,
+    CNTYFIPS==2232 ~ 2105,
+    CNTYFIPS==2280 ~ 2195,
+    CNTYFIPS==2201 ~ 2198,
+    TRUE ~ CNTYFIPS
+  )) %&gt;% 
+  left_join(county.fips, by=c(&quot;CNTYFIPS&quot;=&quot;fips&quot;)) </code></pre>
+<pre class="r"><code>View(murders)</code></pre>
+<div class="figure">
+<img src="/wrangling/case_-_study/images/counties.png?classes=shadow" />
+
+</div>
+<div class="notices tip" ><p>This is where I’d put in sirens if I could. Really wrap your head around how this worked because joins are so very essential to expanding the capabilities of data analysis.</p>
+</div>
+
+<p>Okay, that worked. Now we can filter it based on this criteria:</p>
+<ul>
+<li>King County, Washington</li>
+<li>Time span was between 1982 and 2001</li>
+<li>Female victims</li>
+<li>Victims often strangled</li>
+<li>Found in remote locations</li>
+</ul>
+<pre class="r"><code>greenway1 &lt;- murders %&gt;% 
+  filter(State==&quot;Washington&quot; &amp; name_of_county==&quot;King&quot;) %&gt;% 
+  filter(Year &gt;=1982 &amp; Year &lt;=2001) %&gt;% 
+  filter(VicSex_label==&quot;Female&quot;) </code></pre>
+<pre class="r"><code>View(greenway1)</code></pre>
+<div class="figure">
+<img src="/wrangling/case_-_study/images/510.png?classes=shadow" />
+
+</div>
+<p>Alright, we’ve narrowed it down to 510 cases by filtering with “king” county and “Washington” state. We set it between 1982 and 2001 and looked for female victims.</p>
+<p>How many of those were strangled? Is there a distinction for that? What types of weapons are labeled by officials?</p>
+<pre class="r"><code>murders %&gt;% 
+  select(Weapon_label) %&gt;% 
+  unique()</code></pre>
+<pre><code>##                              Weapon_label
+## 1             Knife or cutting instrument
+## 2                                 Shotgun
+## 5                 Strangulation - hanging
+## 6                                   Rifle
+## 7         Handgun - pistol, revolver, etc
+## 41     Personal weapons, includes beating
+## 49                                   Fire
+## 54                  Other or type unknown
+## 69               Firearm, type not stated
+## 85   Asphyxiation - includes death by gas
+## 89     Narcotics or drugs, sleeping pills
+## 101      Blunt object - hammer, club, etc
+## 495                              Drowning
+## 550           Pushed or thrown out window
+## 1063                            Other gun
+## 1099        Poison - does not include gas
+## 1708                           Explosives</code></pre>
+<p>So what fits Ridgeway’s methods?</p>
+<p>Maybe “Strangulation - hanging” and “Other or type unknown”</p>
+<pre class="r"><code>greenway2 &lt;- greenway1 %&gt;% 
+  filter(Weapon_label==&quot;Strangulation - hanging&quot; |
+           Weapon_label==&quot;Other or type unknown&quot;)</code></pre>
+<pre class="r"><code>View(greenway2)</code></pre>
+<div class="figure">
+<img src="/wrangling/case_-_study/images/116.png?classes=shadow" />
+
+</div>
+<p>Well, that narrowed it down.</p>
+<p>Now there are 116 cases.</p>
+<p>What were the circumstances for these murders? Can we narrow it down to outdoors?</p>
+<pre class="r"><code>greenway2 %&gt;% 
+  group_by(Circumstance_label) %&gt;% 
+  count() %&gt;% 
+  arrange(desc(n))</code></pre>
+<pre><code>## # A tibble: 13 x 2
+## # Groups:   Circumstance_label [13]
+##    Circumstance_label                       n
+##    &lt;fct&gt;                                &lt;int&gt;
+##  1 Circumstances undetermined              81
+##  2 Other                                   12
+##  3 Rape                                     4
+##  4 Other arguments                          4
+##  5 Robbery                                  3
+##  6 Other sex offense                        3
+##  7 Burglary                                 2
+##  8 Argument over money or property          2
+##  9 Arson                                    1
+## 10 Narcotic drug laws                       1
+## 11 Other - not specified                    1
+## 12 Lovers triangle                          1
+## 13 All other manslaughter by negligence     1</code></pre>
+<p>No, it doesn’t appear that’s an option. Only “Circumstances undetermined” and “Other” which are vague.</p>
+<pre class="r"><code>greenway2 %&gt;% 
+  group_by(Solved_label) %&gt;% 
+  summarize(total=n()) %&gt;% 
+  mutate(percent=round(total/sum(total)*100,2))</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   Solved_label total percent
+##   &lt;fct&gt;        &lt;int&gt;   &lt;dbl&gt;
+## 1 No              84    72.4
+## 2 Yes             32    27.6</code></pre>
+<p>We should be clear that there’s no way to tell with this data set that the filtered data we’ve sliced out are all victims of Gary Ridgway. That would involve looking up the case files for each victim or researching the evidence presented at his trial. Still there’s a decent chance based on his confession that some of the victims were listed above.</p>
+<div id="mindhunter" class="section level3">
+<h3>Mindhunter</h3>
+<p>Put yourself in the mindset of a detective or criminal profiler.</p>
+<p>Can you reverse engineer the process of narrowing down the list of victims and apply it to the data set to surface areas where a serial killer might be murdering with impunity?</p>
+<p>What’s the list of patterns you could wrangle the data for?</p>
+<ul>
+<li>Areas with low rates of homicide clearances</li>
+<li>Murders span years, even decades</li>
+<li>Victims are similar in gender</li>
+<li>Method of killing is often repeated</li>
+</ul>
+</div>
+<div id="the-algorithm" class="section level3">
+<h3>The algorithm</h3>
+<p>Thomas Hargrove noticed these patterns as a journalist and developed an algorithm that would locate these clusters of murders that showed these signs.</p>
+<p>Here it is as it’s programmed <a href="https://www.dropbox.com/s/49i2mw0caswn8y0/Algorithm.pdf?dl=0">in SPSS</a>. You’ll notice that the syntax is reminiscent to what we’ve worked with.</p>
+<p>Let’s translate that into R and, specifically, <strong>dplyr</strong>.</p>
+<ol style="list-style-type: decimal">
+<li>Case status
+<ul>
+<li>Solved: <em>0</em> | Unsolved: <em>1</em></li>
+<li>dplyr verb: <code>mutate()</code> and <code>case_when()</code></li>
+</ul></li>
+<li>Gender of victim
+<ul>
+<li>Male:* 1 | <em>Female</em>: 2 | <em>Unknown</em>:</li>
+<li>dplyr verb: <code>mutate()</code> and <code>case_when()</code></li>
+</ul></li>
+<li>Creating clustering number
+<ul>
+<li>Counties and MSA</li>
+<li>gender</li>
+<li>weapon value assigned by factor</li>
+</ul></li>
+</ol>
+<pre class="r"><code>msagrp &lt;- murders %&gt;% 
+  mutate(solved_num = ifelse(Solved_label==&quot;Yes&quot;, 1, 0)) %&gt;% 
+  group_by(MSA_label, VicSex_label, Weapon_label) %&gt;% 
+  summarize(cases=n(), solved=sum(solved_num)) %&gt;%
+  mutate(clearance=round(solved/cases*100,2))</code></pre>
+<pre class="r"><code>View(msagrp)</code></pre>
+<div class="figure">
+<img src="/wrangling/case_-_study/images/msagrp.png?classes=shadow" />
+
+</div>
+<p>Alright, we have more than 10,000 clusters.</p>
+<p>Hargrove says we can filter it further.</p>
+<p>Look for female victims, and where clearance rates are less than 33 percent. And where there is more than one victim.</p>
+<pre class="r"><code>msagrp_filtered &lt;- msagrp %&gt;% 
+  filter(VicSex_label==&quot;Female&quot; &amp; clearance &lt;= 33 &amp; cases &gt; 1) 
+datatable(msagrp_filtered)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99"],["Abilene, TX","Abilene, TX","Abilene, TX","Alexandria, LA","Anchorage, AK","Ann Arbor, MI","Ann Arbor, MI","Appleton, WI","Atlanta-Sandy Springs-Marietta, GA","Atlantic City, NJ","Atlantic City, NJ","Bakersfield, CA","Bellingham, WA","Boulder, CO","Bowling Green, KY","Canton-Massillon, OH","Cape Coral-Fort Myers, FL","Champaign-Urbana, IL","Cleveland, TN","Cleveland-Elyria-Mentor, OH","College Station-Bryan, TX","Columbus, IN","Dallas-Fort Worth-Arlington, TX","Deltona-Daytona Beach-Ormond Beach, FL","Des Moines, IA","Duluth, MN-WI","Elkhart-Goshen, IN","Elmira, NY","Erie, PA","Farmington, NM","Fayetteville, NC","Flint, MI","Fort Wayne, IN","Gainesville, FL","Grand Junction, CO","Greenville, NC","Gulfport-Biloxi, MS","Hartford, CT","Honolulu, HI","Huntington-Ashland, WV-KY-OH","Jackson, MS","Johnstown, PA","Kankakee-Bradley, IL","Knoxville, TN","Lansing-East Lansing, MI","Lawton, OK","Lewiston-Auburn, ME","Manchester-Nashua, NH","Merced, CA","Merced, CA","Merced, CA","Minneapolis-St. Paul-Bloomington, MN-WI","Morgantown, WV","Naples-Marco Island, FL","Nashville-Davidson-Murfreesboro, TN","Norwich-New London, CT","Pittsburgh, PA","Prescott, AZ","Pueblo, CO","Racine, WI","Rome, GA","St. Louis, MO-IL","St. Louis, MO-IL","Salinas, CA","Salinas, CA","Salt Lake City, UT","Santa Fe, NM","Seattle-Tacoma-Bellevue, WA","Springfield, IL","Springfield, OH","Springfield, OH","Springfield, OH","Springfield, OH","Terre Haute, IN","Tucson, AZ","Tucson, AZ","Tuscaloosa, AL","Vero Beach, FL","Victoria, TX","Waco, TX","Waco, TX","Wausau, WI","Wenatchee, WA","Wichita, KS","Worcester, MA","Yuba City, CA","Rural Arizona","Rural Arizona","Rural Florida","Rural Georgia","Rural Hawaii","Rural Illinois","Rural Louisiana","Rural Nevada","Rural New York","Rural Ohio","Rural South Carolina","Rural Texas","Rural Utah"],["Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female"],["Drowning","Strangulation - hanging","Other or type unknown","Fire","Fire","Firearm, type not stated","Fire","Strangulation - hanging","Explosives","Asphyxiation - includes death by gas","Other or type unknown","Drowning","Other or type unknown","Strangulation - hanging","Other or type unknown","Other or type unknown","Asphyxiation - includes death by gas","Other or type unknown","Other or type unknown","Other gun","Other or type unknown","Other or type unknown","Other gun","Strangulation - hanging","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Other or type unknown","Fire","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Explosives","Strangulation - hanging","Strangulation - hanging","Other gun","Strangulation - hanging","Strangulation - hanging","Firearm, type not stated","Asphyxiation - includes death by gas","Drowning","Firearm, type not stated","Strangulation - hanging","Strangulation - hanging","Other gun","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Fire","Other or type unknown","Other gun","Fire","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Explosives","Other or type unknown","Blunt object - hammer, club, etc","Fire","Other or type unknown","Other gun","Explosives","Firearm, type not stated","Narcotics or drugs, sleeping pills","Strangulation - hanging","Strangulation - hanging","Poison - does not include gas","Strangulation - hanging","Firearm, type not stated","Blunt object - hammer, club, etc","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Firearm, type not stated","Other gun","Asphyxiation - includes death by gas","Blunt object - hammer, club, etc","Strangulation - hanging","Fire","Other or type unknown","Rifle","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Firearm, type not stated","Firearm, type not stated","Fire","Strangulation - hanging","Drowning","Asphyxiation - includes death by gas","Fire","Drowning","Strangulation - hanging","Other gun","Drowning","Drowning","Other gun","Blunt object - hammer, club, etc"],[2,7,7,2,4,4,3,2,4,7,9,2,2,2,4,6,2,2,2,2,3,4,15,2,4,2,2,2,4,4,6,11,3,2,2,4,6,22,6,2,2,2,2,7,2,4,4,4,8,5,4,2,4,16,18,4,2,5,2,2,6,10,4,10,2,20,4,3,4,5,2,2,12,4,4,2,2,3,4,3,12,2,2,16,11,2,2,4,8,4,2,4,3,2,2,3,2,2,2],[0,2,2,0,1,1,0,0,1,2,2,0,0,0,1,1,0,0,0,0,0,0,3,0,1,0,0,0,1,1,1,3,0,0,0,1,1,7,1,0,0,0,0,1,0,0,1,0,2,1,1,0,1,5,5,1,0,1,0,0,1,3,1,3,0,5,1,0,1,0,0,0,3,1,1,0,0,0,1,0,3,0,0,5,3,0,0,1,2,1,0,1,0,0,0,0,0,0,0],[0,28.57,28.57,0,25,25,0,0,25,28.57,22.22,0,0,0,25,16.67,0,0,0,0,0,0,20,0,25,0,0,0,25,25,16.67,27.27,0,0,0,25,16.67,31.82,16.67,0,0,0,0,14.29,0,0,25,0,25,20,25,0,25,31.25,27.78,25,0,20,0,0,16.67,30,25,30,0,25,25,0,25,0,0,0,25,25,25,0,0,0,25,0,25,0,0,31.25,27.27,0,0,25,25,25,0,25,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>MSA_label<\/th>\n      <th>VicSex_label<\/th>\n      <th>Weapon_label<\/th>\n      <th>cases<\/th>\n      <th>solved<\/th>\n      <th>clearance<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>We have narrowed down 10,000 clusters to 99.</p>
+<p>Let’s change the scope and apply what we did to MSAs to Counties.</p>
+<p>Why is this distinction important? Well, Metro Statistical Areas consists of at least one county– sometimes whole counties or pieces of it.</p>
+<p>Counties are so large that they’re often covered by multiple agencies like town police departments and state police and sheriff’s deputies focusing on different jurisdictions. These things vary but it’s important to note that counties and MSAs– these are just different ways to <strong>bin</strong> or categorize the data.</p>
+<p>Serial killers aren’t limited to by their geography, so it’s important to be flexible with the scope.</p>
+<pre class="r"><code>countygrp &lt;- murders %&gt;% 
+  mutate(solved_num = ifelse(Solved_label==&quot;Yes&quot;, 1, 0)) %&gt;% 
+  group_by(county_state, VicSex_label, Weapon_label) %&gt;% 
+  summarize(cases=n(), solved=sum(solved_num)) %&gt;%
+  mutate(clearance=round(solved/cases*100,2)) %&gt;% 
+  filter(VicSex_label==&quot;Female&quot; &amp; clearance &lt;= 33 &amp; cases &gt; 1) %&gt;% 
+  arrange(desc(cases))
+
+datatable(countygrp)</code></pre>
+<div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325"],["St Louis City, MO","Fulton, GA","King, WA","St Louis City, MO","Jackson, MO","Washington, DC","Galveston, TX","Suffolk, MA","Orleans, LA","Broward, FL","Lake, IN","St Lucie, FL","Hartford, CT","Camden, NJ","Salt Lake, UT","Collier, FL","Davidson, TN","Fort Bend, TX","Fulton, GA","Snohomish, WA","Putnam, FL","Clark, OH","Dallas, TX","McLennan, TX","Richmond City, VA","Genesee, MI","Worcester, MA","Monterey, CA","Washington, OR","Atlantic, NJ","Norfolk, MA","Clackamas, OR","Clark, WA","Frederick, MD","Humboldt, CA","Merced, CA","Pulaski, MO","St Louis City, MO","Washington, PA","Atlantic, NJ","Bell, TX","Dallas, AL","Edgecombe, NC","Glynn, GA","Harford, MD","Kaufman, TX","Knox, TN","Mercer, PA","San Mateo, CA","Taylor, TX","Wayne, MI","Cumberland, NC","Floyd, GA","Guernsey, OH","Harrison, MS","Honolulu, HI","Plymouth, MA","Stark, OH","Taylor, TX","Beaver, PA","Chambers, TX","Clark, OH","Crisp, GA","Dare, NC","Darlington, SC","Gadsden, FL","Hampton City, VA","Liberty, GA","Mecklenburg, NC","Merced, CA","Nassau, NY","Nevada, CA","Rutherford, NC","Williamson, TX","Yavapai, AZ","Anchorage, AK","Androscoggin, ME","Bartholomew, IN","Bladen, NC","Bucks, PA","Cass, TX","Charles, MD","Clinton, MI","Coffee, GA","Collin, TX","Comanche, OK","Contra Costa, CA","Cumberland, ME","Dauphin, PA","Del Norte, CA","Du Page, IL","Erie, PA","Fulton, GA","Gila, AZ","Greenup, KY","Halifax, VA","Hillsborough, FL","Hillsborough, NH","Hinds, MS","Hunt, TX","Hunt, TX","Isabella, MI","Jackson, IL","Jefferson Davis, LA","Lafourche, LA","Lake, IL","Lawrence, PA","Lee, TX","Lenoir, NC","Lincoln, OR","Macon, AL","Marin, CA","Merced, CA","Merrimack, NH","Monongalia, WV","Monroe, FL","Monroe, GA","Nelson, KY","New London, CT","Northumberland, PA","Parker, TX","Pickaway, OH","Pima, AZ","Pitt, NC","Portsmouth City, VA","Pulaski, KY","Putnam, NY","Salem, NJ","Saline, KS","Sampson, NC","San Juan, NM","Sangamon, IL","Santa Fe, NM","St Joseph, IN","Stewart, TN","Victoria, TX","Warren, KY","Washington, OH","Washtenaw, MI","Wayne, IN","Wayne, NY","Yolo, CA","Adams, CO","Allen, IN","Brazos, TX","Bremer, IA","Calhoun, TX","Callaway, MO","Carson, TX","Cheshire, NH","Columbia, OR","Currituck, NC","Dimmit, TX","Durham, NC","Fairfield, OH","Greensville, VA","Indian River, FL","Jefferson, IL","Kane, IL","Lawrence, PA","Mayes, OK","McLennan, TX","Miami, OH","Osage, OK","Osceola, MI","Page, VA","Polk, GA","Randolph, MO","Roane, TN","Vance, NC","Washtenaw, MI","Williamson, TX","Alachua, FL","Allegheny, PA","Allen, KY","Angelina, TX","Arkansas, AR","Ashtabula, OH","Atchison, KS","Auglaize, OH","Bamberg, SC","Bandera, TX","Bates, MO","Beaufort, SC","Bolivar, MS","Boulder, CO","Bradley, TN","Brazoria, TX","Bullitt, KY","Cambria, PA","Camden, GA","Camden, NC","Carroll, KY","Cass, NE","Champaign, OH","Chelan, WA","Chemung, NY","Cherokee, KS","Clare, MI","Clark, OH","Clark, OH","Clark, WA","Clay, IN","Coahoma, MS","Colleton, SC","Colleton, SC","Copiah, MS","Creek, OK","Cross, AR","Cuyahoga, OH","De Kalb, TN","Dearborn, IN","Dorchester, MD","Durham, NC","Edgefield, SC","Elkhart, IN","Fayette, PA","Fayette, TX","Fayette, WV","Gallia, OH","Gallia, OH","Galveston, TX","Geary, KS","Gray, TX","Hardee, FL","Henderson, KY","Hinds, MS","Hot Spring, AR","Hudspeth, TX","Ingham, MI","Jackson, IL","Jackson, IL","Jackson, IN","Jeff Davis, GA","Jefferson, IL","Kankakee, IL","Kern, CA","King and Queen, VA","Klamath, OR","Knox, IN","La Paz, AZ","Lassen, CA","Lawrence, IN","Lee, FL","Lee, NC","Lenawee, MI","Licking, OH","Lincoln, LA","Lincoln, OK","Lincoln, OK","Livingston, KY","Lowndes, MS","Lowndes, MS","Macon, GA","Macon, MO","Madison, AL","Madison, FL","Manatee, FL","Marathon, WI","Mason, MI","Maui, HI","Meade, KY","Mecosta, MI","Mesa, CO","Miami, IN","Monroe, FL","Monterey, CA","Morgan, IN","Oldham, KY","Oneida, ID","Orleans, NY","Outagamie, WI","Park, MT","Pasco, FL","Perry, KY","Pershing, NV","Pierce, WA","Pima, AZ","Plumas, CA","Polk, MO","Posey, IN","Powhatan, VA","Preble, OH","Pueblo, CO","Racine, WI","Ramsey, MN","Rapides, LA","Roanoke City, VA","Russell, AL","San Miguel, CO","Schuylkill, PA","Scioto, OH","Sedgwick, KS","Seneca, NY","Sherburne, MN","Sierra, CA","St Clair, IL","St John the Baptist, LA","St Louis, MN","Stark, ND","Starr, TX","Steuben, IN","Sumter, GA","Talladega, AL","Taylor, TX","Todd, KY","Toombs, GA","Tuscaloosa, AL","Vigo, IN","Volusia, FL","Walker, GA","Ware, GA","Washington, LA","Washington, VA","Waupaca, WI","Whatcom, WA","Whiteside, IL","Whitfield, GA","Whitley, KY","Wilcox, AL","Williamsburg, SC","Wilson, TX","Winn, LA","Wood, OH","Yuba, CA"],["Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female"],["Firearm, type not stated","Strangulation - hanging","Other or type unknown","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Other or type unknown","Firearm, type not stated","Strangulation - hanging","Strangulation - hanging","Fire","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Other or type unknown","Asphyxiation - includes death by gas","Other or type unknown","Other or type unknown","Other or type unknown","Other gun","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Firearm, type not stated","Other or type unknown","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Other or type unknown","Other gun","Strangulation - hanging","Asphyxiation - includes death by gas","Blunt object - hammer, club, etc","Firearm, type not stated","Other or type unknown","Other or type unknown","Other or type unknown","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Fire","Other or type unknown","Other gun","Strangulation - hanging","Other or type unknown","Fire","Strangulation - hanging","Firearm, type not stated","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Other or type unknown","Firearm, type not stated","Other or type unknown","Knife or cutting instrument","Firearm, type not stated","Other or type unknown","Strangulation - hanging","Other or type unknown","Firearm, type not stated","Fire","Firearm, type not stated","Other or type unknown","Other or type unknown","Other or type unknown","Other or type unknown","Fire","Other or type unknown","Other or type unknown","Other or type unknown","Fire","Personal weapons, includes beating","Other or type unknown","Other or type unknown","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Asphyxiation - includes death by gas","Strangulation - hanging","Poison - does not include gas","Strangulation - hanging","Blunt object - hammer, club, etc","Fire","Explosives","Fire","Knife or cutting instrument","Firearm, type not stated","Asphyxiation - includes death by gas","Strangulation - hanging","Strangulation - hanging","Blunt object - hammer, club, etc","Other or type unknown","Other or type unknown","Fire","Other or type unknown","Fire","Other or type unknown","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Other or type unknown","Strangulation - hanging","Other or type unknown","Firearm, type not stated","Other or type unknown","Other or type unknown","Fire","Other or type unknown","Handgun - pistol, revolver, etc","Knife or cutting instrument","Strangulation - hanging","Other or type unknown","Other or type unknown","Other or type unknown","Firearm, type not stated","Other gun","Strangulation - hanging","Other or type unknown","Other or type unknown","Other or type unknown","Other or type unknown","Other gun","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Rifle","Shotgun","Strangulation - hanging","Other or type unknown","Other or type unknown","Firearm, type not stated","Strangulation - hanging","Other or type unknown","Blunt object - hammer, club, etc","Strangulation - hanging","Explosives","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Knife or cutting instrument","Blunt object - hammer, club, etc","Fire","Other or type unknown","Other or type unknown","Fire","Fire","Other or type unknown","Other or type unknown","Blunt object - hammer, club, etc","Blunt object - hammer, club, etc","Fire","Strangulation - hanging","Strangulation - hanging","Fire","Other or type unknown","Other or type unknown","Knife or cutting instrument","Fire","Blunt object - hammer, club, etc","Fire","Fire","Strangulation - hanging","Fire","Strangulation - hanging","Strangulation - hanging","Explosives","Personal weapons, includes beating","Other or type unknown","Blunt object - hammer, club, etc","Drowning","Knife or cutting instrument","Knife or cutting instrument","Other or type unknown","Asphyxiation - includes death by gas","Shotgun","Asphyxiation - includes death by gas","Other or type unknown","Strangulation - hanging","Other or type unknown","Fire","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Handgun - pistol, revolver, etc","Knife or cutting instrument","Blunt object - hammer, club, etc","Personal weapons, includes beating","Other or type unknown","Other or type unknown","Knife or cutting instrument","Fire","Blunt object - hammer, club, etc","Strangulation - hanging","Drowning","Shotgun","Firearm, type not stated","Strangulation - hanging","Other or type unknown","Other or type unknown","Strangulation - hanging","Knife or cutting instrument","Other gun","Rifle","Knife or cutting instrument","Other or type unknown","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Firearm, type not stated","Other or type unknown","Strangulation - hanging","Shotgun","Knife or cutting instrument","Drowning","Other or type unknown","Other or type unknown","Other or type unknown","Other or type unknown","Drowning","Firearm, type not stated","Other or type unknown","Other gun","Strangulation - hanging","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Knife or cutting instrument","Strangulation - hanging","Drowning","Other or type unknown","Firearm, type not stated","Other or type unknown","Knife or cutting instrument","Other or type unknown","Fire","Asphyxiation - includes death by gas","Other gun","Other or type unknown","Firearm, type not stated","Blunt object - hammer, club, etc","Blunt object - hammer, club, etc","Strangulation - hanging","Knife or cutting instrument","Strangulation - hanging","Asphyxiation - includes death by gas","Other or type unknown","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Strangulation - hanging","Rifle","Other or type unknown","Asphyxiation - includes death by gas","Knife or cutting instrument","Knife or cutting instrument","Strangulation - hanging","Blunt object - hammer, club, etc","Strangulation - hanging","Narcotics or drugs, sleeping pills","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Strangulation - hanging","Strangulation - hanging","Blunt object - hammer, club, etc","Strangulation - hanging","Knife or cutting instrument","Blunt object - hammer, club, etc","Poison - does not include gas","Other gun","Other or type unknown","Handgun - pistol, revolver, etc","Fire","Other or type unknown","Blunt object - hammer, club, etc","Blunt object - hammer, club, etc","Fire","Other gun","Fire","Strangulation - hanging","Strangulation - hanging","Handgun - pistol, revolver, etc","Strangulation - hanging","Firearm, type not stated","Fire","Other or type unknown","Knife or cutting instrument","Blunt object - hammer, club, etc","Pushed or thrown out window","Personal weapons, includes beating","Other or type unknown","Other or type unknown","Firearm, type not stated","Shotgun","Other or type unknown","Other or type unknown","Drowning","Knife or cutting instrument","Firearm, type not stated","Asphyxiation - includes death by gas","Strangulation - hanging","Strangulation - hanging","Other or type unknown","Rifle","Firearm, type not stated","Fire","Knife or cutting instrument","Other or type unknown","Handgun - pistol, revolver, etc","Shotgun","Knife or cutting instrument","Other or type unknown","Firearm, type not stated","Blunt object - hammer, club, etc","Other or type unknown","Blunt object - hammer, club, etc","Other or type unknown"],[203,133,108,107,73,71,40,39,37,27,23,22,20,19,19,16,16,16,15,15,13,12,12,12,12,11,11,10,10,9,9,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[62,33,31,35,22,19,10,11,8,8,5,6,6,6,5,5,4,4,3,4,4,3,0,3,3,3,3,3,2,2,2,2,2,1,2,2,1,2,2,2,2,2,2,2,1,1,1,2,0,2,2,1,1,0,1,1,0,1,1,1,0,0,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[30.54,24.81,28.7,32.71,30.14,26.76,25,28.21,21.62,29.63,21.74,27.27,30,31.58,26.32,31.25,25,25,20,26.67,30.77,25,0,25,25,27.27,27.27,30,20,22.22,22.22,25,25,12.5,25,25,12.5,25,25,28.57,28.57,28.57,28.57,28.57,14.29,14.29,14.29,28.57,0,28.57,28.57,16.67,16.67,0,16.67,16.67,0,16.67,16.67,20,0,0,20,20,20,0,20,20,0,20,20,20,20,20,20,25,25,0,25,25,25,25,0,25,25,0,25,25,25,25,25,25,25,25,25,25,25,0,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,0,25,25,25,25,25,25,0,25,25,25,25,0,25,25,25,25,25,25,25,25,25,25,25,25,25,0,25,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>county_state<\/th>\n      <th>VicSex_label<\/th>\n      <th>Weapon_label<\/th>\n      <th>cases<\/th>\n      <th>solved<\/th>\n      <th>clearance<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Alright, we now have 325 clusters.</p>
+<p>Go to the search bar and type in “King, WA”</p>
+<p>Cases: 108. Solved: 31. Clearance: 28.7.</p>
+<p>Ridgeway’s 75-80 victims are probably among those.</p>
+<p>Chilling.</p>
+<hr />
+</div>
+<div id="expanding-the-scope-of-the-search" class="section level3">
+<h3>Expanding the scope of the search</h3>
+<p>Now that we have the basics of this “algorithm” down (it’s basically an illuminating way of grouping and wrangling data), we can add more customization.</p>
+<p>We don’t have exclude the genders of men and unknown.</p>
+<p>We can limit the scope to the latest 10 years of data.</p>
+<p>All by adding or adjusting filters.</p>
+<pre class="r"><code>countygrp2 &lt;- murders %&gt;%
+  # year filter here | remember &quot;:&quot; stands for &quot;through&quot;, so 2006:2016 is 2006 2007 2008 etc
+  filter(Year %in% 2006:2016) %&gt;% 
+  mutate(solved_num = ifelse(Solved_label==&quot;Yes&quot;, 1, 0)) %&gt;% 
+  group_by(county_state, VicSex_label, Weapon_label) %&gt;% 
+  summarize(cases=n(), solved=sum(solved_num)) %&gt;%
+  mutate(clearance=round(solved/cases*100,2)) %&gt;% 
+  filter(clearance &lt;= 33 &amp; cases &gt; 1) %&gt;% 
+  arrange(desc(cases))
+
+datatable(countygrp2)</code></pre>
+<div id="htmlwidget-3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320"],["Cook, IL","Essex, NJ","St Louis City, MO","Allegheny, PA","San Francisco, CA","Orleans, LA","Erie, NY","Alameda, CA","Suffolk, MA","Dallas, TX","Cuyahoga, OH","Allegheny, PA","Suffolk, MA","Genesee, MI","Delaware, PA","Monterey, CA","Monterey, CA","Camden, NJ","Contra Costa, CA","San Mateo, CA","Montgomery, AL","Erie, NY","Hartford, CT","St Louis City, MO","Duval, FL","San Francisco, CA","Jefferson, KY","St Louis, MO","Suffolk, NY","Jefferson, LA","Essex, NJ","Dallas, TX","Fairfield, CT","St Louis City, MO","Fulton, GA","St Louis City, MO","Dallas, AL","St Lucie, FL","Hennepin, MN","Montgomery, AL","Bexar, TX","Suffolk, NY","Atlantic, NJ","Union, NJ","Genesee, MI","Montgomery, AL","Orleans, LA","Chaves, NM","Grenada, MS","Dallas, TX","St Louis City, MO","Alameda, CA","Suffolk, MA","Sampson, NC","Anne Arundel, MD","Hopewell City, VA","Pitt, NC","Wyandotte, KS","Clark, OH","Delaware, PA","Duval, FL","Erie, PA","McLennan, TX","Mecklenburg, NC","Monterey, CA","Nassau, NY","Hennepin, MN","Macon, AL","Monterey, CA","Will, IL","Cook, IL","Dallas, AL","Glenn, CA","Jefferson, AR","Maricopa, AZ","Norfolk, MA","Ouachita, LA","Pulaski, MO","San Benito, CA","San Benito, CA","Santa Clara, CA","Yakima, WA","Catawba, NC","Honolulu, HI","Mendocino, CA","Darlington, SC","De Kalb, GA","Gwinnett, GA","Hamilton, OH","Jefferson, AL","Jefferson, TX","Lake, FL","Lamar, TX","Madera, CA","Madison, KY","McLennan, TX","Mercer, NJ","Peoria, IL","Pima, AZ","Santa Cruz, AZ","Tallapoosa, AL","Apache, AZ","Apache, AZ","Atlantic, NJ","Atlantic, NJ","Bartholomew, IN","Bucks, PA","Caddo, LA","Cameron, TX","Clark, OH","Clayton, GA","Cleveland, NC","Cleveland, NC","Clinton, MI","Cuyahoga, OH","Delaware, PA","Duval, FL","Flathead, MT","Garfield, CO","Genesee, MI","Independence, AR","Jefferson, KY","Kern, CA","Lake, IN","Lauderdale, TN","Leon, FL","Lincoln, NC","McKinley, NM","Merced, CA","Mercer, PA","Miami, Florida","Napa, CA","Orleans, LA","Pitt, NC","Pueblo, CO","Pulaski, MO","Rensselaer, NY","Sampson, NC","Smyth, VA","St Louis City, MO","Stanly, NC","Umatilla, OR","Ventura, CA","Ventura, CA","Vermilion, LA","Wayne, MI","Webster, IA","Wilson, NC","Wyandotte, KS","Anderson, SC","Baltimore City, MD","Clark, OH","Cook, IL","Coweta, GA","Currituck, NC","Curry, NM","Dallas, AL","Dallas, TX","Dallas, TX","Edgecombe, NC","Frederick, MD","Fulton, GA","Genesee, MI","Harford, MD","Harris, TX","King, WA","Lake, IN","Monroe, IN","Montgomery, AL","Nevada, CA","Oakland, MI","Page, VA","Perry, KY","Pike, KY","San Joaquin, CA","San Juan, NM","Santa Barbara, CA","Siskiyou, CA","Solano, CA","St Clair, AL","St Landry, LA","Tom Green, TX","Warren, OH","Adair, OK","Allegheny, PA","Anne Arundel, MD","Ascension, LA","Baltimore, MD","Bastrop, TX","Baxter, AR","Bay, MI","Berks, PA","Bibb, AL","Blue Earth, MN","Boise, ID","Bremer, IA","Buchanan, VA","Bullitt, KY","Burlington, NJ","Butler, AL","Cambria, PA","Cape Girardeau, MO","Caroline, VA","Cass, MO","Caswell, NC","Cattaraugus, NY","Centre, PA","Chesapeake City, VA","Cibola, NM","Clackamas, OR","Clark, AR","Coahoma, MS","Coffee, GA","Cole, MO","Colquitt, GA","Columbus, NC","Cook, IL","Cook, IL","Coosa, AL","Crawford, PA","Crenshaw, AL","Cumberland, NC","Cumberland, PA","Dallas, AL","Dare, NC","Daviess, MO","Del Norte, CA","Erie, PA","Escambia, AL","Essex, NJ","Falls Church City, VA","Fayette, TX","Fayette, WV","Florence, SC","Franklin, OH","Franklin, PA","Frederick, MD","Frederick, MD","Fresno, CA","Gaines, TX","Galveston, TX","Garfield, OK","Genesee, MI","Genesee, MI","Greensville, VA","Greenup, KY","Guadalupe, TX","Guilford, NC","Hamilton, OH","Hancock, MS","Harris, TX","Hempstead, AR","Henry, MO","Henry, VA","Hertford, NC","Hillsborough, FL","Howard, IN","Hudspeth, TX","Huntingdon, PA","Jackson, OH","Jasper, MO","Jefferson Davis, LA","Jefferson, LA","Klamath, OR","Lafourche, LA","Lauderdale, TN","Lawrence, AL","Lebanon, PA","Leflore, MS","Leflore, MS","Luzerne, PA","Maricopa, AZ","Maricopa, AZ","Marion, IN","Marshall, AL","Merced, CA","Mercer, PA","Mobile, AL","Monroe, FL","Monroe, FL","Muskingum, OH","Navajo, AZ","Newton, MO","Northampton, PA","Nueces, TX","Okaloosa, FL","Okfuskee, OK","Okmulgee, OK","Oneida, ID","Orangeburg, SC","Orleans, LA","Palm Beach, FL","Park, CO","Phillips, AR","Pike, MS","Pima, AZ","Pittsburg, OK","Polk, TX","Prince Edward, VA","Racine, WI","Ramsey, MN","Randolph, WV","Rock Island, IL","Rowan, NC","Sacramento, CA","Saginaw, MI","Sampson, NC","Schenectady, NY","Scioto, OH","Starr, TX","Starr, TX","Sumter, FL","Tallahatchie, MS","Tehama, CA","Tulare, CA","Tuscaloosa, AL","Williamsburg, SC","Williamson, TX","Wilson, NC","York, PA"],["Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Male","Male","Female","Female","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Female","Unknown","Male","Male","Male","Male","Male","Female","Male","Female","Male","Female","Female","Male","Male","Unknown","Male","Male","Female","Male","Male","Male","Female","Male","Male","Male","Female","Male","Male","Male","Unknown","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Male","Male","Male","Female","Female","Male","Male","Male","Female","Female","Male","Unknown","Male","Male","Female","Male","Female","Male","Female","Male","Female","Male","Male","Male","Female","Male","Male","Male","Female","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Female","Male","Male","Male","Female","Male","Female","Unknown","Male","Male","Male","Male","Female","Unknown","Female","Female","Male","Female","Female","Unknown","Male","Male","Male","Male","Female","Unknown","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Unknown","Male","Male","Male","Male","Male","Female","Male","Male","Male","Male","Female","Male","Female","Male","Female","Female","Male","Male","Male","Male","Male","Female","Male","Male","Female","Female","Male","Female","Male","Male","Unknown","Female","Unknown","Male","Male","Male","Female","Male","Unknown","Male","Male","Male","Female","Male","Female","Male","Female","Male","Unknown","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Female","Female","Male","Female","Male","Male","Male","Female","Male","Male","Female","Unknown","Female","Female","Female","Male","Male","Female","Male","Male","Male","Female","Male","Male","Female","Male","Female","Male","Unknown","Male","Male","Male","Female","Unknown","Female","Male","Male","Male","Male","Male","Female","Male","Female","Female","Male","Female","Female","Male","Male","Unknown","Male","Female","Female","Female","Male","Female","Male","Male","Male","Female","Male","Male","Female","Male","Female","Female","Male","Male","Male","Male","Male","Unknown","Female","Female","Female","Female"],["Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Rifle","Rifle","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Other gun","Firearm, type not stated","Handgun - pistol, revolver, etc","Other gun","Other or type unknown","Other or type unknown","Firearm, type not stated","Other gun","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Other gun","Firearm, type not stated","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Asphyxiation - includes death by gas","Firearm, type not stated","Handgun - pistol, revolver, etc","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Handgun - pistol, revolver, etc","Knife or cutting instrument","Shotgun","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Other gun","Firearm, type not stated","Rifle","Firearm, type not stated","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Other or type unknown","Firearm, type not stated","Other gun","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Blunt object - hammer, club, etc","Asphyxiation - includes death by gas","Other or type unknown","Rifle","Firearm, type not stated","Other or type unknown","Other or type unknown","Other or type unknown","Strangulation - hanging","Other gun","Personal weapons, includes beating","Personal weapons, includes beating","Fire","Shotgun","Handgun - pistol, revolver, etc","Personal weapons, includes beating","Other or type unknown","Rifle","Other or type unknown","Firearm, type not stated","Strangulation - hanging","Rifle","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Other or type unknown","Shotgun","Handgun - pistol, revolver, etc","Fire","Firearm, type not stated","Strangulation - hanging","Other gun","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Other gun","Other or type unknown","Rifle","Other gun","Firearm, type not stated","Rifle","Other or type unknown","Other or type unknown","Other gun","Handgun - pistol, revolver, etc","Other or type unknown","Asphyxiation - includes death by gas","Firearm, type not stated","Asphyxiation - includes death by gas","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Rifle","Other gun","Other or type unknown","Other or type unknown","Other or type unknown","Narcotics or drugs, sleeping pills","Fire","Other or type unknown","Other or type unknown","Fire","Fire","Blunt object - hammer, club, etc","Rifle","Other or type unknown","Other or type unknown","Fire","Firearm, type not stated","Knife or cutting instrument","Fire","Firearm, type not stated","Rifle","Blunt object - hammer, club, etc","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Rifle","Other or type unknown","Fire","Other or type unknown","Handgun - pistol, revolver, etc","Asphyxiation - includes death by gas","Other gun","Firearm, type not stated","Other or type unknown","Knife or cutting instrument","Handgun - pistol, revolver, etc","Other gun","Other or type unknown","Other or type unknown","Shotgun","Other or type unknown","Blunt object - hammer, club, etc","Firearm, type not stated","Firearm, type not stated","Knife or cutting instrument","Firearm, type not stated","Rifle","Blunt object - hammer, club, etc","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Other gun","Other or type unknown","Blunt object - hammer, club, etc","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Personal weapons, includes beating","Shotgun","Other or type unknown","Shotgun","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Other or type unknown","Handgun - pistol, revolver, etc","Firearm, type not stated","Fire","Knife or cutting instrument","Firearm, type not stated","Handgun - pistol, revolver, etc","Other or type unknown","Shotgun","Other or type unknown","Fire","Other gun","Firearm, type not stated","Other or type unknown","Fire","Firearm, type not stated","Strangulation - hanging","Blunt object - hammer, club, etc","Other gun","Fire","Other or type unknown","Knife or cutting instrument","Other or type unknown","Fire","Other gun","Handgun - pistol, revolver, etc","Other gun","Other or type unknown","Firearm, type not stated","Other or type unknown","Knife or cutting instrument","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Other or type unknown","Handgun - pistol, revolver, etc","Other or type unknown","Fire","Other or type unknown","Fire","Other gun","Firearm, type not stated","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Other or type unknown","Firearm, type not stated","Blunt object - hammer, club, etc","Fire","Explosives","Firearm, type not stated","Other gun","Firearm, type not stated","Fire","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Other or type unknown","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Strangulation - hanging","Other or type unknown","Narcotics or drugs, sleeping pills","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Blunt object - hammer, club, etc","Other gun","Fire","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Fire","Strangulation - hanging","Narcotics or drugs, sleeping pills","Firearm, type not stated","Rifle","Fire","Shotgun","Other or type unknown","Strangulation - hanging","Firearm, type not stated","Firearm, type not stated","Shotgun","Other or type unknown","Handgun - pistol, revolver, etc","Other or type unknown","Drowning","Other or type unknown","Firearm, type not stated","Other or type unknown","Other gun","Firearm, type not stated"],[4252,1041,596,462,396,368,328,320,264,230,212,201,200,191,184,169,163,118,104,94,91,74,71,71,70,64,55,55,55,49,47,44,44,44,40,32,31,31,26,26,22,22,18,18,17,16,16,15,15,14,14,12,12,11,10,10,10,10,9,9,9,9,9,9,9,9,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[1131,317,94,150,126,86,65,66,65,53,48,46,46,57,23,34,50,25,34,30,16,16,17,21,21,5,17,18,6,15,7,14,12,9,11,10,7,10,6,8,6,5,4,4,5,5,1,4,4,2,3,3,3,3,3,3,3,1,0,2,0,1,0,1,2,2,2,2,2,0,2,2,2,2,0,1,2,1,1,2,2,2,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[26.6,30.45,15.77,32.47,31.82,23.37,19.82,20.62,24.62,23.04,22.64,22.89,23,29.84,12.5,20.12,30.67,21.19,32.69,31.91,17.58,21.62,23.94,29.58,30,7.81,30.91,32.73,10.91,30.61,14.89,31.82,27.27,20.45,27.5,31.25,22.58,32.26,23.08,30.77,27.27,22.73,22.22,22.22,29.41,31.25,6.25,26.67,26.67,14.29,21.43,25,25,27.27,30,30,30,10,0,22.22,0,11.11,0,11.11,22.22,22.22,25,25,25,0,28.57,28.57,28.57,28.57,0,14.29,28.57,14.29,14.29,28.57,28.57,28.57,16.67,0,16.67,20,20,20,20,20,20,20,0,20,20,20,20,20,20,0,20,25,25,0,25,25,0,25,25,25,25,25,25,25,25,25,0,25,25,25,25,0,25,25,0,25,25,0,25,25,25,25,0,25,25,25,25,25,25,0,0,25,25,25,25,25,0,25,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>county_state<\/th>\n      <th>VicSex_label<\/th>\n      <th>Weapon_label<\/th>\n      <th>cases<\/th>\n      <th>solved<\/th>\n      <th>clearance<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Do you think a killer might be targeting a specific age group?</p>
+<p>You could filter the age like we did with years or we could create age categories with the data.</p>
+<p>Categorical data has been very useful so far. We can turn a continuous variable like age into a categorical variable by dividing it into bins.</p>
+<p>We can use <code>case_when()</code> with <code>mutate()</code> from the <strong>dplyr</strong> package.</p>
+<p>Let’s go back to the <strong>murders</strong> data frame to add this new variable: <em>age_group</em>.</p>
+<p>Then we’ll re-run code we created before with that new grouping variable.</p>
+<div class="notices tip" ><p>Remember, the “:” stand for through. So 0:14 means 0 through 14.</p>
+</div>
+
+<pre class="r"><code>murders &lt;- mutate(murders,
+                  age_group=case_when(
+                  VicAge %in% 0:14 ~ &quot;0-14&quot;,
+                  VicAge %in% 15:19 ~ &quot;15-19&quot;,
+                  VicAge %in% 20:50 ~ &quot;20-50&quot;,
+                  VicAge %in% 51:99 ~ &quot;51-99&quot;,
+                  TRUE ~ &quot;Unknown&quot;))
+
+countygrp3 &lt;- murders %&gt;%
+  filter(Year %in% 2006:2016) %&gt;% 
+  mutate(solved_num = ifelse(Solved_label==&quot;Yes&quot;, 1, 0)) %&gt;% 
+  group_by(county_state, VicSex_label, age_group, Weapon_label) %&gt;% 
+  summarize(cases=n(), solved=sum(solved_num)) %&gt;%
+  mutate(clearance=round(solved/cases*100,2)) %&gt;% 
+  filter(VicSex_label==&quot;Female&quot; &amp; clearance &lt;= 33 &amp; cases &gt; 1) %&gt;% 
+  arrange(desc(cases))
+
+datatable(countygrp3)</code></pre>
+<div id="htmlwidget-4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196"],["St Louis City, MO","Orleans, LA","Suffolk, MA","Alameda, CA","Bexar, TX","Cuyahoga, OH","Suffolk, MA","Bernalillo, NM","Duval, FL","Genesee, MI","Dallas, TX","Fulton, GA","Hennepin, MN","Marion, IN","St Louis City, MO","St Louis City, MO","Cook, IL","Delaware, PA","Fresno, CA","Delaware, PA","Saginaw, MI","Alameda, CA","Alameda, CA","Cook, IL","Dallas, TX","Erie, NY","Los Angeles, CA","Monterey, CA","Suffolk, NY","Alameda, CA","Alameda, CA","Atlantic, NJ","Bexar, TX","Clark, NV","Cook, IL","Cuyahoga, OH","Davidson, TN","Dougherty, GA","Douglas, NE","Durham, NC","East Baton Rouge, LA","Essex, NJ","Essex, NJ","Franklin, KY","Galveston, TX","Hartford, CT","Ingham, MI","Jefferson, KY","Lake, IN","Leon, FL","Monroe, NY","Nassau, NY","Orleans, LA","Orleans, LA","Philadelphia, PA","Pima, AZ","Pitt, NC","Robeson, NC","Shawnee, KS","Smyth, VA","St Louis City, MO","Washington, DC","Allegheny, PA","Anderson, SC","Clark, OH","Clark, OH","Clinton, MI","Cuyahoga, OH","Darlington, SC","Edgecombe, NC","Essex, NJ","Frederick, MD","Fresno, CA","Genesee, MI","Genesee, MI","Horry, SC","Jefferson, KY","Jefferson, LA","Lake, IN","Los Angeles, CA","Los Angeles, CA","Maricopa, AZ","Montgomery, AL","San Joaquin, CA","St Louis City, MO","St Louis City, MO","Tarrant, TX","Washington, DC","Wayne, MI","Alameda, CA","Allegheny, PA","Allen, IN","Bernalillo, NM","Bexar, TX","Bibb, GA","Bremer, IA","Bullitt, KY","Butler, AL","Cambria, PA","Chatham, GA","Clackamas, OR","Clarendon, SC","Clark, AR","Clark, NV","Cobb, GA","Coffee, GA","Cook, IL","Cook, IL","Cook, IL","Cumberland, NC","Cumberland, NC","Cuyahoga, OH","Cuyahoga, OH","Dallas, TX","Dallas, TX","De Kalb, GA","Dona Ana, NM","El Paso, TX","Erie, PA","Franklin, OH","Galveston, TX","Galveston, TX","Genesee, MI","Greensville, VA","Greenup, KY","Hamilton, TN","Hampden, MA","Harford, MD","Hertford, NC","Hood, TX","Hudson, NJ","Hudspeth, TX","Hughes, SD","Huntingdon, PA","Jackson, MI","Jefferson, LA","Jefferson, TX","Kitsap, WA","Knox, TN","Lake, FL","Leflore, MS","Lincoln, NC","Los Angeles, CA","Los Angeles, CA","Los Angeles, CA","Luzerne, PA","Luzerne, PA","Madison, AL","Mahoning, OH","Marion, IN","McKinley, NM","Mercer, PA","Mercer, PA","Monroe, FL","Monterey, CA","Monterey, CA","Montgomery, AL","Montgomery, AL","Montgomery, OH","Montgomery, OH","Nevada, CA","Northumberland, PA","Nueces, TX","Okfuskee, OK","Orange, FL","Page, VA","Palo Pinto, TX","Pickaway, OH","Pinal, AZ","Pinal, AZ","Pitt, NC","Pittsburg, OK","Polk, TX","Prince Georges, MD","Pulaski, MO","Racine, WI","Richmond, GA","Saline, KS","San Joaquin, CA","Scioto, OH","Spokane, WA","St Louis City, MO","St Louis, MO","Starr, TX","Tuscaloosa, AL","Umatilla, OR","Warren, NY","Washington, DC","Wayne, MI","Wayne, MI","Wayne, NC","Wayne, NC","Will, IL","Williamsburg, SC","Williamson, TX","Yakima, WA"],["Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female"],["20-50","20-50","20-50","20-50","20-50","51-99","20-50","20-50","20-50","20-50","51-99","20-50","20-50","20-50","15-19","20-50","51-99","20-50","20-50","51-99","20-50","20-50","20-50","0-14","51-99","15-19","15-19","20-50","Unknown","0-14","15-19","20-50","Unknown","Unknown","20-50","15-19","51-99","20-50","15-19","20-50","20-50","20-50","51-99","51-99","15-19","20-50","20-50","20-50","20-50","20-50","51-99","20-50","20-50","51-99","15-19","51-99","20-50","Unknown","20-50","20-50","20-50","0-14","15-19","51-99","20-50","20-50","20-50","51-99","0-14","20-50","51-99","0-14","15-19","15-19","51-99","15-19","51-99","20-50","Unknown","15-19","Unknown","15-19","51-99","0-14","20-50","51-99","51-99","51-99","Unknown","51-99","51-99","15-19","15-19","15-19","Unknown","0-14","20-50","51-99","20-50","15-19","20-50","0-14","0-14","51-99","15-19","20-50","0-14","15-19","20-50","20-50","Unknown","15-19","51-99","15-19","20-50","20-50","51-99","51-99","20-50","Unknown","15-19","51-99","0-14","Unknown","20-50","51-99","51-99","20-50","51-99","20-50","51-99","20-50","20-50","20-50","0-14","15-19","20-50","51-99","51-99","20-50","20-50","51-99","0-14","15-19","Unknown","20-50","51-99","15-19","51-99","51-99","20-50","20-50","51-99","20-50","20-50","51-99","0-14","15-19","51-99","Unknown","51-99","20-50","20-50","0-14","51-99","0-14","20-50","20-50","51-99","Unknown","51-99","20-50","20-50","Unknown","20-50","15-19","20-50","51-99","15-19","20-50","20-50","0-14","20-50","20-50","20-50","15-19","0-14","20-50","0-14","20-50","15-19","51-99","20-50","51-99","20-50","15-19"],["Firearm, type not stated","Firearm, type not stated","Handgun - pistol, revolver, etc","Firearm, type not stated","Other or type unknown","Other or type unknown","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Blunt object - hammer, club, etc","Blunt object - hammer, club, etc","Other or type unknown","Other or type unknown","Firearm, type not stated","Other or type unknown","Strangulation - hanging","Firearm, type not stated","Firearm, type not stated","Knife or cutting instrument","Firearm, type not stated","Blunt object - hammer, club, etc","Other or type unknown","Blunt object - hammer, club, etc","Other or type unknown","Handgun - pistol, revolver, etc","Other or type unknown","Firearm, type not stated","Other or type unknown","Handgun - pistol, revolver, etc","Rifle","Asphyxiation - includes death by gas","Other or type unknown","Other or type unknown","Asphyxiation - includes death by gas","Other or type unknown","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Other or type unknown","Other or type unknown","Personal weapons, includes beating","Handgun - pistol, revolver, etc","Knife or cutting instrument","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Strangulation - hanging","Firearm, type not stated","Other or type unknown","Other or type unknown","Blunt object - hammer, club, etc","Firearm, type not stated","Knife or cutting instrument","Blunt object - hammer, club, etc","Other gun","Personal weapons, includes beating","Firearm, type not stated","Other or type unknown","Blunt object - hammer, club, etc","Other or type unknown","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Personal weapons, includes beating","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Personal weapons, includes beating","Other or type unknown","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Knife or cutting instrument","Other or type unknown","Other or type unknown","Blunt object - hammer, club, etc","Fire","Firearm, type not stated","Firearm, type not stated","Handgun - pistol, revolver, etc","Rifle","Other or type unknown","Blunt object - hammer, club, etc","Asphyxiation - includes death by gas","Firearm, type not stated","Rifle","Personal weapons, includes beating","Firearm, type not stated","Other or type unknown","Strangulation - hanging","Other or type unknown","Other or type unknown","Firearm, type not stated","Knife or cutting instrument","Firearm, type not stated","Handgun - pistol, revolver, etc","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Firearm, type not stated","Asphyxiation - includes death by gas","Blunt object - hammer, club, etc","Other or type unknown","Firearm, type not stated","Rifle","Shotgun","Firearm, type not stated","Other or type unknown","Personal weapons, includes beating","Fire","Other or type unknown","Other gun","Rifle","Other or type unknown","Blunt object - hammer, club, etc","Fire","Other or type unknown","Strangulation - hanging","Blunt object - hammer, club, etc","Fire","Other or type unknown","Knife or cutting instrument","Other or type unknown","Other or type unknown","Other or type unknown","Knife or cutting instrument","Handgun - pistol, revolver, etc","Blunt object - hammer, club, etc","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Personal weapons, includes beating","Rifle","Other or type unknown","Knife or cutting instrument","Other or type unknown","Other or type unknown","Firearm, type not stated","Other or type unknown","Rifle","Rifle","Other or type unknown","Fire","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Other or type unknown","Other or type unknown","Other or type unknown","Blunt object - hammer, club, etc","Handgun - pistol, revolver, etc","Other or type unknown","Blunt object - hammer, club, etc","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Personal weapons, includes beating","Other or type unknown","Other or type unknown","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Other or type unknown","Fire","Handgun - pistol, revolver, etc","Other or type unknown","Blunt object - hammer, club, etc","Firearm, type not stated","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Handgun - pistol, revolver, etc","Other or type unknown","Other or type unknown","Handgun - pistol, revolver, etc","Blunt object - hammer, club, etc","Knife or cutting instrument","Other or type unknown","Firearm, type not stated","Other or type unknown","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Firearm, type not stated","Knife or cutting instrument","Firearm, type not stated","Personal weapons, includes beating","Fire","Other gun","Other gun","Handgun - pistol, revolver, etc","Firearm, type not stated","Firearm, type not stated","Other or type unknown","Firearm, type not stated"],[50,33,25,20,15,14,12,10,10,9,8,8,8,8,8,8,7,7,7,6,6,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[16,10,7,6,4,4,3,1,3,1,2,2,2,1,0,2,2,1,2,1,1,1,1,1,1,0,1,1,0,0,1,0,0,1,0,1,1,1,0,0,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[32,30.3,28,30,26.67,28.57,25,10,30,11.11,25,25,25,12.5,0,25,28.57,14.29,28.57,16.67,16.67,20,20,20,20,0,20,20,0,0,25,0,0,25,0,25,25,25,0,0,25,25,25,25,0,25,25,0,25,25,25,25,25,0,25,25,25,0,25,25,25,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>county_state<\/th>\n      <th>VicSex_label<\/th>\n      <th>age_group<\/th>\n      <th>Weapon_label<\/th>\n      <th>cases<\/th>\n      <th>solved<\/th>\n      <th>clearance<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Well done.</p>
+<p>I hope this was instrumental in showing you how to approach data to discover insights.</p>
+<p>Happy hunting.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/wrangling/strings/strings/" title="Handling strings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1535033655"></script>
+    <script src="/js/jquery.sticky.js?1535033655"></script>
+    <script src="/js/featherlight.min.js?1535033655"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1535033655"></script>
+    <script src="/js/highlight.pack.js?1535033655"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1535033655"></script>
+    <script src="/js/learn.js?1535033655"></script>
+    <script src="/js/hugo-learn.js?1535033655"></script>
+
+    <link href="/mermaid/mermaid.css?1535033655" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1535033655"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <p>© Copyright 2018, Andrew Tran</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

@@ -1,0 +1,74 @@
+---
+title: "Best practices for GitHub"
+description: "Transparency and avoiding issues"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "github", "github pages", "publishing"]
+weight: 4
+slug: github-pages
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/rKUYR9HC7N0?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+Just some suggestions on how to keep clean GitHub repositories.
+
+Remember that there are different types of audiences for your data and methodology.
+
+## Provide summarized data
+
+While it's excellent to include the scripts that detail the cleaning and wrangling process it took to turn raw data into the polished set you've published, there is a large audience of people who just want to download and play with the finalized data.
+
+Include a folder in the repo that you can point them to so they don't have to dig through your methodology to reproduce the summarized data.
+
+## .gitignore 
+
+Use [.gitignore](https://git-scm.com/docs/gitignore) to exclude certain files from being uploaded to GitHub. Such as:
+
+- Files larger than 100 mb
+    * GitHub will refuse to upload the data
+- Files with your keys or passwords
+- Extraneous files like your R history
+
+You can borrow [this .gitignore](https://github.com/wpinvestigative/kushner_eb5_census/blob/master/.gitignore) file for inspiration.
+
+## Include readmes and data dictionaries
+
+Let people know what they're dealing with.
+
+Be as specific as possible, including where you got the data from.
+
+- [Buzzfeed](https://github.com/BuzzFeedNews/everything) is a good model for how they index their story links and repos as a table
+
+<img src="/git/github/images/index.png">
+
+## Licensing
+
+Be sure to include a [license](https://help.github.com/articles/licensing-a-repository/) in each repo.
+
+This lets others know that it's open source, and sets the limits on how people can use, change, or distribute your work.
+
+For example, The Washington Post usually publishes their work in GitHub under an [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+This means users can share, copy, and redistribute our data in any medium or format and can remix, transform, and build upon our work. However, they must give appropriate credit and indicate if any changes were made. And they must not use it for commercial purposes and must also share their work under the same license.
+
+There's also the MIT license, which is [very similar](https://tldrlegal.com/license/mit-license).
+
+Have a discussion with your folks and remain consistent.
+
+## Please don't create monster data repos
+
+<img src="/git/github/images/fivethirtyeight.png">
+
+## To learn more about using git and GitHub with R
+
+* [http://happygitwithr.com/](http://happygitwithr.com/)
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

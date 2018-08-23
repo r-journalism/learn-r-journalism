@@ -1,0 +1,545 @@
+---
+title: "Charts with ggplot2"
+description: "Applying the grammar of graphics to data visualizations"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "ggplot2"]
+weight: 1
+slug: ggplot2
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/ZBewoHKyMcc?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Let’s load some data, create a chart, and break down the layers.</p>
+<p>We’ll some data from <a href="http://www.vulture.com/2013/04/leading-men-age-but-their-love-interests-dont.html">Vulture.com</a> comparing ages of leading men in movies compared to their love interests.</p>
+<pre class="r"><code>library(readr)
+
+ages &lt;- read_csv(&quot;data/ages.csv&quot;)
+
+head(ages)</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Movie               Genre actor    actor_age actress  actress_age budget
+##   &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;          &lt;int&gt;  &lt;dbl&gt;
+## 1 Mo&#39; Better Blues    drama Denzel …        35 Joie Lee          28     10
+## 2 Malcolm X           drama Denzel …        37 Angela …          34     34
+## 3 The Preacher&#39;s Wife drama Denzel …        41 Whitney…          33     40
+## 4 He Got Game         drama Denzel …        43 Milla J…          22     25
+## 5 Remember the Titans drama Denzel …        45 Micole …          29     30
+## 6 Training Day        drama Denzel …        46 Eva Men…          27     45</code></pre>
+<p>This is the data we’re working with.</p>
+<p>The variables/columns are Movie, Genre, actor, actor_age, actress, actress_age, budget.</p>
+<p>Here’s the chart. Run this in your console.</p>
+<pre class="r"><code># If you haven&#39;t installed the ggplot2 package yet, uncomment and run the line below
+#install.packages(&quot;ggplot2&quot;)
+
+library(ggplot2)
+
+ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) </code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/chart_example-1.png" width="672" /></p>
+<p>What’s this chart show? Men tend to be much older than women in movies.</p>
+<p>Let’s break the components of this chart down.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg1.png" />
+
+</div>
+<p>We start with with the <strong>data frame</strong>. We initialized the data viz function <code>ggplot()</code> by passing the <strong>ages</strong> data frame to it.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg1c.png" />
+
+</div>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg2.png" />
+
+</div>
+<p>Next, we have the dots representing the data we chose to visualize on the x and y axes.</p>
+<p>Mappings describe how aesthetics should relate to the variables in the data.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg2c.png" />
+
+</div>
+<p>Set the <strong>aesthetics</strong> (<code>aes()</code>) visual characteristics that represent your data.</p>
+<p>We are using the default geometric object and color but these are customizable:</p>
+<ul>
+<li>position</li>
+<li>size</li>
+<li>color</li>
+<li>shape</li>
+<li>transparency</li>
+<li>fill</li>
+</ul>
+<p>For each <strong>aesthetic</strong>, we can set the <strong>scales</strong> for how visual characteristic is converted to display values. We’ll practice this later on.</p>
+<p>Let’s take a look at the <code>geom_</code> function we add to <code>ggplot()</code>.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg2d.png" />
+
+</div>
+<p>Notice that <strong>ggplot2</strong> requires a plus between functions.</p>
+<p>This package was created before <strong>dplyr</strong> and others that implemented the <code>%&gt;%</code> piping.</p>
+<p>It’s a weird quirk that I find myself messing up often since the shortcut for piping is pretty much muscle memory to me.</p>
+<p>If you’re using ggplot: plus it!</p>
+<p>For everything else: pipe it!</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg2e.png" />
+
+</div>
+<p>So <code>geom_point()</code> is merely one type out of dozens of possible <em>geom_functions</em>, like <code>geom_bar()</code> or <code>geom_boxplot()</code>.</p>
+<p>No matter the <em>geom_function</em> you end up with, it still requires <em>mappings</em> to be passed to it.</p>
+<p>In this chart’s instance, it’s <strong>actor_age</strong> and <strong>actress_age</strong> from the <strong>ages</strong> data frame.</p>
+<p>This is basically all you need to create a chart in R. The <code>ggplot()</code> and the data and the <code>geom_</code> and mapping from <code>aes()</code>. You don’t have to run the other two lines below from our example.</p>
+<p>But we added more instructions for clarity.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg3.png" />
+
+</div>
+<p>The next line refers to some scaling options.</p>
+<p>Scaling can also be passed to the <code>aes()</code> of the <em>geom_function</em> but can also apply to the entire chart.</p>
+<p><img src="/visualizing/charts_with_ggplot/images/gg3c.png" /> In this chart, we used the <code>expand_limits()</code> function to force the x- and y-axis to start at 0.</p>
+<p>Otherwise, <code>ggplot()</code> would shift the scale so that the points in the chart fill up the entire chart. It assumes you don’t want that extraneous white space that doesn’t include data.</p>
+<p>But for this particular data, we want to emphasize the disparity in ages by starting at the zeroes. Plus, there is a large contingent of data visualization pros that might yell at you for not starting the base at zero (even though there might be some exceptions to that rule!).</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg4.png" />
+
+</div>
+<p>The last line in the stack of functions we have so far is the <code>ab_line()</code>. It’s not necessary, but it’s part of the layering options in <strong>ggplot2</strong>.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg4c.png" />
+
+</div>
+<p>Each function in <strong>ggplot2</strong> like <code>geom_abline()</code> allows for additional variables that can be passed to it. In this example, we specify the intercept should be at 1 and the color of the bar should be “light gray”. We accept the default width of the line by not passing it the variable to the <code>geom_abline()</code> at all.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/gg5.png" />
+
+</div>
+<p>Okay, let’s make some more charts.</p>
+<p>But first, consider the data.</p>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>It’s crucial to understand the structure of the data you have when working with <code>ggplot2()</code>.</p>
+<pre class="r"><code>head(ages)</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Movie               Genre actor    actor_age actress  actress_age budget
+##   &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;          &lt;int&gt;  &lt;dbl&gt;
+## 1 Mo&#39; Better Blues    drama Denzel …        35 Joie Lee          28     10
+## 2 Malcolm X           drama Denzel …        37 Angela …          34     34
+## 3 The Preacher&#39;s Wife drama Denzel …        41 Whitney…          33     40
+## 4 He Got Game         drama Denzel …        43 Milla J…          22     25
+## 5 Remember the Titans drama Denzel …        45 Micole …          29     30
+## 6 Training Day        drama Denzel …        46 Eva Men…          27     45</code></pre>
+<p>We have six variables (columns) in this data frame.</p>
+<p>Each row represents data for a single movie. That’s pretty tidy.</p>
+<p>It seems like an obvious format, but not all data sets have this structure by default.</p>
+<p>Recall the previous chapter when we were dealing with wide versus long data?</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/wide.png" />
+
+</div>
+<p>The variables for each race are spread out into columns.</p>
+<p>This looks great in a spreadsheet but it doesn’t work well with <strong>ggplot2</strong> because it isn’t tidy.</p>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/long.png" />
+
+</div>
+<p>That’s better. Each row is a different variable. This way, we could add another variable for percent solved or total cases per metro and race.</p>
+<p>It’s simply more versatile.</p>
+<p>Data works best in <code>ggplot()</code> in a tidy, long (tall) format.</p>
+</div>
+<div id="geoms" class="section level2">
+<h2>Geoms</h2>
+<p>Let’s go over some new <code>geom_</code> types.</p>
+<div id="simple-bar-plot" class="section level3">
+<h3>Simple bar plot</h3>
+<p>We’ll start with <code>geom_bar()</code> which is the most common type of chart you’ll need to make starting out.</p>
+<p>Notice that we are nesting <code>aes()</code> into <code>ggplot()</code> this time and not using the <code>method=</code> or the <code>data=</code> because they are not necessary.</p>
+<pre class="r"><code>ggplot(ages,
+    aes(x=actor)) +
+    geom_bar()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/bar-1.png" width="864" /></p>
+<p>Start keeping track of how many variables we’re using in each of these charts.</p>
+<p>For the one above, we started with <strong>one variable</strong> and sort of created a new one by counting the instances they appear in the data frame. We didn’t have to alter the data frame at all or summarize it for this chart to work.</p>
+<p>Common <code>geom_bar()</code> options:</p>
+<ul>
+<li>width</li>
+<li>fill</li>
+<li>color (border)</li>
+<li>position_dodge()</li>
+</ul>
+</div>
+<div id="stacked-bar-plot" class="section level3">
+<h3>Stacked bar plot</h3>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor, fill=Genre)) +
+  geom_bar()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/stacked_bar-1.png" width="864" /></p>
+</div>
+</div>
+<div id="aesthetics" class="section level2">
+<h2>Aesthetics</h2>
+<p>Before we move on to other chart types, let’s talk about what just happened in the chart above.</p>
+<p>The only difference between the bar plot and the stacked bar plot was that <code>, fill=Genre</code> was added to the <code>aes()</code> function.</p>
+<p><strong>Variable count:</strong> 2 (actor &amp; genre, if you don’t count the count of actor)</p>
+<p>Here’s a reminder that these are the aesthetic properties that can be set:</p>
+<ul>
+<li>position</li>
+<li>size</li>
+<li>color</li>
+<li>shape</li>
+<li>transparency</li>
+<li>fill</li>
+</ul>
+<div class="figure">
+<img src="/visualizing/charts_with_ggplot/images/aes.png" />
+
+</div>
+<p>What if we changed the <code>aes()</code> from <code>fill</code> to <code>color</code>?</p>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor, color=Genre)) +
+  geom_bar()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/stacked_bar_color-1.png" width="864" /></p>
+<p>Yikes, not as effective. But now you know about the option.</p>
+<p>When would this be a good option? Line charts or dots.</p>
+<p>Notice how the color and legend was added automatically?</p>
+<p><img src="/visualizing/charts_with_ggplot/images/autocolor.png" /> This is the default color list. There are ways to customize the colors, but we’ll go over that in the next section.</p>
+<p>Let’s go back to <code>fill=Genre</code> but this time with a twist.</p>
+<p>Take a look at the code and see if you can spot why it didn’t work like it did earlier.</p>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor), fill=Genre) +
+  geom_bar()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/stacked_bar_fill_fail-1.png" width="864" /></p>
+<p>Do you see it?</p>
+<p>It’s the parenthesis in <code>aes()</code> – it closed off before including <code>fill=Genre</code> so it wasn’t included. Try it this time correctly.</p>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor, fill=Genre)) +
+  geom_bar()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/stacked_bar_fill_fail2-1.png" width="864" /></p>
+<div id="grouped-bar-plot" class="section level3">
+<h3>Grouped bar plot</h3>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor, fill=Genre)) +
+  geom_bar(position=&quot;dodge&quot;)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/grouped_bar_plot-1.png" width="864" /></p>
+<p>So this chart was similar to the stacked bar plot above, but this time <code>position=&quot;dodge&quot;</code> was passed to the <code>geom_bar()</code> function.</p>
+<p>This tells ggplot to group the bar plot.</p>
+<p>This is useful for easier comparison within groups.</p>
+</div>
+<div id="spinogram" class="section level3">
+<h3>Spinogram</h3>
+<p>It’s simple to turn a stacked bar plot into a percent-based chart.</p>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actor, fill=Genre)) +
+  geom_bar(position=&quot;fill&quot;)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/spinogram-1.png" width="864" /></p>
+<p>This type of chart allows for a greater understanding of the proportion compared to other groups.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/x4OMSY2kz8M?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="box-plot" class="section level3">
+<h3>Box plot</h3>
+<p>You’ll see this type of chart often in research papers.</p>
+<p>It succinctly summarizes the distribution of numbers in each category we’ve set: actors.</p>
+<pre class="r"><code>ggplot(ages, aes(x=actor, y=actress_age)) +
+  geom_boxplot()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/box_whiskers-1.png" width="672" /></p>
+<p>The height of the line is the max and min of the numbers in the y axis: actress ages.</p>
+<p>The top of the box is the top quartile and the bottom of the box is the bottom quartile. The line in the middle is the median age. That floating dot? Considered an outlier.</p>
+<p>Common <code>geom_boxplot()</code> options:</p>
+<ul>
+<li>fill</li>
+<li>color</li>
+<li>notch (=TRUE or FALSE)</li>
+<li>outlier. color shape size</li>
+</ul>
+</div>
+<div id="violin-plot" class="section level3">
+<h3>Violin plot</h3>
+<p>This is another way to show distribution of numbers.</p>
+<pre class="r"><code>ggplot(ages, aes(x=actor, y=actress_age)) +
+  geom_violin()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/violin-1.png" width="864" /></p>
+<p>The wider the diameter, the more numbers there are. It’s a bit more intuitive to follow.</p>
+<p><strong>Variable count:</strong> 2 - <em>actress_age</em> and <em>actor</em></p>
+</div>
+</div>
+<div id="scaling" class="section level2">
+<h2>Scaling</h2>
+<p>Useful to transform or rescale the data with.</p>
+</div>
+<div id="geom_histogram" class="section level2">
+<h2>geom_histogram</h2>
+<pre class="r"><code>ggplot(data=ages, aes(x=actor_age)) +
+  geom_histogram(binwidth=1)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/scaling1-1.png" width="672" /></p>
+<p>Common <code>geom_histogram()</code> options:</p>
+<ul>
+<li>binwidth</li>
+<li>color (border)</li>
+<li>fill</li>
+</ul>
+<p><strong>Applying a logorithmic scale</strong></p>
+<p>It makes more sense to apply scalar transformations to while plotting rather than altering the data set itself.</p>
+<pre class="r"><code>ggplot(data=ages, aes(x=actor_age)) +
+  geom_histogram() + scale_x_log10()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/scaling2-1.png" width="672" /></p>
+<div id="kernel-density-plot" class="section level3">
+<h3>Kernel density plot</h3>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actress_age)) +
+  geom_density(fill=&quot;red&quot;)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/kernel-1.png" width="864" /> Common <code>geom_density()</code> options:</p>
+<ul>
+<li>fill</li>
+<li>color</li>
+<li>alpha</li>
+</ul>
+<pre class="r"><code>ggplot(data=ages,
+  aes(x=actress_age, fill=actor)) +
+  geom_density(alpha=.3)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/kernel2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="dot-plot" class="section level2">
+<h2>Dot plot</h2>
+<pre class="r"><code>ggplot(ages,
+       aes(x=actress_age, y=Movie)) +
+  geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/dotplot-1.png" width="768" /></p>
+<div id="line-plot" class="section level3">
+<h3>Line plot</h3>
+<p>Let’s start by summarizing the ages of the actresses per actor.</p>
+<pre class="r"><code>library(dplyr)
+
+avg_age &lt;- ages %&gt;% 
+  group_by(actor) %&gt;%
+  mutate(age_diff = actor_age-actress_age) %&gt;% 
+  summarize(average_age_diff = mean(age_diff))
+
+ggplot(avg_age, aes(x=actor, y=average_age_diff, group=1)) +
+  geom_line()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/lineplot-1.png" width="864" /></p>
+<p><strong>Variable count:</strong> 2 - the new mutated variable <em>average_age_diff</em> and <strong>actor</strong></p>
+<p>Don’t forget, we can add more layers.</p>
+<p>Let’s make the same chart above but with dots, too.</p>
+<pre class="r"><code>ggplot(avg_age, aes(x=actor, y=average_age_diff, group=1)) +
+  geom_line() +
+  geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/dot_line-1.png" width="864" /></p>
+<p>Does this make sense as a visualization? Mmm… nah.</p>
+<p>Never use a line chart to chart anything across an axis that doesn’t represent something continuous.</p>
+<p>Common <code>geom_point()</code> options:</p>
+<ul>
+<li>color</li>
+<li>fill</li>
+<li>alpha</li>
+<li>shape</li>
+<li>size</li>
+</ul>
+</div>
+<div id="scatterplot-with-fit" class="section level3">
+<h3>Scatterplot with fit</h3>
+<p>We’ve made a scatter plot before.</p>
+<p>This time, let’s add a <code>geom_smooth()</code> layer.</p>
+<pre class="r"><code>ggplot(ages,
+      aes(x=actor_age,
+          y=actress_age)) +
+  geom_point() +
+  geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/scatter_fit-1.png" width="672" /></p>
+<p>We can customize it and throw in a linear regression line. Notice the <code>~</code> which is used often in statistical analysis formulas.</p>
+<pre class="r"><code>ggplot(ages,
+      aes(x=actor_age,
+          y=actress_age)) +
+  geom_point() +
+  geom_smooth(method=&quot;lm&quot;,
+              formula=y~x)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/scatter_fit_lm-1.png" width="672" /></p>
+</div>
+</div>
+<div id="grouping" class="section level2">
+<h2>Grouping</h2>
+<pre class="r"><code>ggplot(data=ages,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor)) +
+  geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/grouping1-1.png" width="672" /></p>
+<p><strong>Variable count:</strong> 3! We’re working with <em>actor_age</em>, <em>actress_age</em>, and <em>actor</em>.</p>
+<p>See how we’re able to start packing more information into a chart with a line of code?</p>
+<p>When you’re exploring data visually, this might help surface insights you wouldn’t notice by just looking at the raw data.</p>
+<p>Everything’s still pretty clustered in this chart so you might only be able to notice outliers like Tom Cruise and Johnny Depp on the bottom left. But everything in the middle is kinda just too much.</p>
+<p>Let’s go crazy and add another variable.</p>
+<pre class="r"><code>ggplot(data=ages,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           shape=Genre)) +
+  geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/grouping2-1.png" width="672" /></p>
+<p><strong>Variable count:</strong> 4! We’re working with <em>actor_age</em>, <em>actress_age</em>, <em>actor</em>, and now <em>Genre</em>.</p>
+<p>This looks not good.</p>
+<p>Why did we do this?? I just wanted to show you that the shapes option exist. You’ll probably never use it.</p>
+<p>Okay, what if we try keeping the color and shapes to one variable: <em>actor</em>?</p>
+<pre class="r"><code>ggplot(data=ages,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           shape=actor)) +
+  geom_point()</code></pre>
+<pre><code>## Warning: The shape palette can deal with a maximum of 6 discrete values
+## because more than 6 becomes difficult to discriminate; you have 7.
+## Consider specifying shapes manually if you must have them.</code></pre>
+<pre><code>## Warning: Removed 10 rows containing missing values (geom_point).</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/grouping3-1.png" width="672" /></p>
+<p>Nope, still not great. Plus, there are only a limited amount of shapes to pull from.</p>
+<p>Did you see that warning?</p>
+<pre><code>## Warning: Removed 10 rows containing missing values (geom_point).</code></pre>
+<p>That’s because it couldn’t find a shape for Tom Hanks. Hanks was left off the chart.</p>
+<p>Don’t you feel horrible? Tom Hanks is the nicest guy ever.</p>
+<p>Like colors, you should limit the palette so it doesn’t confuse readers.</p>
+<div id="scatterplot-with-color-and-size" class="section level3">
+<h3>Scatterplot with color and size</h3>
+<p>Let’s swap out <em>Genre</em> for another variable that might make more sense to add to the visualization: <em>budget</em>.</p>
+<pre class="r"><code>ggplot(data=ages,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           size=budget)) +
+  geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/grouping4-1.png" width="672" /></p>
+<p><strong>Variable count:</strong> 4! We’re working with <em>actor_age</em>, <em>actress_age</em>, <em>actor</em>, and now <em>Genre</em>.</p>
+<p>Lots of data being communicated to readers here. The legends were auto-generated.</p>
+</div>
+</div>
+<div id="coords" class="section level2">
+<h2>Coords</h2>
+<p>You’ll see <strong>stats</strong> in the <code>geom_bar()</code> function. This is the statistical transformations that summarize data. In this instance we’re setting it to <code>&quot;identity&quot;</code> because we want the bars to represent the numbers in the <code>y</code> in <code>aes()</code>, not the count of it.</p>
+<ul>
+<li>counts</li>
+<li>means</li>
+<li>trend lines</li>
+</ul>
+<p>We’re going to alter the coordinates of the chart so that we get a horizontal chart instead of the default vertical one.</p>
+<p>The <code>coord_flip()</code> option flips a chart you’ve been working on from vertical to horizontal or horizontal to vertical.</p>
+<pre class="r"><code>ggplot(data = avg_age, aes(x= actor, y=average_age_diff)) +
+    geom_bar(stat=&quot;identity&quot;) +
+    coord_flip()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/coords-1.png" width="672" /></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/xjnj-rJwd6A?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="facets" class="section level2">
+<h2>Facets</h2>
+<p>Remember how that big scatter plot above had all the different colors on one viz and it was all clustered together?</p>
+<p>It’s simple to break those out into individual charts.</p>
+<p>This is sometimes referred to as “small multiples”.</p>
+<pre class="r"><code>ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) +
+   facet_grid(Genre~actor)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/facet_grid-1.png" width="864" /></p>
+<p><strong>Variable count:</strong> 4! - We’re working with <em>actor_age</em>, <em>actress_age</em>, <em>actor</em>, and also <em>Genre</em>.</p>
+<p>{{% notice note %}} Take a moment to appreciate how easy this was. This is a pain in the ass in other languages, like D3. {{% /notice %}}</p>
+<p>Want to add another variable? Let’s do it. Add <code>size=budget</code> the <code>geom_point()</code>.</p>
+<pre class="r"><code>ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age, size=budget)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) +
+   facet_grid(Genre~actor)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/facet_grid_more-1.png" width="864" /></p>
+<p><strong>Variable count:</strong> 5! - We’re working with <em>actor_age</em>, <em>actress_age</em>, <em>actor</em>, and also <em>Genre</em> AND <em>budget</em>. The sizing kinda jumbles up the circles in some, but keep playing around with alpha or change the size of the chart, maybe. You can see it’s quite easy to play around with the options until you find the right balance.</p>
+<p>This is all possible thanks to the tidiness of the data structure.</p>
+<p>The variables might contain more than one group but it’s all tied back to rows with each individual movie.</p>
+<p>Here are other types of ways to create “small multiples” through facets.</p>
+<ul>
+<li><code>facets_grid(genre~actor)</code></li>
+<li><code>facets_grid(. ~ actor)</code> - just columns</li>
+<li><code>facets_grid(actor ~ .)</code> - just rows</li>
+<li><code>facets_wrap(~ var, ncol=#)</code> - one classification variable wrapped to fill page</li>
+</ul>
+<pre class="r"><code>ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) +
+   facet_grid(.~actor)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/facet_grid2-1.png" width="672" /></p>
+<p>You don’t have to use two variables in <code>facet_grid()</code> – you can just use one and it’ll break out the charts based on where the <code>~</code> is in relation to the variable and the <code>.</code>.</p>
+<p>The chart above had <code>facet_wrap(.~actor)</code> so the grid is split vertically.</p>
+<p>If it was swapped to <code>facet_wrap(actor~.)</code> then the grid will split by row.</p>
+<pre class="r"><code>ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) +
+   facet_grid(actor~.)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/facet_grid3-1.png" width="672" /></p>
+<p>I find myself using <code>facet_wrap()</code> more often because I can customize the number of columns in the small multiples with <code>ncol=</code>.</p>
+<pre class="r"><code>ggplot(data=ages) +
+   geom_point(mapping=aes(x=actor_age, y=actress_age)) + 
+   expand_limits(x = 0, y = 0) +
+   geom_abline(intercept=0, col=&quot;light gray&quot;) +
+   facet_wrap(~actor, ncol=4)</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/facet_wrap-1.png" width="864" /></p>
+</div>
+<div id="global-versus-local" class="section level2">
+<h2>Global versus Local</h2>
+<p>The layers in your <code>ggplot()</code> chart can be customized in nuanced ways.</p>
+<p>Everything nested in the initial <code>ggplot()</code> call will be considered global and apply to the rest of the layers.</p>
+<pre class="r"><code>ggplot(ages,
+      aes(x=actor_age,
+          y=actress_age)) +
+      geom_point()</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/global-1.png" width="864" /></p>
+<p>So in the chart above, <code>aes()</code> with <em>actor_age</em> and <em>actress_age</em> are in the x and y globally.</p>
+<p>But I can also pass <code>aes()</code> to the <code>geom_point()</code> layer, which will make that local and apply to that layer only.</p>
+<pre class="r"><code>ggplot(ages,
+      aes(x=actor_age,
+          y=actress_age)) +
+      geom_point(aes(color=actor))</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/local-1.png" width="864" /></p>
+<p>You can also set data locally.</p>
+<p>This is very useful if you want to highlight a specific subset from the data.</p>
+<pre class="r"><code># Let&#39;s make a copy of the  minus the actor variable so it can&#39;t be faceted
+
+ages_copy &lt;- ages %&gt;% select(-actor)
+
+ggplot(data=ages,
+      aes(x=actor_age,
+          y=actress_age,
+          color=actor)) +
+      geom_point(data=ages_copy, color=&quot;grey&quot;) +
+      geom_point() +
+      facet_wrap(~actor) +
+      theme(legend.position=&quot;none&quot;) # This removes the legend</code></pre>
+<p><img src="/visualizing/charts_with_ggplot/2018-05-27-ggplot_files/figure-html/local2-1.png" width="864" /></p>
+<p>We were able to use different data sets. Globally, we wanted to use the <strong>ages</strong> data frame because we were going to facet it.</p>
+<p>We needed a second data set without the <em>actor</em> variable to plot in a background layer and set the color manually to “grey” (go back to the code above and this time put <code>color=&quot;grey&quot;</code> in <code>aes()</code> and see the difference). This was the first <code>geom_point()</code> layer referenced locally.</p>
+<p>The second <code>geom_point()</code> built a scatter plot based on the global data set in <code>ggplot()</code>.</p>
+<p>This type of chart really improves on that first grouped scatter plot because it makes it easier to see each individual group in the context to the rest of the data.</p>
+<hr />
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-4/#section-ggplot2">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are on the <a href="https://learn.r-journalism.com/en/visualizing/">intro page</a> to this section.</p>
+<hr />
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next steps</h2>
+<p>With some practice and understanding of <a href="https://ggplot2.tidyverse.org/reference/#section-layer-geoms">basic geom-types</a> you can quickly iterate through different ways to visualize your data.</p>
+<p>Once your data is structured correctly, you can use <strong>ggplot2</strong> to slice, group, and facet data visually multiple ways until you find something worth elaborating on.</p>
+<p>What is being communicated? What information is left out or obscured?</p>
+<p>Going through these examples, you saw how shapes, layout, the number of variables, etc, all matter. Swapping out geoms and aesthetics. Different combinations communicated better than others. It all depends on the structure of the data and what it contains.</p>
+<p>By visualizing data with the grammar of graphics, you’ll approach data in a flexible new way.</p>
+<p>Great, now let’s do more with charts including how to move beyond exploring the data visually and how to turn get these charts to publication quality.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

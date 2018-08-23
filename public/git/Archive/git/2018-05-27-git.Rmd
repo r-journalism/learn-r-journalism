@@ -1,0 +1,10 @@
+---
+title: "Setting up, using Git"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "version control"]
+weight: 1
+slug: git
+---
+

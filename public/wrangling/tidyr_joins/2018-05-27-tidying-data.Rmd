@@ -1,0 +1,26 @@
+---
+title: "Tidying and joining data"
+description: "Learn how to tidy up and join data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dplyr"]
+weight: 2
+slug: tidyr-joins
+---
+
+We're going to learn a couple new concepts while digging through this **murders** database.
+
+Do you st
+
+# tidyr
+
+# Joining data
+
+![](/wrangling/joining/images/leftjoin.png)
+![](/wrangling/joining/images/rightjoin.png)
+![](/wrangling/joining/images/fulljoin.png)
+![](/wrangling/joining/images/innerjoin.png)
+
+
+

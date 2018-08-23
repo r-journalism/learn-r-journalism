@@ -1,0 +1,132 @@
+---
+title: "Installing git"
+description: "On a Mac and PC"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "version control"]
+weight: 1
+slug: installing-git
+---
+
+## On a mac
+
+We're going to the process that Ben Welsh has already described on his site at [firstpythonnotebook.org](http://www.firstpythonnotebook.org/). 
+
+And the first step is to check if Git is already installed. 
+
+Git should be installed automatically on Macs. 
+
+Click on the magnifying glass to search in the top right and search for/open up terminal. 
+
+![](/git/installing_git/images/macterminal.png)
+
+And just type in this command 
+
+```
+git --version
+```
+
+And I got this:
+
+```
+git version 2.15.2 (Apple Git-101.1)
+```
+
+
+Alright, I have Git version 2.15.2. 
+
+And if there was a blank or there was if it gave back an error, that means you don't have Git installed. 
+
+So if you have an older version or you don't have it installed then just go to the website: [git-scm.com](https://git-scm.com/).
+
+![](/git/installing_git/images/downloadmac.png)
+
+Now you might get an error that says can't be open the file because it's from an unidentified developer. 
+
+![](/git/installing_git/images/developer_mac.png)
+
+
+Go ahead and click OK. 
+
+You're going to need administrative privileges for this part. So go back to search. Pop open settings. And click on security and privacy.
+
+![](/git/installing_git/images/security.png)
+
+Now under general there will be a message that says this package was blocked from opening because it's not from an unidentified developer.
+
+![](/git/installing_git/images/open_mac.png)
+
+Click on the button open anyway. Click open anyway. And now fill in your username and password.
+
+The installer will pop open. 
+
+Install the software, fill in your username and password when prompted.
+
+Close terminal and then reopen it.
+
+Type in 
+
+```
+git --version
+```
+
+And now I have
+
+```
+git version 2.18.0
+```
+
+### Set up your identity
+
+In the terminal, type in the command
+
+```
+git config --global user.email "your@email.com"
+git config --global user.name "your name"
+```
+
+That's it. You're ready for the next step.
+
+## On a PC
+
+So the steps do this is right here in this notepad. So first thing we can do is check if we already have Git installed. And to do that. We just need to go to command which is down here. 
+
+Under search type in CMD first thing that'll pop up click on that and type in
+
+```
+git --version 
+```
+
+If Git is not recognized as an internal or external command, that means it's not installed yet.
+
+Go to [gitforwindows.org](https://gitforwindows.org)
+
+Click download and unzip and run the exe file.
+
+You'll need administrative privileges.
+
+Click all the defaults.
+
+Close the CMD. And then reopen it because you have to restart the terminal to make the changes go through.
+
+Once again, type in 
+
+```
+git --version
+```
+
+Finally, type in the CMD/terminal
+
+```
+git config --global user.email "your@email.com"
+git config --global user.name "your name"
+```
+
+You're all set and ready to move on to the next section.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

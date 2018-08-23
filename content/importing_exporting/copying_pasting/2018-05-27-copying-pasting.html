@@ -1,0 +1,128 @@
+---
+title: "Copying and pasting data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "copying", "pasting"]
+weight: 5
+slug: copying-pasting
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/3W9m2iyfoGk?t=2s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.</p>
+<p>I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.</p>
+<p>Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</p>
+<p><a href="https://github.com/MilesMcBain/datapasta">Datapasta</a> skips those steps and lets users copy data structured in a table from somewhere else and paste it directly into RStudio.</p>
+<p><strong>Sometimes you just want to play around with the data right away.</strong></p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta.gif" alt="Datapasta in action" />
+<p class="caption">Datapasta in action</p>
+</div>
+<p>{{% notice note %}} I’m going to show you how to use <strong>datapasta</strong> but <em>only</em> because I’m assuming you’ll go back and bring the data in correctly later on as you’re adding documentation to your project. {{% /notice %}}</p>
+<p>What is <code>tribble()</code>? It’s a new package that lets you build data frames in a more human-readable way. <a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html">Check out tibble</a>.</p>
+<p>Datapasta depends on keyboard shortcuts and using RStudio. That’s why you’ll see things magically appear in the GIF above without any clear commands. I’ll explain below.</p>
+<div id="install-and-load-the-packages-below" class="section level3">
+<h3>Install and load the packages below</h3>
+<pre class="r"><code># install.packages(&quot;datapasta&quot;)
+library(datapasta)
+
+# install.packages(&quot;tibble&quot;)
+library(tibble)</code></pre>
+<p>Now go to <strong>Tools &gt; Addins &gt; Browse Addins…</strong></p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta1.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Next, click the <strong>Keyboard Shortcuts</strong> button.</p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta2.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Now, click add the keyboard shorts for each type of data you’re creating in the <strong>Shortcuts</strong> column. You’ll have to click in the blank space in the <strong>Shortcuts</strong> column.</p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datap.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Those are the recommended shortcut commands, but create your own custom one if you want.</p>
+<p>Let’s go to the Internet Broadway Database and look up some <a href="https://www.ibdb.com/grosses-production/hamilton-499521/1">Hamilton statistics</a>.</p>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/datapasta4.png" alt="Browse" />
+<p class="caption">Browse</p>
+</div>
+<p>Select the data in the table and go over to RStudio and use your shortcut to bring in the tibble (for me, it was shift+cmd+T).</p>
+<p>You’ll get something like this.</p>
+<pre class="r"><code>tribble(
+    ~Week.Ending,       ~Gross, ~X..Gross.Pot., ~Attendance, ~X..Capacity, ~X..Previews, ~X..Perf.,
+  &quot;May 22, 2016&quot;, &quot;$1,764,808&quot;,         &quot;132%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;May 15, 2016&quot;, &quot;$1,686,168&quot;,         &quot;126%&quot;,    &quot;10,736&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 8, 2016&quot;, &quot;$1,833,473&quot;,         &quot;137%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 1, 2016&quot;, &quot;$1,818,758&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 24, 2016&quot;, &quot;$1,813,024&quot;,         &quot;136%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 17, 2016&quot;, &quot;$1,678,620&quot;,         &quot;126%&quot;,    &quot;10,732&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 10, 2016&quot;, &quot;$1,813,655&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Apr 3, 2016&quot;, &quot;$1,822,594&quot;,         &quot;137%&quot;,    &quot;10,752&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 27, 2016&quot;, &quot;$1,719,570&quot;,         &quot;129%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 20, 2016&quot;, &quot;$1,740,104&quot;,         &quot;130%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 13, 2016&quot;, &quot;$1,758,555&quot;,         &quot;132%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Mar 6, 2016&quot;, &quot;$1,766,223&quot;,         &quot;132%&quot;,    &quot;10,751&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 28, 2016&quot;, &quot;$1,755,010&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 21, 2016&quot;, &quot;$1,750,924&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8
+  )</code></pre>
+<p>I’ve heard there are some errors with this process. This happens if the percent signs didn’t convert into Xs so it failed because of special characters. You might need to manually replaces those by hand before running the command in the console.</p>
+<p>Don’t forget to assign it to an object</p>
+<pre class="r"><code>new_table &lt;- tribble(
+    ~Week.Ending,       ~Gross, ~X..Gross.Pot., ~Attendance, ~X..Capacity, ~X..Previews, ~X..Perf.,
+  &quot;May 22, 2016&quot;, &quot;$1,764,808&quot;,         &quot;132%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;May 15, 2016&quot;, &quot;$1,686,168&quot;,         &quot;126%&quot;,    &quot;10,736&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 8, 2016&quot;, &quot;$1,833,473&quot;,         &quot;137%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;May 1, 2016&quot;, &quot;$1,818,758&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 24, 2016&quot;, &quot;$1,813,024&quot;,         &quot;136%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 17, 2016&quot;, &quot;$1,678,620&quot;,         &quot;126%&quot;,    &quot;10,732&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Apr 10, 2016&quot;, &quot;$1,813,655&quot;,         &quot;136%&quot;,    &quot;10,754&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Apr 3, 2016&quot;, &quot;$1,822,594&quot;,         &quot;137%&quot;,    &quot;10,752&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 27, 2016&quot;, &quot;$1,719,570&quot;,         &quot;129%&quot;,    &quot;10,755&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 20, 2016&quot;, &quot;$1,740,104&quot;,         &quot;130%&quot;,    &quot;10,753&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Mar 13, 2016&quot;, &quot;$1,758,555&quot;,         &quot;132%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+   &quot;Mar 6, 2016&quot;, &quot;$1,766,223&quot;,         &quot;132%&quot;,    &quot;10,751&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 28, 2016&quot;, &quot;$1,755,010&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8,
+  &quot;Feb 21, 2016&quot;, &quot;$1,750,924&quot;,         &quot;131%&quot;,    &quot;10,756&quot;,       &quot;102%&quot;,            0,         8
+  )</code></pre>
+<p>How’s it look?</p>
+<pre><code>View(new_table)
+</code></pre>
+<div class="figure">
+<img src="/importing_exporting/copying_pasting/images/new_table.png" />
+
+</div>
+<p>Simple!</p>
+<p>Now you can now clean up the column names and up by taking out commas, dollar signs, percent signs, etc, so you can do some analysis or visualization of the data. (We’ll get into that later)</p>
+<p>Why did we use tibble instead of the shortcut to build a dataframe? Well, the tibble package is more forgiving of bringing in information with odd characters. If you used the shortcut to bring in the data frame via <strong>shift+cmd+D</strong>, RStudio would’ve given you an error.</p>
+</div>
+<div id="using-datapasta-with-vectors" class="section level2">
+<h2>Using datapasta with vectors</h2>
+<p>Sometimes you don’t want a whole dataframe and just want a an array.</p>
+<p>Use the shortcut to paste as vector <strong>(shift+cmd+V)</strong> would turn a single copied row of that Hamilton data into</p>
+<pre class="r"><code>c(&quot;May 22&quot;, &quot; 2016&quot;, &quot;$1&quot;, &quot;764&quot;, &quot;808&quot;, &quot;132%&quot;, &quot;10&quot;, &quot;755&quot;, &quot;102%&quot;, &quot;0&quot;, &quot;8&quot;)</code></pre>
+<pre><code>##  [1] &quot;May 22&quot; &quot; 2016&quot;  &quot;$1&quot;     &quot;764&quot;    &quot;808&quot;    &quot;132%&quot;   &quot;10&quot;    
+##  [8] &quot;755&quot;    &quot;102%&quot;   &quot;0&quot;      &quot;8&quot;</code></pre>
+<p>An alternate way to do it is to paste each element on its own separate line, which is nice if you have an extremely long list of data and don’t want to have to scroll right to find an element. The shortcut I recommend you setting up is <strong>shift+cmd+alt+V</strong></p>
+<pre class="r"><code>c(&quot;May 22&quot;,
+  &quot; 2016&quot;,
+  &quot;$1&quot;,
+  &quot;764&quot;,
+  &quot;808&quot;,
+  &quot;132%&quot;,
+  &quot;10&quot;,
+  &quot;755&quot;,
+  &quot;102%&quot;,
+  &quot;0&quot;,
+  &quot;8&quot;)</code></pre>
+<pre><code>##  [1] &quot;May 22&quot; &quot; 2016&quot;  &quot;$1&quot;     &quot;764&quot;    &quot;808&quot;    &quot;132%&quot;   &quot;10&quot;    
+##  [8] &quot;755&quot;    &quot;102%&quot;   &quot;0&quot;      &quot;8&quot;</code></pre>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

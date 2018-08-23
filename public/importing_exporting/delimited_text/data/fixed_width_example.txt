@@ -1,0 +1,26 @@
+03/04/2013                                                                                                                 Page    1
+Period 01 Thru 03                                                                
+4:16 pm                                                                          
+Company 200                                                                      
+                                                                  
+
+ Entry  Per. Post Date  GL Account   Description               Srce. Cflow  Ref.  Post             Debit              Credit  Alloc.
+------------------------------------------------------------------------------------------------------------------------------------
+
+ 16524  01  10/17/2012  3930621977   TXNPUES                    S1   Yes RHMXWPCP  Yes                              5,007.10    No  
+191675  01  01/14/2013  2368183100   OUNHQEX XUFQONY            S1   No            Yes                             43,537.00    Yes 
+191667  01  01/14/2013  3714468136   GHAKASC QHJXDFM            S1   Yes           Yes          3,172.53                        Yes 
+191673  01  01/14/2013  2632703881   PAHFSAP LUVIKXZ            S1   No            Yes            983.21                        No  
+ 80495  01  11/21/2012  2766389794   XDZANTV                    S1   Yes TGZGMOXG  Yes                                903.78    Yes 
+ 80507  01  11/21/2012  4609266335   BWWYEZL                    S1   Yes USUKVMZO  Yes                                670.31    No  
+ 80509  01  11/21/2012  1092717420   QJYPKVO                    S1   No  DNUNTASS  Yes                                848.50    Yes 
+ 80497  01  11/21/2012  3386366766   SOQLCMU                    S1   Yes BRHUMGJR  Yes                                  7.31    Yes 
+191669  01  01/14/2013  5905893739   FYIWNKA QUAFDKD            S1   Yes           Yes          9,167.93                        Yes 
+191671  01  01/14/2013  2749355876   CBMJTLP NGFSEIS            S1   Yes           Yes            746.70                        Yes 
+191674  01  01/14/2013  4530359106   OTAVZGH ZUQFISZ            S1   Yes           No           7,035.74                        Yes 
+244819  01  02/04/2013  4679391677   EGHLQTI ABE                S1   Yes           No                              89,947.13    No  
+ 96062  01  11/30/2012  5996493062   KTSVTADFF EHEHFMX          S1   Yes UBNQLRCC  Yes              7.10                        Yes 
+ 16527  01  10/17/2012  5595769375   ILCVJYC                    S1   Yes HCVZOUMY  Yes                                321.19    Yes 
+191670  01  01/14/2013  1948028853   RPPDCWC UWODNIO            S1   Yes           No           9,293.80                        No  
+191672  01  01/14/2013  4938823703   CTMDXXP HXOXVFF            S1   Yes           No             175.00                        Yes 
+191668  01  01/14/2013  4207018603   DBZZULF QGDZQMD            S1   Yes           Yes            206.26                        Yes 

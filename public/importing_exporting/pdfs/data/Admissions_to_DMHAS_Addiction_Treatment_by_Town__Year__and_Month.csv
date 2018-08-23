@@ -1,0 +1,3421 @@
+FiscalYear,MonthYear,Town,AdmMonth,FYMonthOrder,AdmYear,MonthTotal
+2014,July-13,Ansonia,7,1,2013,42
+2014,August-13,Ansonia,8,2,2013,43
+2014,September-13,Ansonia,9,3,2013,39
+2014,October-13,Ansonia,10,4,2013,33
+2014,November-13,Ansonia,11,5,2013,38
+2014,December-13,Ansonia,12,6,2013,45
+2014,January-14,Ansonia,1,7,2014,35
+2014,February-14,Ansonia,2,8,2014,38
+2014,March-14,Ansonia,3,9,2014,45
+2014,April-14,Ansonia,4,10,2014,46
+2014,May-14,Ansonia,5,11,2014,40
+2014,June-14,Ansonia,6,12,2014,56
+2015,July-14,Ansonia,7,1,2014,54
+2015,August-14,Ansonia,8,2,2014,53
+2015,September-14,Ansonia,9,3,2014,50
+2015,October-14,Ansonia,10,4,2014,60
+2015,November-14,Ansonia,11,5,2014,41
+2015,December-14,Ansonia,12,6,2014,50
+2015,January-15,Ansonia,1,7,2015,45
+2015,February-15,Ansonia,2,8,2015,42
+2015,March-15,Ansonia,3,9,2015,56
+2015,April-15,Ansonia,4,10,2015,42
+2015,May-15,Ansonia,5,11,2015,38
+2015,June-15,Ansonia,6,12,2015,61
+2016,July-15,Ansonia,7,1,2015,38
+2016,August-15,Ansonia,8,2,2015,45
+2016,September-15,Ansonia,9,3,2015,51
+2016,October-15,Ansonia,10,4,2015,41
+2016,November-15,Ansonia,11,5,2015,38
+2016,December-15,Ansonia,12,6,2015,44
+2016,January-16,Ansonia,1,7,2016,37
+2016,February-16,Ansonia,2,8,2016,42
+2016,March-16,Ansonia,3,9,2016,37
+2016,April-16,Ansonia,4,10,2016,45
+2016,May-16,Ansonia,5,11,2016,53
+2016,June-16,Ansonia,6,12,2016,50
+2014,July-13,Berlin,7,1,2013,27
+2014,August-13,Berlin,8,2,2013,24
+2014,September-13,Berlin,9,3,2013,22
+2014,October-13,Berlin,10,4,2013,22
+2014,November-13,Berlin,11,5,2013,16
+2014,December-13,Berlin,12,6,2013,22
+2014,January-14,Berlin,1,7,2014,21
+2014,February-14,Berlin,2,8,2014,19
+2014,March-14,Berlin,3,9,2014,25
+2014,April-14,Berlin,4,10,2014,18
+2014,May-14,Berlin,5,11,2014,24
+2014,June-14,Berlin,6,12,2014,29
+2015,July-14,Berlin,7,1,2014,35
+2015,August-14,Berlin,8,2,2014,23
+2015,September-14,Berlin,9,3,2014,27
+2015,October-14,Berlin,10,4,2014,24
+2015,November-14,Berlin,11,5,2014,13
+2015,December-14,Berlin,12,6,2014,33
+2015,January-15,Berlin,1,7,2015,22
+2015,February-15,Berlin,2,8,2015,23
+2015,March-15,Berlin,3,9,2015,22
+2015,April-15,Berlin,4,10,2015,28
+2015,May-15,Berlin,5,11,2015,25
+2015,June-15,Berlin,6,12,2015,28
+2016,July-15,Berlin,7,1,2015,28
+2016,August-15,Berlin,8,2,2015,21
+2016,September-15,Berlin,9,3,2015,26
+2016,October-15,Berlin,10,4,2015,24
+2016,November-15,Berlin,11,5,2015,20
+2016,December-15,Berlin,12,6,2015,22
+2016,January-16,Berlin,1,7,2016,21
+2016,February-16,Berlin,2,8,2016,32
+2016,March-16,Berlin,3,9,2016,30
+2016,April-16,Berlin,4,10,2016,22
+2016,May-16,Berlin,5,11,2016,26
+2016,June-16,Berlin,6,12,2016,22
+2014,July-13,Bethel,7,1,2013,18
+2014,August-13,Bethel,8,2,2013,25
+2014,September-13,Bethel,9,3,2013,23
+2014,October-13,Bethel,10,4,2013,24
+2014,November-13,Bethel,11,5,2013,23
+2014,December-13,Bethel,12,6,2013,27
+2014,January-14,Bethel,1,7,2014,22
+2014,February-14,Bethel,2,8,2014,24
+2014,March-14,Bethel,3,9,2014,20
+2014,April-14,Bethel,4,10,2014,25
+2014,May-14,Bethel,5,11,2014,17
+2014,June-14,Bethel,6,12,2014,30
+2015,July-14,Bethel,7,1,2014,28
+2015,August-14,Bethel,8,2,2014,24
+2015,September-14,Bethel,9,3,2014,23
+2015,October-14,Bethel,10,4,2014,23
+2015,November-14,Bethel,11,5,2014,15
+2015,December-14,Bethel,12,6,2014,33
+2015,January-15,Bethel,1,7,2015,22
+2015,February-15,Bethel,2,8,2015,21
+2015,March-15,Bethel,3,9,2015,31
+2015,April-15,Bethel,4,10,2015,33
+2015,May-15,Bethel,5,11,2015,27
+2015,June-15,Bethel,6,12,2015,28
+2016,July-15,Bethel,7,1,2015,26
+2016,August-15,Bethel,8,2,2015,20
+2016,September-15,Bethel,9,3,2015,29
+2016,October-15,Bethel,10,4,2015,25
+2016,November-15,Bethel,11,5,2015,19
+2016,December-15,Bethel,12,6,2015,21
+2016,January-16,Bethel,1,7,2016,24
+2016,February-16,Bethel,2,8,2016,18
+2016,March-16,Bethel,3,9,2016,41
+2016,April-16,Bethel,4,10,2016,24
+2016,May-16,Bethel,5,11,2016,25
+2016,June-16,Bethel,6,12,2016,31
+2014,July-13,Bloomfield,7,1,2013,20
+2014,August-13,Bloomfield,8,2,2013,25
+2014,September-13,Bloomfield,9,3,2013,19
+2014,October-13,Bloomfield,10,4,2013,26
+2014,November-13,Bloomfield,11,5,2013,21
+2014,December-13,Bloomfield,12,6,2013,22
+2014,January-14,Bloomfield,1,7,2014,21
+2014,February-14,Bloomfield,2,8,2014,14
+2014,March-14,Bloomfield,3,9,2014,30
+2014,April-14,Bloomfield,4,10,2014,26
+2014,May-14,Bloomfield,5,11,2014,31
+2014,June-14,Bloomfield,6,12,2014,26
+2015,July-14,Bloomfield,7,1,2014,19
+2015,August-14,Bloomfield,8,2,2014,30
+2015,September-14,Bloomfield,9,3,2014,19
+2015,October-14,Bloomfield,10,4,2014,24
+2015,November-14,Bloomfield,11,5,2014,27
+2015,December-14,Bloomfield,12,6,2014,23
+2015,January-15,Bloomfield,1,7,2015,30
+2015,February-15,Bloomfield,2,8,2015,35
+2015,March-15,Bloomfield,3,9,2015,26
+2015,April-15,Bloomfield,4,10,2015,21
+2015,May-15,Bloomfield,5,11,2015,17
+2015,June-15,Bloomfield,6,12,2015,36
+2016,July-15,Bloomfield,7,1,2015,18
+2016,August-15,Bloomfield,8,2,2015,25
+2016,September-15,Bloomfield,9,3,2015,29
+2016,October-15,Bloomfield,10,4,2015,22
+2016,November-15,Bloomfield,11,5,2015,22
+2016,December-15,Bloomfield,12,6,2015,21
+2016,January-16,Bloomfield,1,7,2016,38
+2016,February-16,Bloomfield,2,8,2016,29
+2016,March-16,Bloomfield,3,9,2016,28
+2016,April-16,Bloomfield,4,10,2016,21
+2016,May-16,Bloomfield,5,11,2016,20
+2016,June-16,Bloomfield,6,12,2016,28
+2014,July-13,Branford,7,1,2013,35
+2014,August-13,Branford,8,2,2013,36
+2014,September-13,Branford,9,3,2013,44
+2014,October-13,Branford,10,4,2013,44
+2014,November-13,Branford,11,5,2013,40
+2014,December-13,Branford,12,6,2013,34
+2014,January-14,Branford,1,7,2014,41
+2014,February-14,Branford,2,8,2014,31
+2014,March-14,Branford,3,9,2014,45
+2014,April-14,Branford,4,10,2014,41
+2014,May-14,Branford,5,11,2014,49
+2014,June-14,Branford,6,12,2014,61
+2015,July-14,Branford,7,1,2014,50
+2015,August-14,Branford,8,2,2014,49
+2015,September-14,Branford,9,3,2014,42
+2015,October-14,Branford,10,4,2014,46
+2015,November-14,Branford,11,5,2014,27
+2015,December-14,Branford,12,6,2014,35
+2015,January-15,Branford,1,7,2015,56
+2015,February-15,Branford,2,8,2015,43
+2015,March-15,Branford,3,9,2015,37
+2015,April-15,Branford,4,10,2015,29
+2015,May-15,Branford,5,11,2015,44
+2015,June-15,Branford,6,12,2015,35
+2016,July-15,Branford,7,1,2015,40
+2016,August-15,Branford,8,2,2015,51
+2016,September-15,Branford,9,3,2015,39
+2016,October-15,Branford,10,4,2015,51
+2016,November-15,Branford,11,5,2015,33
+2016,December-15,Branford,12,6,2015,39
+2016,January-16,Branford,1,7,2016,33
+2016,February-16,Branford,2,8,2016,56
+2016,March-16,Branford,3,9,2016,40
+2016,April-16,Branford,4,10,2016,53
+2016,May-16,Branford,5,11,2016,39
+2016,June-16,Branford,6,12,2016,42
+2014,July-13,Bridgeport,7,1,2013,455
+2014,August-13,Bridgeport,8,2,2013,466
+2014,September-13,Bridgeport,9,3,2013,464
+2014,October-13,Bridgeport,10,4,2013,532
+2014,November-13,Bridgeport,11,5,2013,403
+2014,December-13,Bridgeport,12,6,2013,441
+2014,January-14,Bridgeport,1,7,2014,398
+2014,February-14,Bridgeport,2,8,2014,407
+2014,March-14,Bridgeport,3,9,2014,524
+2014,April-14,Bridgeport,4,10,2014,514
+2014,May-14,Bridgeport,5,11,2014,495
+2014,June-14,Bridgeport,6,12,2014,485
+2015,July-14,Bridgeport,7,1,2014,520
+2015,August-14,Bridgeport,8,2,2014,474
+2015,September-14,Bridgeport,9,3,2014,455
+2015,October-14,Bridgeport,10,4,2014,480
+2015,November-14,Bridgeport,11,5,2014,423
+2015,December-14,Bridgeport,12,6,2014,467
+2015,January-15,Bridgeport,1,7,2015,477
+2015,February-15,Bridgeport,2,8,2015,426
+2015,March-15,Bridgeport,3,9,2015,499
+2015,April-15,Bridgeport,4,10,2015,519
+2015,May-15,Bridgeport,5,11,2015,481
+2015,June-15,Bridgeport,6,12,2015,551
+2016,July-15,Bridgeport,7,1,2015,508
+2016,August-15,Bridgeport,8,2,2015,459
+2016,September-15,Bridgeport,9,3,2015,425
+2016,October-15,Bridgeport,10,4,2015,480
+2016,November-15,Bridgeport,11,5,2015,360
+2016,December-15,Bridgeport,12,6,2015,491
+2016,January-16,Bridgeport,1,7,2016,494
+2016,February-16,Bridgeport,2,8,2016,494
+2016,March-16,Bridgeport,3,9,2016,529
+2016,April-16,Bridgeport,4,10,2016,520
+2016,May-16,Bridgeport,5,11,2016,404
+2016,June-16,Bridgeport,6,12,2016,408
+2014,July-13,Bristol,7,1,2013,127
+2014,August-13,Bristol,8,2,2013,132
+2014,September-13,Bristol,9,3,2013,121
+2014,October-13,Bristol,10,4,2013,153
+2014,November-13,Bristol,11,5,2013,141
+2014,December-13,Bristol,12,6,2013,114
+2014,January-14,Bristol,1,7,2014,142
+2014,February-14,Bristol,2,8,2014,119
+2014,March-14,Bristol,3,9,2014,154
+2014,April-14,Bristol,4,10,2014,154
+2014,May-14,Bristol,5,11,2014,158
+2014,June-14,Bristol,6,12,2014,126
+2015,July-14,Bristol,7,1,2014,171
+2015,August-14,Bristol,8,2,2014,159
+2015,September-14,Bristol,9,3,2014,172
+2015,October-14,Bristol,10,4,2014,171
+2015,November-14,Bristol,11,5,2014,125
+2015,December-14,Bristol,12,6,2014,157
+2015,January-15,Bristol,1,7,2015,131
+2015,February-15,Bristol,2,8,2015,140
+2015,March-15,Bristol,3,9,2015,168
+2015,April-15,Bristol,4,10,2015,173
+2015,May-15,Bristol,5,11,2015,161
+2015,June-15,Bristol,6,12,2015,172
+2016,July-15,Bristol,7,1,2015,166
+2016,August-15,Bristol,8,2,2015,169
+2016,September-15,Bristol,9,3,2015,179
+2016,October-15,Bristol,10,4,2015,143
+2016,November-15,Bristol,11,5,2015,123
+2016,December-15,Bristol,12,6,2015,166
+2016,January-16,Bristol,1,7,2016,173
+2016,February-16,Bristol,2,8,2016,169
+2016,March-16,Bristol,3,9,2016,177
+2016,April-16,Bristol,4,10,2016,184
+2016,May-16,Bristol,5,11,2016,172
+2016,June-16,Bristol,6,12,2016,172
+2014,July-13,Brookfield,7,1,2013,19
+2014,August-13,Brookfield,8,2,2013,20
+2014,September-13,Brookfield,9,3,2013,25
+2014,October-13,Brookfield,10,4,2013,17
+2014,November-13,Brookfield,11,5,2013,21
+2014,December-13,Brookfield,12,6,2013,18
+2014,January-14,Brookfield,1,7,2014,21
+2014,February-14,Brookfield,2,8,2014,12
+2014,March-14,Brookfield,3,9,2014,20
+2014,April-14,Brookfield,4,10,2014,17
+2014,May-14,Brookfield,5,11,2014,14
+2014,June-14,Brookfield,6,12,2014,23
+2015,July-14,Brookfield,7,1,2014,12
+2015,August-14,Brookfield,8,2,2014,23
+2015,September-14,Brookfield,9,3,2014,23
+2015,October-14,Brookfield,10,4,2014,21
+2015,November-14,Brookfield,11,5,2014,20
+2015,December-14,Brookfield,12,6,2014,10
+2015,January-15,Brookfield,1,7,2015,26
+2015,February-15,Brookfield,2,8,2015,23
+2015,March-15,Brookfield,3,9,2015,25
+2015,April-15,Brookfield,4,10,2015,15
+2015,May-15,Brookfield,5,11,2015,10
+2015,June-15,Brookfield,6,12,2015,22
+2016,July-15,Brookfield,7,1,2015,15
+2016,August-15,Brookfield,8,2,2015,15
+2016,September-15,Brookfield,9,3,2015,14
+2016,October-15,Brookfield,10,4,2015,17
+2016,November-15,Brookfield,11,5,2015,17
+2016,December-15,Brookfield,12,6,2015,14
+2016,January-16,Brookfield,1,7,2016,9
+2016,February-16,Brookfield,2,8,2016,25
+2016,March-16,Brookfield,3,9,2016,16
+2016,April-16,Brookfield,4,10,2016,28
+2016,May-16,Brookfield,5,11,2016,25
+2016,June-16,Brookfield,6,12,2016,23
+2014,July-13,Brooklyn,7,1,2013,14
+2014,August-13,Brooklyn,8,2,2013,12
+2014,September-13,Brooklyn,9,3,2013,38
+2014,October-13,Brooklyn,10,4,2013,16
+2014,November-13,Brooklyn,11,5,2013,8
+2014,December-13,Brooklyn,12,6,2013,50
+2014,January-14,Brooklyn,1,7,2014,17
+2014,February-14,Brooklyn,2,8,2014,15
+2014,March-14,Brooklyn,3,9,2014,38
+2014,April-14,Brooklyn,4,10,2014,39
+2014,May-14,Brooklyn,5,11,2014,14
+2014,June-14,Brooklyn,6,12,2014,30
+2015,July-14,Brooklyn,7,1,2014,21
+2015,August-14,Brooklyn,8,2,2014,17
+2015,September-14,Brooklyn,9,3,2014,33
+2015,October-14,Brooklyn,10,4,2014,21
+2015,November-14,Brooklyn,11,5,2014,13
+2015,December-14,Brooklyn,12,6,2014,23
+2015,January-15,Brooklyn,1,7,2015,20
+2015,February-15,Brooklyn,2,8,2015,13
+2015,March-15,Brooklyn,3,9,2015,16
+2015,April-15,Brooklyn,4,10,2015,13
+2015,May-15,Brooklyn,5,11,2015,6
+2015,June-15,Brooklyn,6,12,2015,17
+2016,July-15,Brooklyn,7,1,2015,7
+2016,August-15,Brooklyn,8,2,2015,16
+2016,September-15,Brooklyn,9,3,2015,7
+2016,October-15,Brooklyn,10,4,2015,8
+2016,November-15,Brooklyn,11,5,2015,6
+2016,December-15,Brooklyn,12,6,2015,14
+2016,January-16,Brooklyn,1,7,2016,9
+2016,February-16,Brooklyn,2,8,2016,25
+2016,March-16,Brooklyn,3,9,2016,20
+2016,April-16,Brooklyn,4,10,2016,17
+2016,May-16,Brooklyn,5,11,2016,14
+2016,June-16,Brooklyn,6,12,2016,14
+2014,July-13,Burlington,7,1,2013,11
+2014,August-13,Burlington,8,2,2013,8
+2014,September-13,Burlington,9,3,2013,7
+2014,October-13,Burlington,10,4,2013,12
+2014,November-13,Burlington,11,5,2013,8
+2014,December-13,Burlington,12,6,2013,6
+2014,January-14,Burlington,1,7,2014,9
+2014,February-14,Burlington,2,8,2014,11
+2014,March-14,Burlington,3,9,2014,8
+2014,April-14,Burlington,4,10,2014,9
+2014,May-14,Burlington,5,11,2014,12
+2014,June-14,Burlington,6,12,2014,9
+2015,July-14,Burlington,7,1,2014,10
+2015,August-14,Burlington,8,2,2014,13
+2015,September-14,Burlington,9,3,2014,11
+2015,October-14,Burlington,10,4,2014,9
+2015,November-14,Burlington,11,5,2014,13
+2015,December-14,Burlington,12,6,2014,15
+2015,January-15,Burlington,1,7,2015,13
+2015,February-15,Burlington,2,8,2015,15
+2015,March-15,Burlington,3,9,2015,12
+2015,April-15,Burlington,4,10,2015,6
+2015,May-15,Burlington,5,11,2015,6
+2015,June-15,Burlington,6,12,2015,6
+2014,July-13,Cheshire,7,1,2013,15
+2014,August-13,Cheshire,8,2,2013,27
+2014,September-13,Cheshire,9,3,2013,12
+2014,October-13,Cheshire,10,4,2013,23
+2014,November-13,Cheshire,11,5,2013,14
+2014,December-13,Cheshire,12,6,2013,11
+2014,January-14,Cheshire,1,7,2014,30
+2014,February-14,Cheshire,2,8,2014,14
+2014,March-14,Cheshire,3,9,2014,24
+2014,April-14,Cheshire,4,10,2014,19
+2014,May-14,Cheshire,5,11,2014,21
+2014,June-14,Cheshire,6,12,2014,32
+2015,July-14,Cheshire,7,1,2014,27
+2015,August-14,Cheshire,8,2,2014,28
+2015,September-14,Cheshire,9,3,2014,19
+2015,October-14,Cheshire,10,4,2014,30
+2015,November-14,Cheshire,11,5,2014,22
+2015,December-14,Cheshire,12,6,2014,24
+2015,January-15,Cheshire,1,7,2015,18
+2015,February-15,Cheshire,2,8,2015,16
+2015,March-15,Cheshire,3,9,2015,37
+2015,April-15,Cheshire,4,10,2015,29
+2015,May-15,Cheshire,5,11,2015,11
+2015,June-15,Cheshire,6,12,2015,36
+2016,July-15,Cheshire,7,1,2015,18
+2016,August-15,Cheshire,8,2,2015,30
+2016,September-15,Cheshire,9,3,2015,27
+2016,October-15,Cheshire,10,4,2015,27
+2016,November-15,Cheshire,11,5,2015,19
+2016,December-15,Cheshire,12,6,2015,29
+2016,January-16,Cheshire,1,7,2016,33
+2016,February-16,Cheshire,2,8,2016,20
+2016,March-16,Cheshire,3,9,2016,18
+2016,April-16,Cheshire,4,10,2016,7
+2016,May-16,Cheshire,5,11,2016,23
+2016,June-16,Cheshire,6,12,2016,19
+2014,July-13,Clinton,7,1,2013,19
+2014,August-13,Clinton,8,2,2013,17
+2014,September-13,Clinton,9,3,2013,14
+2014,October-13,Clinton,10,4,2013,22
+2014,November-13,Clinton,11,5,2013,15
+2014,December-13,Clinton,12,6,2013,22
+2014,January-14,Clinton,1,7,2014,17
+2014,February-14,Clinton,2,8,2014,20
+2014,March-14,Clinton,3,9,2014,17
+2014,April-14,Clinton,4,10,2014,18
+2014,May-14,Clinton,5,11,2014,16
+2014,June-14,Clinton,6,12,2014,23
+2015,July-14,Clinton,7,1,2014,10
+2015,August-14,Clinton,8,2,2014,14
+2015,September-14,Clinton,9,3,2014,26
+2015,October-14,Clinton,10,4,2014,17
+2015,November-14,Clinton,11,5,2014,11
+2015,December-14,Clinton,12,6,2014,20
+2015,January-15,Clinton,1,7,2015,17
+2015,February-15,Clinton,2,8,2015,22
+2015,March-15,Clinton,3,9,2015,31
+2015,April-15,Clinton,4,10,2015,17
+2015,May-15,Clinton,5,11,2015,10
+2015,June-15,Clinton,6,12,2015,22
+2016,July-15,Clinton,7,1,2015,36
+2016,August-15,Clinton,8,2,2015,18
+2016,September-15,Clinton,9,3,2015,15
+2016,October-15,Clinton,10,4,2015,11
+2016,November-15,Clinton,11,5,2015,9
+2016,December-15,Clinton,12,6,2015,8
+2016,January-16,Clinton,1,7,2016,12
+2016,February-16,Clinton,2,8,2016,17
+2016,March-16,Clinton,3,9,2016,14
+2016,April-16,Clinton,4,10,2016,18
+2016,May-16,Clinton,5,11,2016,13
+2016,June-16,Clinton,6,12,2016,12
+2014,July-13,Colchester,7,1,2013,31
+2014,August-13,Colchester,8,2,2013,29
+2014,September-13,Colchester,9,3,2013,29
+2014,October-13,Colchester,10,4,2013,18
+2014,November-13,Colchester,11,5,2013,27
+2014,December-13,Colchester,12,6,2013,35
+2014,January-14,Colchester,1,7,2014,30
+2014,February-14,Colchester,2,8,2014,30
+2014,March-14,Colchester,3,9,2014,31
+2014,April-14,Colchester,4,10,2014,26
+2014,May-14,Colchester,5,11,2014,25
+2014,June-14,Colchester,6,12,2014,28
+2015,July-14,Colchester,7,1,2014,36
+2015,August-14,Colchester,8,2,2014,25
+2015,September-14,Colchester,9,3,2014,33
+2015,October-14,Colchester,10,4,2014,38
+2015,November-14,Colchester,11,5,2014,23
+2015,December-14,Colchester,12,6,2014,28
+2015,January-15,Colchester,1,7,2015,37
+2015,February-15,Colchester,2,8,2015,35
+2015,March-15,Colchester,3,9,2015,36
+2015,April-15,Colchester,4,10,2015,18
+2015,May-15,Colchester,5,11,2015,24
+2015,June-15,Colchester,6,12,2015,32
+2016,July-15,Colchester,7,1,2015,30
+2016,August-15,Colchester,8,2,2015,35
+2016,September-15,Colchester,9,3,2015,36
+2016,October-15,Colchester,10,4,2015,32
+2016,November-15,Colchester,11,5,2015,19
+2016,December-15,Colchester,12,6,2015,34
+2016,January-16,Colchester,1,7,2016,37
+2016,February-16,Colchester,2,8,2016,29
+2016,March-16,Colchester,3,9,2016,29
+2016,April-16,Colchester,4,10,2016,18
+2016,May-16,Colchester,5,11,2016,21
+2016,June-16,Colchester,6,12,2016,21
+2014,July-13,Coventry,7,1,2013,9
+2014,August-13,Coventry,8,2,2013,12
+2014,September-13,Coventry,9,3,2013,14
+2014,October-13,Coventry,10,4,2013,28
+2014,November-13,Coventry,11,5,2013,8
+2014,December-13,Coventry,12,6,2013,20
+2014,January-14,Coventry,1,7,2014,19
+2014,February-14,Coventry,2,8,2014,17
+2014,March-14,Coventry,3,9,2014,22
+2014,April-14,Coventry,4,10,2014,19
+2014,May-14,Coventry,5,11,2014,16
+2014,June-14,Coventry,6,12,2014,18
+2015,July-14,Coventry,7,1,2014,17
+2015,August-14,Coventry,8,2,2014,17
+2015,September-14,Coventry,9,3,2014,16
+2015,October-14,Coventry,10,4,2014,17
+2015,November-14,Coventry,11,5,2014,19
+2015,December-14,Coventry,12,6,2014,16
+2015,January-15,Coventry,1,7,2015,10
+2015,February-15,Coventry,2,8,2015,18
+2015,March-15,Coventry,3,9,2015,25
+2015,April-15,Coventry,4,10,2015,21
+2015,May-15,Coventry,5,11,2015,10
+2015,June-15,Coventry,6,12,2015,17
+2016,July-15,Coventry,7,1,2015,25
+2016,August-15,Coventry,8,2,2015,13
+2016,September-15,Coventry,9,3,2015,19
+2016,October-15,Coventry,10,4,2015,13
+2016,November-15,Coventry,11,5,2015,15
+2016,December-15,Coventry,12,6,2015,14
+2016,January-16,Coventry,1,7,2016,14
+2016,February-16,Coventry,2,8,2016,15
+2016,March-16,Coventry,3,9,2016,14
+2016,April-16,Coventry,4,10,2016,17
+2016,May-16,Coventry,5,11,2016,15
+2016,June-16,Coventry,6,12,2016,18
+2014,July-13,Cromwell,7,1,2013,7
+2014,August-13,Cromwell,8,2,2013,14
+2014,September-13,Cromwell,9,3,2013,12
+2014,October-13,Cromwell,10,4,2013,25
+2014,November-13,Cromwell,11,5,2013,21
+2014,December-13,Cromwell,12,6,2013,15
+2014,January-14,Cromwell,1,7,2014,25
+2014,February-14,Cromwell,2,8,2014,16
+2014,March-14,Cromwell,3,9,2014,21
+2014,April-14,Cromwell,4,10,2014,28
+2014,May-14,Cromwell,5,11,2014,15
+2014,June-14,Cromwell,6,12,2014,26
+2015,July-14,Cromwell,7,1,2014,29
+2015,August-14,Cromwell,8,2,2014,14
+2015,September-14,Cromwell,9,3,2014,24
+2015,October-14,Cromwell,10,4,2014,16
+2015,November-14,Cromwell,11,5,2014,18
+2015,December-14,Cromwell,12,6,2014,25
+2015,January-15,Cromwell,1,7,2015,18
+2015,February-15,Cromwell,2,8,2015,17
+2015,March-15,Cromwell,3,9,2015,27
+2015,April-15,Cromwell,4,10,2015,15
+2015,May-15,Cromwell,5,11,2015,28
+2015,June-15,Cromwell,6,12,2015,14
+2016,July-15,Cromwell,7,1,2015,23
+2016,August-15,Cromwell,8,2,2015,16
+2016,September-15,Cromwell,9,3,2015,12
+2016,October-15,Cromwell,10,4,2015,19
+2016,November-15,Cromwell,11,5,2015,17
+2016,December-15,Cromwell,12,6,2015,10
+2016,January-16,Cromwell,1,7,2016,22
+2016,February-16,Cromwell,2,8,2016,23
+2016,March-16,Cromwell,3,9,2016,24
+2016,April-16,Cromwell,4,10,2016,28
+2016,May-16,Cromwell,5,11,2016,23
+2016,June-16,Cromwell,6,12,2016,17
+2014,July-13,Danbury,7,1,2013,155
+2014,August-13,Danbury,8,2,2013,155
+2014,September-13,Danbury,9,3,2013,146
+2014,October-13,Danbury,10,4,2013,162
+2014,November-13,Danbury,11,5,2013,103
+2014,December-13,Danbury,12,6,2013,154
+2014,January-14,Danbury,1,7,2014,167
+2014,February-14,Danbury,2,8,2014,133
+2014,March-14,Danbury,3,9,2014,139
+2014,April-14,Danbury,4,10,2014,165
+2014,May-14,Danbury,5,11,2014,168
+2014,June-14,Danbury,6,12,2014,173
+2015,July-14,Danbury,7,1,2014,147
+2015,August-14,Danbury,8,2,2014,151
+2015,September-14,Danbury,9,3,2014,150
+2015,October-14,Danbury,10,4,2014,167
+2015,November-14,Danbury,11,5,2014,129
+2015,December-14,Danbury,12,6,2014,151
+2015,January-15,Danbury,1,7,2015,156
+2015,February-15,Danbury,2,8,2015,158
+2015,March-15,Danbury,3,9,2015,162
+2015,April-15,Danbury,4,10,2015,142
+2015,May-15,Danbury,5,11,2015,152
+2015,June-15,Danbury,6,12,2015,153
+2016,July-15,Danbury,7,1,2015,186
+2016,August-15,Danbury,8,2,2015,146
+2016,September-15,Danbury,9,3,2015,167
+2016,October-15,Danbury,10,4,2015,146
+2016,November-15,Danbury,11,5,2015,122
+2016,December-15,Danbury,12,6,2015,122
+2016,January-16,Danbury,1,7,2016,170
+2016,February-16,Danbury,2,8,2016,167
+2016,March-16,Danbury,3,9,2016,164
+2016,April-16,Danbury,4,10,2016,127
+2016,May-16,Danbury,5,11,2016,154
+2016,June-16,Danbury,6,12,2016,185
+2014,July-13,Derby,7,1,2013,31
+2014,August-13,Derby,8,2,2013,21
+2014,September-13,Derby,9,3,2013,21
+2014,October-13,Derby,10,4,2013,35
+2014,November-13,Derby,11,5,2013,23
+2014,December-13,Derby,12,6,2013,22
+2014,January-14,Derby,1,7,2014,21
+2014,February-14,Derby,2,8,2014,23
+2014,March-14,Derby,3,9,2014,21
+2014,April-14,Derby,4,10,2014,28
+2014,May-14,Derby,5,11,2014,30
+2014,June-14,Derby,6,12,2014,28
+2015,July-14,Derby,7,1,2014,34
+2015,August-14,Derby,8,2,2014,29
+2015,September-14,Derby,9,3,2014,20
+2015,October-14,Derby,10,4,2014,25
+2015,November-14,Derby,11,5,2014,32
+2015,December-14,Derby,12,6,2014,22
+2015,January-15,Derby,1,7,2015,20
+2015,February-15,Derby,2,8,2015,32
+2015,March-15,Derby,3,9,2015,30
+2015,April-15,Derby,4,10,2015,32
+2015,May-15,Derby,5,11,2015,36
+2015,June-15,Derby,6,12,2015,22
+2016,July-15,Derby,7,1,2015,41
+2016,August-15,Derby,8,2,2015,35
+2016,September-15,Derby,9,3,2015,32
+2016,October-15,Derby,10,4,2015,24
+2016,November-15,Derby,11,5,2015,21
+2016,December-15,Derby,12,6,2015,26
+2016,January-16,Derby,1,7,2016,30
+2016,February-16,Derby,2,8,2016,36
+2016,March-16,Derby,3,9,2016,35
+2016,April-16,Derby,4,10,2016,29
+2016,May-16,Derby,5,11,2016,36
+2016,June-16,Derby,6,12,2016,37
+2014,July-13,East Haddam,7,1,2013,8
+2014,August-13,East Haddam,8,2,2013,8
+2014,September-13,East Haddam,9,3,2013,18
+2014,October-13,East Haddam,10,4,2013,15
+2014,November-13,East Haddam,11,5,2013,12
+2014,December-13,East Haddam,12,6,2013,12
+2014,January-14,East Haddam,1,7,2014,10
+2014,February-14,East Haddam,2,8,2014,17
+2014,March-14,East Haddam,3,9,2014,11
+2014,April-14,East Haddam,4,10,2014,18
+2014,May-14,East Haddam,5,11,2014,8
+2014,June-14,East Haddam,6,12,2014,18
+2016,July-15,East Haddam,7,1,2015,12
+2016,August-15,East Haddam,8,2,2015,11
+2016,September-15,East Haddam,9,3,2015,11
+2016,October-15,East Haddam,10,4,2015,7
+2016,November-15,East Haddam,11,5,2015,6
+2016,December-15,East Haddam,12,6,2015,8
+2016,January-16,East Haddam,1,7,2016,9
+2016,February-16,East Haddam,2,8,2016,9
+2016,March-16,East Haddam,3,9,2016,20
+2016,April-16,East Haddam,4,10,2016,13
+2016,May-16,East Haddam,5,11,2016,15
+2016,June-16,East Haddam,6,12,2016,14
+2014,July-13,East Hampton,7,1,2013,24
+2014,August-13,East Hampton,8,2,2013,30
+2014,September-13,East Hampton,9,3,2013,20
+2014,October-13,East Hampton,10,4,2013,28
+2014,November-13,East Hampton,11,5,2013,22
+2014,December-13,East Hampton,12,6,2013,19
+2014,January-14,East Hampton,1,7,2014,21
+2014,February-14,East Hampton,2,8,2014,17
+2014,March-14,East Hampton,3,9,2014,22
+2014,April-14,East Hampton,4,10,2014,22
+2014,May-14,East Hampton,5,11,2014,18
+2014,June-14,East Hampton,6,12,2014,26
+2015,July-14,East Hampton,7,1,2014,32
+2015,August-14,East Hampton,8,2,2014,21
+2015,September-14,East Hampton,9,3,2014,14
+2015,October-14,East Hampton,10,4,2014,16
+2015,November-14,East Hampton,11,5,2014,17
+2015,December-14,East Hampton,12,6,2014,22
+2015,January-15,East Hampton,1,7,2015,21
+2015,February-15,East Hampton,2,8,2015,17
+2015,March-15,East Hampton,3,9,2015,37
+2015,April-15,East Hampton,4,10,2015,16
+2015,May-15,East Hampton,5,11,2015,14
+2015,June-15,East Hampton,6,12,2015,26
+2016,July-15,East Hampton,7,1,2015,27
+2016,August-15,East Hampton,8,2,2015,20
+2016,September-15,East Hampton,9,3,2015,17
+2016,October-15,East Hampton,10,4,2015,11
+2016,November-15,East Hampton,11,5,2015,17
+2016,December-15,East Hampton,12,6,2015,23
+2016,January-16,East Hampton,1,7,2016,17
+2016,February-16,East Hampton,2,8,2016,28
+2016,March-16,East Hampton,3,9,2016,22
+2016,April-16,East Hampton,4,10,2016,23
+2016,May-16,East Hampton,5,11,2016,15
+2016,June-16,East Hampton,6,12,2016,17
+2014,July-13,East Hartford,7,1,2013,114
+2014,August-13,East Hartford,8,2,2013,114
+2014,September-13,East Hartford,9,3,2013,122
+2014,October-13,East Hartford,10,4,2013,109
+2014,November-13,East Hartford,11,5,2013,99
+2014,December-13,East Hartford,12,6,2013,83
+2014,January-14,East Hartford,1,7,2014,108
+2014,February-14,East Hartford,2,8,2014,89
+2014,March-14,East Hartford,3,9,2014,113
+2014,April-14,East Hartford,4,10,2014,121
+2014,May-14,East Hartford,5,11,2014,95
+2014,June-14,East Hartford,6,12,2014,99
+2015,July-14,East Hartford,7,1,2014,86
+2015,August-14,East Hartford,8,2,2014,100
+2015,September-14,East Hartford,9,3,2014,102
+2015,October-14,East Hartford,10,4,2014,84
+2015,November-14,East Hartford,11,5,2014,70
+2015,December-14,East Hartford,12,6,2014,68
+2015,January-15,East Hartford,1,7,2015,88
+2015,February-15,East Hartford,2,8,2015,89
+2015,March-15,East Hartford,3,9,2015,81
+2015,April-15,East Hartford,4,10,2015,88
+2015,May-15,East Hartford,5,11,2015,78
+2015,June-15,East Hartford,6,12,2015,73
+2016,July-15,East Hartford,7,1,2015,76
+2016,August-15,East Hartford,8,2,2015,78
+2016,September-15,East Hartford,9,3,2015,94
+2016,October-15,East Hartford,10,4,2015,99
+2016,November-15,East Hartford,11,5,2015,69
+2016,December-15,East Hartford,12,6,2015,74
+2016,January-16,East Hartford,1,7,2016,89
+2016,February-16,East Hartford,2,8,2016,72
+2016,March-16,East Hartford,3,9,2016,78
+2016,April-16,East Hartford,4,10,2016,74
+2016,May-16,East Hartford,5,11,2016,90
+2016,June-16,East Hartford,6,12,2016,70
+2014,July-13,East Haven,7,1,2013,69
+2014,August-13,East Haven,8,2,2013,82
+2014,September-13,East Haven,9,3,2013,57
+2014,October-13,East Haven,10,4,2013,66
+2014,November-13,East Haven,11,5,2013,54
+2014,December-13,East Haven,12,6,2013,74
+2014,January-14,East Haven,1,7,2014,55
+2014,February-14,East Haven,2,8,2014,62
+2014,March-14,East Haven,3,9,2014,65
+2014,April-14,East Haven,4,10,2014,64
+2014,May-14,East Haven,5,11,2014,67
+2014,June-14,East Haven,6,12,2014,104
+2015,July-14,East Haven,7,1,2014,73
+2015,August-14,East Haven,8,2,2014,60
+2015,September-14,East Haven,9,3,2014,65
+2015,October-14,East Haven,10,4,2014,76
+2015,November-14,East Haven,11,5,2014,51
+2015,December-14,East Haven,12,6,2014,82
+2015,January-15,East Haven,1,7,2015,91
+2015,February-15,East Haven,2,8,2015,69
+2015,March-15,East Haven,3,9,2015,67
+2015,April-15,East Haven,4,10,2015,74
+2015,May-15,East Haven,5,11,2015,60
+2015,June-15,East Haven,6,12,2015,60
+2016,July-15,East Haven,7,1,2015,66
+2016,August-15,East Haven,8,2,2015,95
+2016,September-15,East Haven,9,3,2015,50
+2016,October-15,East Haven,10,4,2015,63
+2016,November-15,East Haven,11,5,2015,60
+2016,December-15,East Haven,12,6,2015,67
+2016,January-16,East Haven,1,7,2016,82
+2016,February-16,East Haven,2,8,2016,82
+2016,March-16,East Haven,3,9,2016,71
+2016,April-16,East Haven,4,10,2016,78
+2016,May-16,East Haven,5,11,2016,72
+2016,June-16,East Haven,6,12,2016,65
+2014,July-13,East Lyme,7,1,2013,38
+2014,August-13,East Lyme,8,2,2013,36
+2014,September-13,East Lyme,9,3,2013,29
+2014,October-13,East Lyme,10,4,2013,30
+2014,November-13,East Lyme,11,5,2013,35
+2014,December-13,East Lyme,12,6,2013,25
+2014,January-14,East Lyme,1,7,2014,25
+2014,February-14,East Lyme,2,8,2014,33
+2014,March-14,East Lyme,3,9,2014,31
+2014,April-14,East Lyme,4,10,2014,29
+2014,May-14,East Lyme,5,11,2014,34
+2014,June-14,East Lyme,6,12,2014,33
+2015,July-14,East Lyme,7,1,2014,25
+2015,August-14,East Lyme,8,2,2014,34
+2015,September-14,East Lyme,9,3,2014,32
+2015,October-14,East Lyme,10,4,2014,24
+2015,November-14,East Lyme,11,5,2014,20
+2015,December-14,East Lyme,12,6,2014,20
+2015,January-15,East Lyme,1,7,2015,32
+2015,February-15,East Lyme,2,8,2015,23
+2015,March-15,East Lyme,3,9,2015,19
+2015,April-15,East Lyme,4,10,2015,30
+2015,May-15,East Lyme,5,11,2015,29
+2015,June-15,East Lyme,6,12,2015,24
+2016,July-15,East Lyme,7,1,2015,28
+2016,August-15,East Lyme,8,2,2015,28
+2016,September-15,East Lyme,9,3,2015,24
+2016,October-15,East Lyme,10,4,2015,21
+2016,November-15,East Lyme,11,5,2015,18
+2016,December-15,East Lyme,12,6,2015,29
+2016,January-16,East Lyme,1,7,2016,26
+2016,February-16,East Lyme,2,8,2016,23
+2016,March-16,East Lyme,3,9,2016,20
+2016,April-16,East Lyme,4,10,2016,24
+2016,May-16,East Lyme,5,11,2016,29
+2016,June-16,East Lyme,6,12,2016,26
+2014,July-13,East Windsor,7,1,2013,24
+2014,August-13,East Windsor,8,2,2013,18
+2014,September-13,East Windsor,9,3,2013,18
+2014,October-13,East Windsor,10,4,2013,15
+2014,November-13,East Windsor,11,5,2013,17
+2014,December-13,East Windsor,12,6,2013,15
+2014,January-14,East Windsor,1,7,2014,12
+2014,February-14,East Windsor,2,8,2014,18
+2014,March-14,East Windsor,3,9,2014,22
+2014,April-14,East Windsor,4,10,2014,13
+2014,May-14,East Windsor,5,11,2014,15
+2014,June-14,East Windsor,6,12,2014,19
+2016,July-15,East Windsor,7,1,2015,13
+2016,August-15,East Windsor,8,2,2015,23
+2016,September-15,East Windsor,9,3,2015,14
+2016,October-15,East Windsor,10,4,2015,19
+2016,November-15,East Windsor,11,5,2015,15
+2016,December-15,East Windsor,12,6,2015,13
+2016,January-16,East Windsor,1,7,2016,17
+2016,February-16,East Windsor,2,8,2016,13
+2016,March-16,East Windsor,3,9,2016,9
+2016,April-16,East Windsor,4,10,2016,8
+2016,May-16,East Windsor,5,11,2016,20
+2016,June-16,East Windsor,6,12,2016,16
+2014,July-13,Ellington,7,1,2013,22
+2014,August-13,Ellington,8,2,2013,22
+2014,September-13,Ellington,9,3,2013,12
+2014,October-13,Ellington,10,4,2013,10
+2014,November-13,Ellington,11,5,2013,6
+2014,December-13,Ellington,12,6,2013,12
+2014,January-14,Ellington,1,7,2014,17
+2014,February-14,Ellington,2,8,2014,12
+2014,March-14,Ellington,3,9,2014,13
+2014,April-14,Ellington,4,10,2014,7
+2014,May-14,Ellington,5,11,2014,12
+2014,June-14,Ellington,6,12,2014,12
+2016,July-15,Ellington,7,1,2015,9
+2016,August-15,Ellington,8,2,2015,8
+2016,September-15,Ellington,9,3,2015,14
+2016,October-15,Ellington,10,4,2015,10
+2016,November-15,Ellington,11,5,2015,9
+2016,December-15,Ellington,12,6,2015,13
+2016,January-16,Ellington,1,7,2016,17
+2016,February-16,Ellington,2,8,2016,19
+2016,March-16,Ellington,3,9,2016,12
+2016,April-16,Ellington,4,10,2016,9
+2016,May-16,Ellington,5,11,2016,13
+2016,June-16,Ellington,6,12,2016,12
+2014,July-13,Enfield,7,1,2013,90
+2014,August-13,Enfield,8,2,2013,94
+2014,September-13,Enfield,9,3,2013,63
+2014,October-13,Enfield,10,4,2013,100
+2014,November-13,Enfield,11,5,2013,84
+2014,December-13,Enfield,12,6,2013,78
+2014,January-14,Enfield,1,7,2014,101
+2014,February-14,Enfield,2,8,2014,84
+2014,March-14,Enfield,3,9,2014,96
+2014,April-14,Enfield,4,10,2014,88
+2014,May-14,Enfield,5,11,2014,79
+2014,June-14,Enfield,6,12,2014,70
+2015,July-14,Enfield,7,1,2014,95
+2015,August-14,Enfield,8,2,2014,95
+2015,September-14,Enfield,9,3,2014,77
+2015,October-14,Enfield,10,4,2014,78
+2015,November-14,Enfield,11,5,2014,59
+2015,December-14,Enfield,12,6,2014,71
+2015,January-15,Enfield,1,7,2015,79
+2015,February-15,Enfield,2,8,2015,59
+2015,March-15,Enfield,3,9,2015,96
+2015,April-15,Enfield,4,10,2015,101
+2015,May-15,Enfield,5,11,2015,77
+2015,June-15,Enfield,6,12,2015,80
+2016,July-15,Enfield,7,1,2015,80
+2016,August-15,Enfield,8,2,2015,94
+2016,September-15,Enfield,9,3,2015,90
+2016,October-15,Enfield,10,4,2015,81
+2016,November-15,Enfield,11,5,2015,69
+2016,December-15,Enfield,12,6,2015,72
+2016,January-16,Enfield,1,7,2016,70
+2016,February-16,Enfield,2,8,2016,69
+2016,March-16,Enfield,3,9,2016,74
+2016,April-16,Enfield,4,10,2016,55
+2016,May-16,Enfield,5,11,2016,62
+2016,June-16,Enfield,6,12,2016,70
+2014,July-13,Fairfield,7,1,2013,37
+2014,August-13,Fairfield,8,2,2013,38
+2014,September-13,Fairfield,9,3,2013,26
+2014,October-13,Fairfield,10,4,2013,39
+2014,November-13,Fairfield,11,5,2013,32
+2014,December-13,Fairfield,12,6,2013,32
+2014,January-14,Fairfield,1,7,2014,26
+2014,February-14,Fairfield,2,8,2014,27
+2014,March-14,Fairfield,3,9,2014,41
+2014,April-14,Fairfield,4,10,2014,39
+2014,May-14,Fairfield,5,11,2014,33
+2014,June-14,Fairfield,6,12,2014,31
+2015,July-14,Fairfield,7,1,2014,42
+2015,August-14,Fairfield,8,2,2014,46
+2015,September-14,Fairfield,9,3,2014,36
+2015,October-14,Fairfield,10,4,2014,46
+2015,November-14,Fairfield,11,5,2014,21
+2015,December-14,Fairfield,12,6,2014,26
+2015,January-15,Fairfield,1,7,2015,24
+2015,February-15,Fairfield,2,8,2015,23
+2015,March-15,Fairfield,3,9,2015,42
+2015,April-15,Fairfield,4,10,2015,33
+2015,May-15,Fairfield,5,11,2015,38
+2015,June-15,Fairfield,6,12,2015,38
+2016,July-15,Fairfield,7,1,2015,28
+2016,August-15,Fairfield,8,2,2015,40
+2016,September-15,Fairfield,9,3,2015,26
+2016,October-15,Fairfield,10,4,2015,27
+2016,November-15,Fairfield,11,5,2015,30
+2016,December-15,Fairfield,12,6,2015,31
+2016,January-16,Fairfield,1,7,2016,32
+2016,February-16,Fairfield,2,8,2016,41
+2016,March-16,Fairfield,3,9,2016,35
+2016,April-16,Fairfield,4,10,2016,32
+2016,May-16,Fairfield,5,11,2016,28
+2016,June-16,Fairfield,6,12,2016,29
+2014,July-13,Farmington,7,1,2013,26
+2014,August-13,Farmington,8,2,2013,18
+2014,September-13,Farmington,9,3,2013,15
+2014,October-13,Farmington,10,4,2013,13
+2014,November-13,Farmington,11,5,2013,12
+2014,December-13,Farmington,12,6,2013,19
+2014,January-14,Farmington,1,7,2014,24
+2014,February-14,Farmington,2,8,2014,13
+2014,March-14,Farmington,3,9,2014,25
+2014,April-14,Farmington,4,10,2014,25
+2014,May-14,Farmington,5,11,2014,24
+2014,June-14,Farmington,6,12,2014,19
+2015,July-14,Farmington,7,1,2014,22
+2015,August-14,Farmington,8,2,2014,14
+2015,September-14,Farmington,9,3,2014,14
+2015,October-14,Farmington,10,4,2014,20
+2015,November-14,Farmington,11,5,2014,23
+2015,December-14,Farmington,12,6,2014,12
+2015,January-15,Farmington,1,7,2015,26
+2015,February-15,Farmington,2,8,2015,21
+2015,March-15,Farmington,3,9,2015,21
+2015,April-15,Farmington,4,10,2015,22
+2015,May-15,Farmington,5,11,2015,14
+2015,June-15,Farmington,6,12,2015,19
+2016,July-15,Farmington,7,1,2015,22
+2016,August-15,Farmington,8,2,2015,15
+2016,September-15,Farmington,9,3,2015,21
+2016,October-15,Farmington,10,4,2015,14
+2016,November-15,Farmington,11,5,2015,24
+2016,December-15,Farmington,12,6,2015,27
+2016,January-16,Farmington,1,7,2016,23
+2016,February-16,Farmington,2,8,2016,20
+2016,March-16,Farmington,3,9,2016,18
+2016,April-16,Farmington,4,10,2016,27
+2016,May-16,Farmington,5,11,2016,18
+2016,June-16,Farmington,6,12,2016,17
+2014,July-13,Glastonbury,7,1,2013,15
+2014,August-13,Glastonbury,8,2,2013,24
+2014,September-13,Glastonbury,9,3,2013,25
+2014,October-13,Glastonbury,10,4,2013,32
+2014,November-13,Glastonbury,11,5,2013,23
+2014,December-13,Glastonbury,12,6,2013,28
+2014,January-14,Glastonbury,1,7,2014,21
+2014,February-14,Glastonbury,2,8,2014,20
+2014,March-14,Glastonbury,3,9,2014,23
+2014,April-14,Glastonbury,4,10,2014,34
+2014,May-14,Glastonbury,5,11,2014,21
+2014,June-14,Glastonbury,6,12,2014,38
+2015,July-14,Glastonbury,7,1,2014,32
+2015,August-14,Glastonbury,8,2,2014,29
+2015,September-14,Glastonbury,9,3,2014,31
+2015,October-14,Glastonbury,10,4,2014,30
+2015,November-14,Glastonbury,11,5,2014,31
+2015,December-14,Glastonbury,12,6,2014,25
+2015,January-15,Glastonbury,1,7,2015,28
+2015,February-15,Glastonbury,2,8,2015,23
+2015,March-15,Glastonbury,3,9,2015,18
+2015,April-15,Glastonbury,4,10,2015,11
+2015,May-15,Glastonbury,5,11,2015,13
+2015,June-15,Glastonbury,6,12,2015,28
+2016,July-15,Glastonbury,7,1,2015,32
+2016,August-15,Glastonbury,8,2,2015,34
+2016,September-15,Glastonbury,9,3,2015,27
+2016,October-15,Glastonbury,10,4,2015,22
+2016,November-15,Glastonbury,11,5,2015,26
+2016,December-15,Glastonbury,12,6,2015,32
+2016,January-16,Glastonbury,1,7,2016,25
+2016,February-16,Glastonbury,2,8,2016,29
+2016,March-16,Glastonbury,3,9,2016,30
+2016,April-16,Glastonbury,4,10,2016,16
+2016,May-16,Glastonbury,5,11,2016,31
+2016,June-16,Glastonbury,6,12,2016,21
+2014,July-13,Greenwich,7,1,2013,29
+2014,August-13,Greenwich,8,2,2013,32
+2014,September-13,Greenwich,9,3,2013,19
+2014,October-13,Greenwich,10,4,2013,21
+2014,November-13,Greenwich,11,5,2013,21
+2014,December-13,Greenwich,12,6,2013,27
+2014,January-14,Greenwich,1,7,2014,19
+2014,February-14,Greenwich,2,8,2014,30
+2014,March-14,Greenwich,3,9,2014,29
+2014,April-14,Greenwich,4,10,2014,23
+2014,May-14,Greenwich,5,11,2014,22
+2014,June-14,Greenwich,6,12,2014,32
+2015,July-14,Greenwich,7,1,2014,22
+2015,August-14,Greenwich,8,2,2014,19
+2015,September-14,Greenwich,9,3,2014,19
+2015,October-14,Greenwich,10,4,2014,28
+2015,November-14,Greenwich,11,5,2014,26
+2015,December-14,Greenwich,12,6,2014,27
+2015,January-15,Greenwich,1,7,2015,27
+2015,February-15,Greenwich,2,8,2015,28
+2015,March-15,Greenwich,3,9,2015,27
+2015,April-15,Greenwich,4,10,2015,18
+2015,May-15,Greenwich,5,11,2015,22
+2015,June-15,Greenwich,6,12,2015,31
+2016,July-15,Greenwich,7,1,2015,39
+2016,August-15,Greenwich,8,2,2015,16
+2016,September-15,Greenwich,9,3,2015,11
+2016,October-15,Greenwich,10,4,2015,24
+2016,November-15,Greenwich,11,5,2015,20
+2016,December-15,Greenwich,12,6,2015,35
+2016,January-16,Greenwich,1,7,2016,18
+2016,February-16,Greenwich,2,8,2016,31
+2016,March-16,Greenwich,3,9,2016,26
+2016,April-16,Greenwich,4,10,2016,20
+2016,May-16,Greenwich,5,11,2016,21
+2016,June-16,Greenwich,6,12,2016,23
+2014,July-13,Griswold,7,1,2013,41
+2014,August-13,Griswold,8,2,2013,54
+2014,September-13,Griswold,9,3,2013,42
+2014,October-13,Griswold,10,4,2013,44
+2014,November-13,Griswold,11,5,2013,30
+2014,December-13,Griswold,12,6,2013,47
+2014,January-14,Griswold,1,7,2014,40
+2014,February-14,Griswold,2,8,2014,27
+2014,March-14,Griswold,3,9,2014,37
+2014,April-14,Griswold,4,10,2014,32
+2014,May-14,Griswold,5,11,2014,36
+2014,June-14,Griswold,6,12,2014,34
+2015,July-14,Griswold,7,1,2014,53
+2015,August-14,Griswold,8,2,2014,29
+2015,September-14,Griswold,9,3,2014,42
+2015,October-14,Griswold,10,4,2014,39
+2015,November-14,Griswold,11,5,2014,34
+2015,December-14,Griswold,12,6,2014,29
+2015,January-15,Griswold,1,7,2015,44
+2015,February-15,Griswold,2,8,2015,41
+2015,March-15,Griswold,3,9,2015,45
+2015,April-15,Griswold,4,10,2015,49
+2015,May-15,Griswold,5,11,2015,30
+2015,June-15,Griswold,6,12,2015,32
+2016,July-15,Griswold,7,1,2015,41
+2016,August-15,Griswold,8,2,2015,36
+2016,September-15,Griswold,9,3,2015,36
+2016,October-15,Griswold,10,4,2015,35
+2016,November-15,Griswold,11,5,2015,32
+2016,December-15,Griswold,12,6,2015,38
+2016,January-16,Griswold,1,7,2016,30
+2016,February-16,Griswold,2,8,2016,30
+2016,March-16,Griswold,3,9,2016,40
+2016,April-16,Griswold,4,10,2016,38
+2016,May-16,Griswold,5,11,2016,30
+2016,June-16,Griswold,6,12,2016,26
+2014,July-13,Groton,7,1,2013,52
+2014,August-13,Groton,8,2,2013,61
+2014,September-13,Groton,9,3,2013,68
+2014,October-13,Groton,10,4,2013,61
+2014,November-13,Groton,11,5,2013,50
+2014,December-13,Groton,12,6,2013,57
+2014,January-14,Groton,1,7,2014,54
+2014,February-14,Groton,2,8,2014,54
+2014,March-14,Groton,3,9,2014,62
+2014,April-14,Groton,4,10,2014,58
+2014,May-14,Groton,5,11,2014,67
+2014,June-14,Groton,6,12,2014,65
+2015,July-14,Groton,7,1,2014,55
+2015,August-14,Groton,8,2,2014,66
+2015,September-14,Groton,9,3,2014,57
+2015,October-14,Groton,10,4,2014,57
+2015,November-14,Groton,11,5,2014,51
+2015,December-14,Groton,12,6,2014,73
+2015,January-15,Groton,1,7,2015,43
+2015,February-15,Groton,2,8,2015,51
+2015,March-15,Groton,3,9,2015,59
+2015,April-15,Groton,4,10,2015,49
+2015,May-15,Groton,5,11,2015,51
+2015,June-15,Groton,6,12,2015,43
+2016,July-15,Groton,7,1,2015,61
+2016,August-15,Groton,8,2,2015,47
+2016,September-15,Groton,9,3,2015,53
+2016,October-15,Groton,10,4,2015,47
+2016,November-15,Groton,11,5,2015,51
+2016,December-15,Groton,12,6,2015,48
+2016,January-16,Groton,1,7,2016,61
+2016,February-16,Groton,2,8,2016,52
+2016,March-16,Groton,3,9,2016,59
+2016,April-16,Groton,4,10,2016,49
+2016,May-16,Groton,5,11,2016,47
+2016,June-16,Groton,6,12,2016,51
+2014,July-13,Guilford,7,1,2013,21
+2014,August-13,Guilford,8,2,2013,18
+2014,September-13,Guilford,9,3,2013,16
+2014,October-13,Guilford,10,4,2013,21
+2014,November-13,Guilford,11,5,2013,18
+2014,December-13,Guilford,12,6,2013,21
+2014,January-14,Guilford,1,7,2014,13
+2014,February-14,Guilford,2,8,2014,18
+2014,March-14,Guilford,3,9,2014,16
+2014,April-14,Guilford,4,10,2014,19
+2014,May-14,Guilford,5,11,2014,25
+2014,June-14,Guilford,6,12,2014,19
+2015,July-14,Guilford,7,1,2014,14
+2015,August-14,Guilford,8,2,2014,17
+2015,September-14,Guilford,9,3,2014,9
+2015,October-14,Guilford,10,4,2014,16
+2015,November-14,Guilford,11,5,2014,8
+2015,December-14,Guilford,12,6,2014,17
+2015,January-15,Guilford,1,7,2015,21
+2015,February-15,Guilford,2,8,2015,24
+2015,March-15,Guilford,3,9,2015,26
+2015,April-15,Guilford,4,10,2015,9
+2015,May-15,Guilford,5,11,2015,14
+2015,June-15,Guilford,6,12,2015,18
+2014,July-13,Hamden,7,1,2013,76
+2014,August-13,Hamden,8,2,2013,54
+2014,September-13,Hamden,9,3,2013,72
+2014,October-13,Hamden,10,4,2013,64
+2014,November-13,Hamden,11,5,2013,63
+2014,December-13,Hamden,12,6,2013,65
+2014,January-14,Hamden,1,7,2014,58
+2014,February-14,Hamden,2,8,2014,77
+2014,March-14,Hamden,3,9,2014,62
+2014,April-14,Hamden,4,10,2014,62
+2014,May-14,Hamden,5,11,2014,79
+2014,June-14,Hamden,6,12,2014,110
+2015,July-14,Hamden,7,1,2014,73
+2015,August-14,Hamden,8,2,2014,70
+2015,September-14,Hamden,9,3,2014,61
+2015,October-14,Hamden,10,4,2014,67
+2015,November-14,Hamden,11,5,2014,59
+2015,December-14,Hamden,12,6,2014,84
+2015,January-15,Hamden,1,7,2015,84
+2015,February-15,Hamden,2,8,2015,50
+2015,March-15,Hamden,3,9,2015,77
+2015,April-15,Hamden,4,10,2015,47
+2015,May-15,Hamden,5,11,2015,71
+2015,June-15,Hamden,6,12,2015,77
+2016,July-15,Hamden,7,1,2015,66
+2016,August-15,Hamden,8,2,2015,64
+2016,September-15,Hamden,9,3,2015,57
+2016,October-15,Hamden,10,4,2015,60
+2016,November-15,Hamden,11,5,2015,48
+2016,December-15,Hamden,12,6,2015,70
+2016,January-16,Hamden,1,7,2016,76
+2016,February-16,Hamden,2,8,2016,59
+2016,March-16,Hamden,3,9,2016,70
+2016,April-16,Hamden,4,10,2016,64
+2016,May-16,Hamden,5,11,2016,54
+2016,June-16,Hamden,6,12,2016,74
+2014,July-13,Hartford,7,1,2013,586
+2014,August-13,Hartford,8,2,2013,611
+2014,September-13,Hartford,9,3,2013,629
+2014,October-13,Hartford,10,4,2013,678
+2014,November-13,Hartford,11,5,2013,586
+2014,December-13,Hartford,12,6,2013,563
+2014,January-14,Hartford,1,7,2014,609
+2014,February-14,Hartford,2,8,2014,506
+2014,March-14,Hartford,3,9,2014,660
+2014,April-14,Hartford,4,10,2014,666
+2014,May-14,Hartford,5,11,2014,627
+2014,June-14,Hartford,6,12,2014,602
+2015,July-14,Hartford,7,1,2014,710
+2015,August-14,Hartford,8,2,2014,674
+2015,September-14,Hartford,9,3,2014,635
+2015,October-14,Hartford,10,4,2014,715
+2015,November-14,Hartford,11,5,2014,588
+2015,December-14,Hartford,12,6,2014,643
+2015,January-15,Hartford,1,7,2015,597
+2015,February-15,Hartford,2,8,2015,642
+2015,March-15,Hartford,3,9,2015,709
+2015,April-15,Hartford,4,10,2015,687
+2015,May-15,Hartford,5,11,2015,594
+2015,June-15,Hartford,6,12,2015,665
+2016,July-15,Hartford,7,1,2015,670
+2016,August-15,Hartford,8,2,2015,635
+2016,September-15,Hartford,9,3,2015,685
+2016,October-15,Hartford,10,4,2015,679
+2016,November-15,Hartford,11,5,2015,549
+2016,December-15,Hartford,12,6,2015,601
+2016,January-16,Hartford,1,7,2016,551
+2016,February-16,Hartford,2,8,2016,583
+2016,March-16,Hartford,3,9,2016,631
+2016,April-16,Hartford,4,10,2016,648
+2016,May-16,Hartford,5,11,2016,550
+2016,June-16,Hartford,6,12,2016,605
+2014,July-13,Hebron,7,1,2013,11
+2014,August-13,Hebron,8,2,2013,9
+2014,September-13,Hebron,9,3,2013,10
+2014,October-13,Hebron,10,4,2013,8
+2014,November-13,Hebron,11,5,2013,12
+2014,December-13,Hebron,12,6,2013,9
+2014,January-14,Hebron,1,7,2014,12
+2014,February-14,Hebron,2,8,2014,8
+2014,March-14,Hebron,3,9,2014,8
+2014,April-14,Hebron,4,10,2014,16
+2014,May-14,Hebron,5,11,2014,6
+2014,June-14,Hebron,6,12,2014,10
+2014,July-13,Killingly,7,1,2013,54
+2014,August-13,Killingly,8,2,2013,46
+2014,September-13,Killingly,9,3,2013,42
+2014,October-13,Killingly,10,4,2013,57
+2014,November-13,Killingly,11,5,2013,35
+2014,December-13,Killingly,12,6,2013,34
+2014,January-14,Killingly,1,7,2014,42
+2014,February-14,Killingly,2,8,2014,58
+2014,March-14,Killingly,3,9,2014,50
+2014,April-14,Killingly,4,10,2014,47
+2014,May-14,Killingly,5,11,2014,38
+2014,June-14,Killingly,6,12,2014,65
+2015,July-14,Killingly,7,1,2014,43
+2015,August-14,Killingly,8,2,2014,53
+2015,September-14,Killingly,9,3,2014,44
+2015,October-14,Killingly,10,4,2014,58
+2015,November-14,Killingly,11,5,2014,38
+2015,December-14,Killingly,12,6,2014,39
+2015,January-15,Killingly,1,7,2015,58
+2015,February-15,Killingly,2,8,2015,43
+2015,March-15,Killingly,3,9,2015,57
+2015,April-15,Killingly,4,10,2015,53
+2015,May-15,Killingly,5,11,2015,47
+2015,June-15,Killingly,6,12,2015,59
+2016,July-15,Killingly,7,1,2015,53
+2016,August-15,Killingly,8,2,2015,51
+2016,September-15,Killingly,9,3,2015,61
+2016,October-15,Killingly,10,4,2015,40
+2016,November-15,Killingly,11,5,2015,41
+2016,December-15,Killingly,12,6,2015,49
+2016,January-16,Killingly,1,7,2016,47
+2016,February-16,Killingly,2,8,2016,41
+2016,March-16,Killingly,3,9,2016,56
+2016,April-16,Killingly,4,10,2016,55
+2016,May-16,Killingly,5,11,2016,43
+2016,June-16,Killingly,6,12,2016,49
+2014,July-13,Lebanon,7,1,2013,29
+2014,August-13,Lebanon,8,2,2013,15
+2014,September-13,Lebanon,9,3,2013,22
+2014,October-13,Lebanon,10,4,2013,26
+2014,November-13,Lebanon,11,5,2013,15
+2014,December-13,Lebanon,12,6,2013,19
+2014,January-14,Lebanon,1,7,2014,25
+2014,February-14,Lebanon,2,8,2014,11
+2014,March-14,Lebanon,3,9,2014,36
+2014,April-14,Lebanon,4,10,2014,30
+2014,May-14,Lebanon,5,11,2014,17
+2014,June-14,Lebanon,6,12,2014,21
+2015,July-14,Lebanon,7,1,2014,20
+2015,August-14,Lebanon,8,2,2014,29
+2015,September-14,Lebanon,9,3,2014,34
+2015,October-14,Lebanon,10,4,2014,31
+2015,November-14,Lebanon,11,5,2014,19
+2015,December-14,Lebanon,12,6,2014,25
+2015,January-15,Lebanon,1,7,2015,20
+2015,February-15,Lebanon,2,8,2015,19
+2015,March-15,Lebanon,3,9,2015,25
+2015,April-15,Lebanon,4,10,2015,24
+2015,May-15,Lebanon,5,11,2015,30
+2015,June-15,Lebanon,6,12,2015,18
+2016,July-15,Lebanon,7,1,2015,26
+2016,August-15,Lebanon,8,2,2015,22
+2016,September-15,Lebanon,9,3,2015,23
+2016,October-15,Lebanon,10,4,2015,23
+2016,November-15,Lebanon,11,5,2015,24
+2016,December-15,Lebanon,12,6,2015,24
+2016,January-16,Lebanon,1,7,2016,18
+2016,February-16,Lebanon,2,8,2016,20
+2016,March-16,Lebanon,3,9,2016,28
+2016,April-16,Lebanon,4,10,2016,26
+2016,May-16,Lebanon,5,11,2016,22
+2016,June-16,Lebanon,6,12,2016,22
+2014,July-13,Ledyard,7,1,2013,12
+2014,August-13,Ledyard,8,2,2013,16
+2014,September-13,Ledyard,9,3,2013,12
+2014,October-13,Ledyard,10,4,2013,21
+2014,November-13,Ledyard,11,5,2013,14
+2014,December-13,Ledyard,12,6,2013,23
+2014,January-14,Ledyard,1,7,2014,31
+2014,February-14,Ledyard,2,8,2014,20
+2014,March-14,Ledyard,3,9,2014,19
+2014,April-14,Ledyard,4,10,2014,22
+2014,May-14,Ledyard,5,11,2014,30
+2014,June-14,Ledyard,6,12,2014,29
+2015,July-14,Ledyard,7,1,2014,11
+2015,August-14,Ledyard,8,2,2014,24
+2015,September-14,Ledyard,9,3,2014,25
+2015,October-14,Ledyard,10,4,2014,17
+2015,November-14,Ledyard,11,5,2014,14
+2015,December-14,Ledyard,12,6,2014,17
+2015,January-15,Ledyard,1,7,2015,15
+2015,February-15,Ledyard,2,8,2015,18
+2015,March-15,Ledyard,3,9,2015,18
+2015,April-15,Ledyard,4,10,2015,26
+2015,May-15,Ledyard,5,11,2015,20
+2015,June-15,Ledyard,6,12,2015,19
+2016,July-15,Ledyard,7,1,2015,7
+2016,August-15,Ledyard,8,2,2015,19
+2016,September-15,Ledyard,9,3,2015,17
+2016,October-15,Ledyard,10,4,2015,22
+2016,November-15,Ledyard,11,5,2015,15
+2016,December-15,Ledyard,12,6,2015,10
+2016,January-16,Ledyard,1,7,2016,17
+2016,February-16,Ledyard,2,8,2016,26
+2016,March-16,Ledyard,3,9,2016,16
+2016,April-16,Ledyard,4,10,2016,22
+2016,May-16,Ledyard,5,11,2016,19
+2016,June-16,Ledyard,6,12,2016,22
+2014,July-13,Litchfield,7,1,2013,11
+2014,August-13,Litchfield,8,2,2013,13
+2014,September-13,Litchfield,9,3,2013,14
+2014,October-13,Litchfield,10,4,2013,14
+2014,November-13,Litchfield,11,5,2013,13
+2014,December-13,Litchfield,12,6,2013,9
+2014,January-14,Litchfield,1,7,2014,14
+2014,February-14,Litchfield,2,8,2014,10
+2014,March-14,Litchfield,3,9,2014,17
+2014,April-14,Litchfield,4,10,2014,11
+2014,May-14,Litchfield,5,11,2014,9
+2014,June-14,Litchfield,6,12,2014,10
+2015,July-14,Litchfield,7,1,2014,13
+2015,August-14,Litchfield,8,2,2014,8
+2015,September-14,Litchfield,9,3,2014,17
+2015,October-14,Litchfield,10,4,2014,18
+2015,November-14,Litchfield,11,5,2014,11
+2015,December-14,Litchfield,12,6,2014,12
+2015,January-15,Litchfield,1,7,2015,11
+2015,February-15,Litchfield,2,8,2015,6
+2015,March-15,Litchfield,3,9,2015,10
+2015,April-15,Litchfield,4,10,2015,11
+2015,May-15,Litchfield,5,11,2015,12
+2015,June-15,Litchfield,6,12,2015,15
+2016,July-15,Litchfield,7,1,2015,12
+2016,August-15,Litchfield,8,2,2015,20
+2016,September-15,Litchfield,9,3,2015,14
+2016,October-15,Litchfield,10,4,2015,9
+2016,November-15,Litchfield,11,5,2015,14
+2016,December-15,Litchfield,12,6,2015,20
+2016,January-16,Litchfield,1,7,2016,18
+2016,February-16,Litchfield,2,8,2016,8
+2016,March-16,Litchfield,3,9,2016,16
+2016,April-16,Litchfield,4,10,2016,10
+2016,May-16,Litchfield,5,11,2016,12
+2016,June-16,Litchfield,6,12,2016,11
+2014,July-13,Madison,7,1,2013,18
+2014,August-13,Madison,8,2,2013,15
+2014,September-13,Madison,9,3,2013,13
+2014,October-13,Madison,10,4,2013,13
+2014,November-13,Madison,11,5,2013,12
+2014,December-13,Madison,12,6,2013,12
+2014,January-14,Madison,1,7,2014,12
+2014,February-14,Madison,2,8,2014,22
+2014,March-14,Madison,3,9,2014,20
+2014,April-14,Madison,4,10,2014,12
+2014,May-14,Madison,5,11,2014,12
+2014,June-14,Madison,6,12,2014,20
+2015,July-14,Madison,7,1,2014,17
+2015,August-14,Madison,8,2,2014,19
+2015,September-14,Madison,9,3,2014,16
+2015,October-14,Madison,10,4,2014,18
+2015,November-14,Madison,11,5,2014,9
+2015,December-14,Madison,12,6,2014,14
+2015,January-15,Madison,1,7,2015,18
+2015,February-15,Madison,2,8,2015,8
+2015,March-15,Madison,3,9,2015,17
+2015,April-15,Madison,4,10,2015,10
+2015,May-15,Madison,5,11,2015,10
+2015,June-15,Madison,6,12,2015,12
+2014,July-13,Manchester,7,1,2013,91
+2014,August-13,Manchester,8,2,2013,82
+2014,September-13,Manchester,9,3,2013,88
+2014,October-13,Manchester,10,4,2013,89
+2014,November-13,Manchester,11,5,2013,77
+2014,December-13,Manchester,12,6,2013,84
+2014,January-14,Manchester,1,7,2014,92
+2014,February-14,Manchester,2,8,2014,76
+2014,March-14,Manchester,3,9,2014,97
+2014,April-14,Manchester,4,10,2014,75
+2014,May-14,Manchester,5,11,2014,81
+2014,June-14,Manchester,6,12,2014,95
+2015,July-14,Manchester,7,1,2014,101
+2015,August-14,Manchester,8,2,2014,88
+2015,September-14,Manchester,9,3,2014,95
+2015,October-14,Manchester,10,4,2014,91
+2015,November-14,Manchester,11,5,2014,74
+2015,December-14,Manchester,12,6,2014,77
+2015,January-15,Manchester,1,7,2015,86
+2015,February-15,Manchester,2,8,2015,71
+2015,March-15,Manchester,3,9,2015,107
+2015,April-15,Manchester,4,10,2015,74
+2015,May-15,Manchester,5,11,2015,78
+2015,June-15,Manchester,6,12,2015,99
+2016,July-15,Manchester,7,1,2015,89
+2016,August-15,Manchester,8,2,2015,77
+2016,September-15,Manchester,9,3,2015,89
+2016,October-15,Manchester,10,4,2015,91
+2016,November-15,Manchester,11,5,2015,86
+2016,December-15,Manchester,12,6,2015,79
+2016,January-16,Manchester,1,7,2016,94
+2016,February-16,Manchester,2,8,2016,80
+2016,March-16,Manchester,3,9,2016,93
+2016,April-16,Manchester,4,10,2016,92
+2016,May-16,Manchester,5,11,2016,72
+2016,June-16,Manchester,6,12,2016,102
+2014,July-13,Mansfield,7,1,2013,19
+2014,August-13,Mansfield,8,2,2013,32
+2014,September-13,Mansfield,9,3,2013,31
+2014,October-13,Mansfield,10,4,2013,31
+2014,November-13,Mansfield,11,5,2013,16
+2014,December-13,Mansfield,12,6,2013,14
+2014,January-14,Mansfield,1,7,2014,20
+2014,February-14,Mansfield,2,8,2014,28
+2014,March-14,Mansfield,3,9,2014,19
+2014,April-14,Mansfield,4,10,2014,19
+2014,May-14,Mansfield,5,11,2014,16
+2014,June-14,Mansfield,6,12,2014,22
+2015,July-14,Mansfield,7,1,2014,18
+2015,August-14,Mansfield,8,2,2014,12
+2015,September-14,Mansfield,9,3,2014,11
+2015,October-14,Mansfield,10,4,2014,20
+2015,November-14,Mansfield,11,5,2014,15
+2015,December-14,Mansfield,12,6,2014,21
+2015,January-15,Mansfield,1,7,2015,9
+2015,February-15,Mansfield,2,8,2015,25
+2015,March-15,Mansfield,3,9,2015,18
+2015,April-15,Mansfield,4,10,2015,18
+2015,May-15,Mansfield,5,11,2015,14
+2015,June-15,Mansfield,6,12,2015,10
+2016,July-15,Mansfield,7,1,2015,21
+2016,August-15,Mansfield,8,2,2015,20
+2016,September-15,Mansfield,9,3,2015,20
+2016,October-15,Mansfield,10,4,2015,20
+2016,November-15,Mansfield,11,5,2015,22
+2016,December-15,Mansfield,12,6,2015,9
+2016,January-16,Mansfield,1,7,2016,23
+2016,February-16,Mansfield,2,8,2016,20
+2016,March-16,Mansfield,3,9,2016,17
+2016,April-16,Mansfield,4,10,2016,18
+2016,May-16,Mansfield,5,11,2016,12
+2016,June-16,Mansfield,6,12,2016,12
+2014,July-13,Meriden,7,1,2013,133
+2014,August-13,Meriden,8,2,2013,139
+2014,September-13,Meriden,9,3,2013,104
+2014,October-13,Meriden,10,4,2013,130
+2014,November-13,Meriden,11,5,2013,92
+2014,December-13,Meriden,12,6,2013,84
+2014,January-14,Meriden,1,7,2014,127
+2014,February-14,Meriden,2,8,2014,104
+2014,March-14,Meriden,3,9,2014,126
+2014,April-14,Meriden,4,10,2014,124
+2014,May-14,Meriden,5,11,2014,128
+2014,June-14,Meriden,6,12,2014,135
+2015,July-14,Meriden,7,1,2014,98
+2015,August-14,Meriden,8,2,2014,115
+2015,September-14,Meriden,9,3,2014,128
+2015,October-14,Meriden,10,4,2014,135
+2015,November-14,Meriden,11,5,2014,87
+2015,December-14,Meriden,12,6,2014,142
+2015,January-15,Meriden,1,7,2015,156
+2015,February-15,Meriden,2,8,2015,95
+2015,March-15,Meriden,3,9,2015,145
+2015,April-15,Meriden,4,10,2015,116
+2015,May-15,Meriden,5,11,2015,115
+2015,June-15,Meriden,6,12,2015,125
+2016,July-15,Meriden,7,1,2015,125
+2016,August-15,Meriden,8,2,2015,116
+2016,September-15,Meriden,9,3,2015,136
+2016,October-15,Meriden,10,4,2015,112
+2016,November-15,Meriden,11,5,2015,100
+2016,December-15,Meriden,12,6,2015,113
+2016,January-16,Meriden,1,7,2016,105
+2016,February-16,Meriden,2,8,2016,109
+2016,March-16,Meriden,3,9,2016,124
+2016,April-16,Meriden,4,10,2016,139
+2016,May-16,Meriden,5,11,2016,108
+2016,June-16,Meriden,6,12,2016,108
+2014,July-13,Middletown,7,1,2013,181
+2014,August-13,Middletown,8,2,2013,152
+2014,September-13,Middletown,9,3,2013,145
+2014,October-13,Middletown,10,4,2013,133
+2014,November-13,Middletown,11,5,2013,117
+2014,December-13,Middletown,12,6,2013,137
+2014,January-14,Middletown,1,7,2014,151
+2014,February-14,Middletown,2,8,2014,130
+2014,March-14,Middletown,3,9,2014,138
+2014,April-14,Middletown,4,10,2014,159
+2014,May-14,Middletown,5,11,2014,152
+2014,June-14,Middletown,6,12,2014,165
+2015,July-14,Middletown,7,1,2014,181
+2015,August-14,Middletown,8,2,2014,150
+2015,September-14,Middletown,9,3,2014,154
+2015,October-14,Middletown,10,4,2014,173
+2015,November-14,Middletown,11,5,2014,129
+2015,December-14,Middletown,12,6,2014,127
+2015,January-15,Middletown,1,7,2015,135
+2015,February-15,Middletown,2,8,2015,131
+2015,March-15,Middletown,3,9,2015,136
+2015,April-15,Middletown,4,10,2015,135
+2015,May-15,Middletown,5,11,2015,129
+2015,June-15,Middletown,6,12,2015,139
+2016,July-15,Middletown,7,1,2015,127
+2016,August-15,Middletown,8,2,2015,154
+2016,September-15,Middletown,9,3,2015,145
+2016,October-15,Middletown,10,4,2015,146
+2016,November-15,Middletown,11,5,2015,128
+2016,December-15,Middletown,12,6,2015,140
+2016,January-16,Middletown,1,7,2016,144
+2016,February-16,Middletown,2,8,2016,138
+2016,March-16,Middletown,3,9,2016,162
+2016,April-16,Middletown,4,10,2016,168
+2016,May-16,Middletown,5,11,2016,137
+2016,June-16,Middletown,6,12,2016,149
+2014,July-13,Milford,7,1,2013,70
+2014,August-13,Milford,8,2,2013,71
+2014,September-13,Milford,9,3,2013,64
+2014,October-13,Milford,10,4,2013,62
+2014,November-13,Milford,11,5,2013,46
+2014,December-13,Milford,12,6,2013,37
+2014,January-14,Milford,1,7,2014,62
+2014,February-14,Milford,2,8,2014,55
+2014,March-14,Milford,3,9,2014,55
+2014,April-14,Milford,4,10,2014,63
+2014,May-14,Milford,5,11,2014,60
+2014,June-14,Milford,6,12,2014,70
+2015,July-14,Milford,7,1,2014,60
+2015,August-14,Milford,8,2,2014,66
+2015,September-14,Milford,9,3,2014,64
+2015,October-14,Milford,10,4,2014,66
+2015,November-14,Milford,11,5,2014,44
+2015,December-14,Milford,12,6,2014,67
+2015,January-15,Milford,1,7,2015,60
+2015,February-15,Milford,2,8,2015,48
+2015,March-15,Milford,3,9,2015,67
+2015,April-15,Milford,4,10,2015,58
+2015,May-15,Milford,5,11,2015,61
+2015,June-15,Milford,6,12,2015,56
+2016,July-15,Milford,7,1,2015,68
+2016,August-15,Milford,8,2,2015,56
+2016,September-15,Milford,9,3,2015,61
+2016,October-15,Milford,10,4,2015,66
+2016,November-15,Milford,11,5,2015,41
+2016,December-15,Milford,12,6,2015,59
+2016,January-16,Milford,1,7,2016,63
+2016,February-16,Milford,2,8,2016,58
+2016,March-16,Milford,3,9,2016,74
+2016,April-16,Milford,4,10,2016,53
+2016,May-16,Milford,5,11,2016,80
+2016,June-16,Milford,6,12,2016,58
+2014,July-13,Monroe,7,1,2013,12
+2014,August-13,Monroe,8,2,2013,18
+2014,September-13,Monroe,9,3,2013,13
+2014,October-13,Monroe,10,4,2013,15
+2014,November-13,Monroe,11,5,2013,22
+2014,December-13,Monroe,12,6,2013,10
+2014,January-14,Monroe,1,7,2014,11
+2014,February-14,Monroe,2,8,2014,10
+2014,March-14,Monroe,3,9,2014,13
+2014,April-14,Monroe,4,10,2014,7
+2014,May-14,Monroe,5,11,2014,18
+2014,June-14,Monroe,6,12,2014,14
+2015,July-14,Monroe,7,1,2014,16
+2015,August-14,Monroe,8,2,2014,17
+2015,September-14,Monroe,9,3,2014,15
+2015,October-14,Monroe,10,4,2014,18
+2015,November-14,Monroe,11,5,2014,13
+2015,December-14,Monroe,12,6,2014,13
+2015,January-15,Monroe,1,7,2015,22
+2015,February-15,Monroe,2,8,2015,10
+2015,March-15,Monroe,3,9,2015,15
+2015,April-15,Monroe,4,10,2015,17
+2015,May-15,Monroe,5,11,2015,15
+2015,June-15,Monroe,6,12,2015,9
+2016,July-15,Monroe,7,1,2015,12
+2016,August-15,Monroe,8,2,2015,22
+2016,September-15,Monroe,9,3,2015,11
+2016,October-15,Monroe,10,4,2015,14
+2016,November-15,Monroe,11,5,2015,14
+2016,December-15,Monroe,12,6,2015,18
+2016,January-16,Monroe,1,7,2016,16
+2016,February-16,Monroe,2,8,2016,15
+2016,March-16,Monroe,3,9,2016,18
+2016,April-16,Monroe,4,10,2016,15
+2016,May-16,Monroe,5,11,2016,13
+2016,June-16,Monroe,6,12,2016,13
+2014,July-13,Montville,7,1,2013,35
+2014,August-13,Montville,8,2,2013,32
+2014,September-13,Montville,9,3,2013,41
+2014,October-13,Montville,10,4,2013,54
+2014,November-13,Montville,11,5,2013,33
+2014,December-13,Montville,12,6,2013,36
+2014,January-14,Montville,1,7,2014,35
+2014,February-14,Montville,2,8,2014,26
+2014,March-14,Montville,3,9,2014,31
+2014,April-14,Montville,4,10,2014,31
+2014,May-14,Montville,5,11,2014,52
+2014,June-14,Montville,6,12,2014,35
+2015,July-14,Montville,7,1,2014,32
+2015,August-14,Montville,8,2,2014,33
+2015,September-14,Montville,9,3,2014,25
+2015,October-14,Montville,10,4,2014,23
+2015,November-14,Montville,11,5,2014,25
+2015,December-14,Montville,12,6,2014,32
+2015,January-15,Montville,1,7,2015,31
+2015,February-15,Montville,2,8,2015,27
+2015,March-15,Montville,3,9,2015,31
+2015,April-15,Montville,4,10,2015,30
+2015,May-15,Montville,5,11,2015,31
+2015,June-15,Montville,6,12,2015,36
+2016,July-15,Montville,7,1,2015,31
+2016,August-15,Montville,8,2,2015,22
+2016,September-15,Montville,9,3,2015,34
+2016,October-15,Montville,10,4,2015,27
+2016,November-15,Montville,11,5,2015,39
+2016,December-15,Montville,12,6,2015,29
+2016,January-16,Montville,1,7,2016,35
+2016,February-16,Montville,2,8,2016,24
+2016,March-16,Montville,3,9,2016,42
+2016,April-16,Montville,4,10,2016,28
+2016,May-16,Montville,5,11,2016,33
+2016,June-16,Montville,6,12,2016,38
+2014,July-13,NA,7,1,2013,165
+2014,August-13,NA,8,2,2013,177
+2014,September-13,NA,9,3,2013,165
+2014,October-13,NA,10,4,2013,156
+2014,November-13,NA,11,5,2013,137
+2014,December-13,NA,12,6,2013,151
+2014,January-14,NA,1,7,2014,162
+2014,February-14,NA,2,8,2014,157
+2014,March-14,NA,3,9,2014,159
+2014,April-14,NA,4,10,2014,179
+2014,May-14,NA,5,11,2014,164
+2014,June-14,NA,6,12,2014,155
+2015,July-14,NA,7,1,2014,182
+2015,August-14,NA,8,2,2014,180
+2015,September-14,NA,9,3,2014,153
+2015,October-14,NA,10,4,2014,155
+2015,November-14,NA,11,5,2014,137
+2015,December-14,NA,12,6,2014,148
+2015,January-15,NA,1,7,2015,143
+2015,February-15,NA,2,8,2015,115
+2015,March-15,NA,3,9,2015,144
+2015,April-15,NA,4,10,2015,188
+2015,May-15,NA,5,11,2015,148
+2015,June-15,NA,6,12,2015,161
+2016,July-15,NA,7,1,2015,160
+2016,August-15,NA,8,2,2015,151
+2016,September-15,NA,9,3,2015,168
+2016,October-15,NA,10,4,2015,166
+2016,November-15,NA,11,5,2015,134
+2016,December-15,NA,12,6,2015,136
+2016,January-16,NA,1,7,2016,171
+2016,February-16,NA,2,8,2016,161
+2016,March-16,NA,3,9,2016,146
+2016,April-16,NA,4,10,2016,136
+2016,May-16,NA,5,11,2016,161
+2016,June-16,NA,6,12,2016,156
+2014,July-13,Naugatuck,7,1,2013,62
+2014,August-13,Naugatuck,8,2,2013,69
+2014,September-13,Naugatuck,9,3,2013,70
+2014,October-13,Naugatuck,10,4,2013,72
+2014,November-13,Naugatuck,11,5,2013,71
+2014,December-13,Naugatuck,12,6,2013,59
+2014,January-14,Naugatuck,1,7,2014,61
+2014,February-14,Naugatuck,2,8,2014,37
+2014,March-14,Naugatuck,3,9,2014,79
+2014,April-14,Naugatuck,4,10,2014,65
+2014,May-14,Naugatuck,5,11,2014,63
+2014,June-14,Naugatuck,6,12,2014,62
+2015,July-14,Naugatuck,7,1,2014,75
+2015,August-14,Naugatuck,8,2,2014,59
+2015,September-14,Naugatuck,9,3,2014,70
+2015,October-14,Naugatuck,10,4,2014,73
+2015,November-14,Naugatuck,11,5,2014,73
+2015,December-14,Naugatuck,12,6,2014,73
+2015,January-15,Naugatuck,1,7,2015,69
+2015,February-15,Naugatuck,2,8,2015,58
+2015,March-15,Naugatuck,3,9,2015,101
+2015,April-15,Naugatuck,4,10,2015,68
+2015,May-15,Naugatuck,5,11,2015,51
+2015,June-15,Naugatuck,6,12,2015,84
+2016,July-15,Naugatuck,7,1,2015,70
+2016,August-15,Naugatuck,8,2,2015,77
+2016,September-15,Naugatuck,9,3,2015,66
+2016,October-15,Naugatuck,10,4,2015,71
+2016,November-15,Naugatuck,11,5,2015,46
+2016,December-15,Naugatuck,12,6,2015,58
+2016,January-16,Naugatuck,1,7,2016,68
+2016,February-16,Naugatuck,2,8,2016,70
+2016,March-16,Naugatuck,3,9,2016,84
+2016,April-16,Naugatuck,4,10,2016,87
+2016,May-16,Naugatuck,5,11,2016,78
+2016,June-16,Naugatuck,6,12,2016,68
+2014,July-13,New Britain,7,1,2013,243
+2014,August-13,New Britain,8,2,2013,225
+2014,September-13,New Britain,9,3,2013,228
+2014,October-13,New Britain,10,4,2013,258
+2014,November-13,New Britain,11,5,2013,212
+2014,December-13,New Britain,12,6,2013,222
+2014,January-14,New Britain,1,7,2014,240
+2014,February-14,New Britain,2,8,2014,212
+2014,March-14,New Britain,3,9,2014,256
+2014,April-14,New Britain,4,10,2014,275
+2014,May-14,New Britain,5,11,2014,230
+2014,June-14,New Britain,6,12,2014,264
+2015,July-14,New Britain,7,1,2014,267
+2015,August-14,New Britain,8,2,2014,246
+2015,September-14,New Britain,9,3,2014,261
+2015,October-14,New Britain,10,4,2014,251
+2015,November-14,New Britain,11,5,2014,228
+2015,December-14,New Britain,12,6,2014,224
+2015,January-15,New Britain,1,7,2015,230
+2015,February-15,New Britain,2,8,2015,230
+2015,March-15,New Britain,3,9,2015,266
+2015,April-15,New Britain,4,10,2015,258
+2015,May-15,New Britain,5,11,2015,261
+2015,June-15,New Britain,6,12,2015,281
+2016,July-15,New Britain,7,1,2015,297
+2016,August-15,New Britain,8,2,2015,262
+2016,September-15,New Britain,9,3,2015,316
+2016,October-15,New Britain,10,4,2015,301
+2016,November-15,New Britain,11,5,2015,219
+2016,December-15,New Britain,12,6,2015,265
+2016,January-16,New Britain,1,7,2016,241
+2016,February-16,New Britain,2,8,2016,285
+2016,March-16,New Britain,3,9,2016,293
+2016,April-16,New Britain,4,10,2016,249
+2016,May-16,New Britain,5,11,2016,286
+2016,June-16,New Britain,6,12,2016,294
+2015,July-14,New Fairfield,7,1,2014,16
+2015,August-14,New Fairfield,8,2,2014,8
+2015,September-14,New Fairfield,9,3,2014,8
+2015,October-14,New Fairfield,10,4,2014,13
+2015,November-14,New Fairfield,11,5,2014,10
+2015,December-14,New Fairfield,12,6,2014,12
+2015,January-15,New Fairfield,1,7,2015,16
+2015,February-15,New Fairfield,2,8,2015,14
+2015,March-15,New Fairfield,3,9,2015,22
+2015,April-15,New Fairfield,4,10,2015,13
+2015,May-15,New Fairfield,5,11,2015,19
+2015,June-15,New Fairfield,6,12,2015,19
+2016,July-15,New Fairfield,7,1,2015,14
+2016,August-15,New Fairfield,8,2,2015,16
+2016,September-15,New Fairfield,9,3,2015,15
+2016,October-15,New Fairfield,10,4,2015,14
+2016,November-15,New Fairfield,11,5,2015,17
+2016,December-15,New Fairfield,12,6,2015,13
+2016,January-16,New Fairfield,1,7,2016,16
+2016,February-16,New Fairfield,2,8,2016,15
+2016,March-16,New Fairfield,3,9,2016,17
+2016,April-16,New Fairfield,4,10,2016,20
+2016,May-16,New Fairfield,5,11,2016,11
+2016,June-16,New Fairfield,6,12,2016,14
+2014,July-13,New Haven,7,1,2013,463
+2014,August-13,New Haven,8,2,2013,522
+2014,September-13,New Haven,9,3,2013,487
+2014,October-13,New Haven,10,4,2013,536
+2014,November-13,New Haven,11,5,2013,434
+2014,December-13,New Haven,12,6,2013,451
+2014,January-14,New Haven,1,7,2014,486
+2014,February-14,New Haven,2,8,2014,428
+2014,March-14,New Haven,3,9,2014,568
+2014,April-14,New Haven,4,10,2014,561
+2014,May-14,New Haven,5,11,2014,550
+2014,June-14,New Haven,6,12,2014,619
+2015,July-14,New Haven,7,1,2014,537
+2015,August-14,New Haven,8,2,2014,500
+2015,September-14,New Haven,9,3,2014,526
+2015,October-14,New Haven,10,4,2014,585
+2015,November-14,New Haven,11,5,2014,470
+2015,December-14,New Haven,12,6,2014,545
+2015,January-15,New Haven,1,7,2015,545
+2015,February-15,New Haven,2,8,2015,450
+2015,March-15,New Haven,3,9,2015,548
+2015,April-15,New Haven,4,10,2015,495
+2015,May-15,New Haven,5,11,2015,479
+2015,June-15,New Haven,6,12,2015,476
+2016,July-15,New Haven,7,1,2015,516
+2016,August-15,New Haven,8,2,2015,447
+2016,September-15,New Haven,9,3,2015,510
+2016,October-15,New Haven,10,4,2015,562
+2016,November-15,New Haven,11,5,2015,442
+2016,December-15,New Haven,12,6,2015,482
+2016,January-16,New Haven,1,7,2016,462
+2016,February-16,New Haven,2,8,2016,492
+2016,March-16,New Haven,3,9,2016,554
+2016,April-16,New Haven,4,10,2016,503
+2016,May-16,New Haven,5,11,2016,492
+2016,June-16,New Haven,6,12,2016,463
+2014,July-13,New London,7,1,2013,185
+2014,August-13,New London,8,2,2013,154
+2014,September-13,New London,9,3,2013,146
+2014,October-13,New London,10,4,2013,148
+2014,November-13,New London,11,5,2013,160
+2014,December-13,New London,12,6,2013,138
+2014,January-14,New London,1,7,2014,161
+2014,February-14,New London,2,8,2014,137
+2014,March-14,New London,3,9,2014,176
+2014,April-14,New London,4,10,2014,196
+2014,May-14,New London,5,11,2014,153
+2014,June-14,New London,6,12,2014,178
+2015,July-14,New London,7,1,2014,176
+2015,August-14,New London,8,2,2014,151
+2015,September-14,New London,9,3,2014,174
+2015,October-14,New London,10,4,2014,162
+2015,November-14,New London,11,5,2014,121
+2015,December-14,New London,12,6,2014,127
+2015,January-15,New London,1,7,2015,140
+2015,February-15,New London,2,8,2015,141
+2015,March-15,New London,3,9,2015,130
+2015,April-15,New London,4,10,2015,130
+2015,May-15,New London,5,11,2015,122
+2015,June-15,New London,6,12,2015,141
+2016,July-15,New London,7,1,2015,127
+2016,August-15,New London,8,2,2015,132
+2016,September-15,New London,9,3,2015,150
+2016,October-15,New London,10,4,2015,146
+2016,November-15,New London,11,5,2015,140
+2016,December-15,New London,12,6,2015,149
+2016,January-16,New London,1,7,2016,144
+2016,February-16,New London,2,8,2016,154
+2016,March-16,New London,3,9,2016,159
+2016,April-16,New London,4,10,2016,147
+2016,May-16,New London,5,11,2016,136
+2016,June-16,New London,6,12,2016,114
+2014,July-13,New Milford,7,1,2013,52
+2014,August-13,New Milford,8,2,2013,36
+2014,September-13,New Milford,9,3,2013,47
+2014,October-13,New Milford,10,4,2013,64
+2014,November-13,New Milford,11,5,2013,53
+2014,December-13,New Milford,12,6,2013,44
+2014,January-14,New Milford,1,7,2014,45
+2014,February-14,New Milford,2,8,2014,53
+2014,March-14,New Milford,3,9,2014,56
+2014,April-14,New Milford,4,10,2014,50
+2014,May-14,New Milford,5,11,2014,49
+2014,June-14,New Milford,6,12,2014,54
+2015,July-14,New Milford,7,1,2014,48
+2015,August-14,New Milford,8,2,2014,42
+2015,September-14,New Milford,9,3,2014,45
+2015,October-14,New Milford,10,4,2014,51
+2015,November-14,New Milford,11,5,2014,34
+2015,December-14,New Milford,12,6,2014,43
+2015,January-15,New Milford,1,7,2015,42
+2015,February-15,New Milford,2,8,2015,44
+2015,March-15,New Milford,3,9,2015,58
+2015,April-15,New Milford,4,10,2015,64
+2015,May-15,New Milford,5,11,2015,55
+2015,June-15,New Milford,6,12,2015,43
+2016,July-15,New Milford,7,1,2015,42
+2016,August-15,New Milford,8,2,2015,37
+2016,September-15,New Milford,9,3,2015,53
+2016,October-15,New Milford,10,4,2015,44
+2016,November-15,New Milford,11,5,2015,29
+2016,December-15,New Milford,12,6,2015,48
+2016,January-16,New Milford,1,7,2016,63
+2016,February-16,New Milford,2,8,2016,50
+2016,March-16,New Milford,3,9,2016,58
+2016,April-16,New Milford,4,10,2016,50
+2016,May-16,New Milford,5,11,2016,59
+2016,June-16,New Milford,6,12,2016,56
+2014,July-13,Newington,7,1,2013,42
+2014,August-13,Newington,8,2,2013,42
+2014,September-13,Newington,9,3,2013,35
+2014,October-13,Newington,10,4,2013,50
+2014,November-13,Newington,11,5,2013,34
+2014,December-13,Newington,12,6,2013,28
+2014,January-14,Newington,1,7,2014,22
+2014,February-14,Newington,2,8,2014,39
+2014,March-14,Newington,3,9,2014,34
+2014,April-14,Newington,4,10,2014,29
+2014,May-14,Newington,5,11,2014,33
+2014,June-14,Newington,6,12,2014,41
+2015,July-14,Newington,7,1,2014,36
+2015,August-14,Newington,8,2,2014,27
+2015,September-14,Newington,9,3,2014,37
+2015,October-14,Newington,10,4,2014,39
+2015,November-14,Newington,11,5,2014,33
+2015,December-14,Newington,12,6,2014,27
+2015,January-15,Newington,1,7,2015,29
+2015,February-15,Newington,2,8,2015,34
+2015,March-15,Newington,3,9,2015,26
+2015,April-15,Newington,4,10,2015,27
+2015,May-15,Newington,5,11,2015,33
+2015,June-15,Newington,6,12,2015,33
+2016,July-15,Newington,7,1,2015,44
+2016,August-15,Newington,8,2,2015,39
+2016,September-15,Newington,9,3,2015,35
+2016,October-15,Newington,10,4,2015,39
+2016,November-15,Newington,11,5,2015,35
+2016,December-15,Newington,12,6,2015,37
+2016,January-16,Newington,1,7,2016,43
+2016,February-16,Newington,2,8,2016,42
+2016,March-16,Newington,3,9,2016,39
+2016,April-16,Newington,4,10,2016,38
+2016,May-16,Newington,5,11,2016,46
+2016,June-16,Newington,6,12,2016,34
+2014,July-13,Newtown,7,1,2013,30
+2014,August-13,Newtown,8,2,2013,28
+2014,September-13,Newtown,9,3,2013,31
+2014,October-13,Newtown,10,4,2013,27
+2014,November-13,Newtown,11,5,2013,32
+2014,December-13,Newtown,12,6,2013,21
+2014,January-14,Newtown,1,7,2014,23
+2014,February-14,Newtown,2,8,2014,22
+2014,March-14,Newtown,3,9,2014,28
+2014,April-14,Newtown,4,10,2014,33
+2014,May-14,Newtown,5,11,2014,21
+2014,June-14,Newtown,6,12,2014,24
+2015,July-14,Newtown,7,1,2014,30
+2015,August-14,Newtown,8,2,2014,33
+2015,September-14,Newtown,9,3,2014,37
+2015,October-14,Newtown,10,4,2014,29
+2015,November-14,Newtown,11,5,2014,34
+2015,December-14,Newtown,12,6,2014,25
+2015,January-15,Newtown,1,7,2015,31
+2015,February-15,Newtown,2,8,2015,23
+2015,March-15,Newtown,3,9,2015,38
+2015,April-15,Newtown,4,10,2015,40
+2015,May-15,Newtown,5,11,2015,28
+2015,June-15,Newtown,6,12,2015,24
+2016,July-15,Newtown,7,1,2015,23
+2016,August-15,Newtown,8,2,2015,19
+2016,September-15,Newtown,9,3,2015,25
+2016,October-15,Newtown,10,4,2015,29
+2016,November-15,Newtown,11,5,2015,25
+2016,December-15,Newtown,12,6,2015,21
+2016,January-16,Newtown,1,7,2016,31
+2016,February-16,Newtown,2,8,2016,27
+2016,March-16,Newtown,3,9,2016,39
+2016,April-16,Newtown,4,10,2016,37
+2016,May-16,Newtown,5,11,2016,42
+2016,June-16,Newtown,6,12,2016,24
+2014,July-13,North Branford,7,1,2013,12
+2014,August-13,North Branford,8,2,2013,16
+2014,September-13,North Branford,9,3,2013,8
+2014,October-13,North Branford,10,4,2013,12
+2014,November-13,North Branford,11,5,2013,13
+2014,December-13,North Branford,12,6,2013,10
+2014,January-14,North Branford,1,7,2014,10
+2014,February-14,North Branford,2,8,2014,7
+2014,March-14,North Branford,3,9,2014,8
+2014,April-14,North Branford,4,10,2014,13
+2014,May-14,North Branford,5,11,2014,11
+2014,June-14,North Branford,6,12,2014,25
+2015,July-14,North Branford,7,1,2014,10
+2015,August-14,North Branford,8,2,2014,14
+2015,September-14,North Branford,9,3,2014,22
+2015,October-14,North Branford,10,4,2014,23
+2015,November-14,North Branford,11,5,2014,11
+2015,December-14,North Branford,12,6,2014,30
+2015,January-15,North Branford,1,7,2015,35
+2015,February-15,North Branford,2,8,2015,17
+2015,March-15,North Branford,3,9,2015,16
+2015,April-15,North Branford,4,10,2015,20
+2015,May-15,North Branford,5,11,2015,13
+2015,June-15,North Branford,6,12,2015,19
+2016,July-15,North Branford,7,1,2015,14
+2016,August-15,North Branford,8,2,2015,25
+2016,September-15,North Branford,9,3,2015,20
+2016,October-15,North Branford,10,4,2015,15
+2016,November-15,North Branford,11,5,2015,11
+2016,December-15,North Branford,12,6,2015,10
+2016,January-16,North Branford,1,7,2016,10
+2016,February-16,North Branford,2,8,2016,10
+2016,March-16,North Branford,3,9,2016,26
+2016,April-16,North Branford,4,10,2016,8
+2016,May-16,North Branford,5,11,2016,15
+2016,June-16,North Branford,6,12,2016,11
+2014,July-13,North Haven,7,1,2013,35
+2014,August-13,North Haven,8,2,2013,24
+2014,September-13,North Haven,9,3,2013,20
+2014,October-13,North Haven,10,4,2013,18
+2014,November-13,North Haven,11,5,2013,19
+2014,December-13,North Haven,12,6,2013,14
+2014,January-14,North Haven,1,7,2014,21
+2014,February-14,North Haven,2,8,2014,15
+2014,March-14,North Haven,3,9,2014,18
+2014,April-14,North Haven,4,10,2014,18
+2014,May-14,North Haven,5,11,2014,13
+2014,June-14,North Haven,6,12,2014,43
+2015,July-14,North Haven,7,1,2014,30
+2015,August-14,North Haven,8,2,2014,26
+2015,September-14,North Haven,9,3,2014,23
+2015,October-14,North Haven,10,4,2014,31
+2015,November-14,North Haven,11,5,2014,27
+2015,December-14,North Haven,12,6,2014,44
+2015,January-15,North Haven,1,7,2015,33
+2015,February-15,North Haven,2,8,2015,15
+2015,March-15,North Haven,3,9,2015,25
+2015,April-15,North Haven,4,10,2015,12
+2015,May-15,North Haven,5,11,2015,23
+2015,June-15,North Haven,6,12,2015,21
+2016,July-15,North Haven,7,1,2015,32
+2016,August-15,North Haven,8,2,2015,34
+2016,September-15,North Haven,9,3,2015,30
+2016,October-15,North Haven,10,4,2015,17
+2016,November-15,North Haven,11,5,2015,19
+2016,December-15,North Haven,12,6,2015,21
+2016,January-16,North Haven,1,7,2016,16
+2016,February-16,North Haven,2,8,2016,20
+2016,March-16,North Haven,3,9,2016,24
+2016,April-16,North Haven,4,10,2016,19
+2016,May-16,North Haven,5,11,2016,22
+2016,June-16,North Haven,6,12,2016,29
+2014,July-13,Norwalk,7,1,2013,108
+2014,August-13,Norwalk,8,2,2013,96
+2014,September-13,Norwalk,9,3,2013,105
+2014,October-13,Norwalk,10,4,2013,113
+2014,November-13,Norwalk,11,5,2013,92
+2014,December-13,Norwalk,12,6,2013,68
+2014,January-14,Norwalk,1,7,2014,130
+2014,February-14,Norwalk,2,8,2014,98
+2014,March-14,Norwalk,3,9,2014,100
+2014,April-14,Norwalk,4,10,2014,122
+2014,May-14,Norwalk,5,11,2014,114
+2014,June-14,Norwalk,6,12,2014,94
+2015,July-14,Norwalk,7,1,2014,130
+2015,August-14,Norwalk,8,2,2014,116
+2015,September-14,Norwalk,9,3,2014,115
+2015,October-14,Norwalk,10,4,2014,124
+2015,November-14,Norwalk,11,5,2014,122
+2015,December-14,Norwalk,12,6,2014,98
+2015,January-15,Norwalk,1,7,2015,105
+2015,February-15,Norwalk,2,8,2015,97
+2015,March-15,Norwalk,3,9,2015,115
+2015,April-15,Norwalk,4,10,2015,135
+2015,May-15,Norwalk,5,11,2015,109
+2015,June-15,Norwalk,6,12,2015,109
+2016,July-15,Norwalk,7,1,2015,112
+2016,August-15,Norwalk,8,2,2015,107
+2016,September-15,Norwalk,9,3,2015,112
+2016,October-15,Norwalk,10,4,2015,90
+2016,November-15,Norwalk,11,5,2015,86
+2016,December-15,Norwalk,12,6,2015,93
+2016,January-16,Norwalk,1,7,2016,74
+2016,February-16,Norwalk,2,8,2016,102
+2016,March-16,Norwalk,3,9,2016,107
+2016,April-16,Norwalk,4,10,2016,108
+2016,May-16,Norwalk,5,11,2016,98
+2016,June-16,Norwalk,6,12,2016,92
+2014,July-13,Norwich,7,1,2013,192
+2014,August-13,Norwich,8,2,2013,170
+2014,September-13,Norwich,9,3,2013,155
+2014,October-13,Norwich,10,4,2013,177
+2014,November-13,Norwich,11,5,2013,135
+2014,December-13,Norwich,12,6,2013,135
+2014,January-14,Norwich,1,7,2014,148
+2014,February-14,Norwich,2,8,2014,131
+2014,March-14,Norwich,3,9,2014,158
+2014,April-14,Norwich,4,10,2014,124
+2014,May-14,Norwich,5,11,2014,136
+2014,June-14,Norwich,6,12,2014,145
+2015,July-14,Norwich,7,1,2014,168
+2015,August-14,Norwich,8,2,2014,134
+2015,September-14,Norwich,9,3,2014,139
+2015,October-14,Norwich,10,4,2014,155
+2015,November-14,Norwich,11,5,2014,124
+2015,December-14,Norwich,12,6,2014,162
+2015,January-15,Norwich,1,7,2015,132
+2015,February-15,Norwich,2,8,2015,117
+2015,March-15,Norwich,3,9,2015,179
+2015,April-15,Norwich,4,10,2015,136
+2015,May-15,Norwich,5,11,2015,140
+2015,June-15,Norwich,6,12,2015,134
+2016,July-15,Norwich,7,1,2015,159
+2016,August-15,Norwich,8,2,2015,138
+2016,September-15,Norwich,9,3,2015,145
+2016,October-15,Norwich,10,4,2015,150
+2016,November-15,Norwich,11,5,2015,109
+2016,December-15,Norwich,12,6,2015,152
+2016,January-16,Norwich,1,7,2016,149
+2016,February-16,Norwich,2,8,2016,136
+2016,March-16,Norwich,3,9,2016,143
+2016,April-16,Norwich,4,10,2016,135
+2016,May-16,Norwich,5,11,2016,114
+2016,June-16,Norwich,6,12,2016,120
+2015,July-14,Old Saybrook,7,1,2014,18
+2015,August-14,Old Saybrook,8,2,2014,9
+2015,September-14,Old Saybrook,9,3,2014,16
+2015,October-14,Old Saybrook,10,4,2014,11
+2015,November-14,Old Saybrook,11,5,2014,10
+2015,December-14,Old Saybrook,12,6,2014,6
+2015,January-15,Old Saybrook,1,7,2015,11
+2015,February-15,Old Saybrook,2,8,2015,10
+2015,March-15,Old Saybrook,3,9,2015,9
+2015,April-15,Old Saybrook,4,10,2015,6
+2015,May-15,Old Saybrook,5,11,2015,11
+2015,June-15,Old Saybrook,6,12,2015,9
+2016,July-15,Old Saybrook,7,1,2015,16
+2016,August-15,Old Saybrook,8,2,2015,8
+2016,September-15,Old Saybrook,9,3,2015,7
+2016,October-15,Old Saybrook,10,4,2015,7
+2016,November-15,Old Saybrook,11,5,2015,8
+2016,December-15,Old Saybrook,12,6,2015,6
+2016,January-16,Old Saybrook,1,7,2016,10
+2016,February-16,Old Saybrook,2,8,2016,11
+2016,March-16,Old Saybrook,3,9,2016,7
+2016,April-16,Old Saybrook,4,10,2016,10
+2016,May-16,Old Saybrook,5,11,2016,12
+2016,June-16,Old Saybrook,6,12,2016,9
+2015,July-14,Oxford,7,1,2014,9
+2015,August-14,Oxford,8,2,2014,10
+2015,September-14,Oxford,9,3,2014,19
+2015,October-14,Oxford,10,4,2014,17
+2015,November-14,Oxford,11,5,2014,9
+2015,December-14,Oxford,12,6,2014,14
+2015,January-15,Oxford,1,7,2015,14
+2015,February-15,Oxford,2,8,2015,10
+2015,March-15,Oxford,3,9,2015,17
+2015,April-15,Oxford,4,10,2015,10
+2015,May-15,Oxford,5,11,2015,13
+2015,June-15,Oxford,6,12,2015,18
+2016,July-15,Oxford,7,1,2015,16
+2016,August-15,Oxford,8,2,2015,17
+2016,September-15,Oxford,9,3,2015,25
+2016,October-15,Oxford,10,4,2015,19
+2016,November-15,Oxford,11,5,2015,7
+2016,December-15,Oxford,12,6,2015,10
+2016,January-16,Oxford,1,7,2016,11
+2016,February-16,Oxford,2,8,2016,17
+2016,March-16,Oxford,3,9,2016,14
+2016,April-16,Oxford,4,10,2016,17
+2016,May-16,Oxford,5,11,2016,10
+2016,June-16,Oxford,6,12,2016,20
+2014,July-13,Plainfield,7,1,2013,48
+2014,August-13,Plainfield,8,2,2013,43
+2014,September-13,Plainfield,9,3,2013,44
+2014,October-13,Plainfield,10,4,2013,40
+2014,November-13,Plainfield,11,5,2013,30
+2014,December-13,Plainfield,12,6,2013,31
+2014,January-14,Plainfield,1,7,2014,39
+2014,February-14,Plainfield,2,8,2014,31
+2014,March-14,Plainfield,3,9,2014,38
+2014,April-14,Plainfield,4,10,2014,41
+2014,May-14,Plainfield,5,11,2014,45
+2014,June-14,Plainfield,6,12,2014,37
+2015,July-14,Plainfield,7,1,2014,32
+2015,August-14,Plainfield,8,2,2014,58
+2015,September-14,Plainfield,9,3,2014,31
+2015,October-14,Plainfield,10,4,2014,43
+2015,November-14,Plainfield,11,5,2014,29
+2015,December-14,Plainfield,12,6,2014,35
+2015,January-15,Plainfield,1,7,2015,29
+2015,February-15,Plainfield,2,8,2015,31
+2015,March-15,Plainfield,3,9,2015,47
+2015,April-15,Plainfield,4,10,2015,32
+2015,May-15,Plainfield,5,11,2015,40
+2015,June-15,Plainfield,6,12,2015,46
+2016,July-15,Plainfield,7,1,2015,54
+2016,August-15,Plainfield,8,2,2015,55
+2016,September-15,Plainfield,9,3,2015,38
+2016,October-15,Plainfield,10,4,2015,42
+2016,November-15,Plainfield,11,5,2015,25
+2016,December-15,Plainfield,12,6,2015,37
+2016,January-16,Plainfield,1,7,2016,30
+2016,February-16,Plainfield,2,8,2016,32
+2016,March-16,Plainfield,3,9,2016,50
+2016,April-16,Plainfield,4,10,2016,37
+2016,May-16,Plainfield,5,11,2016,24
+2016,June-16,Plainfield,6,12,2016,24
+2014,July-13,Plainville,7,1,2013,40
+2014,August-13,Plainville,8,2,2013,41
+2014,September-13,Plainville,9,3,2013,35
+2014,October-13,Plainville,10,4,2013,33
+2014,November-13,Plainville,11,5,2013,38
+2014,December-13,Plainville,12,6,2013,33
+2014,January-14,Plainville,1,7,2014,39
+2014,February-14,Plainville,2,8,2014,33
+2014,March-14,Plainville,3,9,2014,36
+2014,April-14,Plainville,4,10,2014,39
+2014,May-14,Plainville,5,11,2014,38
+2014,June-14,Plainville,6,12,2014,29
+2015,July-14,Plainville,7,1,2014,38
+2015,August-14,Plainville,8,2,2014,33
+2015,September-14,Plainville,9,3,2014,60
+2015,October-14,Plainville,10,4,2014,36
+2015,November-14,Plainville,11,5,2014,40
+2015,December-14,Plainville,12,6,2014,28
+2015,January-15,Plainville,1,7,2015,42
+2015,February-15,Plainville,2,8,2015,39
+2015,March-15,Plainville,3,9,2015,47
+2015,April-15,Plainville,4,10,2015,33
+2015,May-15,Plainville,5,11,2015,44
+2015,June-15,Plainville,6,12,2015,41
+2016,July-15,Plainville,7,1,2015,47
+2016,August-15,Plainville,8,2,2015,39
+2016,September-15,Plainville,9,3,2015,36
+2016,October-15,Plainville,10,4,2015,38
+2016,November-15,Plainville,11,5,2015,21
+2016,December-15,Plainville,12,6,2015,48
+2016,January-16,Plainville,1,7,2016,49
+2016,February-16,Plainville,2,8,2016,35
+2016,March-16,Plainville,3,9,2016,55
+2016,April-16,Plainville,4,10,2016,47
+2016,May-16,Plainville,5,11,2016,39
+2016,June-16,Plainville,6,12,2016,44
+2014,July-13,Plymouth,7,1,2013,24
+2014,August-13,Plymouth,8,2,2013,28
+2014,September-13,Plymouth,9,3,2013,23
+2014,October-13,Plymouth,10,4,2013,19
+2014,November-13,Plymouth,11,5,2013,26
+2014,December-13,Plymouth,12,6,2013,25
+2014,January-14,Plymouth,1,7,2014,27
+2014,February-14,Plymouth,2,8,2014,20
+2014,March-14,Plymouth,3,9,2014,16
+2014,April-14,Plymouth,4,10,2014,34
+2014,May-14,Plymouth,5,11,2014,23
+2014,June-14,Plymouth,6,12,2014,20
+2015,July-14,Plymouth,7,1,2014,48
+2015,August-14,Plymouth,8,2,2014,19
+2015,September-14,Plymouth,9,3,2014,35
+2015,October-14,Plymouth,10,4,2014,27
+2015,November-14,Plymouth,11,5,2014,32
+2015,December-14,Plymouth,12,6,2014,27
+2015,January-15,Plymouth,1,7,2015,32
+2015,February-15,Plymouth,2,8,2015,29
+2015,March-15,Plymouth,3,9,2015,28
+2015,April-15,Plymouth,4,10,2015,32
+2015,May-15,Plymouth,5,11,2015,32
+2015,June-15,Plymouth,6,12,2015,30
+2016,July-15,Plymouth,7,1,2015,26
+2016,August-15,Plymouth,8,2,2015,30
+2016,September-15,Plymouth,9,3,2015,23
+2016,October-15,Plymouth,10,4,2015,31
+2016,November-15,Plymouth,11,5,2015,18
+2016,December-15,Plymouth,12,6,2015,25
+2016,January-16,Plymouth,1,7,2016,37
+2016,February-16,Plymouth,2,8,2016,30
+2016,March-16,Plymouth,3,9,2016,23
+2016,April-16,Plymouth,4,10,2016,33
+2016,May-16,Plymouth,5,11,2016,19
+2016,June-16,Plymouth,6,12,2016,34
+2014,July-13,Portland,7,1,2013,16
+2014,August-13,Portland,8,2,2013,14
+2014,September-13,Portland,9,3,2013,14
+2014,October-13,Portland,10,4,2013,20
+2014,November-13,Portland,11,5,2013,18
+2014,December-13,Portland,12,6,2013,19
+2014,January-14,Portland,1,7,2014,15
+2014,February-14,Portland,2,8,2014,11
+2014,March-14,Portland,3,9,2014,16
+2014,April-14,Portland,4,10,2014,22
+2014,May-14,Portland,5,11,2014,17
+2014,June-14,Portland,6,12,2014,24
+2015,July-14,Portland,7,1,2014,28
+2015,August-14,Portland,8,2,2014,15
+2015,September-14,Portland,9,3,2014,18
+2015,October-14,Portland,10,4,2014,20
+2015,November-14,Portland,11,5,2014,10
+2015,December-14,Portland,12,6,2014,17
+2015,January-15,Portland,1,7,2015,17
+2015,February-15,Portland,2,8,2015,25
+2015,March-15,Portland,3,9,2015,25
+2015,April-15,Portland,4,10,2015,26
+2015,May-15,Portland,5,11,2015,21
+2015,June-15,Portland,6,12,2015,17
+2016,July-15,Portland,7,1,2015,24
+2016,August-15,Portland,8,2,2015,19
+2016,September-15,Portland,9,3,2015,21
+2016,October-15,Portland,10,4,2015,18
+2016,November-15,Portland,11,5,2015,15
+2016,December-15,Portland,12,6,2015,24
+2016,January-16,Portland,1,7,2016,19
+2016,February-16,Portland,2,8,2016,14
+2016,March-16,Portland,3,9,2016,22
+2016,April-16,Portland,4,10,2016,19
+2016,May-16,Portland,5,11,2016,17
+2016,June-16,Portland,6,12,2016,23
+2015,July-14,Prospect,7,1,2014,15
+2015,August-14,Prospect,8,2,2014,13
+2015,September-14,Prospect,9,3,2014,12
+2015,October-14,Prospect,10,4,2014,16
+2015,November-14,Prospect,11,5,2014,12
+2015,December-14,Prospect,12,6,2014,11
+2015,January-15,Prospect,1,7,2015,13
+2015,February-15,Prospect,2,8,2015,13
+2015,March-15,Prospect,3,9,2015,23
+2015,April-15,Prospect,4,10,2015,15
+2015,May-15,Prospect,5,11,2015,14
+2015,June-15,Prospect,6,12,2015,10
+2014,July-13,Putnam,7,1,2013,18
+2014,August-13,Putnam,8,2,2013,28
+2014,September-13,Putnam,9,3,2013,23
+2014,October-13,Putnam,10,4,2013,20
+2014,November-13,Putnam,11,5,2013,18
+2014,December-13,Putnam,12,6,2013,32
+2014,January-14,Putnam,1,7,2014,30
+2014,February-14,Putnam,2,8,2014,21
+2014,March-14,Putnam,3,9,2014,24
+2014,April-14,Putnam,4,10,2014,35
+2014,May-14,Putnam,5,11,2014,21
+2014,June-14,Putnam,6,12,2014,33
+2015,July-14,Putnam,7,1,2014,28
+2015,August-14,Putnam,8,2,2014,23
+2015,September-14,Putnam,9,3,2014,24
+2015,October-14,Putnam,10,4,2014,25
+2015,November-14,Putnam,11,5,2014,22
+2015,December-14,Putnam,12,6,2014,23
+2015,January-15,Putnam,1,7,2015,38
+2015,February-15,Putnam,2,8,2015,16
+2015,March-15,Putnam,3,9,2015,25
+2015,April-15,Putnam,4,10,2015,33
+2015,May-15,Putnam,5,11,2015,17
+2015,June-15,Putnam,6,12,2015,32
+2016,July-15,Putnam,7,1,2015,29
+2016,August-15,Putnam,8,2,2015,31
+2016,September-15,Putnam,9,3,2015,32
+2016,October-15,Putnam,10,4,2015,24
+2016,November-15,Putnam,11,5,2015,25
+2016,December-15,Putnam,12,6,2015,25
+2016,January-16,Putnam,1,7,2016,15
+2016,February-16,Putnam,2,8,2016,17
+2016,March-16,Putnam,3,9,2016,23
+2016,April-16,Putnam,4,10,2016,23
+2016,May-16,Putnam,5,11,2016,27
+2016,June-16,Putnam,6,12,2016,25
+2014,July-13,Ridgefield,7,1,2013,20
+2014,August-13,Ridgefield,8,2,2013,14
+2014,September-13,Ridgefield,9,3,2013,11
+2014,October-13,Ridgefield,10,4,2013,17
+2014,November-13,Ridgefield,11,5,2013,8
+2014,December-13,Ridgefield,12,6,2013,16
+2014,January-14,Ridgefield,1,7,2014,17
+2014,February-14,Ridgefield,2,8,2014,12
+2014,March-14,Ridgefield,3,9,2014,11
+2014,April-14,Ridgefield,4,10,2014,16
+2014,May-14,Ridgefield,5,11,2014,7
+2014,June-14,Ridgefield,6,12,2014,12
+2015,July-14,Ridgefield,7,1,2014,12
+2015,August-14,Ridgefield,8,2,2014,8
+2015,September-14,Ridgefield,9,3,2014,11
+2015,October-14,Ridgefield,10,4,2014,12
+2015,November-14,Ridgefield,11,5,2014,9
+2015,December-14,Ridgefield,12,6,2014,10
+2015,January-15,Ridgefield,1,7,2015,11
+2015,February-15,Ridgefield,2,8,2015,13
+2015,March-15,Ridgefield,3,9,2015,11
+2015,April-15,Ridgefield,4,10,2015,11
+2015,May-15,Ridgefield,5,11,2015,9
+2015,June-15,Ridgefield,6,12,2015,10
+2016,July-15,Ridgefield,7,1,2015,19
+2016,August-15,Ridgefield,8,2,2015,11
+2016,September-15,Ridgefield,9,3,2015,16
+2016,October-15,Ridgefield,10,4,2015,13
+2016,November-15,Ridgefield,11,5,2015,10
+2016,December-15,Ridgefield,12,6,2015,13
+2016,January-16,Ridgefield,1,7,2016,14
+2016,February-16,Ridgefield,2,8,2016,17
+2016,March-16,Ridgefield,3,9,2016,16
+2016,April-16,Ridgefield,4,10,2016,19
+2016,May-16,Ridgefield,5,11,2016,10
+2016,June-16,Ridgefield,6,12,2016,12
+2014,July-13,Rocky Hill,7,1,2013,24
+2014,August-13,Rocky Hill,8,2,2013,21
+2014,September-13,Rocky Hill,9,3,2013,23
+2014,October-13,Rocky Hill,10,4,2013,24
+2014,November-13,Rocky Hill,11,5,2013,17
+2014,December-13,Rocky Hill,12,6,2013,32
+2014,January-14,Rocky Hill,1,7,2014,30
+2014,February-14,Rocky Hill,2,8,2014,20
+2014,March-14,Rocky Hill,3,9,2014,33
+2014,April-14,Rocky Hill,4,10,2014,13
+2014,May-14,Rocky Hill,5,11,2014,19
+2014,June-14,Rocky Hill,6,12,2014,18
+2015,July-14,Rocky Hill,7,1,2014,16
+2015,August-14,Rocky Hill,8,2,2014,22
+2015,September-14,Rocky Hill,9,3,2014,26
+2015,October-14,Rocky Hill,10,4,2014,19
+2015,November-14,Rocky Hill,11,5,2014,16
+2015,December-14,Rocky Hill,12,6,2014,13
+2015,January-15,Rocky Hill,1,7,2015,12
+2015,February-15,Rocky Hill,2,8,2015,17
+2015,March-15,Rocky Hill,3,9,2015,15
+2015,April-15,Rocky Hill,4,10,2015,14
+2015,May-15,Rocky Hill,5,11,2015,19
+2015,June-15,Rocky Hill,6,12,2015,21
+2016,July-15,Rocky Hill,7,1,2015,17
+2016,August-15,Rocky Hill,8,2,2015,22
+2016,September-15,Rocky Hill,9,3,2015,22
+2016,October-15,Rocky Hill,10,4,2015,9
+2016,November-15,Rocky Hill,11,5,2015,11
+2016,December-15,Rocky Hill,12,6,2015,17
+2016,January-16,Rocky Hill,1,7,2016,15
+2016,February-16,Rocky Hill,2,8,2016,18
+2016,March-16,Rocky Hill,3,9,2016,24
+2016,April-16,Rocky Hill,4,10,2016,14
+2016,May-16,Rocky Hill,5,11,2016,16
+2016,June-16,Rocky Hill,6,12,2016,23
+2014,July-13,Seymour,7,1,2013,24
+2014,August-13,Seymour,8,2,2013,26
+2014,September-13,Seymour,9,3,2013,21
+2014,October-13,Seymour,10,4,2013,25
+2014,November-13,Seymour,11,5,2013,33
+2014,December-13,Seymour,12,6,2013,24
+2014,January-14,Seymour,1,7,2014,22
+2014,February-14,Seymour,2,8,2014,27
+2014,March-14,Seymour,3,9,2014,30
+2014,April-14,Seymour,4,10,2014,33
+2014,May-14,Seymour,5,11,2014,34
+2014,June-14,Seymour,6,12,2014,26
+2015,July-14,Seymour,7,1,2014,30
+2015,August-14,Seymour,8,2,2014,25
+2015,September-14,Seymour,9,3,2014,27
+2015,October-14,Seymour,10,4,2014,21
+2015,November-14,Seymour,11,5,2014,31
+2015,December-14,Seymour,12,6,2014,27
+2015,January-15,Seymour,1,7,2015,24
+2015,February-15,Seymour,2,8,2015,28
+2015,March-15,Seymour,3,9,2015,31
+2015,April-15,Seymour,4,10,2015,37
+2015,May-15,Seymour,5,11,2015,30
+2015,June-15,Seymour,6,12,2015,31
+2016,July-15,Seymour,7,1,2015,29
+2016,August-15,Seymour,8,2,2015,27
+2016,September-15,Seymour,9,3,2015,36
+2016,October-15,Seymour,10,4,2015,30
+2016,November-15,Seymour,11,5,2015,23
+2016,December-15,Seymour,12,6,2015,30
+2016,January-16,Seymour,1,7,2016,28
+2016,February-16,Seymour,2,8,2016,25
+2016,March-16,Seymour,3,9,2016,25
+2016,April-16,Seymour,4,10,2016,20
+2016,May-16,Seymour,5,11,2016,18
+2016,June-16,Seymour,6,12,2016,28
+2015,July-14,Sharon,7,1,2014,16
+2015,August-14,Sharon,8,2,2014,11
+2015,September-14,Sharon,9,3,2014,9
+2015,October-14,Sharon,10,4,2014,8
+2015,November-14,Sharon,11,5,2014,7
+2015,December-14,Sharon,12,6,2014,13
+2015,January-15,Sharon,1,7,2015,7
+2015,February-15,Sharon,2,8,2015,6
+2015,March-15,Sharon,3,9,2015,10
+2015,April-15,Sharon,4,10,2015,7
+2015,May-15,Sharon,5,11,2015,8
+2015,June-15,Sharon,6,12,2015,16
+2014,July-13,Shelton,7,1,2013,49
+2014,August-13,Shelton,8,2,2013,47
+2014,September-13,Shelton,9,3,2013,53
+2014,October-13,Shelton,10,4,2013,47
+2014,November-13,Shelton,11,5,2013,42
+2014,December-13,Shelton,12,6,2013,41
+2014,January-14,Shelton,1,7,2014,46
+2014,February-14,Shelton,2,8,2014,46
+2014,March-14,Shelton,3,9,2014,55
+2014,April-14,Shelton,4,10,2014,52
+2014,May-14,Shelton,5,11,2014,50
+2014,June-14,Shelton,6,12,2014,53
+2015,July-14,Shelton,7,1,2014,65
+2015,August-14,Shelton,8,2,2014,45
+2015,September-14,Shelton,9,3,2014,63
+2015,October-14,Shelton,10,4,2014,62
+2015,November-14,Shelton,11,5,2014,55
+2015,December-14,Shelton,12,6,2014,60
+2015,January-15,Shelton,1,7,2015,71
+2015,February-15,Shelton,2,8,2015,55
+2015,March-15,Shelton,3,9,2015,70
+2015,April-15,Shelton,4,10,2015,63
+2015,May-15,Shelton,5,11,2015,59
+2015,June-15,Shelton,6,12,2015,63
+2016,July-15,Shelton,7,1,2015,56
+2016,August-15,Shelton,8,2,2015,62
+2016,September-15,Shelton,9,3,2015,67
+2016,October-15,Shelton,10,4,2015,50
+2016,November-15,Shelton,11,5,2015,46
+2016,December-15,Shelton,12,6,2015,50
+2016,January-16,Shelton,1,7,2016,56
+2016,February-16,Shelton,2,8,2016,66
+2016,March-16,Shelton,3,9,2016,64
+2016,April-16,Shelton,4,10,2016,67
+2016,May-16,Shelton,5,11,2016,53
+2016,June-16,Shelton,6,12,2016,61
+2015,July-14,Simsbury,7,1,2014,13
+2015,August-14,Simsbury,8,2,2014,11
+2015,September-14,Simsbury,9,3,2014,15
+2015,October-14,Simsbury,10,4,2014,8
+2015,November-14,Simsbury,11,5,2014,10
+2015,December-14,Simsbury,12,6,2014,17
+2015,January-15,Simsbury,1,7,2015,11
+2015,February-15,Simsbury,2,8,2015,10
+2015,March-15,Simsbury,3,9,2015,13
+2015,April-15,Simsbury,4,10,2015,19
+2015,May-15,Simsbury,5,11,2015,11
+2015,June-15,Simsbury,6,12,2015,20
+2014,July-13,Somers,7,1,2013,11
+2014,August-13,Somers,8,2,2013,8
+2014,September-13,Somers,9,3,2013,14
+2014,October-13,Somers,10,4,2013,16
+2014,November-13,Somers,11,5,2013,13
+2014,December-13,Somers,12,6,2013,13
+2014,January-14,Somers,1,7,2014,11
+2014,February-14,Somers,2,8,2014,11
+2014,March-14,Somers,3,9,2014,14
+2014,April-14,Somers,4,10,2014,13
+2014,May-14,Somers,5,11,2014,15
+2014,June-14,Somers,6,12,2014,11
+2015,July-14,Somers,7,1,2014,26
+2015,August-14,Somers,8,2,2014,9
+2015,September-14,Somers,9,3,2014,16
+2015,October-14,Somers,10,4,2014,20
+2015,November-14,Somers,11,5,2014,7
+2015,December-14,Somers,12,6,2014,7
+2015,January-15,Somers,1,7,2015,18
+2015,February-15,Somers,2,8,2015,13
+2015,March-15,Somers,3,9,2015,18
+2015,April-15,Somers,4,10,2015,10
+2015,May-15,Somers,5,11,2015,10
+2015,June-15,Somers,6,12,2015,13
+2016,July-15,Somers,7,1,2015,18
+2016,August-15,Somers,8,2,2015,17
+2016,September-15,Somers,9,3,2015,8
+2016,October-15,Somers,10,4,2015,15
+2016,November-15,Somers,11,5,2015,16
+2016,December-15,Somers,12,6,2015,10
+2016,January-16,Somers,1,7,2016,12
+2016,February-16,Somers,2,8,2016,9
+2016,March-16,Somers,3,9,2016,16
+2016,April-16,Somers,4,10,2016,11
+2016,May-16,Somers,5,11,2016,9
+2016,June-16,Somers,6,12,2016,14
+2014,July-13,South Windsor,7,1,2013,18
+2014,August-13,South Windsor,8,2,2013,10
+2014,September-13,South Windsor,9,3,2013,13
+2014,October-13,South Windsor,10,4,2013,13
+2014,November-13,South Windsor,11,5,2013,10
+2014,December-13,South Windsor,12,6,2013,11
+2014,January-14,South Windsor,1,7,2014,11
+2014,February-14,South Windsor,2,8,2014,9
+2014,March-14,South Windsor,3,9,2014,14
+2014,April-14,South Windsor,4,10,2014,13
+2014,May-14,South Windsor,5,11,2014,14
+2014,June-14,South Windsor,6,12,2014,12
+2015,July-14,South Windsor,7,1,2014,14
+2015,August-14,South Windsor,8,2,2014,7
+2015,September-14,South Windsor,9,3,2014,10
+2015,October-14,South Windsor,10,4,2014,20
+2015,November-14,South Windsor,11,5,2014,11
+2015,December-14,South Windsor,12,6,2014,22
+2015,January-15,South Windsor,1,7,2015,19
+2015,February-15,South Windsor,2,8,2015,15
+2015,March-15,South Windsor,3,9,2015,11
+2015,April-15,South Windsor,4,10,2015,12
+2015,May-15,South Windsor,5,11,2015,14
+2015,June-15,South Windsor,6,12,2015,20
+2016,July-15,South Windsor,7,1,2015,10
+2016,August-15,South Windsor,8,2,2015,12
+2016,September-15,South Windsor,9,3,2015,11
+2016,October-15,South Windsor,10,4,2015,10
+2016,November-15,South Windsor,11,5,2015,16
+2016,December-15,South Windsor,12,6,2015,12
+2016,January-16,South Windsor,1,7,2016,18
+2016,February-16,South Windsor,2,8,2016,17
+2016,March-16,South Windsor,3,9,2016,16
+2016,April-16,South Windsor,4,10,2016,15
+2016,May-16,South Windsor,5,11,2016,20
+2016,June-16,South Windsor,6,12,2016,18
+2014,July-13,Southbury,7,1,2013,12
+2014,August-13,Southbury,8,2,2013,16
+2014,September-13,Southbury,9,3,2013,12
+2014,October-13,Southbury,10,4,2013,10
+2014,November-13,Southbury,11,5,2013,13
+2014,December-13,Southbury,12,6,2013,18
+2014,January-14,Southbury,1,7,2014,26
+2014,February-14,Southbury,2,8,2014,15
+2014,March-14,Southbury,3,9,2014,18
+2014,April-14,Southbury,4,10,2014,21
+2014,May-14,Southbury,5,11,2014,27
+2014,June-14,Southbury,6,12,2014,21
+2015,July-14,Southbury,7,1,2014,16
+2015,August-14,Southbury,8,2,2014,15
+2015,September-14,Southbury,9,3,2014,18
+2015,October-14,Southbury,10,4,2014,18
+2015,November-14,Southbury,11,5,2014,9
+2015,December-14,Southbury,12,6,2014,22
+2015,January-15,Southbury,1,7,2015,24
+2015,February-15,Southbury,2,8,2015,13
+2015,March-15,Southbury,3,9,2015,18
+2015,April-15,Southbury,4,10,2015,20
+2015,May-15,Southbury,5,11,2015,25
+2015,June-15,Southbury,6,12,2015,20
+2016,July-15,Southbury,7,1,2015,27
+2016,August-15,Southbury,8,2,2015,27
+2016,September-15,Southbury,9,3,2015,16
+2016,October-15,Southbury,10,4,2015,21
+2016,November-15,Southbury,11,5,2015,17
+2016,December-15,Southbury,12,6,2015,14
+2016,January-16,Southbury,1,7,2016,20
+2016,February-16,Southbury,2,8,2016,18
+2016,March-16,Southbury,3,9,2016,23
+2016,April-16,Southbury,4,10,2016,17
+2016,May-16,Southbury,5,11,2016,11
+2016,June-16,Southbury,6,12,2016,11
+2014,July-13,Southington,7,1,2013,53
+2014,August-13,Southington,8,2,2013,63
+2014,September-13,Southington,9,3,2013,56
+2014,October-13,Southington,10,4,2013,59
+2014,November-13,Southington,11,5,2013,50
+2014,December-13,Southington,12,6,2013,42
+2014,January-14,Southington,1,7,2014,68
+2014,February-14,Southington,2,8,2014,62
+2014,March-14,Southington,3,9,2014,58
+2014,April-14,Southington,4,10,2014,54
+2014,May-14,Southington,5,11,2014,66
+2014,June-14,Southington,6,12,2014,70
+2015,July-14,Southington,7,1,2014,65
+2015,August-14,Southington,8,2,2014,58
+2015,September-14,Southington,9,3,2014,65
+2015,October-14,Southington,10,4,2014,48
+2015,November-14,Southington,11,5,2014,49
+2015,December-14,Southington,12,6,2014,66
+2015,January-15,Southington,1,7,2015,66
+2015,February-15,Southington,2,8,2015,61
+2015,March-15,Southington,3,9,2015,80
+2015,April-15,Southington,4,10,2015,67
+2015,May-15,Southington,5,11,2015,50
+2015,June-15,Southington,6,12,2015,68
+2016,July-15,Southington,7,1,2015,66
+2016,August-15,Southington,8,2,2015,49
+2016,September-15,Southington,9,3,2015,65
+2016,October-15,Southington,10,4,2015,76
+2016,November-15,Southington,11,5,2015,53
+2016,December-15,Southington,12,6,2015,44
+2016,January-16,Southington,1,7,2016,62
+2016,February-16,Southington,2,8,2016,64
+2016,March-16,Southington,3,9,2016,62
+2016,April-16,Southington,4,10,2016,63
+2016,May-16,Southington,5,11,2016,71
+2016,June-16,Southington,6,12,2016,67
+2014,July-13,Stafford,7,1,2013,24
+2014,August-13,Stafford,8,2,2013,20
+2014,September-13,Stafford,9,3,2013,23
+2014,October-13,Stafford,10,4,2013,30
+2014,November-13,Stafford,11,5,2013,23
+2014,December-13,Stafford,12,6,2013,20
+2014,January-14,Stafford,1,7,2014,19
+2014,February-14,Stafford,2,8,2014,23
+2014,March-14,Stafford,3,9,2014,19
+2014,April-14,Stafford,4,10,2014,28
+2014,May-14,Stafford,5,11,2014,23
+2014,June-14,Stafford,6,12,2014,20
+2015,July-14,Stafford,7,1,2014,22
+2015,August-14,Stafford,8,2,2014,13
+2015,September-14,Stafford,9,3,2014,22
+2015,October-14,Stafford,10,4,2014,27
+2015,November-14,Stafford,11,5,2014,11
+2015,December-14,Stafford,12,6,2014,15
+2015,January-15,Stafford,1,7,2015,13
+2015,February-15,Stafford,2,8,2015,12
+2015,March-15,Stafford,3,9,2015,24
+2015,April-15,Stafford,4,10,2015,22
+2015,May-15,Stafford,5,11,2015,16
+2015,June-15,Stafford,6,12,2015,18
+2016,July-15,Stafford,7,1,2015,27
+2016,August-15,Stafford,8,2,2015,20
+2016,September-15,Stafford,9,3,2015,16
+2016,October-15,Stafford,10,4,2015,28
+2016,November-15,Stafford,11,5,2015,7
+2016,December-15,Stafford,12,6,2015,15
+2016,January-16,Stafford,1,7,2016,22
+2016,February-16,Stafford,2,8,2016,11
+2016,March-16,Stafford,3,9,2016,21
+2016,April-16,Stafford,4,10,2016,12
+2016,May-16,Stafford,5,11,2016,16
+2016,June-16,Stafford,6,12,2016,28
+2014,July-13,Stamford,7,1,2013,134
+2014,August-13,Stamford,8,2,2013,124
+2014,September-13,Stamford,9,3,2013,123
+2014,October-13,Stamford,10,4,2013,126
+2014,November-13,Stamford,11,5,2013,123
+2014,December-13,Stamford,12,6,2013,102
+2014,January-14,Stamford,1,7,2014,117
+2014,February-14,Stamford,2,8,2014,125
+2014,March-14,Stamford,3,9,2014,147
+2014,April-14,Stamford,4,10,2014,157
+2014,May-14,Stamford,5,11,2014,127
+2014,June-14,Stamford,6,12,2014,134
+2015,July-14,Stamford,7,1,2014,153
+2015,August-14,Stamford,8,2,2014,136
+2015,September-14,Stamford,9,3,2014,137
+2015,October-14,Stamford,10,4,2014,151
+2015,November-14,Stamford,11,5,2014,148
+2015,December-14,Stamford,12,6,2014,148
+2015,January-15,Stamford,1,7,2015,135
+2015,February-15,Stamford,2,8,2015,139
+2015,March-15,Stamford,3,9,2015,141
+2015,April-15,Stamford,4,10,2015,132
+2015,May-15,Stamford,5,11,2015,134
+2015,June-15,Stamford,6,12,2015,144
+2016,July-15,Stamford,7,1,2015,143
+2016,August-15,Stamford,8,2,2015,116
+2016,September-15,Stamford,9,3,2015,81
+2016,October-15,Stamford,10,4,2015,83
+2016,November-15,Stamford,11,5,2015,86
+2016,December-15,Stamford,12,6,2015,123
+2016,January-16,Stamford,1,7,2016,113
+2016,February-16,Stamford,2,8,2016,141
+2016,March-16,Stamford,3,9,2016,133
+2016,April-16,Stamford,4,10,2016,135
+2016,May-16,Stamford,5,11,2016,127
+2016,June-16,Stamford,6,12,2016,89
+2014,July-13,Stonington,7,1,2013,23
+2014,August-13,Stonington,8,2,2013,29
+2014,September-13,Stonington,9,3,2013,28
+2014,October-13,Stonington,10,4,2013,34
+2014,November-13,Stonington,11,5,2013,23
+2014,December-13,Stonington,12,6,2013,27
+2014,January-14,Stonington,1,7,2014,26
+2014,February-14,Stonington,2,8,2014,23
+2014,March-14,Stonington,3,9,2014,24
+2014,April-14,Stonington,4,10,2014,21
+2014,May-14,Stonington,5,11,2014,22
+2014,June-14,Stonington,6,12,2014,24
+2015,July-14,Stonington,7,1,2014,15
+2015,August-14,Stonington,8,2,2014,24
+2015,September-14,Stonington,9,3,2014,34
+2015,October-14,Stonington,10,4,2014,21
+2015,November-14,Stonington,11,5,2014,22
+2015,December-14,Stonington,12,6,2014,14
+2015,January-15,Stonington,1,7,2015,29
+2015,February-15,Stonington,2,8,2015,26
+2015,March-15,Stonington,3,9,2015,29
+2015,April-15,Stonington,4,10,2015,28
+2015,May-15,Stonington,5,11,2015,25
+2015,June-15,Stonington,6,12,2015,18
+2016,July-15,Stonington,7,1,2015,28
+2016,August-15,Stonington,8,2,2015,21
+2016,September-15,Stonington,9,3,2015,29
+2016,October-15,Stonington,10,4,2015,26
+2016,November-15,Stonington,11,5,2015,28
+2016,December-15,Stonington,12,6,2015,28
+2016,January-16,Stonington,1,7,2016,23
+2016,February-16,Stonington,2,8,2016,22
+2016,March-16,Stonington,3,9,2016,24
+2016,April-16,Stonington,4,10,2016,19
+2016,May-16,Stonington,5,11,2016,22
+2016,June-16,Stonington,6,12,2016,30
+2014,July-13,Stratford,7,1,2013,73
+2014,August-13,Stratford,8,2,2013,69
+2014,September-13,Stratford,9,3,2013,68
+2014,October-13,Stratford,10,4,2013,68
+2014,November-13,Stratford,11,5,2013,65
+2014,December-13,Stratford,12,6,2013,53
+2014,January-14,Stratford,1,7,2014,62
+2014,February-14,Stratford,2,8,2014,67
+2014,March-14,Stratford,3,9,2014,67
+2014,April-14,Stratford,4,10,2014,63
+2014,May-14,Stratford,5,11,2014,82
+2014,June-14,Stratford,6,12,2014,77
+2015,July-14,Stratford,7,1,2014,79
+2015,August-14,Stratford,8,2,2014,59
+2015,September-14,Stratford,9,3,2014,72
+2015,October-14,Stratford,10,4,2014,78
+2015,November-14,Stratford,11,5,2014,69
+2015,December-14,Stratford,12,6,2014,70
+2015,January-15,Stratford,1,7,2015,72
+2015,February-15,Stratford,2,8,2015,64
+2015,March-15,Stratford,3,9,2015,67
+2015,April-15,Stratford,4,10,2015,83
+2015,May-15,Stratford,5,11,2015,71
+2015,June-15,Stratford,6,12,2015,76
+2016,July-15,Stratford,7,1,2015,79
+2016,August-15,Stratford,8,2,2015,61
+2016,September-15,Stratford,9,3,2015,69
+2016,October-15,Stratford,10,4,2015,62
+2016,November-15,Stratford,11,5,2015,66
+2016,December-15,Stratford,12,6,2015,57
+2016,January-16,Stratford,1,7,2016,59
+2016,February-16,Stratford,2,8,2016,64
+2016,March-16,Stratford,3,9,2016,65
+2016,April-16,Stratford,4,10,2016,61
+2016,May-16,Stratford,5,11,2016,45
+2016,June-16,Stratford,6,12,2016,67
+2014,July-13,Suffield,7,1,2013,13
+2014,August-13,Suffield,8,2,2013,11
+2014,September-13,Suffield,9,3,2013,9
+2014,October-13,Suffield,10,4,2013,11
+2014,November-13,Suffield,11,5,2013,6
+2014,December-13,Suffield,12,6,2013,12
+2014,January-14,Suffield,1,7,2014,14
+2014,February-14,Suffield,2,8,2014,11
+2014,March-14,Suffield,3,9,2014,8
+2014,April-14,Suffield,4,10,2014,11
+2014,May-14,Suffield,5,11,2014,12
+2014,June-14,Suffield,6,12,2014,7
+2015,July-14,Thomaston,7,1,2014,16
+2015,August-14,Thomaston,8,2,2014,15
+2015,September-14,Thomaston,9,3,2014,14
+2015,October-14,Thomaston,10,4,2014,15
+2015,November-14,Thomaston,11,5,2014,11
+2015,December-14,Thomaston,12,6,2014,10
+2015,January-15,Thomaston,1,7,2015,20
+2015,February-15,Thomaston,2,8,2015,11
+2015,March-15,Thomaston,3,9,2015,17
+2015,April-15,Thomaston,4,10,2015,14
+2015,May-15,Thomaston,5,11,2015,14
+2015,June-15,Thomaston,6,12,2015,14
+2016,July-15,Thomaston,7,1,2015,9
+2016,August-15,Thomaston,8,2,2015,6
+2016,September-15,Thomaston,9,3,2015,10
+2016,October-15,Thomaston,10,4,2015,14
+2016,November-15,Thomaston,11,5,2015,11
+2016,December-15,Thomaston,12,6,2015,13
+2016,January-16,Thomaston,1,7,2016,17
+2016,February-16,Thomaston,2,8,2016,10
+2016,March-16,Thomaston,3,9,2016,26
+2016,April-16,Thomaston,4,10,2016,11
+2016,May-16,Thomaston,5,11,2016,12
+2016,June-16,Thomaston,6,12,2016,11
+2014,July-13,Thompson,7,1,2013,12
+2014,August-13,Thompson,8,2,2013,18
+2014,September-13,Thompson,9,3,2013,13
+2014,October-13,Thompson,10,4,2013,10
+2014,November-13,Thompson,11,5,2013,7
+2014,December-13,Thompson,12,6,2013,6
+2014,January-14,Thompson,1,7,2014,10
+2014,February-14,Thompson,2,8,2014,10
+2014,March-14,Thompson,3,9,2014,10
+2014,April-14,Thompson,4,10,2014,15
+2014,May-14,Thompson,5,11,2014,11
+2014,June-14,Thompson,6,12,2014,7
+2016,July-15,Thompson,7,1,2015,14
+2016,August-15,Thompson,8,2,2015,15
+2016,September-15,Thompson,9,3,2015,10
+2016,October-15,Thompson,10,4,2015,17
+2016,November-15,Thompson,11,5,2015,14
+2016,December-15,Thompson,12,6,2015,7
+2016,January-16,Thompson,1,7,2016,18
+2016,February-16,Thompson,2,8,2016,12
+2016,March-16,Thompson,3,9,2016,8
+2016,April-16,Thompson,4,10,2016,9
+2016,May-16,Thompson,5,11,2016,10
+2016,June-16,Thompson,6,12,2016,12
+2015,July-14,Tolland,7,1,2014,11
+2015,August-14,Tolland,8,2,2014,9
+2015,September-14,Tolland,9,3,2014,14
+2015,October-14,Tolland,10,4,2014,7
+2015,November-14,Tolland,11,5,2014,13
+2015,December-14,Tolland,12,6,2014,11
+2015,January-15,Tolland,1,7,2015,10
+2015,February-15,Tolland,2,8,2015,9
+2015,March-15,Tolland,3,9,2015,11
+2015,April-15,Tolland,4,10,2015,9
+2015,May-15,Tolland,5,11,2015,9
+2015,June-15,Tolland,6,12,2015,10
+2016,July-15,Tolland,7,1,2015,9
+2016,August-15,Tolland,8,2,2015,9
+2016,September-15,Tolland,9,3,2015,16
+2016,October-15,Tolland,10,4,2015,9
+2016,November-15,Tolland,11,5,2015,10
+2016,December-15,Tolland,12,6,2015,12
+2016,January-16,Tolland,1,7,2016,16
+2016,February-16,Tolland,2,8,2016,16
+2016,March-16,Tolland,3,9,2016,11
+2016,April-16,Tolland,4,10,2016,8
+2016,May-16,Tolland,5,11,2016,7
+2016,June-16,Tolland,6,12,2016,11
+2014,July-13,Torrington,7,1,2013,120
+2014,August-13,Torrington,8,2,2013,133
+2014,September-13,Torrington,9,3,2013,110
+2014,October-13,Torrington,10,4,2013,146
+2014,November-13,Torrington,11,5,2013,112
+2014,December-13,Torrington,12,6,2013,99
+2014,January-14,Torrington,1,7,2014,142
+2014,February-14,Torrington,2,8,2014,119
+2014,March-14,Torrington,3,9,2014,140
+2014,April-14,Torrington,4,10,2014,137
+2014,May-14,Torrington,5,11,2014,138
+2014,June-14,Torrington,6,12,2014,154
+2015,July-14,Torrington,7,1,2014,142
+2015,August-14,Torrington,8,2,2014,129
+2015,September-14,Torrington,9,3,2014,170
+2015,October-14,Torrington,10,4,2014,168
+2015,November-14,Torrington,11,5,2014,113
+2015,December-14,Torrington,12,6,2014,122
+2015,January-15,Torrington,1,7,2015,106
+2015,February-15,Torrington,2,8,2015,127
+2015,March-15,Torrington,3,9,2015,154
+2015,April-15,Torrington,4,10,2015,152
+2015,May-15,Torrington,5,11,2015,117
+2015,June-15,Torrington,6,12,2015,143
+2016,July-15,Torrington,7,1,2015,161
+2016,August-15,Torrington,8,2,2015,168
+2016,September-15,Torrington,9,3,2015,155
+2016,October-15,Torrington,10,4,2015,178
+2016,November-15,Torrington,11,5,2015,120
+2016,December-15,Torrington,12,6,2015,169
+2016,January-16,Torrington,1,7,2016,170
+2016,February-16,Torrington,2,8,2016,148
+2016,March-16,Torrington,3,9,2016,175
+2016,April-16,Torrington,4,10,2016,152
+2016,May-16,Torrington,5,11,2016,160
+2016,June-16,Torrington,6,12,2016,152
+2014,July-13,Trumbull,7,1,2013,27
+2014,August-13,Trumbull,8,2,2013,33
+2014,September-13,Trumbull,9,3,2013,26
+2014,October-13,Trumbull,10,4,2013,25
+2014,November-13,Trumbull,11,5,2013,31
+2014,December-13,Trumbull,12,6,2013,30
+2014,January-14,Trumbull,1,7,2014,33
+2014,February-14,Trumbull,2,8,2014,27
+2014,March-14,Trumbull,3,9,2014,26
+2014,April-14,Trumbull,4,10,2014,24
+2014,May-14,Trumbull,5,11,2014,30
+2014,June-14,Trumbull,6,12,2014,25
+2015,July-14,Trumbull,7,1,2014,31
+2015,August-14,Trumbull,8,2,2014,22
+2015,September-14,Trumbull,9,3,2014,36
+2015,October-14,Trumbull,10,4,2014,31
+2015,November-14,Trumbull,11,5,2014,24
+2015,December-14,Trumbull,12,6,2014,30
+2015,January-15,Trumbull,1,7,2015,19
+2015,February-15,Trumbull,2,8,2015,19
+2015,March-15,Trumbull,3,9,2015,37
+2015,April-15,Trumbull,4,10,2015,26
+2015,May-15,Trumbull,5,11,2015,26
+2015,June-15,Trumbull,6,12,2015,26
+2016,July-15,Trumbull,7,1,2015,32
+2016,August-15,Trumbull,8,2,2015,27
+2016,September-15,Trumbull,9,3,2015,19
+2016,October-15,Trumbull,10,4,2015,20
+2016,November-15,Trumbull,11,5,2015,18
+2016,December-15,Trumbull,12,6,2015,24
+2016,January-16,Trumbull,1,7,2016,28
+2016,February-16,Trumbull,2,8,2016,28
+2016,March-16,Trumbull,3,9,2016,35
+2016,April-16,Trumbull,4,10,2016,23
+2016,May-16,Trumbull,5,11,2016,24
+2016,June-16,Trumbull,6,12,2016,25
+2014,July-13,Vernon,7,1,2013,41
+2014,August-13,Vernon,8,2,2013,35
+2014,September-13,Vernon,9,3,2013,41
+2014,October-13,Vernon,10,4,2013,34
+2014,November-13,Vernon,11,5,2013,24
+2014,December-13,Vernon,12,6,2013,48
+2014,January-14,Vernon,1,7,2014,48
+2014,February-14,Vernon,2,8,2014,38
+2014,March-14,Vernon,3,9,2014,42
+2014,April-14,Vernon,4,10,2014,37
+2014,May-14,Vernon,5,11,2014,32
+2014,June-14,Vernon,6,12,2014,39
+2015,July-14,Vernon,7,1,2014,34
+2015,August-14,Vernon,8,2,2014,41
+2015,September-14,Vernon,9,3,2014,56
+2015,October-14,Vernon,10,4,2014,45
+2015,November-14,Vernon,11,5,2014,43
+2015,December-14,Vernon,12,6,2014,34
+2015,January-15,Vernon,1,7,2015,36
+2015,February-15,Vernon,2,8,2015,33
+2015,March-15,Vernon,3,9,2015,51
+2015,April-15,Vernon,4,10,2015,55
+2015,May-15,Vernon,5,11,2015,35
+2015,June-15,Vernon,6,12,2015,53
+2016,July-15,Vernon,7,1,2015,42
+2016,August-15,Vernon,8,2,2015,47
+2016,September-15,Vernon,9,3,2015,30
+2016,October-15,Vernon,10,4,2015,35
+2016,November-15,Vernon,11,5,2015,27
+2016,December-15,Vernon,12,6,2015,35
+2016,January-16,Vernon,1,7,2016,41
+2016,February-16,Vernon,2,8,2016,51
+2016,March-16,Vernon,3,9,2016,47
+2016,April-16,Vernon,4,10,2016,41
+2016,May-16,Vernon,5,11,2016,26
+2016,June-16,Vernon,6,12,2016,41
+2014,July-13,Wallingford,7,1,2013,47
+2014,August-13,Wallingford,8,2,2013,53
+2014,September-13,Wallingford,9,3,2013,40
+2014,October-13,Wallingford,10,4,2013,69
+2014,November-13,Wallingford,11,5,2013,41
+2014,December-13,Wallingford,12,6,2013,37
+2014,January-14,Wallingford,1,7,2014,41
+2014,February-14,Wallingford,2,8,2014,38
+2014,March-14,Wallingford,3,9,2014,45
+2014,April-14,Wallingford,4,10,2014,51
+2014,May-14,Wallingford,5,11,2014,47
+2014,June-14,Wallingford,6,12,2014,85
+2015,July-14,Wallingford,7,1,2014,44
+2015,August-14,Wallingford,8,2,2014,53
+2015,September-14,Wallingford,9,3,2014,61
+2015,October-14,Wallingford,10,4,2014,63
+2015,November-14,Wallingford,11,5,2014,35
+2015,December-14,Wallingford,12,6,2014,98
+2015,January-15,Wallingford,1,7,2015,82
+2015,February-15,Wallingford,2,8,2015,42
+2015,March-15,Wallingford,3,9,2015,57
+2015,April-15,Wallingford,4,10,2015,45
+2015,May-15,Wallingford,5,11,2015,40
+2015,June-15,Wallingford,6,12,2015,40
+2016,July-15,Wallingford,7,1,2015,41
+2016,August-15,Wallingford,8,2,2015,49
+2016,September-15,Wallingford,9,3,2015,59
+2016,October-15,Wallingford,10,4,2015,39
+2016,November-15,Wallingford,11,5,2015,44
+2016,December-15,Wallingford,12,6,2015,38
+2016,January-16,Wallingford,1,7,2016,43
+2016,February-16,Wallingford,2,8,2016,55
+2016,March-16,Wallingford,3,9,2016,52
+2016,April-16,Wallingford,4,10,2016,79
+2016,May-16,Wallingford,5,11,2016,51
+2016,June-16,Wallingford,6,12,2016,40
+2014,July-13,Waterbury,7,1,2013,468
+2014,August-13,Waterbury,8,2,2013,422
+2014,September-13,Waterbury,9,3,2013,395
+2014,October-13,Waterbury,10,4,2013,478
+2014,November-13,Waterbury,11,5,2013,368
+2014,December-13,Waterbury,12,6,2013,370
+2014,January-14,Waterbury,1,7,2014,418
+2014,February-14,Waterbury,2,8,2014,360
+2014,March-14,Waterbury,3,9,2014,483
+2014,April-14,Waterbury,4,10,2014,448
+2014,May-14,Waterbury,5,11,2014,427
+2014,June-14,Waterbury,6,12,2014,460
+2015,July-14,Waterbury,7,1,2014,486
+2015,August-14,Waterbury,8,2,2014,423
+2015,September-14,Waterbury,9,3,2014,465
+2015,October-14,Waterbury,10,4,2014,496
+2015,November-14,Waterbury,11,5,2014,422
+2015,December-14,Waterbury,12,6,2014,469
+2015,January-15,Waterbury,1,7,2015,473
+2015,February-15,Waterbury,2,8,2015,399
+2015,March-15,Waterbury,3,9,2015,506
+2015,April-15,Waterbury,4,10,2015,482
+2015,May-15,Waterbury,5,11,2015,434
+2015,June-15,Waterbury,6,12,2015,501
+2016,July-15,Waterbury,7,1,2015,481
+2016,August-15,Waterbury,8,2,2015,489
+2016,September-15,Waterbury,9,3,2015,462
+2016,October-15,Waterbury,10,4,2015,502
+2016,November-15,Waterbury,11,5,2015,394
+2016,December-15,Waterbury,12,6,2015,442
+2016,January-16,Waterbury,1,7,2016,466
+2016,February-16,Waterbury,2,8,2016,465
+2016,March-16,Waterbury,3,9,2016,573
+2016,April-16,Waterbury,4,10,2016,513
+2016,May-16,Waterbury,5,11,2016,482
+2016,June-16,Waterbury,6,12,2016,478
+2014,July-13,Waterford,7,1,2013,37
+2014,August-13,Waterford,8,2,2013,29
+2014,September-13,Waterford,9,3,2013,32
+2014,October-13,Waterford,10,4,2013,28
+2014,November-13,Waterford,11,5,2013,31
+2014,December-13,Waterford,12,6,2013,27
+2014,January-14,Waterford,1,7,2014,22
+2014,February-14,Waterford,2,8,2014,27
+2014,March-14,Waterford,3,9,2014,39
+2014,April-14,Waterford,4,10,2014,30
+2014,May-14,Waterford,5,11,2014,28
+2014,June-14,Waterford,6,12,2014,28
+2015,July-14,Waterford,7,1,2014,33
+2015,August-14,Waterford,8,2,2014,37
+2015,September-14,Waterford,9,3,2014,34
+2015,October-14,Waterford,10,4,2014,34
+2015,November-14,Waterford,11,5,2014,24
+2015,December-14,Waterford,12,6,2014,31
+2015,January-15,Waterford,1,7,2015,27
+2015,February-15,Waterford,2,8,2015,25
+2015,March-15,Waterford,3,9,2015,35
+2015,April-15,Waterford,4,10,2015,30
+2015,May-15,Waterford,5,11,2015,23
+2015,June-15,Waterford,6,12,2015,27
+2016,July-15,Waterford,7,1,2015,33
+2016,August-15,Waterford,8,2,2015,24
+2016,September-15,Waterford,9,3,2015,27
+2016,October-15,Waterford,10,4,2015,20
+2016,November-15,Waterford,11,5,2015,20
+2016,December-15,Waterford,12,6,2015,24
+2016,January-16,Waterford,1,7,2016,31
+2016,February-16,Waterford,2,8,2016,30
+2016,March-16,Waterford,3,9,2016,37
+2016,April-16,Waterford,4,10,2016,27
+2016,May-16,Waterford,5,11,2016,38
+2016,June-16,Waterford,6,12,2016,19
+2014,July-13,Watertown,7,1,2013,34
+2014,August-13,Watertown,8,2,2013,37
+2014,September-13,Watertown,9,3,2013,28
+2014,October-13,Watertown,10,4,2013,31
+2014,November-13,Watertown,11,5,2013,36
+2014,December-13,Watertown,12,6,2013,28
+2014,January-14,Watertown,1,7,2014,34
+2014,February-14,Watertown,2,8,2014,27
+2014,March-14,Watertown,3,9,2014,44
+2014,April-14,Watertown,4,10,2014,37
+2014,May-14,Watertown,5,11,2014,44
+2014,June-14,Watertown,6,12,2014,33
+2015,July-14,Watertown,7,1,2014,39
+2015,August-14,Watertown,8,2,2014,35
+2015,September-14,Watertown,9,3,2014,25
+2015,October-14,Watertown,10,4,2014,37
+2015,November-14,Watertown,11,5,2014,32
+2015,December-14,Watertown,12,6,2014,56
+2015,January-15,Watertown,1,7,2015,48
+2015,February-15,Watertown,2,8,2015,32
+2015,March-15,Watertown,3,9,2015,39
+2015,April-15,Watertown,4,10,2015,31
+2015,May-15,Watertown,5,11,2015,22
+2015,June-15,Watertown,6,12,2015,33
+2016,July-15,Watertown,7,1,2015,47
+2016,August-15,Watertown,8,2,2015,24
+2016,September-15,Watertown,9,3,2015,35
+2016,October-15,Watertown,10,4,2015,27
+2016,November-15,Watertown,11,5,2015,28
+2016,December-15,Watertown,12,6,2015,42
+2016,January-16,Watertown,1,7,2016,36
+2016,February-16,Watertown,2,8,2016,29
+2016,March-16,Watertown,3,9,2016,40
+2016,April-16,Watertown,4,10,2016,34
+2016,May-16,Watertown,5,11,2016,29
+2016,June-16,Watertown,6,12,2016,52
+2014,July-13,West Hartford,7,1,2013,59
+2014,August-13,West Hartford,8,2,2013,60
+2014,September-13,West Hartford,9,3,2013,54
+2014,October-13,West Hartford,10,4,2013,70
+2014,November-13,West Hartford,11,5,2013,51
+2014,December-13,West Hartford,12,6,2013,56
+2014,January-14,West Hartford,1,7,2014,59
+2014,February-14,West Hartford,2,8,2014,36
+2014,March-14,West Hartford,3,9,2014,50
+2014,April-14,West Hartford,4,10,2014,51
+2014,May-14,West Hartford,5,11,2014,57
+2014,June-14,West Hartford,6,12,2014,72
+2015,July-14,West Hartford,7,1,2014,57
+2015,August-14,West Hartford,8,2,2014,61
+2015,September-14,West Hartford,9,3,2014,43
+2015,October-14,West Hartford,10,4,2014,54
+2015,November-14,West Hartford,11,5,2014,40
+2015,December-14,West Hartford,12,6,2014,49
+2015,January-15,West Hartford,1,7,2015,47
+2015,February-15,West Hartford,2,8,2015,47
+2015,March-15,West Hartford,3,9,2015,59
+2015,April-15,West Hartford,4,10,2015,44
+2015,May-15,West Hartford,5,11,2015,48
+2015,June-15,West Hartford,6,12,2015,59
+2016,July-15,West Hartford,7,1,2015,59
+2016,August-15,West Hartford,8,2,2015,47
+2016,September-15,West Hartford,9,3,2015,56
+2016,October-15,West Hartford,10,4,2015,54
+2016,November-15,West Hartford,11,5,2015,41
+2016,December-15,West Hartford,12,6,2015,58
+2016,January-16,West Hartford,1,7,2016,54
+2016,February-16,West Hartford,2,8,2016,38
+2016,March-16,West Hartford,3,9,2016,55
+2016,April-16,West Hartford,4,10,2016,51
+2016,May-16,West Hartford,5,11,2016,51
+2016,June-16,West Hartford,6,12,2016,35
+2014,July-13,West Haven,7,1,2013,118
+2014,August-13,West Haven,8,2,2013,90
+2014,September-13,West Haven,9,3,2013,94
+2014,October-13,West Haven,10,4,2013,103
+2014,November-13,West Haven,11,5,2013,63
+2014,December-13,West Haven,12,6,2013,71
+2014,January-14,West Haven,1,7,2014,71
+2014,February-14,West Haven,2,8,2014,73
+2014,March-14,West Haven,3,9,2014,89
+2014,April-14,West Haven,4,10,2014,94
+2014,May-14,West Haven,5,11,2014,81
+2014,June-14,West Haven,6,12,2014,110
+2015,July-14,West Haven,7,1,2014,110
+2015,August-14,West Haven,8,2,2014,109
+2015,September-14,West Haven,9,3,2014,93
+2015,October-14,West Haven,10,4,2014,118
+2015,November-14,West Haven,11,5,2014,86
+2015,December-14,West Haven,12,6,2014,98
+2015,January-15,West Haven,1,7,2015,110
+2015,February-15,West Haven,2,8,2015,117
+2015,March-15,West Haven,3,9,2015,128
+2015,April-15,West Haven,4,10,2015,102
+2015,May-15,West Haven,5,11,2015,92
+2015,June-15,West Haven,6,12,2015,97
+2016,July-15,West Haven,7,1,2015,123
+2016,August-15,West Haven,8,2,2015,102
+2016,September-15,West Haven,9,3,2015,105
+2016,October-15,West Haven,10,4,2015,105
+2016,November-15,West Haven,11,5,2015,81
+2016,December-15,West Haven,12,6,2015,85
+2016,January-16,West Haven,1,7,2016,103
+2016,February-16,West Haven,2,8,2016,110
+2016,March-16,West Haven,3,9,2016,87
+2016,April-16,West Haven,4,10,2016,102
+2016,May-16,West Haven,5,11,2016,110
+2016,June-16,West Haven,6,12,2016,79
+2014,July-13,Westbrook,7,1,2013,14
+2014,August-13,Westbrook,8,2,2013,16
+2014,September-13,Westbrook,9,3,2013,16
+2014,October-13,Westbrook,10,4,2013,15
+2014,November-13,Westbrook,11,5,2013,10
+2014,December-13,Westbrook,12,6,2013,6
+2014,January-14,Westbrook,1,7,2014,10
+2014,February-14,Westbrook,2,8,2014,9
+2014,March-14,Westbrook,3,9,2014,17
+2014,April-14,Westbrook,4,10,2014,18
+2014,May-14,Westbrook,5,11,2014,12
+2014,June-14,Westbrook,6,12,2014,7
+2015,July-14,Westbrook,7,1,2014,15
+2015,August-14,Westbrook,8,2,2014,10
+2015,September-14,Westbrook,9,3,2014,12
+2015,October-14,Westbrook,10,4,2014,9
+2015,November-14,Westbrook,11,5,2014,12
+2015,December-14,Westbrook,12,6,2014,9
+2015,January-15,Westbrook,1,7,2015,9
+2015,February-15,Westbrook,2,8,2015,9
+2015,March-15,Westbrook,3,9,2015,12
+2015,April-15,Westbrook,4,10,2015,7
+2015,May-15,Westbrook,5,11,2015,7
+2015,June-15,Westbrook,6,12,2015,12
+2015,July-14,Westport,7,1,2014,13
+2015,August-14,Westport,8,2,2014,9
+2015,September-14,Westport,9,3,2014,11
+2015,October-14,Westport,10,4,2014,13
+2015,November-14,Westport,11,5,2014,7
+2015,December-14,Westport,12,6,2014,16
+2015,January-15,Westport,1,7,2015,15
+2015,February-15,Westport,2,8,2015,12
+2015,March-15,Westport,3,9,2015,9
+2015,April-15,Westport,4,10,2015,15
+2015,May-15,Westport,5,11,2015,16
+2015,June-15,Westport,6,12,2015,17
+2016,July-15,Westport,7,1,2015,15
+2016,August-15,Westport,8,2,2015,10
+2016,September-15,Westport,9,3,2015,10
+2016,October-15,Westport,10,4,2015,9
+2016,November-15,Westport,11,5,2015,10
+2016,December-15,Westport,12,6,2015,8
+2016,January-16,Westport,1,7,2016,6
+2016,February-16,Westport,2,8,2016,8
+2016,March-16,Westport,3,9,2016,10
+2016,April-16,Westport,4,10,2016,7
+2016,May-16,Westport,5,11,2016,16
+2016,June-16,Westport,6,12,2016,12
+2014,July-13,Wethersfield,7,1,2013,34
+2014,August-13,Wethersfield,8,2,2013,30
+2014,September-13,Wethersfield,9,3,2013,18
+2014,October-13,Wethersfield,10,4,2013,29
+2014,November-13,Wethersfield,11,5,2013,26
+2014,December-13,Wethersfield,12,6,2013,24
+2014,January-14,Wethersfield,1,7,2014,42
+2014,February-14,Wethersfield,2,8,2014,30
+2014,March-14,Wethersfield,3,9,2014,37
+2014,April-14,Wethersfield,4,10,2014,23
+2014,May-14,Wethersfield,5,11,2014,29
+2014,June-14,Wethersfield,6,12,2014,30
+2015,July-14,Wethersfield,7,1,2014,24
+2015,August-14,Wethersfield,8,2,2014,27
+2015,September-14,Wethersfield,9,3,2014,30
+2015,October-14,Wethersfield,10,4,2014,27
+2015,November-14,Wethersfield,11,5,2014,28
+2015,December-14,Wethersfield,12,6,2014,19
+2015,January-15,Wethersfield,1,7,2015,37
+2015,February-15,Wethersfield,2,8,2015,24
+2015,March-15,Wethersfield,3,9,2015,24
+2015,April-15,Wethersfield,4,10,2015,36
+2015,May-15,Wethersfield,5,11,2015,25
+2015,June-15,Wethersfield,6,12,2015,29
+2016,July-15,Wethersfield,7,1,2015,35
+2016,August-15,Wethersfield,8,2,2015,39
+2016,September-15,Wethersfield,9,3,2015,34
+2016,October-15,Wethersfield,10,4,2015,42
+2016,November-15,Wethersfield,11,5,2015,23
+2016,December-15,Wethersfield,12,6,2015,40
+2016,January-16,Wethersfield,1,7,2016,28
+2016,February-16,Wethersfield,2,8,2016,19
+2016,March-16,Wethersfield,3,9,2016,34
+2016,April-16,Wethersfield,4,10,2016,17
+2016,May-16,Wethersfield,5,11,2016,19
+2016,June-16,Wethersfield,6,12,2016,29
+2014,July-13,Winchester,7,1,2013,23
+2014,August-13,Winchester,8,2,2013,35
+2014,September-13,Winchester,9,3,2013,25
+2014,October-13,Winchester,10,4,2013,41
+2014,November-13,Winchester,11,5,2013,33
+2014,December-13,Winchester,12,6,2013,27
+2014,January-14,Winchester,1,7,2014,38
+2014,February-14,Winchester,2,8,2014,30
+2014,March-14,Winchester,3,9,2014,26
+2014,April-14,Winchester,4,10,2014,34
+2014,May-14,Winchester,5,11,2014,27
+2014,June-14,Winchester,6,12,2014,28
+2015,July-14,Winchester,7,1,2014,35
+2015,August-14,Winchester,8,2,2014,30
+2015,September-14,Winchester,9,3,2014,48
+2015,October-14,Winchester,10,4,2014,34
+2015,November-14,Winchester,11,5,2014,27
+2015,December-14,Winchester,12,6,2014,25
+2015,January-15,Winchester,1,7,2015,37
+2015,February-15,Winchester,2,8,2015,23
+2015,March-15,Winchester,3,9,2015,41
+2015,April-15,Winchester,4,10,2015,35
+2015,May-15,Winchester,5,11,2015,34
+2015,June-15,Winchester,6,12,2015,48
+2016,July-15,Winchester,7,1,2015,27
+2016,August-15,Winchester,8,2,2015,44
+2016,September-15,Winchester,9,3,2015,32
+2016,October-15,Winchester,10,4,2015,38
+2016,November-15,Winchester,11,5,2015,20
+2016,December-15,Winchester,12,6,2015,33
+2016,January-16,Winchester,1,7,2016,29
+2016,February-16,Winchester,2,8,2016,34
+2016,March-16,Winchester,3,9,2016,33
+2016,April-16,Winchester,4,10,2016,28
+2016,May-16,Winchester,5,11,2016,41
+2016,June-16,Winchester,6,12,2016,31
+2014,July-13,Windham,7,1,2013,139
+2014,August-13,Windham,8,2,2013,144
+2014,September-13,Windham,9,3,2013,169
+2014,October-13,Windham,10,4,2013,147
+2014,November-13,Windham,11,5,2013,150
+2014,December-13,Windham,12,6,2013,122
+2014,January-14,Windham,1,7,2014,154
+2014,February-14,Windham,2,8,2014,137
+2014,March-14,Windham,3,9,2014,161
+2014,April-14,Windham,4,10,2014,162
+2014,May-14,Windham,5,11,2014,155
+2014,June-14,Windham,6,12,2014,162
+2015,July-14,Windham,7,1,2014,197
+2015,August-14,Windham,8,2,2014,156
+2015,September-14,Windham,9,3,2014,168
+2015,October-14,Windham,10,4,2014,197
+2015,November-14,Windham,11,5,2014,138
+2015,December-14,Windham,12,6,2014,166
+2015,January-15,Windham,1,7,2015,162
+2015,February-15,Windham,2,8,2015,143
+2015,March-15,Windham,3,9,2015,180
+2015,April-15,Windham,4,10,2015,161
+2015,May-15,Windham,5,11,2015,135
+2015,June-15,Windham,6,12,2015,164
+2016,July-15,Windham,7,1,2015,188
+2016,August-15,Windham,8,2,2015,155
+2016,September-15,Windham,9,3,2015,163
+2016,October-15,Windham,10,4,2015,139
+2016,November-15,Windham,11,5,2015,156
+2016,December-15,Windham,12,6,2015,160
+2016,January-16,Windham,1,7,2016,148
+2016,February-16,Windham,2,8,2016,156
+2016,March-16,Windham,3,9,2016,163
+2016,April-16,Windham,4,10,2016,169
+2016,May-16,Windham,5,11,2016,168
+2016,June-16,Windham,6,12,2016,137
+2014,July-13,Windsor,7,1,2013,30
+2014,August-13,Windsor,8,2,2013,34
+2014,September-13,Windsor,9,3,2013,31
+2014,October-13,Windsor,10,4,2013,35
+2014,November-13,Windsor,11,5,2013,25
+2014,December-13,Windsor,12,6,2013,22
+2014,January-14,Windsor,1,7,2014,26
+2014,February-14,Windsor,2,8,2014,23
+2014,March-14,Windsor,3,9,2014,43
+2014,April-14,Windsor,4,10,2014,18
+2014,May-14,Windsor,5,11,2014,30
+2014,June-14,Windsor,6,12,2014,35
+2015,July-14,Windsor,7,1,2014,46
+2015,August-14,Windsor,8,2,2014,31
+2015,September-14,Windsor,9,3,2014,33
+2015,October-14,Windsor,10,4,2014,26
+2015,November-14,Windsor,11,5,2014,25
+2015,December-14,Windsor,12,6,2014,24
+2015,January-15,Windsor,1,7,2015,33
+2015,February-15,Windsor,2,8,2015,25
+2015,March-15,Windsor,3,9,2015,39
+2015,April-15,Windsor,4,10,2015,29
+2015,May-15,Windsor,5,11,2015,40
+2015,June-15,Windsor,6,12,2015,35
+2016,July-15,Windsor,7,1,2015,28
+2016,August-15,Windsor,8,2,2015,27
+2016,September-15,Windsor,9,3,2015,30
+2016,October-15,Windsor,10,4,2015,37
+2016,November-15,Windsor,11,5,2015,27
+2016,December-15,Windsor,12,6,2015,19
+2016,January-16,Windsor,1,7,2016,33
+2016,February-16,Windsor,2,8,2016,34
+2016,March-16,Windsor,3,9,2016,33
+2016,April-16,Windsor,4,10,2016,34
+2016,May-16,Windsor,5,11,2016,35
+2016,June-16,Windsor,6,12,2016,36
+2014,July-13,Windsor Locks,7,1,2013,20
+2014,August-13,Windsor Locks,8,2,2013,19
+2014,September-13,Windsor Locks,9,3,2013,12
+2014,October-13,Windsor Locks,10,4,2013,23
+2014,November-13,Windsor Locks,11,5,2013,19
+2014,December-13,Windsor Locks,12,6,2013,14
+2014,January-14,Windsor Locks,1,7,2014,24
+2014,February-14,Windsor Locks,2,8,2014,15
+2014,March-14,Windsor Locks,3,9,2014,27
+2014,April-14,Windsor Locks,4,10,2014,18
+2014,May-14,Windsor Locks,5,11,2014,22
+2014,June-14,Windsor Locks,6,12,2014,21
+2015,July-14,Windsor Locks,7,1,2014,17
+2015,August-14,Windsor Locks,8,2,2014,24
+2015,September-14,Windsor Locks,9,3,2014,14
+2015,October-14,Windsor Locks,10,4,2014,17
+2015,November-14,Windsor Locks,11,5,2014,26
+2015,December-14,Windsor Locks,12,6,2014,19
+2015,January-15,Windsor Locks,1,7,2015,20
+2015,February-15,Windsor Locks,2,8,2015,17
+2015,March-15,Windsor Locks,3,9,2015,23
+2015,April-15,Windsor Locks,4,10,2015,24
+2015,May-15,Windsor Locks,5,11,2015,13
+2015,June-15,Windsor Locks,6,12,2015,18
+2016,July-15,Windsor Locks,7,1,2015,12
+2016,August-15,Windsor Locks,8,2,2015,27
+2016,September-15,Windsor Locks,9,3,2015,13
+2016,October-15,Windsor Locks,10,4,2015,25
+2016,November-15,Windsor Locks,11,5,2015,14
+2016,December-15,Windsor Locks,12,6,2015,16
+2016,January-16,Windsor Locks,1,7,2016,21
+2016,February-16,Windsor Locks,2,8,2016,19
+2016,March-16,Windsor Locks,3,9,2016,25
+2016,April-16,Windsor Locks,4,10,2016,16
+2016,May-16,Windsor Locks,5,11,2016,15
+2016,June-16,Windsor Locks,6,12,2016,21
+2014,July-13,Wolcott,7,1,2013,20
+2014,August-13,Wolcott,8,2,2013,21
+2014,September-13,Wolcott,9,3,2013,17
+2014,October-13,Wolcott,10,4,2013,20
+2014,November-13,Wolcott,11,5,2013,24
+2014,December-13,Wolcott,12,6,2013,20
+2014,January-14,Wolcott,1,7,2014,19
+2014,February-14,Wolcott,2,8,2014,31
+2014,March-14,Wolcott,3,9,2014,21
+2014,April-14,Wolcott,4,10,2014,29
+2014,May-14,Wolcott,5,11,2014,35
+2014,June-14,Wolcott,6,12,2014,22
+2015,July-14,Wolcott,7,1,2014,17
+2015,August-14,Wolcott,8,2,2014,22
+2015,September-14,Wolcott,9,3,2014,25
+2015,October-14,Wolcott,10,4,2014,21
+2015,November-14,Wolcott,11,5,2014,26
+2015,December-14,Wolcott,12,6,2014,34
+2015,January-15,Wolcott,1,7,2015,26
+2015,February-15,Wolcott,2,8,2015,19
+2015,March-15,Wolcott,3,9,2015,18
+2015,April-15,Wolcott,4,10,2015,17
+2015,May-15,Wolcott,5,11,2015,31
+2015,June-15,Wolcott,6,12,2015,31
+2016,July-15,Wolcott,7,1,2015,28
+2016,August-15,Wolcott,8,2,2015,26
+2016,September-15,Wolcott,9,3,2015,32
+2016,October-15,Wolcott,10,4,2015,37
+2016,November-15,Wolcott,11,5,2015,19
+2016,December-15,Wolcott,12,6,2015,22
+2016,January-16,Wolcott,1,7,2016,24
+2016,February-16,Wolcott,2,8,2016,26
+2016,March-16,Wolcott,3,9,2016,26
+2016,April-16,Wolcott,4,10,2016,28
+2016,May-16,Wolcott,5,11,2016,32
+2016,June-16,Wolcott,6,12,2016,34

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content on Journalism with R</title>
+    <link>/en/cont/</link>
+    <description>Recent content in Content on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="/en/cont/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Archetypes</title>
+      <link>/en/cont/archetypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/cont/archetypes/</guid>
+      <description>Using the command: hugo new [relative new content path], you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more : archetypes.
+It is pre-configured skeleton pages with default front matter. Please refer to the documentation for types of page to understand the differences.
+Chapter To create a Chapter page, run the following commands
+hugo new --kind chapter &amp;lt;name&amp;gt;/_index.</description>
+    </item>
+    
+    <item>
+      <title>Markdown syntax</title>
+      <link>/en/cont/markdown/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>/en/cont/markdown/</guid>
+      <description>This page is a shameful copy of the great Grav original page. Only difference is information about image customization (resizing, add CSS classes&amp;hellip;)
+ Let&amp;rsquo;s face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
+Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.</description>
+    </item>
+    
+    <item>
+      <title>Menu extra shortcuts</title>
+      <link>/en/cont/menushortcuts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>/en/cont/menushortcuts/</guid>
+      <description>You can define additional menu entries or shortcuts in the navigation menu without any link to content.
+Basic configuration Edit the website configuration config.toml and add a [[menu.shortcuts]] entry for each link your want to add.
+Example from the current website:
+[[menu.shortcuts]] name = &amp;quot;&amp;lt;i class=&#39;fa fa-github&#39;&amp;gt;&amp;lt;/i&amp;gt; Github repo&amp;quot; identifier = &amp;quot;ds&amp;quot; url = &amp;quot;https://github.com/matcornic/hugo-theme-learn&amp;quot; weight = 10 [[menu.shortcuts]] name = &amp;quot;&amp;lt;i class=&#39;fa fa-camera&#39;&amp;gt;&amp;lt;/i&amp;gt; Showcases&amp;quot; url = &amp;quot;/showcase&amp;quot; weight = 11 [[menu.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+---
+title: "Setting up a project folder for this class"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "projects", "workflow"]
+weight: 4
+slug: class-project
+---
+
+A couple options for this class.
+We're going to  operate out of one folder.
+
+So you can create a folder now.
+
+Or download the files from HERE.
+
+Ideally, you'll create the files yourself in the correct folder structure. THen you'll type the code in yourself manually.
+
+This is the best way to learn and train yourself by doing this process manually.
+
+That being said, if you get stuck, all the scripts and code and proper folder structure is available to download. But try to use it as a reference and avoid copying and pasting the code because you're passively learning. 
+

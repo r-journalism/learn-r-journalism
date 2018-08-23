@@ -1,0 +1,34 @@
+---
+title: "Installing R"
+description: "Click, click, click"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "install"]
+weight: 3
+slug: installing-r
+---
+
+## Downloading R
+
+* R homepage - [http://www.r-project.org](http://www.r-project.org)
+* CRAN Mirrors - [http://cran.r-project.org](http://cran.r-project.org)
+
+<img src="/introduction/installing_r/images/r-download.png" alt="Download R on Cran", class="shadow", style="width:70%">
+
+You can also install [via command line](http://tristanpenman.com/blog/posts/2015/10/20/installing-r-and-rstudio-on-mac-os-x/) package manager Homebrew.
+
+## Default R Console
+
+This is what the default R app looks like. 
+
+<img src="/introduction/installing_r/images/r-gui.png" alt="R GUI", class="shadow", style="width:60%">
+
+It's very simple but things have advanced to the point that we don't need to settle for this.
+
+Now that we have the basic code installed, we can move on to a much [better interface](../../installing_rstudio/installing-rstudio/) for working with R.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

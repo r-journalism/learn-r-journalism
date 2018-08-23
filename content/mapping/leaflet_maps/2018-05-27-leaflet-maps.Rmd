@@ -1,0 +1,238 @@
+---
+title: "Interactive maps with Leaflet"
+description: "Locator maps and geolocating addresses"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "leaflet"]
+weight: 4
+slug: leaflet
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/279WR2zOU90?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+Let's create a locator map like you would when searching for an address on Google Maps.
+
+Sometimes it's necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.
+
+The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource JavaScript library. 
+
+It’s great for journalists who have little knowledge of JavaScript who want to make interesting interactives using R. And there is [excellent documentation](https://rstudio.github.io/leaflet/) if you want to dig deeper into its functionality after this introduction.
+
+Essentially, this package lets you make maps with custom map tiles, markers, polygons, lines, popups, and geojson. Almost any maps you can make in Google Fusion Tables or Carto(DB), you can make in R using the Leaflet package.
+
+```{r loading_packages, warning=F, message=F}
+# Uncomment and run "install.packages" functions below if you have not yet installed these packages
+
+#install.packages("leaflet")
+
+# IF YOU GET AN ERROR BECAUSE THERE IS NO PACKAGE CALLED httpuv
+#install.packages("httpuv")
+#install.packages("leaflet")
+
+library(leaflet)
+
+
+
+
+#install.packages("dplyr")
+library(dplyr)
+```
+
+
+
+## Putting a marker on a map
+
+Let's begin by finding a latitude and longitude to map.
+
+Go to [Google Maps](https://www.google.com/maps/) and search for any address.
+
+Right click on the map until you get this menu.
+
+![](/mapping/leaflet_maps/images/right_map.png)
+
+Select "What's here?" and at the bottom copy and paste that latitude and longitude.
+
+![](/mapping/leaflet_maps/images/lat_lon.png)
+
+
+
+1. Create a map widget by calling the `leaflet()` function
+2. Add *layers* (such as features) to the map by using layer functions
+    * like `addTiles`, `addMarkers`, `addPolygons`
+3. Print the map widget
+4. Customize the view port zoom and center location with `setView()`
+
+```{r first_map_simplified,  fig.width=8, fig.height=4, warning=F, message=F}
+# Insert your latitude and longitude in the code below
+# NOTE: Don't get them reversed otherwise you'll end up in the South Pole.
+
+# Initialize and assign m as the leaflet object
+m <- leaflet() %>%
+# Now add tiles to it
+    addTiles() %>%  
+# Setting the middle of where the map should be and the zoom level
+    setView(lng=-77.030137, lat=38.902986, zoom = 16) %>%
+# Now, add a marker with a popup, 
+    addMarkers(lng=-77.030137, lat=38.902986, popup="<b>Hello</b><br><a href='https://www.washingtonpost.com'>-Me</a>")
+
+m 
+```
+
+Go ahead and click the blue marker.
+
+**Explaining the R code**
+
+* `leaflet()` initializes the leaflet work space
+* `addTiles()` by itself will bring in the default OpenStreetMap tiles
+    * Here's [a list](http://leaflet-extras.github.io/leaflet-providers/preview/) of free leaflet tiles you can use
+    * **Note:** OpenStreetMaps is a wonderful and free open-source service. Their only stipulation for using their tiles is to be sure to credit and link to them in the map.
+* `setView()` is pretty self-explanatory but is simpler to implement
+* `addMarkers()` with some specific parameters.
+
+**Note:** The order of commands is important. A view can’t be set unless there are tiles established first.
+
+## How to put the map online
+
+Run the code in your RStudio console and it will appear in your Viewer tab.
+
+Click on **Export > Save as Web page**.
+
+![Export](/mapping/leaflet_maps/images/export.png)
+
+Give it a file name and click save.
+
+![Save as](/mapping/leaflet_maps/images/filename.png)
+
+You have the map now as a full screen html file.
+
+
+![File](/mapping/leaflet_maps/images/file.png)
+
+You can upload the file wherever you like and then iframe to it if you want to embed it into website like the code below.
+
+`<iframe src="leaflet_map.html" frameborder="0" width="100%" height="300px"></iframe>`
+
+Or you can leave it embedded in an R Markdown file as the raw R code, like I have in this file.
+
+
+{{% notice note %}}
+When comparing the size of the HTML files, the R-produced version of the map is larger in size because it is bringing all the JavaScript and CSS inline into the HTML. However, when looking at how much data is actually downloaded to load the map html, the differences aren’t as drastic.
+{{% /notice %}}
+
+
+## Multiple locations from a csv
+
+Let's bring in some new data.
+
+```{r import1}
+library(readr)
+dunkin <- read_csv("data/dunkin.csv")
+
+glimpse(dunkin)
+```
+
+We've imported nearly 8,000 rows of Dunkin' Donuts store location data.
+
+Let's limit it a bit because 8,000 dots on a slippy map is taxing on a browser.
+
+```{r filtered_dd}
+# Pick a state, any state.
+# I'll use Massachusetts here because that's where Dunkin started
+
+dd_state <- dunkin %>% 
+  filter(state=="MA")
+```
+
+Let's make a map with a new tile set. Instead of leaving `addTiles()` empty, we'll pass on some new data to some third-party tiles with the `addProviderTiles()` function. Check out all the neat [tile options](http://leaflet-extras.github.io/leaflet-providers/preview/index.html).
+
+Some options to use with `addCircles` includes the data to pull in for `popup` and `color`, which we've made bright orange. We've also set `radius` and `weight` and `fillOpacity`.
+
+If we wanted to change the radius of the circle based on some data point, you could replace `40` with some column with numeric values in it.
+
+```{r dunk_map1, fig.width=9, fig.height=4, warning=F, messag=F, eval=F}
+m <- leaflet(dd_state) %>% addProviderTiles(providers$CartoDB.DarkMatter) %>% 
+  setView(-71.931180, 42.385453, zoom = 7) %>% 
+  addCircles(~lon, ~lat, popup=dunkin$type, weight = 3, radius=40, 
+                 color="#ffa500", stroke = TRUE, fillOpacity = 0.8) 
+m
+```
+
+<iframe src="//learn.r-journalism.com/iframes/dunk_map1.html" frameborder=0,  height=400, width="100%", scrolling="no"></iframe>
+
+Why stop there?
+
+Let's bring in some competition. 
+
+```{r import2}
+starbucks <- read_csv("data/starbucks.csv")
+
+glimpse(starbucks)
+```
+
+We should filter it so it's only the state for which we already filtered for Dunkin data.
+
+
+```{r filter2}
+sb_state <- starbucks %>% 
+  filter(Province=="MA")
+```
+The data is structured a bit differently, but at least it has `type` and location data.
+
+Also, let's switch from `addCircles` to `addCircleMarkers`.
+
+```{r dunk_map2, fig.width=8, fig.height=4, warning=F, message=F, eval=F}
+# isolating just the 3 columns we're interested in-- type, lat, and lon
+sb_loc <- select(sb_state, type, lat, lon)
+dd_loc <- select(dd_state, type, lat, lon)
+
+# joining the two data frames together
+ddsb <- rbind(sb_loc, dd_loc)
+
+# creating a coffee color palette
+
+cof <- colorFactor(c("#ffa500", "#13ED3F"), domain=c("Dunkin Donuts", "Starbucks"))
+# mapping based on type
+m <- leaflet(ddsb) %>% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %>% 
+  setView(-71.931180, 42.385453, zoom = 7) %>% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5) 
+m
+```
+
+
+<iframe src="//learn.r-journalism.com/iframes/dunk_map2.html" frameborder=0,  height=400, width="100%", scrolling="no"></iframe>
+
+Play around with the slippy map. Interesting, right?
+
+The file size is only 1.3 m even though there are more than 1,300 points on the map.
+
+Still, that's a lot of points to process. I don't recommend more.
+
+# Add a legend
+
+Let's add a legend with the function `addLegend()` and options for where to place it and colors and labels.
+
+```{r add_legend, fig.width=8, fig.height=4, warning=F, message=F, eval=F}
+m <- leaflet(ddsb)  %>% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %>% 
+  setView(-71.931180, 42.385453, zoom = 7) %>% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5)  %>%
+  addLegend("bottomright", colors= c("#ffa500", "#13ED3F"), labels=c("Dunkin'", "Starbucks"), title="Coffee places") 
+
+m
+```
+
+
+<iframe src="//learn.r-journalism.com/iframes/dunk_map3.html" frameborder=0, height=400, width="100%", scrolling="no"></iframe>
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

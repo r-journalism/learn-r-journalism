@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dplyrs on Journalism with R</title>
+    <link>/en/wrangling/dplyr/</link>
+    <description>Recent content in Dplyrs on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/wrangling/dplyr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Transforming and analyzing data</title>
+      <link>/en/wrangling/dplyr/dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/dplyr/</guid>
+      <description>Why do I use dplyr?
+ Works best with dataframes, which is what journalists are used to Great for data exploration and transformation Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes Fast on data frames  Five basic verbs  filter() select() arrange() mutate() summarize() plus group_by()   Our data We’re going to be wrangling some pretty big data– murders over decades across the country.</description>
+    </item>
+    
+    <item>
+      <title>Transforming and analyzing data</title>
+      <link>/en/wrangling/dplyr/arrange/dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/arrange/dplyr/</guid>
+      <description>Why do I use dplyr?
+ Works best with dataframes, which is what journalists are used to Great for data exploration and transformation Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes Fast on data frames  Five basic verbs  filter() select() arrange() mutate() summarize() plus group_by()   Our data We’re going to be wrangling some pretty big data– murders over decades across the country.</description>
+    </item>
+    
+    <item>
+      <title>Filter</title>
+      <link>/en/wrangling/dplyr/filter/2018-05-27-filter/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/filter/2018-05-27-filter/</guid>
+      <description>Filter works by extracting rows that meet a criteria you set.
+ You pass the dataframe as a variable to filter() first and then you add any logical tests.
+One = in R is the same as &amp;lt;- in that it assigns a value. Logical tests requires two, so == which tests for equal.
+ df1 &amp;lt;- filter(murders, Relationship_label==&amp;quot;Husband&amp;quot;, VicAge &amp;gt; 60, Year==2016) df2 &amp;lt;- filter(murders, Relationship_label==&amp;quot;Husband&amp;quot; &amp;amp; VicAge &amp;gt; 60 &amp;amp; Year==2016) # same as the line above df3 &amp;lt;- filter(murders, Relationship_label %in% c(&amp;quot;Husband&amp;quot;, &amp;quot;Boyfriend&amp;quot;) | Circumstance_label==&amp;quot;Lovers triangle&amp;quot;) Check out the new objects in the Environment window of RStudio.</description>
+    </item>
+    
+  </channel>
+</rss>

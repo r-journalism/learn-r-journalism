@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/en/importing_exporting/csv/csv-files/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/visualizing/charts_with_ggplot/ggplot2/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/from_excel/from-excel-to-r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/git/installing_git/installing-git/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/publishing/rmarkdown/rmarkdown/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/tour_rstudio/rstudio-tour/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/static_maps/static-maps/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/dplyr/dplyr/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/introduction/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/introduction/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/visualizing/customizing_charts/customizing-exporting-ggplot2/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/excel/excel-files/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/geolocating/geolocating/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/intro_to_r/intro-to-r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/publishing/more_rmarkdown/more-rmarkdown/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/git/git/git/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/tidyr_joins/tidyr-joins/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/what_is_r/what-is-r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/how_to_use_r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/how_to_use_r/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/git/github/github/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/initial_exploration/data-structures/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/delimited_text/delimited-text/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/installing_r/installing-r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/json/json-files/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/visualizing/more_charts/fancy-charts/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/case_study/murders-case-study/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/publishing/workflow/r-projects/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/case_study/traffic-stops/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/importing_exporting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/importing_exporting/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/git/github_pages/github-pages/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/strings/strings/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/installing_rstudio/installing-rstudio/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/leaflet_maps/leaflet/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/spss/spss-files/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/project_for_class/class-project/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/wrangling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/wrangling/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/copying_pasting/copying-pasting/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/dates/dates/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/census_maps/census-maps/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/syntax/r-syntax/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/visualizing/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/visualizing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/visualizing/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/mapping/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/mapping/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/mapping/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/folder_of_files/bulk-files/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/publishing/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/publishing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/publishing/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/git/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/git/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/faq/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/faq/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags/basics/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/bulk/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags/census/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/charts/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/copying/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/csv/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/data-structures/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/dates/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/delimited-text/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/dplyr/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/excel/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/ggplot2/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/git/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/categories/git/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/github/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/github-pages/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/importing/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/install/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/introduction/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/joins/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/json/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/leaflet/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/lubridate/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/mapping/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/maps/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/pasting/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/programming/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/projects/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/publishing/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/categories/r/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/r-markdown/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags/rgdal/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/rmarkdown/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/rstudio/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/spss/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/stringr/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags/version-control/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/visualization/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/workflow/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/tags/wrangling/</loc>
+    <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

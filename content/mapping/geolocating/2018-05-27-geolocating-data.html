@@ -1,0 +1,130 @@
+---
+title: "Geolocating data"
+description: "Getting latitude and longitude from addresses"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "rgdal"]
+weight: 2
+slug: geolocating
+---
+
+
+
+<div id="geolocating-addresses-in-r" class="section level3">
+<h3>Geolocating addresses in R</h3>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/hTEQLk0dOZM?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>We’re going to start with geolocating municipal police stations in Connecticut.</p>
+<p>We’ll be using the <a href="https://github.com/dkahle/ggmap"><code>ggmap</code> package</a> for a lot of functions, starting with geolocating addresses with Google Maps.</p>
+<pre class="r"><code># if you don&#39;t have the following packages installed, uncomment and run the lines below
+
+#install.packages(c(&quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;tidyr&quot;, &quot;ggmap&quot;, &quot;DT&quot;, &quot;knitr&quot;, &quot;readr&quot;))
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(ggmap)
+library(DT)
+library(knitr)</code></pre>
+<p>After we import the data, let’s use the <code>glimpse()</code> function which lists out the variables for the data frame.</p>
+<pre class="r"><code>stations &lt;- read_csv(&quot;data/Police_Departments.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   NAME = col_character(),
+##   DESCRIPTION = col_character(),
+##   TELEPHONE = col_character(),
+##   ADDRESS = col_character(),
+##   ADDRESS2 = col_character(),
+##   CITY = col_character(),
+##   STATE = col_character(),
+##   ZIP = col_integer(),
+##   ZIPP4 = col_integer()
+## )</code></pre>
+<pre class="r"><code>glimpse(stations)</code></pre>
+<pre><code>## Observations: 185
+## Variables: 9
+## $ NAME        &lt;chr&gt; &quot;AMTRAK POLICE DEPARTMENT&quot;, &quot;ANDOVER POLICE DEPART...
+## $ DESCRIPTION &lt;chr&gt; &quot;OTHER&quot;, &quot;MUNICIPAL&quot;, &quot;COLLEGE OR UNIVERSITY&quot;, &quot;CO...
+## $ TELEPHONE   &lt;chr&gt; &quot;203-773-6000&quot;, &quot;860-742-0235&quot;, &quot;860-405-9088&quot;, &quot;8...
+## $ ADDRESS     &lt;chr&gt; &quot;50 UNION AVENUE&quot;, &quot;17 SCHOOL ROAD&quot;, &quot;1084 SHENNEC...
+## $ ADDRESS2    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA...
+## $ CITY        &lt;chr&gt; &quot;NEW HAVEN&quot;, &quot;ANDOVER&quot;, &quot;GROTON&quot;, &quot;HARTFORD&quot;, &quot;NEW...
+## $ STATE       &lt;chr&gt; &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;CT&quot;, &quot;C...
+## $ ZIP         &lt;int&gt; 6519, 6232, 6340, 6103, 6050, 6410, 6413, 6415, 61...
+## $ ZIPP4       &lt;int&gt; 1754, 1526, 6048, 1207, 2439, 2249, 2115, 1230, 16...</code></pre>
+<hr />
+<p>To find the latitude and longitude of an address, we need a full address like you would put into Google Maps. This data frame has a separate column for each piece of the address.</p>
+<p>We need a single column for addresses, so we’ll concatenate <em>ADDRESS</em>, <em>CITY</em>, <em>STATE</em>, and <em>ZIP</em>.</p>
+<p>{{% notice important %}} Did you notice the zip code is numeric and has only 4 digits out of 5 for zip code? That’s because Connecticut zip codes all start with 0. We’ll need to put that 0 back for the geocoding to work successfully. {{% /notice %}}</p>
+<pre class="r"><code>stations &lt;- stations %&gt;% 
+  mutate(ZIP=paste0(&quot;0&quot;, as.character(ZIP))) %&gt;% 
+  mutate(location = paste0(ADDRESS, &quot;, &quot;, CITY, &quot;, CT &quot;, ZIP))</code></pre>
+<p>The function to geocode a single address is <code>geocode()</code> but we’ve got a bunch of addresses, so we can use <code>mutate_geocode()</code>.</p>
+<pre class="r"><code>geo &lt;- mutate_geocode(stations, location)</code></pre>
+<pre class="r"><code># If it&#39;s taking too long, you can cancel and load the output by uncommenting the line below
+geo &lt;- read_csv(&quot;data/geo_stations.csv&quot;)
+
+# Bringing over the longitude and latitude data
+stations$lon &lt;- geo$lon
+stations$lat &lt;- geo$lat</code></pre>
+<p>This is using Google’s service, and last I checked there were about 2,500 queries allowed per day if you don’t have a key. If you do get a key, check out the documentation at the bottom of <a href="https://github.com/dkahle/ggmap">this page</a>.</p>
+<p><strong>Also</strong> did you know that Google let’s you reverse geocode?</p>
+<p>If you pass latitude and longitude data to <code>revgeocode()</code> it will return an address.</p>
+<pre class="r"><code>revgeocode(c(lon = -77.030137, lat = 38.902986))</code></pre>
+<pre><code>## [1] &quot;One Franklin Square, 1301 K St NW, Washington, DC 20071, USA&quot;</code></pre>
+</div>
+<div id="plotting-points-with-ggplot2" class="section level3">
+<h3>Plotting points with ggplot2</h3>
+<p>Let’s pull town shapes for Connecticut with <strong>tigris</strong>.</p>
+<pre class="r"><code># If you don&#39;t have tigris or ggplot2 or sf installed yet, uncomment and run the line below
+#install.packages(&quot;tigris&quot;, &quot;sf&quot;, &quot;ggplot2&quot;)
+
+library(tigris)
+library(sf)
+library(ggplot2)
+
+# set sf option
+
+options(tigris_class = &quot;sf&quot;)
+
+ct &lt;- county_subdivisions(&quot;CT&quot;, cb=T)
+
+#If cb is set to TRUE, download a generalized (1:500k) counties file. Defaults to FALSE (the most detailed TIGER file).
+
+ggplot(ct) + 
+  geom_sf() +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+  labs(title=&quot;Connecticut towns&quot;)</code></pre>
+<p><img src="/mapping/geolocating/2018-05-27-geolocating-data_files/figure-html/tigris_ct-1.png" width="672" /></p>
+<p>Okay, we’ve got the shape file.</p>
+<p>We just add the geolocated points like it was dots on a chart. Because that’s essentially what latitude and longitude is.</p>
+<pre class="r"><code>ggplot(ct) + 
+  geom_sf() +
+  geom_point(data=stations, aes(x=lon, y=lat), color=&quot;blue&quot;) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+  labs(title=&quot;Police stations&quot;)</code></pre>
+<p><img src="/mapping/geolocating/2018-05-27-geolocating-data_files/figure-html/map_chart-1.png" width="864" /></p>
+<p>Alright, I’ll throw in grouping for Description.</p>
+<p>And generate some random numbers for staffing for each station so we can make some circle plots.</p>
+<pre class="r"><code>set.seed(7)
+
+stations$staff &lt;- sample(200, size=nrow(stations), replace=T)
+
+ggplot(ct) + 
+  geom_sf(fill=&quot;transparent&quot;) +
+  geom_point(data=stations, aes(x=lon, y=lat, size=staff, color=DESCRIPTION),  fill=&quot;white&quot;, shape=1) +
+  theme_void() +
+  theme(panel.grid.major = element_line(colour = &#39;transparent&#39;)) +
+  labs(title=&quot;Police stations in Connecticut&quot;) +
+  coord_sf()</code></pre>
+<p><img src="/mapping/geolocating/2018-05-27-geolocating-data_files/figure-html/map_chart2-1.png" width="864" /></p>
+<p>I also threw in <code>coord_sf()</code> in there at the end. It makes sures that all layer are using a common <em>CRS</em>. It sets it based on the first layer.</p>
+<p>You can set other <a href="That%20https://ggplot2.tidyverse.org/reference/ggsf.html">projections</a> easily.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

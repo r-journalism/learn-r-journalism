@@ -1,0 +1,120 @@
+---
+title: "Connecting to GitHub"
+description: "Show your work"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "github"]
+weight: 3
+slug: github
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/A07QI3_Ie34?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Github is one of web-based hosting services for sharing and collaborating with code and data.</p>
+<p>It <a href="https://medium.com/flow-ci/github-vs-bitbucket-vs-gitlab-vs-coding-7cf2b43888a1">all depends</a> on your needs and preferences. Each are pretty similar.</p>
+<p><strong>Options</strong></p>
+<ul>
+<li><a href="http://www.github.com">Github</a></li>
+<li><a href="https://bitbucket.org/">BitBucket</a></li>
+<li><a href="https://about.gitlab.com/">GitLab</a></li>
+</ul>
+<p>We’re going to publish a folder to Github because it offers free hosting to open-source software projects.</p>
+<p>It’s already where most R packages are hosted when they’re being developed.</p>
+<p>{{% notice warning %}} If you’re using two-factor authentication in Github, you’ll need to go through <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">some more steps</a> for generating an SSH key to connect. This shouldn’t concern you if you’re using Github after just creating a new account. {{% /notice %}}</p>
+<div id="creating-a-github-respository" class="section level3">
+<h3>Creating a Github respository</h3>
+<p>Go to Github.com and <a href="https://github.com/join">create a new account</a> if you haven’t yet. Use the same username and email address that you set up with your git global option.</p>
+<p>For this example, we’re going to upload our folder of chunks that we created in the Publishing chapter.</p>
+<p>In Github, <a href="https://github.com/new">create a new</a> public repository called “chunks”.</p>
+<p>Do NOT check “Initialize with README”. You want a blank repository.</p>
+<div class="figure">
+<img src="/git/github/images/chunks.png" />
+
+</div>
+<p>This will create a new repository page, which needs to be synchronized with the local repository we’re about to create.</p>
+<p>Create a folder somewhere (Remember good workflow. Maybe move it to your Documents folder or a new folder for Projects?) and also call it “chunks”.</p>
+<p>Copy and paste the files, including 01_chunk.html and 01_chunk.rmd files into that “chunks” folder.</p>
+<div class="figure">
+<img src="/git/github/images/chunk_files.png" />
+
+</div>
+<p>Open up your CMD/terminal and navigate to the folder.</p>
+<p>For me, that would look like:</p>
+<div class="figure">
+<img src="/git/github/images/navigate.png" />
+
+</div>
+<p>Type in the git commands we <a href="http://learn.r-journalism.com/en/git/git/git/">learned before</a> to initialize, add, and commit.</p>
+<pre><code>git init
+git add .
+git commit -m &quot;first commit&quot;</code></pre>
+<div class="figure">
+<img src="/git/github/images/git_execute.png" />
+
+</div>
+<p>Now we need to connect this repository on the local computer to the repository on Github.</p>
+<p>The lines were provided when you created the repository on Github:</p>
+<div class="figure">
+<img src="/git/github/images/push_existing.png" />
+
+</div>
+<p>Type the equivalent of that into your terminal/cmd:</p>
+<pre><code>git remote add origin git@github.com:YOURUSERNAME/chunks.git
+git push -u origin master</code></pre>
+<div class="figure">
+<img src="/git/github/images/git_pushed.png" />
+
+</div>
+<p>Refresh your Github repo and all your files should be there:</p>
+<div class="figure">
+<img src="/git/github/images/github_yay.png" />
+
+</div>
+<p>Now you can get those HTML files hosted.</p>
+</div>
+<div id="hosting-with-github-pages" class="section level3">
+<h3>Hosting with Github Pages</h3>
+<p>Turn <a href="http://github.com/username/reponame/index.html" class="uri">http://github.com/username/reponame/index.html</a> -&gt;</p>
+<p>Into <a href="http://username.github.io/reponame/index.html" class="uri">http://username.github.io/reponame/index.html</a></p>
+<p>github.io is the address for hosted files. Can you spot what to swap?</p>
+<p>First we need to set up Github to host the files.</p>
+</div>
+<div id="setting-up-gh-pages" class="section level3">
+<h3>Setting up GH Pages</h3>
+<p>After uploading your repo, click on <strong>Settings</strong> on the top right.</p>
+<div class="figure">
+<img src="/git/github/images/settings.png" />
+
+</div>
+<p>Scroll down to the <strong>GitHub Pages</strong> section of Settings.</p>
+<p>Change the <em>Source</em> from <code>None</code> to <code>master branch</code> and click save.</p>
+<div class="figure">
+<img src="/git/github/images/master_branch.png" />
+
+</div>
+<p>For future projects, you can organize your files so that all output HTML are stored in a <code>docs</code> folder. Then the option <code>master branch\docs</code> will host those files and ignore everything in the root folder.</p>
+<p>Now go to <a href="https://YOURUSERNAME.github.io/chunks/06_chunk.html" class="uri">https://YOURUSERNAME.github.io/chunks/06_chunk.html</a> and you should have your hosted file!</p>
+<div class="figure">
+<img src="/git/github/images/chunk6.png" />
+
+</div>
+<p>That’s it!</p>
+<p>What if you get some new data and wanted to update this?</p>
+<ol style="list-style-type: decimal">
+<li>Change the data imported in the local project</li>
+<li>Generate a new HTML from the .Rmd file</li>
+<li>git add the files in the terminal/cmd</li>
+<li>git commit -m with the message “new data” or whatever</li>
+<li>git push -u origin master to move the new file changes to Github</li>
+<li>Refresh the URL address and the changes should be reflected!</li>
+</ol>
+<p>And that is that!</p>
+<p>With this published repo, you’re now part of the reproducible journalism community.</p>
+<p>Last thing we’ll go over are some tips and best practices.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

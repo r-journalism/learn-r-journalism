@@ -1,0 +1,94 @@
+---
+title: "Folder of files"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "bulk"]
+weight: 7
+slug: bulk-files
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/SNtzR9ZOJO4?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+Have you ever dealt with a large folder of spreadsheets that you need to combine into one?
+
+With spreadsheets, you have to copy and paste over and over again.
+
+But with R, you can script that process.
+
+In fact, I've created a function for you that simplifies the process.
+
+You have to download my **muckrakr** package off of GitHub with the **devtools** package.
+
+
+```{r install_muckrakr, warning=F, message=F}
+# If you don't have devtools installed yet, uncomment and run the line below
+#install.packages("devtools")
+
+devtools::install_github("andrewbtran/muckrakr")
+library(muckrakr)
+```
+
+### Bulk CSV files
+
+The function we want to use is called `bulk_csv()`.
+
+It looks like this (**Don't run this command, it's theoretical**):
+
+```{r example, eval=F}
+bulk_csv(folder = "DEFAULTBULKCSV2017", export = "filenamedefaultbulkcsv2018.csv"")
+```
+
+Two arguments: 
+
+* folder - The folder in relation to your working directory where the csv files exist. Default folder is the current working directory.
+* export - File name to export csv file as, if wanted.
+
+Alright, so within this project folder is a sub folder full of CSVs. 
+
+![](/importing_exporting/folder_of_files/images/csvs.png?classes=shadow)
+
+It's in `data/csvs`
+
+
+{{% notice note %}}
+This package is based on readr, so passing on variables from read_csv will work in bulk_csv. These variables will apply to the import of each CSV sheet.
+{{% /notice %}}
+
+To create a new dataframe with all the data sets combined, the command would be:
+
+```{r bulk_csv, warning=F, message=F}
+combined_data <- bulk_csv(folder="data/csvs")
+```
+
+To simply export the data as a new combined CSV file, the command would be:
+
+```{r bulk_csv2, warning=F, message=F}
+bulk_csv(folder="data/csvs", export="combined_data.csv")
+```
+
+
+This would save the file to the current working directory.
+
+You can specify the location to download in export as long as you put the folder structure before the CSV file name, like:
+
+```{r bulk_csv3, warning=F, message=F}
+bulk_csv(folder="data/csvs", export="data/data_export/combined_data.csv")
+```
+
+### Bulk Excel files
+
+Same concept as above, but the function name is `bulk_excel()`.
+
+Read more about the [function](https://andrewbtran.github.io/muckrakr/bulk_excel.html) on the [**muckrakr** github repo](https://github.com/andrewbtran/muckrakr).
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

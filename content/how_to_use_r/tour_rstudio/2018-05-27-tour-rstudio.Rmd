@@ -1,0 +1,77 @@
+---
+title: "RStudio guide"
+description: "A tour of RStudio, which we'll be using to code R in"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "RStudio"]
+weight: 1
+slug: rstudio-tour
+---
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/6hGuNvqeYZ8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+## RStudio tour
+
+When you first open RStudio, the app is divided into three sections.
+
+Most sections have tabs for even more additional ways to view different sorts of things.
+
+{{% notice tip %}}
+These sections can be customized and placed wherever you want through the RStudio menu options. *Preferences > Pane Layout*
+{{% /notice %}}
+
+![](/how_to_use_r/tour_rstudio/images/left.png?classes=shadow)
+
+The tall section on the left is the *console* and that's where you can type in R code to execute.
+
+This code is also called *commands* or *functions*.
+
+![](/how_to_use_r/tour_rstudio/images/top-right.png?classes=shadow)
+
+In the top right section, there's the **Environment** tab where you can see the data you are currently working on. 
+
+At first this section is empty because you have not loaded any data yet.
+
+There's also a tab in the top right section for **History**-- this is where RStudio keeps track of the commands you run in the console.
+
+![](/how_to_use_r/tour_rstudio/images/bottom-right.png?classes=shadow)
+
+A *viewer* is on the bottom right, where there are tabs to flip through the **Files** and folder structure of your computer (like in Finder or Explorer), the **Plots** (diagrams) when they've been generated, your list of available R **Packages**, **Help** information etc. 
+
+## Reproducibility: Save your scripts
+
+There's a difference between quick, on-the-fly analysis and analysis you want to rerun later on.
+
+The code you come up with can be saved in scripts and R Markdown files. Scripts end with .R file extension and R Markdown files, which mixes both R code and Markdown code, end with .Rmd.
+
+In this course we'll be alternating between typing code in the console and typing and saving code in a script. The code that's disposable and written just for quick exploration can be and will be written in the console. Code we want to reuse and re purpose later on should be saved in a script.
+
+![](/how_to_use_r/tour_rstudio/images/four-panes.png?classes=shadow)
+
+These R source code files can be viewed in a **Source** section and pushes the console window down to accommodate. 
+
+To create a new script go through the menu *File > New File > R Script* or through the green plus button on the top left.
+
+
+<img src="/how_to_use_r/tour_rstudio/images/new.png" alt="New File in RStudio", class="shadow", style="width:40%">
+
+
+The file extensions for these files when saved ends with **.R**
+
+Any code we type in here can be run in the console. Hitting the `Run` button at the top of the script window will run the line of code on which the cursor is sitting. 
+
+To run multiple lines of code, highlight them and click `Run`.
+
+Be sure to save your scripts after you create them. And also save before running your code in case you write code that makes R crash-- which will happen once in a while.
+
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

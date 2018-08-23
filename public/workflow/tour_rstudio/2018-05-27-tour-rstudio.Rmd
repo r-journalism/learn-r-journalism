@@ -1,0 +1,70 @@
+---
+title: "RStudio guide"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "RStudio"]
+weight: 1
+slug: rstudio-tour
+---
+
+## RStudio tour
+
+When you first open RStudio, the app is divided into three sections.
+
+Most sections have tabs for even more additional ways to view different sorts of things.
+
+{{% notice tip %}}
+These sections can be customized and placed wherever you want through the RStudio menu options. *Preferences > Pane Layout*
+{{% /notice %}}
+
+![](/workflow/tour_rstudio/images/left.png?classes=shadow)
+
+The tall section on the left is the *console* and thta's where you can type in R code to execute.
+
+This code is also called *commands* or *functions*.
+
+![](/workflow/tour_rstudio/images/top-right.png?classes=shadow)
+
+In the top right section, there's the **Environment** tab where you can see the data you are currently working on. 
+
+At first this section is empty because you have not loaded any data yet.
+
+There's also a tab in the top right section for **History**-- this is where RStudio keeps track of the commands you run in the console.
+
+![](/workflow/tour_rstudio/images/bottom-right.png?classes=shadow)
+
+A *viewer* is on the bottom right, where there are tabs to flip through the **Files** and folder structure of your computer (like in Finder or Explorer), the **Plots** (diagrams) when they've been generated, your list of available R **Packages**, **Help** information etc. 
+
+## Reproducibility: Save your scripts
+
+Data journalism should ideally be fully documented and reproducible. 
+
+It's good practice write R code into separate files called *scripts*. 
+
+All R commands can be saved in a script and executed later when the script is run.
+
+{{% notice note %}}
+Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.
+{{% /notice %}}
+
+![](/workflow/tour_rstudio/images/four-panes.png?classes=shadow)
+
+These R source code files can be viewed in a **Source** section and pushes the console window down to accomodate. 
+
+To create a new script go through the menu *File > New File > R Script* or through the green plus button on the top left.
+
+
+<img src="/workflow/tour_rstudio/images/new.png" alt="New File in RStudio", class="shadow", style="width:40%">
+
+
+The file extensions for these files when saved ends with **.R**
+
+Any code we type in here can be run in the console. Hitting the `Run` button at the top of the script window will run the line of code on which the cursor is sitting. 
+
+To run multiple lines of code, highlight them and click `Run`.
+
+Be sure to save your scripts after you create them.
+
+
+

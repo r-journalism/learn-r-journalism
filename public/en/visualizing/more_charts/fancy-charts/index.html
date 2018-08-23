@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Playing around with ggplot2 extensions">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>More charts :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1535033655" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1535033655" rel="stylesheet">
+    <link href="/css/hybrid.css?1535033655" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1535033655" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1535033655" rel="stylesheet">
+    <link href="/css/auto-complete.css?1535033655" rel="stylesheet">
+    <link href="/css/theme.css?1535033655" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1535033655" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1535033655" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1535033655"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/visualizing/more_charts/fancy-charts/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/copying-pasting/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/copying-pasting/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/folder_of_files/bulk-files/" title="Folder of files" class="dd-item ">
+        <a href="/en/importing_exporting/folder_of_files/bulk-files/">
+        Folder of files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item ">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item ">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item active">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More R Markdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More R Markdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/publishing/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/installing_git/installing-git/" title="Installing git" class="dd-item ">
+        <a href="/en/git/installing_git/installing-git/">
+        Installing git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Connecting to GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Connecting to GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Best practices for GitHub" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Best practices for GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/r-journalism/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/r-journalism/learn-r-journalism/edit/master/content/visualizing/more_charts/2018-05-27-more-charts.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/visualizing/'>Visualizing data</a> > More charts
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>More charts</h1>
+          
+
+        
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/MPhbIVyYm5I?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>We’re going to go over some examples of visualizations created with packages that people have created to build on top of <strong>ggplot2</strong>. People love improving and building upon things. The latest version of <strong>ggplot2</strong> was released recently and more than <a href="https://twitter.com/hadleywickham/status/1014514026208989185">300 people contributed</a>– either by adding pieces from their add-on packages or by suggesting fixes.</p>
+<div id="gghighlight" class="section level2">
+<h2>gghighlight</h2>
+<p>The <strong>gghighlight</strong> package is a relatively new addition. In the previous section, I showed a way to surface important data while keeping the background data for context. This package simplifies it. Learn more on <a href="https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html">their site</a>.</p>
+<p>We’ll use historical monthly average temperature data from the <a href="https://www.ncdc.noaa.gov/cag/national/time-series/110/tavg/all/5/1895-2018?base_prd=true&amp;firstbaseyear=1901&amp;lastbaseyear=2000&amp;trend=true&amp;trend_base=10&amp;firsttrendyear=1895&amp;lasttrendyear=2018">National Centers for Environmental Information</a>.</p>
+<p>This is the image they have on their site illustrating their data:</p>
+<div class="figure">
+<img src="/visualizing/more_charts/images/monthly_temps.png" />
+
+</div>
+<p>We can do better.</p>
+<p>Start with importing and transforming the data below:</p>
+<pre class="r"><code># If you don&#39;t have readr installed yet, uncomment and run the line below
+# install.packages(&quot;readr&quot;)
+
+library(readr)
+
+temps &lt;- read_csv(&quot;data/110-tavg-all-5-1895-2018.csv&quot;, skip=4)
+head(temps)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##     Date Value Anomaly
+##    &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;
+## 1 189501  26.7   -3.43
+## 2 189502  26.6   -7.22
+## 3 189503  40.0   -1.53
+## 4 189504  52.9    1.85
+## 5 189505  59.9   -0.26
+## 6 189506  67.8   -0.69</code></pre>
+<pre class="r"><code># If you don&#39;t have readr installed yet, uncomment and run the line below
+# install.packages(&quot;lubridate&quot;)
+
+# If you don&#39;t have lubridate installed yet uncomment the line below and run it
+#install.packages(&quot;lubridate&quot;)
+
+# NOTE: IF YOU GET AN ERROR ABOUT NOT HAVING A PACKAGE CALLED stringi
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE
+
+#install.packages(&quot;glue&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;stringi&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;stringr&quot;, type=&quot;win.binary&quot;)
+#install.packages(&quot;lubridate&quot;, type=&quot;win.binary&quot;)
+
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A MAC MACHINE
+
+#install.packages(&quot;glue&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;stringi&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;stringr&quot;, type=&quot;mac.binary&quot;)
+#install.packages(&quot;lubridate&quot;, type=&quot;mac.binary&quot;)
+
+library(lubridate)
+
+# Converting the date into a date format R recognizes
+# This requires using paste0() to add a day to the date, so 189501 turns into 18950101
+
+temps$Date &lt;- ymd(paste0(temps$Date, &quot;01&quot;))
+
+# Extracting the year
+temps$Year &lt;- year(temps$Date)
+  
+# Extracting the month
+temps$month &lt;- month(temps$Date)
+temps$month &lt;- as.numeric(temps$month)
+temps$month_label &lt;- month(temps$Date, label=T)
+
+# Creating a column with rounded numbers
+temps$rounded_value &lt;- round(temps$Value, digits=0)
+
+# Turning the year into a factor so it&#39;ll chart easier
+temps$Year &lt;- as.factor(as.character(temps$Year))
+
+
+head(temps)</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Date       Value Anomaly Year  month month_label rounded_value
+##   &lt;date&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;ord&gt;               &lt;dbl&gt;
+## 1 1895-01-01  26.7   -3.43 1895      1 Jan                    27
+## 2 1895-02-01  26.6   -7.22 1895      2 Feb                    27
+## 3 1895-03-01  40.0   -1.53 1895      3 Mar                    40
+## 4 1895-04-01  52.9    1.85 1895      4 Apr                    53
+## 5 1895-05-01  59.9   -0.26 1895      5 May                    60
+## 6 1895-06-01  67.8   -0.69 1895      6 Jun                    68</code></pre>
+<p>Now we have some tidy data to visualize.</p>
+<pre class="r"><code># If you don&#39;t have readr installed yet, uncomment and run the line below
+# install.packages(&quot;ggplot2&quot;)
+
+library(ggplot2)
+
+ggplot(temps, aes(x=month, y=Value, group=Year)) +
+  geom_line() +
+  scale_x_continuous(breaks=seq(1,12,1), limits=c(1,12)) +
+  theme_minimal() +
+  labs(y=&quot;average temperature&quot;, title=&quot;Monthly temperature since 1895&quot;, caption=&quot;Source: NOAA&quot;)</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/gghighlight_intro-1.png" width="864" /></p>
+<p>Let’s use the <strong>gghighlight</strong> package to make this clearer to readers.</p>
+<div class="notices note" ><p>If you get an error about <code>ggplot_add</code> then try <a href="https://github.com/thomasp85/patchwork/issues/31">this link</a> which suggests you run devtools::install_github(“r-lib/rlang”, build_vignettes = TRUE) before rerunning install.packages(“gghighlight”)</p>
+</div>
+
+<pre class="r"><code># If you don&#39;t have readr installed yet, uncomment and run the line below
+# install.packages(&quot;gghighlight&quot;)
+
+library(gghighlight)
+
+# adding some alpha to the line so there&#39;s some transparency
+ggplot(temps, aes(x=month, y=Value, color=Year)) +
+  geom_line(alpha=.08) +
+  scale_x_continuous(breaks=seq(1,12,1), limits=c(1,12)) +
+  theme_minimal() +
+  labs(y=&quot;average temperature&quot;, title=&quot;Monthly temperature since 1895&quot;, caption=&quot;Source: NOAA&quot;) +
+  # NEW CODE BELOW
+  gghighlight(max(as.numeric(Year)), max_highlight = 4L)</code></pre>
+<pre><code>## label_key: Year</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/gghighlight-1.png" width="672" /></p>
+</div>
+<div id="ggrepel" class="section level2">
+<h2>ggrepel</h2>
+<p>Did you like those labels for years on the chart?</p>
+<p>That comes from the <a href="https://cran.r-project.org/web/packages/ggrepel/vignettes/ggrepel.html"><strong>ggrepel</strong></a> package. The <code>geom_label_repel()</code> lets you add those button labels to charts and, as the name implies, it makes sure the labels do not collide or stack on top of each other.</p>
+<p>Let’s take a look at the dataframe from the first ggplot section.</p>
+<p>We’ll make a labeled chart with <strong>ggplot2</strong> as is.</p>
+<pre class="r"><code>ages &lt;- read_csv(&quot;data/ages.csv&quot;)
+
+# We&#39;ll focus on the movies from the Toms
+
+# If you don&#39;t have dplyr or stringr installed yet, uncomment and run the lines below
+#install.packages(&quot;dplyr&quot;)
+#install.packages(&quot;stringr&quot;)
+
+library(dplyr)
+library(stringr)
+
+toms &lt;- ages %&gt;% 
+  filter(str_detect(actor, &quot;Tom&quot;))
+
+ggplot(data=toms,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           label=Movie)) +
+      geom_point() +
+      theme_minimal() +
+      labs(y=&quot;Actress age&quot;, x=&quot;Actor age&quot;, title=&quot;Tom Hanks versus Tom Cruise ages&quot;, caption=&quot;Source; Vulture.com, IMDB&quot;) +
+      geom_text() </code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/importing_ages-1.png" width="672" /></p>
+<p>This is one of the main criticisms of making charts programmatically. These labels look horrible. That creating charts via scripts requires exporting as an SVG file and refining in Adobe Illustrator to make sure the labels look <em>just right</em>.</p>
+<p>And I’m not saying you shouldn’t use whatever tool you want to make charts look perfect.</p>
+<p>It’s just that the community understand these issues and are working together to come up with creative ways to handle it.</p>
+<p>Let’s try the same code above with the new function <code>geom_text_repel()</code> from the <strong>ggrepel</strong> package.</p>
+<pre class="r"><code># if you don&#39;t have the ggrepel package installed yet, uncomment and run the line below
+#install.packages(&quot;ggrepel&quot;)
+
+library(ggrepel)
+
+ggplot(data=toms,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           label=Movie)) +
+      geom_point() +
+      theme_minimal() +
+      labs(y=&quot;Actress age&quot;, x=&quot;Actor age&quot;, title=&quot;Tom Hanks versus Tom Cruise ages&quot;, caption=&quot;Source; Vulture.com, IMDB&quot;) +
+      geom_text_repel()</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/ggrepel-1.png" width="672" /></p>
+<p>Not bad for one line of code.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/SC1rfc8-XB4?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="ridgeplot" class="section level2">
+<h2>ridgeplot</h2>
+<pre class="r"><code># If you don&#39;t have ggridges or viridis installed yet, uncomment and run the lines below
+#install.packages(&quot;ggridges&quot;)
+#install.packages(&quot;viridis&quot;)
+
+library(ggridges)
+library(viridis)
+
+ggplot(temps, aes(x=rounded_value, y=month_label, fill = ..x..)) +
+  geom_density_ridges_gradient(scale=3, rel_min_height = 0.01) +
+  scale_fill_viridis(name=&quot;Temp. [F]&quot;, option=&quot;C&quot;) +
+  labs(title=&quot;Average temperatures since 1895&quot;, y=&quot;&quot;, x=&quot;Temperature&quot;, caption=&quot;Source: NOAA&quot;) +
+  theme_minimal()</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/ridge1-1.png" width="672" /></p>
+<p>Neat. Let’s try it with the actor ages database.</p>
+<pre class="r"><code>ggplot(ages, aes(x=actress_age, y=actor, fill = ..x..)) +
+  geom_density_ridges_gradient(scale=2, rel_min_height = 0.01) +
+  scale_fill_viridis(name=&quot;Actress age&quot;, option=&quot;C&quot;) +
+  labs(title=&quot;Distribution of actress ages for each actor&quot;, y=&quot;&quot;, x=&quot;Actress age&quot;, caption=&quot;Source: Vulture.com, IMDB&quot;) +
+  theme_minimal()</code></pre>
+<pre><code>## Picking joint bandwidth of 3.19</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/ridge2-1.png" width="672" /></p>
+</div>
+<div id="heatmap" class="section level2">
+<h2>heatmap</h2>
+<p>You can make some interesting charts with <code>geom_tile()</code> and it’s already part of <strong>ggplot2</strong>, no extension needed. Let’s use <a href="https://www.ncdc.noaa.gov/cag/global/time-series">Global Land and Ocean Temperature Anomalies</a> with respect to the 20th century average since 1880.</p>
+<pre class="r"><code>anom &lt;- read_csv(&quot;data/1880-2018.csv&quot;, skip=4)
+head(anom)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##     Year Value
+##    &lt;int&gt; &lt;dbl&gt;
+## 1 188001  0   
+## 2 188002 -0.13
+## 3 188003 -0.13
+## 4 188004 -0.05
+## 5 188005 -0.07
+## 6 188006 -0.17</code></pre>
+<pre class="r"><code>anom$Date &lt;- ymd(paste0(anom$Year, &quot;01&quot;))
+
+# Extracting the year
+anom$Year &lt;- year(anom$Date)
+  
+# Extracting the month
+anom$month &lt;- month(anom$Date)
+anom$month &lt;- as.numeric(anom$month)
+anom$month_label &lt;- month(anom$Date, label=T)
+
+# Turning the year into a factor so it&#39;ll chart easier
+anom$Year &lt;- as.factor(as.character(anom$Year))
+
+library(forcats)
+
+anom &lt;- anom %&gt;% 
+  mutate(Year=fct_rev(factor(Year)))</code></pre>
+<pre class="r"><code>ggplot(anom, aes(y=Year, x=month_label, fill=Value)) +
+  geom_tile(color=&quot;white&quot;, width=.9, height=1.1) +
+  theme_minimal() +
+  scale_fill_gradient2(midpoint=0, low=&quot;blue&quot;, high=&quot;red&quot;, limits=c(-1.3, 1.3)) +
+  labs(title=&quot;Global Land and Ocean Temperature Anomalies&quot;, x=&quot;&quot;, y=&quot;&quot;, caption=&quot;Source: NOAA&quot;, fill=&quot;Anomaly&quot;) +
+  scale_x_discrete(position = &quot;top&quot;) +
+  theme(legend.position=&quot;top&quot;)</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/heatmap-1.png" width="480" /></p>
+</div>
+<div id="mr.rogers" class="section level2">
+<h2>Mr. Rogers</h2>
+<p>Did you know that someone sat down and identified the colors of <a href="https://web.archive.org/web/20110525014454/http://neighborhoodarchive.blogspot.com/2011/05/sweater-colors.html">every single sweater</a> that Mr. Rogers wore?</p>
+<p>Well, Owen Phillips scraped it with R and created and visualized it using <strong>ggplot2</strong>.</p>
+<p>Check out his <a href="https://github.com/Henryjean/Rogers-Cardigans/blob/master/MrRogers.R">well-documented code</a> that is hosted on GitHub.</p>
+<p>In the meantime, you can recreate the chart by importing the csv below and then running the <strong>ggplot2</strong> functions.</p>
+<pre class="r"><code># This code is pretty much from Owen Phillips
+
+rogers &lt;- read_csv(&quot;data/mrrogers.csv&quot;)
+rogers$episodenumbers &lt;- as.factor(rogers$episodenumbers)
+rogers$colorcodes &lt;- as.factor(rogers$colorcodes)
+
+cn &lt;- levels(rogers$colorcodes)
+
+
+na.omit(rogers) %&gt;% ggplot(aes(x=episodenumbers)) + geom_bar(aes(fill = factor(colorcodes))) + 
+  scale_fill_manual(values = cn) + theme_minimal() + 
+  labs(fill = &quot;&quot;, x= &quot;&quot;, 
+       title = &quot;Mister Rogers&#39; Cardigans of Many Colors&quot;, 
+       subtitle = &quot; &quot;, 
+       caption = &quot;&quot;) +
+  guides(fill=guide_legend(ncol=2)) + 
+  scale_x_discrete(breaks = c(1466, 1761),
+                   labels = c(&quot;1979&quot;, &quot;2001&quot;)) + 
+  theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) + 
+  theme(legend.position = &quot;none&quot;) + ylim(0,1)</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/owen-1.png" width="864" /></p>
+</div>
+<div id="time-is-a-flat-circle" class="section level2">
+<h2>Time is a flat circle</h2>
+<p>This visualization is by John Muyskens of the Washington Post. He created this <a href="https://gist.github.com/jmuyskens/80b277db4c0606c9d4c4a9b8db730975">exploratory graphic</a> using school shootings data before refining it in D3 and <a href="https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/">publishing it</a>. It should be noted that the final chart uses methodology to estimate attendance based on enrollment figures that differs from what is shown here.</p>
+<pre class="r"><code># uncomment and run the lines below to install the right packages
+
+#install.packages(&quot;ggbeeswarm&quot;)
+#devtools::install_github(&quot;AliciaSchep/gglabeller&quot;) 
+#install.packages(&quot;scales&quot;)
+#install.packages(&quot;readr&quot;)
+
+library(ggbeeswarm)
+library(gglabeller)
+library(scales)
+
+library(readr)
+
+data &lt;- read_csv(&quot;https://github.com/washingtonpost/data-school-shootings/raw/master/school-shootings-data.csv&quot;, 
+  col_types = cols(date = col_date(format = &quot;%m/%d/%Y&quot;)))
+
+theeeeme &lt;- theme_minimal() + theme(
+  axis.text.y=element_blank(), 
+  axis.ticks=element_blank(), 
+  axis.line.y=element_blank(),
+  panel.grid=element_blank())
+
+ggplot(data, aes(date, 0, size=enrollment)) +
+  geom_beeswarm(method = &quot;frowney&quot;, groupOnX=FALSE, dodge.width=0.5, alpha=0.5) +
+  scale_size_area(max_size = 8) +
+  scale_x_date(date_breaks=&quot;1 year&quot;, labels=date_format(&quot;%Y&quot;), limits=as.Date(c(&#39;1998-04-01&#39;, &#39;2023-04-01&#39;))) +
+  scale_y_continuous(limits=c(-20, 10)) +
+  coord_polar(direction = -1) +
+  theeeeme</code></pre>
+<p><img src="/visualizing/more_charts/2018-05-27-more-charts_files/figure-html/john_data_code-1.png" width="768" /></p>
+<p>The final <a href="(https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/?utm_term=.2974624f1071)">published version</a>:</p>
+<div class="figure">
+<img src="/visualizing/more_charts/images/shootings.png" />
+
+</div>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/mapping/" title="Spatial analysis" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.min.js?1535033655"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1535033655"></script>
+    <script src="/js/jquery.sticky.js?1535033655"></script>
+    <script src="/js/featherlight.min.js?1535033655"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1535033655"></script>
+    <script src="/js/highlight.pack.js?1535033655"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1535033655"></script>
+    <script src="/js/learn.js?1535033655"></script>
+    <script src="/js/hugo-learn.js?1535033655"></script>
+
+    <link href="/mermaid/mermaid.css?1535033655" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1535033655"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <p>© Copyright 2018, Andrew Tran</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

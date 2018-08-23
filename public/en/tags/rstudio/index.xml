@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rstudio on Journalism with R</title>
+    <link>/en/tags/rstudio/</link>
+    <description>Recent content in Rstudio on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Evolve from Excel to R</title>
+      <link>/en/introduction/from_excel/from-excel-to-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/from_excel/from-excel-to-r/</guid>
+      <description>R is excellent for those who already are used to working with data in spreadsheets.
+Switching from Excel or Google Sheets to R for data analysis can seem daunting. Over time, the open-source statistical programming language has consistently grown in popularity among those who work with numbers, with thousands of user-created libraries to expand on its power.
+Though it was first created primarily to make it easier to create statistical models and output very basic visuals to explore data, it’s expanded to the point that people can use R to do so many advanced processes such as scrape websites, communicate with APIs, and publish beautiful interactive charts and maps.</description>
+    </item>
+    
+    <item>
+      <title>RStudio guide</title>
+      <link>/en/how_to_use_r/tour_rstudio/rstudio-tour/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/tour_rstudio/rstudio-tour/</guid>
+      <description>RStudio tour When you first open RStudio, the app is divided into three sections.
+Most sections have tabs for even more additional ways to view different sorts of things.
+These sections can be customized and placed wherever you want through the RStudio menu options. Preferences &amp;gt; Pane Layout
+  The tall section on the left is the console and that’s where you can type in R code to execute.</description>
+    </item>
+    
+  </channel>
+</rss>

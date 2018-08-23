@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow on Journalism with R</title>
+    <link>/en/tags/workflow/</link>
+    <description>Recent content in Workflow on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up an R workflow</title>
+      <link>/en/publishing/workflow/r-projects/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/workflow/r-projects/</guid>
+      <description>Workflow Why a clear data analysis workflow?
+ Check analysis and track errors Share results with colleagues for stories or editing Send methodology to sources for bullet-proofing To easily adjust when presented with new data Easily switch between work environments (desktop and laptop) Scavenge and repurpose code in future projects  Constraints  Workflow has to be platform agnostic Easy to deploy for yourself and others Free open source software Input has to be real raw data in whatever format it is (and wherever it is) But have a backup for when internet is not accessible Output has to work – whether html, PDF, or web app IDE agnostic (be able to run it from a command line without RStudio)   Four components Software  R RStudio Git for version control  Clear file organization One R script to pull it all together Hosting the html output internally or publicly with GitHub pages   Thanks These are all things I picked up from browsing other presentations and repos.</description>
+    </item>
+    
+    <item>
+      <title>Setting up for this class</title>
+      <link>/en/how_to_use_r/project_for_class/class-project/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/project_for_class/class-project/</guid>
+      <description>How to a) get the files needed for each chapter in class and b) how to follow along with each chapter/code through.
+Getting files and folders The files for this class will include the raw data, the scripts, and r markdown files.
+There are a few options to download them:
+1) Install the package I’ve created for this class Each chapter has a prompt to download the files associated with each one.</description>
+    </item>
+    
+  </channel>
+</rss>

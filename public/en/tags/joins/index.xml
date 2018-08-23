@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joins on Journalism with R</title>
+    <link>/en/tags/joins/</link>
+    <description>Recent content in Joins on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/joins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Murders case study</title>
+      <link>/en/wrangling/case_study/murders-case-study/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/case_study/murders-case-study/</guid>
+      <description>The FBI has tracked more than 750,000 murders in 40 years across the country. And that’s not counting the police departments that refuse to send them their homicide statistics.
+Thomas Hargrove was a national correspondent for the Scripps Howard News Service, where he developed an algorithm that uses FBI homicide data to identify areas of murders that had an elevated probability of containing serial killings.</description>
+    </item>
+    
+  </channel>
+</rss>

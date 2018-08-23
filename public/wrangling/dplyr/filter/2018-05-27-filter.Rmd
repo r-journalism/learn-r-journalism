@@ -1,0 +1,114 @@
+---
+title: "Filter"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dplyr", "filter"]
+---
+
+```{r importing_data, warning=F, message=F, echo=F}
+source("import_murders.R")
+```
+
+![](/wrangling/dplyr/images/filter.png?classes=shadow)
+
+Filter works by extracting rows that meet a criteria you set.
+
+![](/wrangling/dplyr/images/filter_specifics.png?classes=shadow)
+
+You pass the dataframe as a variable to `filter()` first and then you add any logical tests.
+
+
+{{% notice warning %}}
+One `=` in R is the same as `<-` in that it assigns a value. Logical tests requires two, so  `==` which tests for equal.
+{{% /notice %}}
+
+```{r filter2}
+df1 <- filter(murders, Relationship_label=="Husband", VicAge > 60, Year==2016)
+
+df2 <- filter(murders, Relationship_label=="Husband" & VicAge > 60 & Year==2016) # same as the line above
+
+df3 <- filter(murders, Relationship_label %in% c("Husband", "Boyfriend") | Circumstance_label=="Lovers triangle")
+```
+
+Check out the new objects in the Environment window of RStudio.
+
+![](/wrangling/dplyr/images/3dfs.png?classes=shadow?width=20pc)
+
+Data frames df1 and df2 are exactly the same (Looking for cases in which Husbands were involved, the victim was older than 60, and occurred in 2016)-- only 25 were found. Meanwhile d3 has nearly 32,000 cases in which a Husband or Boyfriend were involved or it was labeled by investigators as a lover's triangle.
+
+## Logical Operators
+
+| Operator | Description |
+| ------ | ------------------------ |
+| `<` | Less than |
+| `<=` | Less than or equal to |
+| `>`    | Greater than |
+| `>=`    | Greater than or equal to |
+| `==`    | Exactly equal to |
+| `!=`    | Not equal to |
+| `!x`    | Not x |
+| `x | y`    | x or y |
+| `x & y`    | x and y |
+| `%in%`    | Group membership
+| `isTRUE(x)`    | Test if x is TRUE |
+| `is.na(x)`    | Test if x is NA |
+| `!is.na(x)`    | Test if x is not NA |
+
+**Test yourself**
+
+Can you use the logical operators and `filter()` to create **df4** which has all the data for murders: 
+
+1. in the District of Columbia
+2. That were solved in 2015 that involved Black victims
+3. in which Handgun - pistol, revolver, etc was victims between the ages of 18 and 21
+
+----
+
+**Common mistakes**
+
+1. Using `=` instead of `==`
+
+```
+# WRONG
+filter(murders, fstate_label="District of Columbia")
+
+# RIGHT
+filter(murders, fstate_label=="District of Columbia")
+```
+
+2. Forgetting quotes
+
+```
+# WRONG
+filter(murders, fstate_label=District of Columbia)
+
+# RIGHT
+filter(murders, fstate_label="District of Columbia"")
+```
+
+3. Collapsing multiple tests into one
+
+```
+# WRONG
+filter(murders, 1980 < year < 1990)
+
+# RIGHT
+filter(murders, 1980 < year, year < 1990)
+```
+
+4. Stringing together many tests instead of using %in%
+
+```
+# Not WRONG but INEFFICIENT
+filter(murders, VicRace_label=="Black" | VicRace_label="Unknown" | VicRace_label=="Asian or Pacific Islander")
+
+# RIGHT
+filter(murders, VicRace_label %in% c("Black", "Unknown", "Asian or Pacific Islander"))
+```
+
+
+Alright, we've got new data frames narrowed down from 750,000 total to about 25 specific incidents of husbands murdering their partners who were older than 60 in 2016 and about 32,000 cases where either the husband or boyfriend was involved or the victim was involved in a love triangle.
+
+We have 47 variables (aka columns) and we don't need all of them for this basic analysis. Let's narrow that down.
+

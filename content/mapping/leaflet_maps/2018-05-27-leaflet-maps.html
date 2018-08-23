@@ -1,0 +1,245 @@
+---
+title: "Interactive maps with Leaflet"
+description: "Locator maps and geolocating addresses"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "mapping", "leaflet"]
+weight: 4
+slug: leaflet
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/279WR2zOU90?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Let’s create a locator map like you would when searching for an address on Google Maps.</p>
+<p>Sometimes it’s necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.</p>
+<p>The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource JavaScript library.</p>
+<p>It’s great for journalists who have little knowledge of JavaScript who want to make interesting interactives using R. And there is <a href="https://rstudio.github.io/leaflet/">excellent documentation</a> if you want to dig deeper into its functionality after this introduction.</p>
+<p>Essentially, this package lets you make maps with custom map tiles, markers, polygons, lines, popups, and geojson. Almost any maps you can make in Google Fusion Tables or Carto(DB), you can make in R using the Leaflet package.</p>
+<pre class="r"><code># Uncomment and run &quot;install.packages&quot; functions below if you have not yet installed these packages
+
+#install.packages(&quot;leaflet&quot;)
+
+# IF YOU GET AN ERROR BECAUSE THERE IS NO PACKAGE CALLED httpuv
+#install.packages(&quot;httpuv&quot;)
+#install.packages(&quot;leaflet&quot;)
+
+library(leaflet)
+
+
+
+
+#install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<div id="putting-a-marker-on-a-map" class="section level2">
+<h2>Putting a marker on a map</h2>
+<p>Let’s begin by finding a latitude and longitude to map.</p>
+<p>Go to <a href="https://www.google.com/maps/">Google Maps</a> and search for any address.</p>
+<p>Right click on the map until you get this menu.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/right_map.png" />
+
+</div>
+<p>Select “What’s here?” and at the bottom copy and paste that latitude and longitude.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/lat_lon.png" />
+
+</div>
+<ol style="list-style-type: decimal">
+<li>Create a map widget by calling the <code>leaflet()</code> function</li>
+<li>Add <em>layers</em> (such as features) to the map by using layer functions
+<ul>
+<li>like <code>addTiles</code>, <code>addMarkers</code>, <code>addPolygons</code></li>
+</ul></li>
+<li>Print the map widget</li>
+<li>Customize the view port zoom and center location with <code>setView()</code></li>
+</ol>
+<pre class="r"><code># Insert your latitude and longitude in the code below
+# NOTE: Don&#39;t get them reversed otherwise you&#39;ll end up in the South Pole.
+
+# Initialize and assign m as the leaflet object
+m &lt;- leaflet() %&gt;%
+# Now add tiles to it
+    addTiles() %&gt;%  
+# Setting the middle of where the map should be and the zoom level
+    setView(lng=-77.030137, lat=38.902986, zoom = 16) %&gt;%
+# Now, add a marker with a popup, 
+    addMarkers(lng=-77.030137, lat=38.902986, popup=&quot;&lt;b&gt;Hello&lt;/b&gt;&lt;br&gt;&lt;a href=&#39;https://www.washingtonpost.com&#39;&gt;-Me&lt;/a&gt;&quot;)
+
+m </code></pre>
+<div id="htmlwidget-1" style="width:768px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.902986,-77.030137,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"<b>Hello<\/b><br><a href='https://www.washingtonpost.com'>-Me<\/a>",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.902986,-77.030137],16,[]],"limits":{"lat":[38.902986,38.902986],"lng":[-77.030137,-77.030137]}},"evals":[],"jsHooks":[]}</script>
+<p>Go ahead and click the blue marker.</p>
+<p><strong>Explaining the R code</strong></p>
+<ul>
+<li><code>leaflet()</code> initializes the leaflet work space</li>
+<li><code>addTiles()</code> by itself will bring in the default OpenStreetMap tiles
+<ul>
+<li>Here’s <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">a list</a> of free leaflet tiles you can use</li>
+<li><strong>Note:</strong> OpenStreetMaps is a wonderful and free open-source service. Their only stipulation for using their tiles is to be sure to credit and link to them in the map.</li>
+</ul></li>
+<li><code>setView()</code> is pretty self-explanatory but is simpler to implement</li>
+<li><code>addMarkers()</code> with some specific parameters.</li>
+</ul>
+<p><strong>Note:</strong> The order of commands is important. A view can’t be set unless there are tiles established first.</p>
+</div>
+<div id="how-to-put-the-map-online" class="section level2">
+<h2>How to put the map online</h2>
+<p>Run the code in your RStudio console and it will appear in your Viewer tab.</p>
+<p>Click on <strong>Export &gt; Save as Web page</strong>.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/export.png" alt="Export" />
+<p class="caption">Export</p>
+</div>
+<p>Give it a file name and click save.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/filename.png" alt="Save as" />
+<p class="caption">Save as</p>
+</div>
+<p>You have the map now as a full screen html file.</p>
+<div class="figure">
+<img src="/mapping/leaflet_maps/images/file.png" alt="File" />
+<p class="caption">File</p>
+</div>
+<p>You can upload the file wherever you like and then iframe to it if you want to embed it into website like the code below.</p>
+<p><code>&lt;iframe src=&quot;leaflet_map.html&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;300px&quot;&gt;&lt;/iframe&gt;</code></p>
+<p>Or you can leave it embedded in an R Markdown file as the raw R code, like I have in this file.</p>
+<p>{{% notice note %}} When comparing the size of the HTML files, the R-produced version of the map is larger in size because it is bringing all the JavaScript and CSS inline into the HTML. However, when looking at how much data is actually downloaded to load the map html, the differences aren’t as drastic. {{% /notice %}}</p>
+</div>
+<div id="multiple-locations-from-a-csv" class="section level2">
+<h2>Multiple locations from a csv</h2>
+<p>Let’s bring in some new data.</p>
+<pre class="r"><code>library(readr)
+dunkin &lt;- read_csv(&quot;data/dunkin.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   id = col_integer(),
+##   address = col_character(),
+##   city = col_character(),
+##   state = col_character(),
+##   zip = col_integer(),
+##   country = col_character(),
+##   lat = col_double(),
+##   lon = col_double(),
+##   type = col_character()
+## )</code></pre>
+<pre class="r"><code>glimpse(dunkin)</code></pre>
+<pre><code>## Observations: 7,794
+## Variables: 9
+## $ id      &lt;int&gt; 300176, 300178, 300179, 300202, 300204, 300205, 300208...
+## $ address &lt;chr&gt; &quot;1752B Route 9&quot;, &quot;99 High St&quot;, &quot;17 Railroad Ave&quot;, &quot;411...
+## $ city    &lt;chr&gt; &quot;Clifton Park&quot;, &quot;Danvers&quot;, &quot;Rockport&quot;, &quot;Holbrook&quot;, &quot;Ea...
+## $ state   &lt;chr&gt; &quot;NY&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;NY&quot;, &quot;NJ&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, &quot;MA&quot;, ...
+## $ zip     &lt;int&gt; 12065, 1923, 1966, 11741, 7018, 2021, 2301, 2188, 2145...
+## $ country &lt;chr&gt; &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, ...
+## $ lat     &lt;dbl&gt; 42.87174, 42.55958, 42.65634, 40.80692, 40.75238, 42.1...
+## $ lon     &lt;dbl&gt; -73.77414, -70.93124, -70.62621, -73.07295, -74.20798,...
+## $ type    &lt;chr&gt; &quot;Dunkin Donuts&quot;, &quot;Dunkin Donuts&quot;, &quot;Dunkin Donuts&quot;, &quot;Du...</code></pre>
+<p>We’ve imported nearly 8,000 rows of Dunkin’ Donuts store location data.</p>
+<p>Let’s limit it a bit because 8,000 dots on a slippy map is taxing on a browser.</p>
+<pre class="r"><code># Pick a state, any state.
+# I&#39;ll use Massachusetts here because that&#39;s where Dunkin started
+
+dd_state &lt;- dunkin %&gt;% 
+  filter(state==&quot;MA&quot;)</code></pre>
+<p>Let’s make a map with a new tile set. Instead of leaving <code>addTiles()</code> empty, we’ll pass on some new data to some third-party tiles with the <code>addProviderTiles()</code> function. Check out all the neat <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html">tile options</a>.</p>
+<p>Some options to use with <code>addCircles</code> includes the data to pull in for <code>popup</code> and <code>color</code>, which we’ve made bright orange. We’ve also set <code>radius</code> and <code>weight</code> and <code>fillOpacity</code>.</p>
+<p>If we wanted to change the radius of the circle based on some data point, you could replace <code>40</code> with some column with numeric values in it.</p>
+<pre class="r"><code>m &lt;- leaflet(dd_state) %&gt;% addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircles(~lon, ~lat, popup=dunkin$type, weight = 3, radius=40, 
+                 color=&quot;#ffa500&quot;, stroke = TRUE, fillOpacity = 0.8) 
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map1.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Why stop there?</p>
+<p>Let’s bring in some competition.</p>
+<pre class="r"><code>starbucks &lt;- read_csv(&quot;data/starbucks.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   `Store Number` = col_integer(),
+##   `Store Name` = col_character(),
+##   Address = col_character(),
+##   `Address Line2` = col_character(),
+##   City = col_character(),
+##   Province = col_character(),
+##   `Postal Code` = col_character(),
+##   `Phone Number` = col_character(),
+##   `Store Hours` = col_character(),
+##   `Wireless?` = col_character(),
+##   lat = col_double(),
+##   lon = col_double(),
+##   type = col_character()
+## )</code></pre>
+<pre class="r"><code>glimpse(starbucks)</code></pre>
+<pre><code>## Observations: 11,135
+## Variables: 13
+## $ `Store Number`  &lt;int&gt; 79797, 79796, 79795, 79794, 79793, 79789, 7978...
+## $ `Store Name`    &lt;chr&gt; &quot;Dominick&#39;s-Chicago #1100&quot;, &quot;Safeway - Chandle...
+## $ Address         &lt;chr&gt; &quot;3145 S Ashland Ave&quot;, &quot;1159 W Chandler Blvd&quot;, ...
+## $ `Address Line2` &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA...
+## $ City            &lt;chr&gt; &quot;Chicago&quot;, &quot;Chandler&quot;, &quot;Mansfield&quot;, &quot;Bothell&quot;,...
+## $ Province        &lt;chr&gt; &quot;IL&quot;, &quot;AZ&quot;, &quot;TX&quot;, &quot;WA&quot;, &quot;WA&quot;, &quot;CA&quot;, &quot;CA&quot;, &quot;SC&quot;...
+## $ `Postal Code`   &lt;chr&gt; &quot;60608-6251&quot;, &quot;85224-5202&quot;, &quot;76063-2602&quot;, &quot;980...
+## $ `Phone Number`  &lt;chr&gt; &quot;773-247-2633&quot;, &quot;480-726-7776&quot;, &quot;817-453-6770&quot;...
+## $ `Store Hours`   &lt;chr&gt; &quot;Mon: 6:00 AM-8:00 PM Tue: 6:00 AM-8:00 PM Wed...
+## $ `Wireless?`     &lt;chr&gt; NA, NA, NA, &quot;Wireless Hotspot&quot;, &quot;Wireless Hots...
+## $ lat             &lt;dbl&gt; 41.83619, 33.30424, 32.58408, 47.78450, 47.269...
+## $ lon             &lt;dbl&gt; -87.66409, -111.86316, -97.13298, -122.21282, ...
+## $ type            &lt;chr&gt; &quot;Starbucks&quot;, &quot;Starbucks&quot;, &quot;Starbucks&quot;, &quot;Starbu...</code></pre>
+<p>We should filter it so it’s only the state for which we already filtered for Dunkin data.</p>
+<pre class="r"><code>sb_state &lt;- starbucks %&gt;% 
+  filter(Province==&quot;MA&quot;)</code></pre>
+<p>The data is structured a bit differently, but at least it has <code>type</code> and location data.</p>
+<p>Also, let’s switch from <code>addCircles</code> to <code>addCircleMarkers</code>.</p>
+<pre class="r"><code># isolating just the 3 columns we&#39;re interested in-- type, lat, and lon
+sb_loc &lt;- select(sb_state, type, lat, lon)
+dd_loc &lt;- select(dd_state, type, lat, lon)
+
+# joining the two data frames together
+ddsb &lt;- rbind(sb_loc, dd_loc)
+
+# creating a coffee color palette
+
+cof &lt;- colorFactor(c(&quot;#ffa500&quot;, &quot;#13ED3F&quot;), domain=c(&quot;Dunkin Donuts&quot;, &quot;Starbucks&quot;))
+# mapping based on type
+m &lt;- leaflet(ddsb) %&gt;% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5) 
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map2.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<p>Play around with the slippy map. Interesting, right?</p>
+<p>The file size is only 1.3 m even though there are more than 1,300 points on the map.</p>
+<p>Still, that’s a lot of points to process. I don’t recommend more.</p>
+</div>
+<div id="add-a-legend" class="section level1">
+<h1>Add a legend</h1>
+<p>Let’s add a legend with the function <code>addLegend()</code> and options for where to place it and colors and labels.</p>
+<pre class="r"><code>m &lt;- leaflet(ddsb)  %&gt;% 
+  addProviderTiles(providers$CartoDB.DarkMatter) %&gt;% 
+  setView(-71.931180, 42.385453, zoom = 7) %&gt;% 
+  addCircleMarkers(~lon, ~lat, popup=ddsb$type, weight = 3, radius=4, 
+                 color=~cof(type), stroke = F, fillOpacity = 0.5)  %&gt;%
+  addLegend(&quot;bottomright&quot;, colors= c(&quot;#ffa500&quot;, &quot;#13ED3F&quot;), labels=c(&quot;Dunkin&#39;&quot;, &quot;Starbucks&quot;), title=&quot;Coffee places&quot;) 
+
+m</code></pre>
+<iframe src="//learn.r-journalism.com/iframes/dunk_map3.html" frameborder="0," height="400," width="100%" , scrolling="no">
+</iframe>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

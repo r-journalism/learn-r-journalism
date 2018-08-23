@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Journalism with R</title>
+    <link>/en/categories/git/</link>
+    <description>Recent content in Git on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best practices for GitHub</title>
+      <link>/en/git/github_pages/github-pages/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github_pages/github-pages/</guid>
+      <description>Just some suggestions on how to keep clean GitHub repositories.
+Remember that there are different types of audiences for your data and methodology.
+Provide summarized data While it’s excellent to include the scripts that detail the cleaning and wrangling process it took to turn raw data into the polished set you’ve published, there is a large audience of people who just want to download and play with the finalized data.</description>
+    </item>
+    
+    <item>
+      <title>Connecting to GitHub</title>
+      <link>/en/git/github/github/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github/github/</guid>
+      <description>Github is one of web-based hosting services for sharing and collaborating with code and data.
+It all depends on your needs and preferences. Each are pretty similar.
+Options
+ Github BitBucket GitLab  We’re going to publish a folder to Github because it offers free hosting to open-source software projects.
+It’s already where most R packages are hosted when they’re being developed.
+If you’re using two-factor authentication in Github, you’ll need to go through some more steps for generating an SSH key to connect.</description>
+    </item>
+    
+    <item>
+      <title>Installing git</title>
+      <link>/en/git/installing_git/installing-git/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/installing_git/installing-git/</guid>
+      <description>On a mac We’re going to the process that Ben Welsh has already described on his site at firstpythonnotebook.org.
+And the first step is to check if Git is already installed.
+Git should be installed automatically on Macs.
+Click on the magnifying glass to search in the top right and search for/open up terminal.
+ And just type in this command
+git --version And I got this:
+git version 2.15.2 (Apple Git-101.</description>
+    </item>
+    
+    <item>
+      <title>Setting up, using Git</title>
+      <link>/en/git/git/git/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/git/git/</guid>
+      <description>Alright, let’s get to git.
+After you’ve installed git, then you can convert a directory on your computer into a repository.
+This means its contents and changes can be tracked after this point.
+So go back to your terminal.
+Creating a new repository Navigate to the project folder you want to track with git.
+Here’s a good guide for using the command prompt to navigate to folders on your PC.</description>
+    </item>
+    
+  </channel>
+</rss>

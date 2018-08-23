@@ -1,0 +1,152 @@
+---
+title: "Dealing with dates"
+description: "Introduction on how to deal with dates"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "wrangling", "dates", "lubridate"]
+weight: 5
+slug: dates
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/yt9x6PNYvlw?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+Dates come in as characters, most of the time.
+
+You'll need to convert them into a date variable
+
+We'll be using the **lubridate** package.
+
+Here's an example of a **character variable** that might be in a data frame.
+
+```{r ex1}
+some_date <- "12-31-1999"
+```
+
+Convert that date into a **date variable** with the function **mdy()**
+
+```{r ex2, warning=F, message=F}
+# If you don't have lubridate installed yet uncomment the line below and run it
+#install.packages("lubridate")
+
+# NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE
+
+#install.packages("glue", type="win.binary")
+#install.packages("stringi", type="win.binary")
+#install.packages("stringr", type="win.binary")
+#install.packages("lubridate", type="win.binary")
+
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A MAC MACHINE
+
+#install.packages("glue", type="mac.binary")
+#install.packages("stringi", type="mac.binary")
+#install.packages("stringr", type="mac.binary")
+#install.packages("lubridate", type="mac.binary")
+
+library(lubridate)
+
+mdy(some_date)
+```
+
+The `mdy()` function is very versatile. It stand for month-date-year.
+
+And it'll be able to parse any version of that (with slashes or commas, or dashes) as long as that's the order of the information. 
+
+Check it out:
+
+```{r ex3}
+
+data <- data.frame(First=c("Charlie", "Lucy", "Peppermint"),
+                   Last=c("Brown", "van Pelt", "Patty"),
+                   birthday=c("10-31-06", "2/4/2007", "June 1, 2005"))
+
+data$DOB <- mdy(data$birthday)
+
+data
+
+```
+
+## Reading dates
+
+| Order of elements in date-time | Parse function |
+| ------ | ------------------------ |
+| year, month, day | `ymd()` |
+| year, day, month | `ydm()` |
+| month, day, year    | `mdy()` |
+| day, month, year    | `dmy()` |
+| hour, minute    | `hm()` |
+| hour, minute, second    | `hms()` |
+| year, month, day, hour, minute, second    | `ymd_hms()` |
+
+## Accessing date parts
+
+| Date component | Function |
+| ------ | ------------------------ |
+| Year | `year()` |
+| Month | `month()` |
+| Week    | `week()` |
+| Day of year  | `yday()` |
+| Day of month  | `mday()` |
+| Day of week | `wday()` |
+| Hour  | `hour()` |
+| Minute  | `minute()` |
+| Second  | `ymd_hms()` |
+| Time zone  | `ymd_hms()` |
+
+Now that we have the date in the right format, we can extract data from it with the functions above.
+
+```{r example_more}
+data$year <- year(data$DOB)
+data$month <- month(data$DOB, label=TRUE)
+data$day <- day(data$DOB)
+data$weekday <- wday(data$DOB, label=TRUE, abbr=FALSE)
+
+data
+```
+
+## Date arithmetic
+
+The function `difftime()` extracts the number of days between two dates that are passed to it
+
+```{r math}
+# We're going to use the now() function which brings in the date for today
+
+today <- now()
+data$age <- difftime(today, data$DOB)
+
+data
+```
+
+And how does that translate into years? 
+
+With some math. We'll have to turn the column into a number, first.
+
+```{r math2}
+data$age_years <- as.numeric(data$age) / 365.25 #.25 because of leap years
+
+data
+```
+
+That's a pretty good start for now. To see more functions and examples, check out [the vignette](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) for **lubridate**.
+
+
+
+----
+
+## Your turn
+
+Challenge yourself with [these exercises](http://code.r-journalism.com/chapter-3/#section-dealing-with-dates) so you'll retain the knowledge of this section.
+
+Instructions on how to run the exercise app are on the [intro page](https://learn.r-journalism.com/en/wrangling/) to this section.
+
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+
+

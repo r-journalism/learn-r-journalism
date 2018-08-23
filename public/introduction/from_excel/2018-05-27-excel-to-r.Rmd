@@ -1,0 +1,41 @@
+---
+title: "Evolve from Excel to R"
+description: "It's good for you"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "RStudio"]
+weight: 1
+slug: from-excel-to-r
+---
+
+R is excellent for those who already are used to working with data in spreadsheets. 
+
+Switching from Excel or Google Sheets to R for data analysis can seem daunting. Over time, the open-source statistical programming language has consistently grown in popularity among those who work with numbers, with thousands of user-created libraries to expand on its power.
+
+Though it was first created primarily to make it easier to create statistical models and output very basic visuals to explore data, it’s expanded to the point that people can use R to do so many advanced processes such as scrape websites, communicate with APIs, and publish beautiful interactive charts and maps.
+
+All with just a few lines of code.
+
+The practice of **Reproducible Research** has been spreading outside the world of academia to other areas, like non-profits and journalism. It’s the idea that analyses should be published with the original data, as well as the methodology or software code so that others can verify or build on them.
+
+Others can reproduce your practice, but the big draw is that for other projects, so can you.
+
+The most important thing here is that you can redo the analysis on the same project in the future. Hadley Wickham [once said](https://www.r-bloggers.com/your-most-valuable-collaborator-future-you/): 
+
+"In every project you have at least one other collaborator; future-you. You don’t want future-you to curse past-you."
+
+In Excel, a user might run a formula, do some sorting, create a couple of pivot tables— but the work you did on that data cannot be replicated quickly on another spreadsheet with a similar data structure. The whole process has to be repeated step by step.
+
+The point of doing data analysis in R is that a user can write a script to slice up and analyze a spreadsheet, then it can be saved, and then brought back to be used on another spreadsheet with just a few tweaks in the code.
+
+Data journalism should ideally be fully documented and reproducible. 
+ The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger data sets and more sophisticated computations. 
+ 
+ Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.
+ 
+ 
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

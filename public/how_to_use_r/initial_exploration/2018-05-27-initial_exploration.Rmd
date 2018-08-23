@@ -1,0 +1,262 @@
+---
+title: "Data structures in R"
+description: "Types of data that you'll be working with in R"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "data structures"]
+weight: 3
+slug: data-structures
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/eXb5ks7lMwQ?t=5s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+## Vectors
+
+A **vector** is a sequence of data elements of the same basic type. The parts that consist of a vector are called **components** or **elements**.
+
+```{r vectors1}
+vec1 <- c(1,4,6,8,10)
+vec1
+```
+
+A vector `vec` is explicitly constructed by the concatenation function `c()`.
+
+```{r vectors2}
+vec1[5]
+```
+
+Elements in vectors can be addressed by standard `[i]` indexing
+
+```{r vectors3}
+vec1[3] <- 12
+vec1
+```
+
+One of the elements in the array is replaced with a new number. 
+
+```{r vectors4}
+vec2 <- seq(from=0, to=1, by=0.25)
+vec2
+```
+
+This shows another useful way of creating a vector: the `seq()` or sequence function.
+
+```{r vectors5}
+sum(vec1)
+```
+
+
+## Matrices
+
+**Matrices** are two-dimensional vectors.
+
+It looks like this 
+
+```{r matrix}
+mat <- matrix(data=c(9,2,3,4,5,6), ncol=3)
+mat
+```
+
+The argument `data` specifies which numbers should be in the matrix.
+
+Use either `ncol` to specify the number of columns or `nrow` to specify the number of rows.
+
+Matrix operations are similar to vector operations.
+
+```{r matrix2}
+mat[1,2]
+```
+
+Elements of a matrix can be addressed in the usual way
+
+```{r matrix3}
+mat[2,1]
+```
+
+When you want to select a whole row, you leave the spot for the column number empty and vice versa for the columns.
+
+```{r matrix4}
+mat[,3]
+```
+
+
+## Data frames
+
+If you're used to working with spreadsheets, then *data frames* will make the most sense to you in R.
+
+This is how to create a data frame from arrays. You don't have to fully understand this at this point-- the data you'll be working with will come pre-structured if you're importing spreadsheets.
+
+
+```{r df1}
+patientID <- c(111, 208, 113, 408)
+age <- c(25, 34, 28, 52)
+sex <- c(1,2,1,1)
+diabetes <- c("Type1", "Type2", "Type1", "Type1")
+status <- c(1,2,3,1)
+
+patientdata <- data.frame(patientID, age, sex, diabetes, status)
+patientdata
+```
+
+But this is what's happening. A set of arrays are being created and a function called `data.frame()` joins them together into a data frame structure.
+
+**How to pull elements from a data frame:**
+
+```{r patientdata}
+# a : means "through"
+patientdata[1:2]
+
+# So 1:2 means 1 through 2
+
+
+patientdata[c("diabetes", "status")]
+
+patientdata$age
+
+patientdata[1:2]
+
+patientdata[c(1,3),1:2]
+
+patientdata[2:3, 1:2]
+```
+
+{{% notice tip %}}
+You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it's 2, so patientdata[,2] is the equivalent. If you only wanted the third row, then it'd look like patientdata[3,]. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. 
+{{% /notice %}}
+
+Instead of using `mean(patientdata[,2])`, you can select the column `age` from the `patientdata` data frame with the `$` sign.
+
+```{r df2}
+mean(patientdata$age)
+```
+
+Here's an alternative way to refer to the `age` column of the `patientdata` data frame. But you will rarely use this method.
+
+
+```{r df3}
+mean(patientdata[["age"]])
+```
+
+
+## Lists
+
+Another basic structure in R is a *list*. 
+
+The main advantage of lists is that the "columns" they're not really ordered in columns any more, but are more of a collection of vectors) don't have to be of the same length, unlike matrices and data frames.
+
+Kind of like JSON files are structured.
+
+```{r list1}
+g <- "My First List"
+h <- c(25, 26, 18, 39)
+# The line below is creating a matrix that's 5 rows deep of numbers 1 through(":") 10
+j <- matrix(1:10, nrow = 5) 
+k <- c("one", "two", "three")
+mylist <- list(title = g, ages = h, j, k)   
+```
+
+This is how a list would appear in the work space
+
+```{r list2}
+names(mylist)
+```
+
+How to find out what's in the list
+
+```{r list_extract}
+mylist[[2]] 
+
+mylist[["ages"]][[1]]
+```
+
+The code above extracts data from the list
+
+```{r list3}
+mylist$age + 10
+```
+
+How to refer to and use the numbers in the example list
+
+## Functions for working with objects
+
+Let's start with the sample_df dataframe below.
+
+```{r factor1}
+# Run the lines of code below
+sample_df <- data.frame(id=c(1001,1002,1003,1004), name=c("Steve", "Pam", "Jim", "Dwight"), age=c(26, 65, 15, 7), race=c("White", "Black", "White", "Hispanic"))
+sample_df$name <- as.character(sample_df$name)
+sample_df
+```
+
+`length(x)` - Find out how many things there are in an object or array
+
+```{r length}
+length(sample_df$name)
+```
+
+`nchar(x)` - If **x** is a string, finds how how many characters there are 
+
+```{r nchar}
+sample_df$name[1]
+nchar(sample_df$name[1])
+```
+
+`dim(x)` - Gives the dimensions of **x**
+```{r dim}
+dim(sample_df)
+```
+
+`ncol(x)` - Counts the number of columns
+
+```{r ncol}
+ncol(sample_df)
+```
+
+`nrow(x)` - Returns the number of rows of **x**
+
+```{r nrow}
+nrow(sample_df)
+```
+
+`str(x)` - Returns the structure of **x**
+
+```{r str}
+str(sample_df)
+```
+
+`summary(x)` - Summarizes the object as understood by R
+
+```{r summary}
+summary(sample_df)
+```
+
+
+`View(x)` - A command to open the object to browse in RStudio
+
+```{r view, eval=F}
+View(sample_df)
+```
+
+`rm(x)` - Removes **x**
+
+```{r rm, error=T}
+rm(sample_df)
+sample_df
+```
+
+## Your turn
+
+Challenge yourself with [these exercises](http://code.r-journalism.com/chapter-1/#section-data-structures-in-r) so you'll retain the knowledge of this section.
+
+Instructions on how to run the exercise app are in the [intro page](http://learn.r-journalism.com/en/how_to_use_r/) to this section.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+
+

@@ -1,0 +1,342 @@
+---
+title: "Introduction to R"
+description: "Functions, syntax, directories, workspace, libraries"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "introduction"]
+weight: 2
+slug: intro-to-r
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/mBIJ_z3Ya7A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<div id="syntax" class="section level2">
+<h2>Syntax</h2>
+<p>You must follow pretty specific syntax rules for it to work. R won’t guess for you.</p>
+<div class="figure">
+<img src="/how_to_use_r/tour_rstudio/images/left.png?classes=shadow" />
+
+</div>
+<ul>
+<li>R is case-sensitive (unlike SQL) <a href="https://en.wikipedia.org/wiki/Interpreted_language">intepreted language</a> (unlike C)</li>
+<li>Can enter commands at prompt <code>&gt;</code> or in batch</li>
+<li>Comments are preceded by <code>#</code>
+<ul>
+<li>This is important to use often in your code for documentation</li>
+<li>You’ll see it often in this course</li>
+</ul></li>
+<li>Statements are lines of code such as functions and object assignments
+<ul>
+<li>Enters in code (as in a new line) or semi-colons will separate statements</li>
+</ul></li>
+</ul>
+</div>
+<div id="working-directories" class="section level2">
+<h2>Working directories</h2>
+<p>Your <em>working directory</em> is the folder on your computer in which you are currently working. When you ask R to open a certain file, it will look in the working directory for this file, and when you tell R to save a data file or figure, it will save it in the working directory.</p>
+<p>Before you start working, please set your working directory to where all your data and script files are or should be stored.</p>
+<p>{{% notice tip %}} When you see code in a black box throughout this class, <strong>I want you to run that code in R unless noted otherwise</strong>. You can run it in the console, I’d prefer you do so in a script so you can see your history. In the video, you’ll see me swap back and forth between coding in the console and the script. This really depends on if I’m experimenting with code quickly or if it’s something I know I should track. Often I will copy and paste code executed from the console to growing script as an afterthought. Also, <strong>be sure to read the commented out code</strong> because I try to give additional context, like tips on what to do if the command fails. {{% /notice %}}</p>
+<p>This is an example of setting a working directory to a manual directory on your computer.</p>
+<pre class="r"><code># On a mac, it&#39;d look like this
+setwd(&quot;~/projects/learn-r-journalism&quot;)
+
+# On a pc, it might look like this
+setwd(&quot;C:/Documents/learn-r-journalism&quot;)</code></pre>
+<p>{{% notice note %}} Make sure that slashes are forward slashes and that you don’t forget the quotation marks. {{% /notice %}}</p>
+<p>Within RStudio, you can also set the working directory via the menu <em>Tools &gt; Set Working Directory</em></p>
+<p><img src="/how_to_use_r/intro_to_r/images/setwd.png" alt="Set working directory", class="shadow", style="width:70%"></p>
+<p>The commands above, <code>setwd()</code> was an example of setting an <strong>absolute</strong> folder.</p>
+<p>This works for you for now, but if you wanted to share your methodology and script in the future or if you wanted to save run the code on another computer it would likely <strong>not</strong> work because it would be looking through a folder structure that doesn’t exist on any computer except the one where the original script was written. This is not ideal for reproducibility.</p>
+<p>Working directories are a tough concept. We’ll be going over best practices in <a href="https://learn.r-journalism.com/en/publishing/">Chapter 6</a> in more detail. Meanwhile, here’s a link that might <a href="https://wangfanghelsinki.wordpress.com/2015/03/31/understanding-and-setting-rstudio-working-directory/">help explain</a> some more.</p>
+</div>
+<div id="libraries" class="section level2">
+<h2>Libraries</h2>
+<p>R can do many statistical and data analyses.</p>
+<p>They are organized in so-called <em>packages</em> or <em>libraries</em>.</p>
+<p>You can do a lot of statistical analysis in R without any additional libraries— this is called base R.</p>
+<p>But other users have created libraries with functions that solve common problems. R package users download only the libraries that they need for an individual project</p>
+<p>To get a list of all installed packages, go to the packages window or type <code>library()</code> in the console window. If the box in front of the package name is ticked in the packages window, the package is loaded and the functions within it are ready to be called.</p>
+<p>There are many more packages available on the R website. If you want to install and use a package (for example, the packaged called “dplyr”) you should:</p>
+<ul>
+<li>Install the package: click <code>install packages</code> in the packages window and type <code>dplyr</code> or type <code>install.packages(&quot;dplyr&quot;)</code> in the console window.</li>
+<li>Load the package: Check box in front of <code>dplyr</code> or type <code>library(&quot;dplyr&quot;)</code> in the console window.</li>
+</ul>
+</div>
+<div id="examples-of-r-commands" class="section level1">
+<h1>Examples of R commands</h1>
+<div id="calculator" class="section level2">
+<h2>Calculator</h2>
+<p>R can be used as a calculator.</p>
+<p>Just type an equation in the console window after the <code>&gt;</code></p>
+<p>{{% notice note %}} In those code sections, the code preceded by ## is the output of the code from the lines above. {{% /notice %}}</p>
+<pre class="r"><code>10^2 + 26</code></pre>
+<pre><code>## [1] 126</code></pre>
+</div>
+<div id="workspace" class="section level2">
+<h2>Workspace</h2>
+<p>You can give numbers a name.</p>
+<p>By doing so, they become so-called variables which can be used later.</p>
+<pre class="r"><code>a &lt;- 4
+a</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>You can do calculations with <code>a</code> now.</p>
+<pre class="r"><code>a*5</code></pre>
+<pre><code>## [1] 20</code></pre>
+<p>If you specify <code>a</code> again, it will forget what value you had before because you did not assign it to anything.</p>
+<pre class="r"><code>a</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>You can also assign a value to <code>a</code> using the old one</p>
+<pre class="r"><code>a &lt;- a + 10
+a</code></pre>
+<pre><code>## [1] 14</code></pre>
+<p>To remove all variables from R’s memory, type</p>
+<pre class="r"><code>rm(list=ls())</code></pre>
+<p>or click the “clear all” broom button in the work space window.</p>
+<p><img src="/how_to_use_r/intro_to_r/images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%"></p>
+</div>
+<div id="scalars-and-vectors" class="section level2">
+<h2>Scalars and vectors</h2>
+<p>Like in many other programs, R organizes numbers in <em>scalars</em> (a single number 0-dimensional), <em>vectors</em> (a row of numbers, also called arrays - `-dimensional) and <em>matrices</em> (which we won’t get into now).</p>
+<p>The <code>a</code> you defined was scalar.</p>
+<p>To define a vector with the numbers 3,4, and 5, you need the function <code>c()</code> which is short for concatenate (or paste together).</p>
+<pre class="r"><code>b=c(3,4,5)
+b</code></pre>
+<pre><code>## [1] 3 4 5</code></pre>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p>If you would like to compute the mean of all the elements in the vector <code>b</code> from the example above, you could type</p>
+<pre class="r"><code>(3+4+5)/3</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>But when the vector is very long, this is very boring and time-consuming work.</p>
+<p>Functions do things to data. R is built on them. Some functions come with R, like <code>median()</code> or <code>summary()</code> and others come as part of packages that others have created.</p>
+<p>When you use a function to compute an average, you’ll type</p>
+<pre class="r"><code>mean(x=b)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Within the brackets you specify the <em>arguments</em>.</p>
+<p>Arguments give extra information to the function. In this case, the argument <em>x</em> says of which set of numbers (vector) the mean should computed (namely of b).</p>
+<p>Sometimes the name of the argument is not necessary:</p>
+<pre class="r"><code>mean(b)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Also works.</p>
+</div>
+<div id="plots" class="section level2">
+<h2>Plots</h2>
+<p>R can make simple graphics right away.</p>
+<pre class="r"><code># rnorm() is a base function that creates random samples from a random distribution
+
+x &lt;- rnorm(100)
+
+# plot() is a base function that charts
+
+plot(x)</code></pre>
+<p><img src="/how_to_use_r/intro_to_r/2018-05-27-intro-to-r_files/figure-html/norm_graph-1.png" width="672" /></p>
+<ul>
+<li>In the first line, 100 random numbers are assigned to the variable x, which becomes a vector by this operation.</li>
+<li>In the second line, all these values are plotted in the plot window.</li>
+</ul>
+</div>
+<div id="scripts" class="section level2">
+<h2>Scripts</h2>
+<p>R is an interpreter that uses a command line based environment.</p>
+<p>This means that you have to type commands, rather than use the mouse and menus.</p>
+<p>This has the advantage that you do not always have to retype commands.</p>
+<p>You can store your commands in files, the so-called <em>scripts</em>. These scripts have typically file names with the extension <strong>.R</strong> as in <strong>script.R</strong>.</p>
+<p>You can open an editor window to edit these files by clicking <em>File &gt; New</em> or <em>File &gt; Open file…</em></p>
+<p>You can run (send to the console window) part of the code by selecting lines and pressing <strong>CTRL+ENTER</strong> or <strong>CMD+ENTER</strong> or click the <em>Run</em> button at the top of the script editor window. If you do not select anything, R will run the line your cursor is on.</p>
+<p>You can always run the whole script with the function <code>source()</code></p>
+<p>For example, to run the entire saved <strong>script.R</strong> if it’s in the root directory of the working directory, type</p>
+<pre class="r"><code>source(&quot;script.R&quot;)</code></pre>
+<p>You can also click <em>Run all</em> in the editor window or type <strong>CTRL+SHIFT+S</strong> or <em>CMD+SHIFT+S</em></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/tQTWM4W9XxQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="not-available-data" class="section level2">
+<h2>Not available data</h2>
+<p>When you work with real data, you will encounter missing values because instrumentation failed or human error.</p>
+<p>When a data is <em>not available</em>, you write <code>NA</code> instead of a number.</p>
+<pre class="r"><code>j &lt;- c(1,2,NA)</code></pre>
+<p>Computing statistics of incomplete data sets is strictly not possible.</p>
+<p>maybe the largest value occurred during the weekend when you didn’t measure. Therefore, R will say that it doesn’t know what the largest value of <code>j</code> is</p>
+<pre class="r"><code>max(j)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>If you don’t mind about the missing data and want to compute the statistics anyway, you can add the argument <code>na.rm=TRUE</code> (Should I remove the <code>NA</code>s? Yes)</p>
+<pre class="r"><code>max(j, na.rm=T)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>{{% notice warning %}} <code>NA</code>s will also affect any sort of math if you’re not careful {{% /notice %}}</p>
+<pre class="r"><code>sum(j)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code># compared to
+sum(j, na.rm=T)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p>Here are <a href="http://faculty.nps.edu/sebuttre/home/R/missings.html">some</a> <a href="https://datascienceplus.com/missing-values-in-r/">links</a> on how to <a href="https://stats.idre.ucla.edu/r/faq/how-does-r-handle-missing-values/">handle</a> <code>NA</code>s in your data</p>
+</div>
+</div>
+<div id="data-types" class="section level1">
+<h1>Data types</h1>
+<p>We’ve been working so far with numbers.</p>
+<p>But sometimes data we work with can be specified as something else, like characters and strings or Boolean values like <strong>TRUE</strong> or <strong>FALSE</strong> or dates.</p>
+<div id="characters" class="section level2">
+<h2>Characters</h2>
+<pre class="r"><code>m &lt;- &quot;apples&quot;
+m</code></pre>
+<pre><code>## [1] &quot;apples&quot;</code></pre>
+<p>To tell R that something is a character string, you should type the text between apostrophes, otherwise R will start looking for a defined variable with the same name.</p>
+<pre class="r"><code>n &lt;- pears</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;pears&#39; not found</code></pre>
+<p>You can’t do math with characters.</p>
+<pre class="r"><code>m + 2</code></pre>
+<pre><code>## Error in m + 2: non-numeric argument to binary operator</code></pre>
+</div>
+<div id="dates" class="section level2">
+<h2>Dates</h2>
+<p>Dates and times are complicated.</p>
+<p>R has to know that 3 o’clock comes after 2:59 and that February has 29 days in some years.</p>
+<p>The base way to tell R that something is a date-time combination is with the function <code>strptime()</code></p>
+<pre class="r"><code>date1 &lt;- strptime(c(&quot;20100225230000&quot;, &quot;20100226000000&quot;, &quot;20100226010000&quot;), format=&quot;%Y%m%d%H%M%S&quot;)
+date1</code></pre>
+<pre><code>## [1] &quot;2010-02-25 23:00:00 EST&quot; &quot;2010-02-26 00:00:00 EST&quot;
+## [3] &quot;2010-02-26 01:00:00 EST&quot;</code></pre>
+<p>A vector is created with <code>c()</code> and the numbers between the quotation marks are strings, because that’s what the <code>strptim()</code> function requires.</p>
+<p>That’s followed by the argument <strong>format</strong> that defines how the character string should be read. In this instance, the year is denoted first (%Y), then the month (%M) and second (%S). You don’t have to specify all of them, as long as the format corresponds to the character string.</p>
+<p>In this course, we’ll be using a less messy way to deal with dates using the package <strong>lubridate</strong>.</p>
+<pre class="r"><code># If you don&#39;t currently have the lubridate package installed, uncomment the line below and run it
+
+# install.packages(&quot;lubridate&quot;)
+
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>date1 &lt;- ymd_hms(c(&quot;20100225230000&quot;, &quot;20100226000000&quot;, &quot;20100226010000&quot;))</code></pre>
+<p>The function <code>ymd_hms()</code> converted the year, month, date and hour, minutes, and seconds in the string. We’ll go over this in more detail in <a href="http://learn.r-journalism.com/en/wrangling/dates/dates/">Chapter 3</a>.</p>
+</div>
+<div id="factors" class="section level2">
+<h2>Factors</h2>
+<p>Complicated.</p>
+<ul>
+<li>Data structure specifying categorical (nominal) or ordered categorical (ordinal) variables</li>
+<li>Tells R how to handle that variable in analyses</li>
+<li>Very important and misunderstood</li>
+<li>Any variable that is categorical or ordinal should usually be stored as a factor.</li>
+</ul>
+<p>For example, Race might be input as “White”, “Black”, and “Hispanic”</p>
+<p>When importing that data in from a spreadsheet, R will most often interpret it as a <strong>Factor</strong>.</p>
+<p>Run these lines of code to create a new object, a dataframe called <strong>sample_df</strong></p>
+<pre class="r"><code>sample_df &lt;- data.frame(id=c(1001,1002,1003,1004), name=c(&quot;Steve&quot;, &quot;Pam&quot;, &quot;Jim&quot;, &quot;Dwight&quot;), age=c(26, 65, 15, 7), race=c(&quot;White&quot;, &quot;Black&quot;, &quot;White&quot;, &quot;Hispanic&quot;))
+sample_df$race &lt;- factor(sample_df$race)
+sample_df$id &lt;- factor(sample_df$id)
+sample_df$name &lt;- as.character(sample_df$name)</code></pre>
+<p><img src="/how_to_use_r/intro_to_r/images/sample_df.png" alt="Set working directory", class="shadow", style="width:40%"></p>
+<p>Let’s take a look at the structure behind a dataframe we’ve created.</p>
+<pre class="r"><code>str(sample_df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  4 variables:
+##  $ id  : Factor w/ 4 levels &quot;1001&quot;,&quot;1002&quot;,..: 1 2 3 4
+##  $ name: chr  &quot;Steve&quot; &quot;Pam&quot; &quot;Jim&quot; &quot;Dwight&quot;
+##  $ age : num  26 65 15 7
+##  $ race: Factor w/ 3 levels &quot;Black&quot;,&quot;Hispanic&quot;,..: 3 1 3 2</code></pre>
+<p>R sees that the <strong>Race</strong> column is a factor variable with three levels.</p>
+<pre class="r"><code>levels(sample_df$race)</code></pre>
+<pre><code>## [1] &quot;Black&quot;    &quot;Hispanic&quot; &quot;White&quot;</code></pre>
+<p>This means that R groups statistics by these levels.</p>
+<pre class="r"><code>summary(sample_df$race)</code></pre>
+<pre><code>##    Black Hispanic    White 
+##        1        1        2</code></pre>
+<p>Internally, R stores the integer values 1, 2, and 3, and maps the character strings in alphabetical order to these values. 1=Black, 2=Hispanic, and 3=White.</p>
+<p>Why is this important to know?</p>
+<p>Journalists are less concerned by factors and will often find themselves converting factors to strings and characters. But when you reach the point that you are wanting to create models and linear regressions then you’ll be happy that it’s an option.</p>
+<p>{{% notice tip %}} Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained. {{% /notice %}}</p>
+</div>
+<div id="integers-numbers" class="section level2">
+<h2>Integers &amp; Numbers</h2>
+<p>These are what they sound like, whole or decimal numbers that can be used in calculations</p>
+<p>R doesn’t handle units properly if they are combined with numbers.</p>
+<p>For example, “4in” will be treated as a string and not as 4.</p>
+</div>
+<div id="converting-between-the-different-types" class="section level2">
+<h2>Converting between the different types</h2>
+<p>Here’s a warning.</p>
+<ul>
+<li>You can convert factors into strings.</li>
+</ul>
+<pre class="r"><code>sample_df$race</code></pre>
+<pre><code>## [1] White    Black    White    Hispanic
+## Levels: Black Hispanic White</code></pre>
+<pre class="r"><code>as.character(sample_df$race)</code></pre>
+<pre><code>## [1] &quot;White&quot;    &quot;Black&quot;    &quot;White&quot;    &quot;Hispanic&quot;</code></pre>
+<ul>
+<li>You can convert strings into factors</li>
+</ul>
+<pre class="r"><code>sample_df$name</code></pre>
+<pre><code>## [1] &quot;Steve&quot;  &quot;Pam&quot;    &quot;Jim&quot;    &quot;Dwight&quot;</code></pre>
+<pre class="r"><code>factor(sample_df$name)</code></pre>
+<pre><code>## [1] Steve  Pam    Jim    Dwight
+## Levels: Dwight Jim Pam Steve</code></pre>
+<ul>
+<li>You <strong>cannot</strong> convert factors into numbers.</li>
+</ul>
+<pre class="r"><code>sample_df$id</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004
+## Levels: 1001 1002 1003 1004</code></pre>
+<pre class="r"><code>as.numeric(sample_df$id)</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<p>Because R stores <strong>Factors</strong> as <strong>Integer</strong> values.</p>
+<p>You must convert factors into characters first <em>before</em> converting it to numbers.</p>
+<p>So you can nest it.</p>
+<pre class="r"><code>sample_df$id</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004
+## Levels: 1001 1002 1003 1004</code></pre>
+<pre class="r"><code>as.numeric(as.character(sample_df$id))</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004</code></pre>
+<p>{{% notice tip %}} It’s okay if you don’t fully understand this next section. It’s pretty advanced. I give you permission to skip down to <strong>Your turn:</strong>. {{% /notice %}}</p>
+</div>
+<div id="revisiting-functions" class="section level2">
+<h2>Revisiting Functions</h2>
+<p>You can also save code you’ve written that simplifies your process into a function.</p>
+<pre class="r"><code>percent_change &lt;- function(first_number, second_number) {
+  pc &lt;- (second_number-first_number)/first_number*100
+  return(pc)
+}
+
+percent_change(100,150)</code></pre>
+<pre><code>## [1] 50</code></pre>
+<p>This is what’s happening in the code above:</p>
+<ul>
+<li><strong>percent_change</strong> is the name of the function, and assigned to it is the function <code>function()</code></li>
+<li>Two variables are necessary to be passed to this function, <strong>first_number</strong> and <strong>second_number</strong></li>
+<li>A new object <code>pc</code> is created using some math calculating percent change from the two variables passed to it</li>
+<li>the function <code>return()</code> assigns the result of the math to <code>percent_change</code> from the first line</li>
+</ul>
+<p>Build enough functions and you can save them as <a href="https://github.com/andrewbtran/muckrakr">your own package</a>.</p>
+<p><strong>The important thing about functions</strong> is that they’re programmed by humans.</p>
+<p>I constructed this function because that’s how I know that I’ll only include two inputs and that each one will be numeric and that they’ll be in order of first then second.</p>
+<p>If you’re working in R and a function you’re using is giving an error, it most likely means there’s something wrong with one or more of the variables you’re passing to the function.</p>
+<p>Here’s what happens when I pass a string to my <code>percent_change()</code> function.</p>
+<pre class="r"><code>percent_change(&quot;what&quot;, &quot;happens&quot;)</code></pre>
+<pre><code>## Error in second_number - first_number: non-numeric argument to binary operator</code></pre>
+<p><strong>This is the point: </strong></p>
+<p>Sometimes really great R programmers will anticipate errors and catch bad inputs and try to output helpful suggestions instead of a generic error.</p>
+<p>This particular error isn’t very explicit. It needs to be interpreted but <strong>you</strong> know that the function needs numbers to work correctly because you created it.</p>
+<p>New users might not know that intuitively.</p>
+<p>And that’s how you’re going to feel when functions you run don’t work.</p>
+<p>You’ll have to Google the error or peek into code to see if you can see what it expects and how it might break down thanks to what you’ve passed it.</p>
+<p>And it won’t be entirely your fault.</p>
+<p>When we’re coding and sharing it for others we can’t anticipate all the ways in which others might want to use it in the future.</p>
+<p>Shoot the function writer a message or if you wrote the package, welcome feedback from others.</p>
+<p>This is what makes participating in the R community so great. We just want to do better.</p>
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-1/#section-intro-to-r">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are in the <a href="http://learn.r-journalism.com/en/how_to_use_r/">intro page</a> to this section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+</div>

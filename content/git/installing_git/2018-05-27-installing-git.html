@@ -1,0 +1,86 @@
+---
+title: "Installing git"
+description: "On a Mac and PC"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "version control"]
+weight: 1
+slug: installing-git
+---
+
+
+
+<div id="on-a-mac" class="section level2">
+<h2>On a mac</h2>
+<p>We’re going to the process that Ben Welsh has already described on his site at <a href="http://www.firstpythonnotebook.org/">firstpythonnotebook.org</a>.</p>
+<p>And the first step is to check if Git is already installed.</p>
+<p>Git should be installed automatically on Macs.</p>
+<p>Click on the magnifying glass to search in the top right and search for/open up terminal.</p>
+<div class="figure">
+<img src="/git/installing_git/images/macterminal.png" />
+
+</div>
+<p>And just type in this command</p>
+<pre><code>git --version</code></pre>
+<p>And I got this:</p>
+<pre><code>git version 2.15.2 (Apple Git-101.1)</code></pre>
+<p>Alright, I have Git version 2.15.2.</p>
+<p>And if there was a blank or there was if it gave back an error, that means you don’t have Git installed.</p>
+<p>So if you have an older version or you don’t have it installed then just go to the website: <a href="https://git-scm.com/">git-scm.com</a>.</p>
+<div class="figure">
+<img src="/git/installing_git/images/downloadmac.png" />
+
+</div>
+<p>Now you might get an error that says can’t be open the file because it’s from an unidentified developer.</p>
+<div class="figure">
+<img src="/git/installing_git/images/developer_mac.png" />
+
+</div>
+<p>Go ahead and click OK.</p>
+<p>You’re going to need administrative privileges for this part. So go back to search. Pop open settings. And click on security and privacy.</p>
+<div class="figure">
+<img src="/git/installing_git/images/security.png" />
+
+</div>
+<p>Now under general there will be a message that says this package was blocked from opening because it’s not from an unidentified developer.</p>
+<div class="figure">
+<img src="/git/installing_git/images/open_mac.png" />
+
+</div>
+<p>Click on the button open anyway. Click open anyway. And now fill in your username and password.</p>
+<p>The installer will pop open.</p>
+<p>Install the software, fill in your username and password when prompted.</p>
+<p>Close terminal and then reopen it.</p>
+<p>Type in</p>
+<pre><code>git --version</code></pre>
+<p>And now I have</p>
+<pre><code>git version 2.18.0</code></pre>
+<div id="set-up-your-identity" class="section level3">
+<h3>Set up your identity</h3>
+<p>In the terminal, type in the command</p>
+<pre><code>git config --global user.email &quot;your@email.com&quot;
+git config --global user.name &quot;your name&quot;</code></pre>
+<p>That’s it. You’re ready for the next step.</p>
+</div>
+</div>
+<div id="on-a-pc" class="section level2">
+<h2>On a PC</h2>
+<p>So the steps do this is right here in this notepad. So first thing we can do is check if we already have Git installed. And to do that. We just need to go to command which is down here.</p>
+<p>Under search type in CMD first thing that’ll pop up click on that and type in</p>
+<pre><code>git --version </code></pre>
+<p>If Git is not recognized as an internal or external command, that means it’s not installed yet.</p>
+<p>Go to <a href="https://gitforwindows.org">gitforwindows.org</a></p>
+<p>Click download and unzip and run the exe file.</p>
+<p>You’ll need administrative privileges.</p>
+<p>Click all the defaults.</p>
+<p>Close the CMD. And then reopen it because you have to restart the terminal to make the changes go through.</p>
+<p>Once again, type in</p>
+<pre><code>git --version</code></pre>
+<p>Finally, type in the CMD/terminal</p>
+<pre><code>git config --global user.email &quot;your@email.com&quot;
+git config --global user.name &quot;your name&quot;</code></pre>
+<p>You’re all set and ready to move on to the next section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

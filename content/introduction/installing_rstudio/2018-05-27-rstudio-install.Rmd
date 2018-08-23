@@ -1,0 +1,29 @@
+---
+title: "Installing RStudio"
+description: "Click, click, click... click"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "install",]
+weight: 4
+slug: installing-rstudio
+---
+
+## Downloading RStudio
+
+* RStudio Desktop - [http://www.rstudio.com](https://www.rstudio.com/products/rstudio/)
+
+<img src="/introduction/installing_rstudio/images/rstudio-install.png" alt="Download RStudio", class="shadow", style="width:70%">
+
+## RStudio Integrated Development Environment (IDE)
+![](/introduction/installing_rstudio/images/r-ide.png?classes=shadow)
+
+RStudio is an IDE that consolidates everything you need to write R code and work with data in a single app.
+
+It allows you to browse help files, plots, and keep track of objects in your environment easily.
+
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

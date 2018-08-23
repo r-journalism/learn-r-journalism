@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csv on Journalism with R</title>
+    <link>/en/tags/csv/</link>
+    <description>Recent content in Csv on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSV files</title>
+      <link>/en/importing_exporting/csv/csv-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/csv/csv-files/</guid>
+      <description>{{%attachments title=“Files for this section” style=“grey” /%}}
+Comma separated files are the most common way to save spreadsheets that doesn’t require a paid program from Microsoft to open.
+What a csv file looks like CSV file names end with a .csv
+  What a csv file looks like on the inside This explains the values separated with commas part of the file name.
+  Importing CSV files  Importing CSV is part of base R, no package needed But we’re going to use a package anyway, readr  Two ways to get data  If you have the URL address  If the csv file exists on the internet, you don’t have to download it to your local machine and then import it, you can import it to R directly from the web using the link  If you have the file on your computer   Get the URL If you have the link to a CSV file, right click the link of the data and click Copy Link Address.</description>
+    </item>
+    
+  </channel>
+</rss>

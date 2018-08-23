@@ -1,0 +1,11 @@
+---
+title: "Common issues"
+author: "Andrew Ba Tran"
+date: 2018-06-09T21:13:14-05:00
+categories: ["R"]
+tags: ["Common issues", "Trouble shooting"]
+slug: common-issues
+---
+
+
+

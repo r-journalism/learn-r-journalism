@@ -1,0 +1,96 @@
+---
+title: "JSON data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "json"]
+weight: 3
+slug: json-files
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/y_WYTUeYiSU?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>JSON stands for JavaScript Object Notation and is the data structure behind many website features like maps.</p>
+<p>Let’s say theoretically you were interested in compiling a list of all <a href="http://sbgi.net/">Sinclair Broadcast</a> TV stations and their locations.</p>
+<p>You’d first visit their web site.</p>
+<div class="figure">
+<img src="/importing_exporting/json/images/sinclair1.png" />
+
+</div>
+<p>And then you might find they have <a href="http://sbgi.net/tv-stations/">a map</a>!</p>
+<div class="figure">
+<img src="/importing_exporting/json/images/sinclair2.png" />
+
+</div>
+<p>Look at the developer tools in your browser and click over to <strong>Network</strong> you could sort by size and see there’s a <strong>json</strong> file being called by the map.</p>
+<div class="figure">
+<img src="/importing_exporting/json/images/sinclair3.png" />
+
+</div>
+<p>If you click into the JSON link you’ll see this data structure that includes affiliation, call letters, and latitude and longitude.</p>
+<div class="figure">
+<img src="/importing_exporting/json/images/sinclair4.png" />
+
+</div>
+<p>Here’s a close up.</p>
+<p>It looks like it could be transformed into rectangular data frame so we can analyze it.</p>
+<p><img src="/importing_exporting/json/images/sinclair5.png" /> ## jsonlite package</p>
+<p>We’re going to use the <a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html"><strong>jsonlite</strong></a></p>
+<p>First, install and load the package.</p>
+<pre class="r"><code>#install.packages(&quot;jsonlite&quot;)
+library(jsonlite)</code></pre>
+<p>Then point to where the JSON file is. You can use the URL or the local path to it if you’ve downloaded it. I recommend downloading it as a backup in case the website is restructured.</p>
+<p>Use the <code>fromJSON()</code> function.</p>
+<pre class="r"><code>json_url &lt;-&quot;http://sbgi.net/resources/assets/sbgi/MetaverseStationData.json&quot;
+
+## If the url above doesn&#39;t exist anymore uncomment the line below and run it
+# json_url &lt;- &quot;data/MetaverseStationData.json&quot;
+
+stations &lt;- fromJSON(json_url)</code></pre>
+<p>Let’s look at the structure of what we’ve imported.</p>
+<pre class="r"><code>str(stations)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    611 obs. of  26 variables:
+##  $ Call_Letter           : chr  &quot;KAAS&quot; &quot;KAAS-2&quot; &quot;KAAS-3&quot; &quot;KAAS-LD&quot; ...
+##  $ Logo_List             : chr  &quot;&quot; &quot;/resources/assets/sbgi/Logo_List-DEFAULT.jpg&quot; &quot;/resources/assets/sbgi/Logo_List-DEFAULT.jpg&quot; &quot;&quot; ...
+##  $ Logo_Map              : chr  &quot;&quot; &quot;/resources/assets/sbgi/Logo_Map-DEFAULT.jpg&quot; &quot;/resources/assets/sbgi/Logo_Map-DEFAULT.jpg&quot; &quot;&quot; ...
+##  $ Web_1st_URL           : chr  &quot;http://www.foxkansas.com&quot; &quot;http://sbgi.net&quot; &quot;http://www.comettv.com/&quot; &quot;http://www.foxkansas.com&quot; ...
+##  $ Web_Address           : chr  &quot;http://www.foxkansas.com&quot; &quot;http://sbgi.net&quot; &quot;http://www.comettv.com/&quot; &quot;http://www.foxkansas.com&quot; ...
+##  $ Station               : chr  &quot;KAAS&quot; &quot;KAAS&quot; &quot;KAAS&quot; &quot;KAAS-LD&quot; ...
+##  $ Channel               : chr  &quot;Primary&quot; &quot;Secondary&quot; &quot;Tertiary&quot; &quot;Primary&quot; ...
+##  $ Affiliation           : chr  &quot;FOX&quot; &quot;TBD&quot; &quot;Comet&quot; &quot;FOX&quot; ...
+##  $ DMA                   : chr  &quot;Wichita - Hutchinson, KS&quot; &quot;Wichita - Hutchinson, KS&quot; &quot;Wichita - Hutchinson, KS&quot; &quot;Wichita - Hutchinson, KS&quot; ...
+##  $ DMA_Code              : chr  &quot;678&quot; &quot;0&quot; &quot;0&quot; &quot;678&quot; ...
+##  $ DMA_Short             : chr  &quot;Wichita_KS&quot; &quot;Wichita_KS&quot; &quot;Wichita_KS&quot; &quot;Wichita_KS&quot; ...
+##  $ DMA_Rank              : int  67 67 67 67 67 67 31 31 31 195 ...
+##  $ Station_Status        : chr  &quot;O&amp;O&quot; &quot;O&amp;O&quot; &quot;O&amp;O&quot; &quot;O&amp;O&quot; ...
+##  $ Station_Address       : chr  &quot;316 North West Street, Wichita, KS 67203&quot; &quot;316 North West Street, Wichita, KS 67203&quot; &quot;316 North West Street, Wichita, KS 67203&quot; &quot;316 North West Street, Wichita, KS 67203&quot; ...
+##  $ Station_City          : chr  &quot;Wichita&quot; &quot;Wichita&quot; &quot;Wichita&quot; &quot;Wichita&quot; ...
+##  $ Station_State         : chr  &quot;KS&quot; &quot;KS&quot; &quot;KS&quot; &quot;KS&quot; ...
+##  $ Station_Zip           : int  67203 67203 67203 67203 67203 67203 78229 78229 78229 NA ...
+##  $ Station_Logo          : chr  &quot;sbg_noimage&quot; &quot;antenna&quot; &quot;comet&quot; &quot;sbg_noimage&quot; ...
+##  $ Station_URL           : chr  &quot;http://www.foxkansas.com, http://www.foxkansas.com&quot; &quot;http://sbgi.net, http://sbgi.net&quot; &quot;http://www.comettv.com/, http://www.comettv.com/&quot; &quot;http://www.foxkansas.com, http://www.foxkansas.com&quot; ...
+##  $ Station_Phone_Number  : chr  &quot;316-942-2424&quot; &quot;316-942-2424&quot; &quot;316-942-2424&quot; &quot;316-942-2424&quot; ...
+##  $ Station_Fax_Number    : chr  &quot;316-942-8927&quot; &quot;316-942-8927&quot; &quot;316-942-8927&quot; &quot;316-942-8927&quot; ...
+##  $ Actual_RF_Channel     : chr  &quot;17&quot; &quot;17&quot; &quot;17&quot; &quot;31&quot; ...
+##  $ News_Schedule_Weekday : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ News_Schedule_Saturday: chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ News_Schedule_Sunday  : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ Location              : chr  &quot;Point (-97.388134 37.68888)&quot; &quot;&quot; &quot;&quot; &quot;Point (-97.388134 37.68888)&quot; ...</code></pre>
+<p>And how’s it now look as a data frame?</p>
+<pre><code>View(stations)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/json/images/json_example.png" />
+
+</div>
+<p>Alright, this is a great start.</p>
+<p>We can proceed to analyzing it and maybe visualizing it ourselves on a map.</p>
+<p>But we’ll get to that in later chapters.</p>
+<p>Also, it should be noted that JSON is rarely ever this clean.</p>
+<p>I forget where this metaphor came from but consider your computer’s folder structure right now. How would you communicate the structure of your folders in a spreadsheet?</p>
+<p>Tough, right? But possible when necesary.</p>
+<p>So JSON is usually nested and messy. But there are ways of <a href="https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89">dealing with that</a>.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>

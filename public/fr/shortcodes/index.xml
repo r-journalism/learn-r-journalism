@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shortcodes on Documentation du thème Hugo Learn</title>
+    <link>/fr/shortcodes/</link>
+    <description>Recent content in Shortcodes on Documentation du thème Hugo Learn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="/fr/shortcodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Attachments (Pièces jointes)</title>
+      <link>/fr/shortcodes/attachments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/attachments/</guid>
+      <description>Le shortcode Attachments affiche une liste de pièces jointes d&amp;rsquo;une page.
+  Pièces jointes   BachGavotteShort.mp3  (357 ko)   Carroll_AliceAuPaysDesMerveilles.pdf  (175 ko)   adivorciarsetoca00cape.pdf  (361 ko)   hugo.png  (17 ko)   movieselectricsheep-flock-244-32500-2.mp4  (340 ko)    Utilisation Le shortcode affiche la liste de fichiers trouvés dans un dossier spécifique A l&amp;rsquo;heure actuelle, il supporte deux implémentations
+ Si votre page est un fichier Markdown, les pièces jointes doivent être placée dans un dossier nommé comme le nom de la page et suffixé par .</description>
+    </item>
+    
+    <item>
+      <title>Button (Bouton)</title>
+      <link>/fr/shortcodes/button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/button/</guid>
+      <description>Le shortcode button est simplement un bouton cliquable avec une icône optionnelle.
+{{% button href=&amp;quot;https://getgrav.org/&amp;quot; %}}Téléchargez Grav{{% /button %}} {{% button href=&amp;quot;https://getgrav.org/&amp;quot; icon=&amp;quot;fa fa-download&amp;quot; %}}Téléchargez Grav avec icône{{% /button %}} {{% button href=&amp;quot;https://getgrav.org/&amp;quot; icon=&amp;quot;fa fa-download&amp;quot; icon-position=&amp;quot;right&amp;quot; %}}Téléchargez Grav avec icône à droite{{% /button %}}  Téléchargez Grav   Téléchargez Grav avec icône  Téléchargez Grav avec icône à droite   </description>
+    </item>
+    
+    <item>
+      <title>Expand</title>
+      <link>/fr/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/expand/</guid>
+      <description>Le shortcode Expand affiche une section de texte qui se plie et se déplie. Ci-dessous un exemple.
+  Déroulez-moi...   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</description>
+    </item>
+    
+    <item>
+      <title>Mermaid</title>
+      <link>/fr/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/mermaid/</guid>
+      <description>Mermaid est une bibliothèque Javascript qui permet de générer des diagrammes (séquence, état, gantt, etc.) à partir de texte, dans le même style que Markdown.
+Insérer votre code Mermaid dans un shortcode mermaid et c&amp;rsquo;est tout.
+Flowchart example {{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; A[Bords droits] --&amp;gt;|Lien texte| B(Bords arondis) B --&amp;gt; C{Décision} C --&amp;gt;|Un| D[Résultat un] C --&amp;gt;|Deux| E[Résultat deux] {{&amp;lt; /mermaid &amp;gt;}}  renders as
+graph LR; A[Bords droits] --|Lien texte| B(Bords arondis) B -- C{Décision} C --|Un| D[Résultat un] C --|Deux| E[Résultat deux]  Sequence example {{&amp;lt;mermaid&amp;gt;}} sequenceDiagram participant Alice participant Bob Alice-&amp;gt;&amp;gt;John: Salut John, comment vas-tu?</description>
+    </item>
+    
+    <item>
+      <title>Notice</title>
+      <link>/fr/shortcodes/notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/notice/</guid>
+      <description>Le shortcode Notice permet d&amp;rsquo;afficher 4 types de message pour vous aider à structurer votre contenu.
+Note {{% notice note %}} Une notice de type *note* {{% /notice %}}  s&amp;rsquo;affiche comme
+Une notice de type note
+ Info {{% notice info %}} Une notice de type *info* {{% /notice %}}  s&amp;rsquo;affiche comme
+Une notice de type info
+ Tip {{% notice tip %}} Une notice de type *tip* {{% /notice %}}  s&amp;rsquo;affiche comme</description>
+    </item>
+    
+    <item>
+      <title>Site param</title>
+      <link>/fr/shortcodes/siteparam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/shortcodes/siteparam/</guid>
+      <description>Les shortcode siteparam est utilisé pour vous aider à afficher des valeurs provenant des paramètres globaux du site.
+Par exemple, dans ce site, le paramètre editURL est utilisé dans le fichier config.toml
+[params] editURL = &amp;quot;https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/&amp;quot;  Utilisez le shortcode siteparam pour affichier sa valeur.
+Valeur de `editURL` : {{% siteparam &amp;quot;editURL&amp;quot; %}}  s&amp;rsquo;affiche comme
+Valeur de editURL : https://github.com/andrewbtran/learn-r-journalism/edit/master/content/</description>
+    </item>
+    
+  </channel>
+</rss>

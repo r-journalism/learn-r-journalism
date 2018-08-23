@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Journalism with R</title>
+    <link>/en/tags/r/</link>
+    <description>Recent content in R on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSV files</title>
+      <link>/en/importing_exporting/csv/csv-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/csv/csv-files/</guid>
+      <description>{{%attachments title=“Files for this section” style=“grey” /%}}
+Comma separated files are the most common way to save spreadsheets that doesn’t require a paid program from Microsoft to open.
+What a csv file looks like CSV file names end with a .csv
+  What a csv file looks like on the inside This explains the values separated with commas part of the file name.
+  Importing CSV files  Importing CSV is part of base R, no package needed But we’re going to use a package anyway, readr  Two ways to get data  If you have the URL address  If the csv file exists on the internet, you don’t have to download it to your local machine and then import it, you can import it to R directly from the web using the link  If you have the file on your computer   Get the URL If you have the link to a CSV file, right click the link of the data and click Copy Link Address.</description>
+    </item>
+    
+    <item>
+      <title>Charts with ggplot2</title>
+      <link>/en/visualizing/charts_with_ggplot/ggplot2/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/charts_with_ggplot/ggplot2/</guid>
+      <description>Let’s load some data, create a chart, and break down the layers.
+We’ll some data from Vulture.com comparing ages of leading men in movies compared to their love interests.
+library(readr) ages &amp;lt;- read_csv(&amp;quot;data/ages.csv&amp;quot;) head(ages) ## # A tibble: 6 x 7 ## Movie Genre actor actor_age actress actress_age budget ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Mo&amp;#39; Better Blues drama Denzel … 35 Joie Lee 28 10 ## 2 Malcolm X drama Denzel … 37 Angela … 34 34 ## 3 The Preacher&amp;#39;s Wife drama Denzel … 41 Whitney… 33 40 ## 4 He Got Game drama Denzel … 43 Milla J… 22 25 ## 5 Remember the Titans drama Denzel … 45 Micole … 29 30 ## 6 Training Day drama Denzel … 46 Eva Men… 27 45 This is the data we’re working with.</description>
+    </item>
+    
+    <item>
+      <title>Copying and pasting data</title>
+      <link>/en/importing_exporting/copying_pasting/copying-pasting/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/copying_pasting/copying-pasting/</guid>
+      <description>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.
+I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.
+Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</description>
+    </item>
+    
+    <item>
+      <title>Customizing charts</title>
+      <link>/en/visualizing/customizing_charts/customizing-exporting-ggplot2/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/customizing_charts/customizing-exporting-ggplot2/</guid>
+      <description>Let’s bring that data back in again.
+library(readr) ages &amp;lt;- read_csv(&amp;quot;data/ages.csv&amp;quot;) Remember that Dot Plot we made before?
+library(ggplot2) ggplot(ages, aes(x=actress_age, y=Movie)) + geom_point() It’s not that great, right? It’s in reverse alphabetical order.
+Let’s reorder it based on age.
+Reordering chart labels This means we need to transform the data.
+The easiest way to do this is with the package forcats, which (surprise!) is also part of the tidyverse universe.</description>
+    </item>
+    
+    <item>
+      <title>Data structures in R</title>
+      <link>/en/how_to_use_r/initial_exploration/data-structures/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/initial_exploration/data-structures/</guid>
+      <description>Vectors A vector is a sequence of data elements of the same basic type. The parts that consist of a vector are called components or elements.
+vec1 &amp;lt;- c(1,4,6,8,10) vec1 ## [1] 1 4 6 8 10 A vector vec is explicitly constructed by the concatenation function c().
+vec1[5] ## [1] 10 Elements in vectors can be addressed by standard [i] indexing
+vec1[3] &amp;lt;- 12 vec1 ## [1] 1 4 12 8 10 One of the elements in the array is replaced with a new number.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with dates</title>
+      <link>/en/wrangling/dates/dates/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dates/dates/</guid>
+      <description>Dates come in as characters, most of the time.
+You’ll need to convert them into a date variable
+We’ll be using the lubridate package.
+Here’s an example of a character variable that might be in a data frame.
+some_date &amp;lt;- &amp;quot;12-31-1999&amp;quot; Convert that date into a date variable with the function mdy()
+# If you don&amp;#39;t have lubridate installed yet uncomment the line below and run it #install.packages(&amp;quot;lubridate&amp;quot;) # NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi # UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE #install.</description>
+    </item>
+    
+    <item>
+      <title>Delimited Text</title>
+      <link>/en/importing_exporting/delimited_text/delimited-text/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/delimited_text/delimited-text/</guid>
+      <description>Sometimes you’ll encounter data with values that are delimited (separated) by characters other than commas. For example, I once received a spreadsheet delimited with emojis.
+Why does this happen? This means the data was exported from a database and the user chose this option. Not all data can be the way we ideally want it but as far as this data structure goes, at least we’re dealing with PDFs (which is possible but we won’t be going over that process in this course)</description>
+    </item>
+    
+    <item>
+      <title>Evolve from Excel to R</title>
+      <link>/en/introduction/from_excel/from-excel-to-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/from_excel/from-excel-to-r/</guid>
+      <description>R is excellent for those who already are used to working with data in spreadsheets.
+Switching from Excel or Google Sheets to R for data analysis can seem daunting. Over time, the open-source statistical programming language has consistently grown in popularity among those who work with numbers, with thousands of user-created libraries to expand on its power.
+Though it was first created primarily to make it easier to create statistical models and output very basic visuals to explore data, it’s expanded to the point that people can use R to do so many advanced processes such as scrape websites, communicate with APIs, and publish beautiful interactive charts and maps.</description>
+    </item>
+    
+    <item>
+      <title>Excel files</title>
+      <link>/en/importing_exporting/excel/excel-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/excel/excel-files/</guid>
+      <description>Excel spreadsheets are unique in that they can contain multiple spreadsheets as a workbook.
+What an Excel file looks like Excel file names end with a .xls or .xlsx
+  What an Excel file looks like on the inside Weird, right? Definitely difficult to parse.
+ What I do sometimes (often) is save a sheet from Excel as a .csv file.
+That’s a short cut. But if you want to be transparent and really deal with the raw data then:</description>
+    </item>
+    
+    <item>
+      <title>Folder of files</title>
+      <link>/en/importing_exporting/folder_of_files/bulk-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/folder_of_files/bulk-files/</guid>
+      <description>Have you ever dealt with a large folder of spreadsheets that you need to combine into one?
+With spreadsheets, you have to copy and paste over and over again.
+But with R, you can script that process.
+In fact, I’ve created a function for you that simplifies the process.
+You have to download my muckrakr package off of GitHub with the devtools package.
+# If you don&amp;#39;t have devtools installed yet, uncomment and run the line below #install.</description>
+    </item>
+    
+    <item>
+      <title>Geolocating data</title>
+      <link>/en/mapping/geolocating/geolocating/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/geolocating/geolocating/</guid>
+      <description>Geolocating addresses in R 
+ We’re going to start with geolocating municipal police stations in Connecticut.
+We’ll be using the ggmap package for a lot of functions, starting with geolocating addresses with Google Maps.
+# if you don&amp;#39;t have the following packages installed, uncomment and run the lines below #install.packages(c(&amp;quot;dplyr&amp;quot;, &amp;quot;ggplot2&amp;quot;, &amp;quot;tidyr&amp;quot;, &amp;quot;ggmap&amp;quot;, &amp;quot;DT&amp;quot;, &amp;quot;knitr&amp;quot;, &amp;quot;readr&amp;quot;)) library(readr) library(dplyr) library(ggplot2) library(tidyr) library(ggmap) library(DT) library(knitr) After we import the data, let’s use the glimpse() function which lists out the variables for the data frame.</description>
+    </item>
+    
+    <item>
+      <title>Handling strings</title>
+      <link>/en/wrangling/strings/strings/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/strings/strings/</guid>
+      <description>We’re going to use the stringr package to manipulate text.
+#install.packages(&amp;quot;stringr&amp;quot;) library(stringr) library(dplyr) Each function starts with str_
+Let’s load this data in:
+messy &amp;lt;- data.frame(name=c(&amp;quot;Bill Smith&amp;quot;, &amp;quot;jane doe&amp;quot;, &amp;quot;John Forest-William&amp;quot;), email=c(&amp;quot;bsmith@themail.com&amp;quot;, &amp;quot;jdoe@themail.com&amp;quot;, &amp;quot;jfwilliams$geemail.com&amp;quot;), income=c(&amp;quot;$90,000&amp;quot;, &amp;quot;$140,000&amp;quot;, &amp;quot;E8500&amp;quot;), phone=c(&amp;quot;(203) 847-334&amp;quot;, &amp;quot;207-999-1122&amp;quot;, &amp;quot;2128487345&amp;quot;), activites=c(&amp;quot;fishing, sailing, planting flowers&amp;quot;, &amp;quot;reading, raising flowers, biking&amp;quot;, &amp;quot;hiking, fishing&amp;quot;)) messy ## name email income phone ## 1 Bill Smith bsmith@themail.com $90,000 (203) 847-334 ## 2 jane doe jdoe@themail.</description>
+    </item>
+    
+    <item>
+      <title>Installing R</title>
+      <link>/en/introduction/installing_r/installing-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_r/installing-r/</guid>
+      <description>Downloading R  R homepage - http://www.r-project.org CRAN Mirrors - http://cran.r-project.org  You can also install via command line package manager Homebrew.
+ Default R Console This is what the default R app looks like.
+It’s very simple but things have advanced to the point that we don’t need to settle for this.
+Now that we have the basic code installed, we can move on to a much better interface for working with R.</description>
+    </item>
+    
+    <item>
+      <title>Interactive choropleth maps</title>
+      <link>/en/mapping/census_maps/census-maps/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/census_maps/census-maps/</guid>
+      <description>Sometimes there are just too many dots on a map. If the point of your map is to know the location of every single data point because of its significance, then fine. Dots can also demonstrate the distribution of data geographically very effectively.
+Choropleth or thematic maps are an effective and popular way to show geographic data.
+And if it’s interactive, it’s useful for exploratory purposes because it can surface information that can’t be expressed visually easily (Interactive maps for reader purposes need carefully considered, though, because readers will usually not click around).</description>
+    </item>
+    
+    <item>
+      <title>Interactive maps with Leaflet</title>
+      <link>/en/mapping/leaflet_maps/leaflet/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/leaflet_maps/leaflet/</guid>
+      <description>Let’s create a locator map like you would when searching for an address on Google Maps.
+Sometimes it’s necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.
+The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource JavaScript library.
+It’s great for journalists who have little knowledge of JavaScript who want to make interesting interactives using R.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to R</title>
+      <link>/en/how_to_use_r/intro_to_r/intro-to-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/intro_to_r/intro-to-r/</guid>
+      <description>Syntax You must follow pretty specific syntax rules for it to work. R won’t guess for you.
+  R is case-sensitive (unlike SQL) intepreted language (unlike C) Can enter commands at prompt &amp;gt; or in batch Comments are preceded by #  This is important to use often in your code for documentation You’ll see it often in this course  Statements are lines of code such as functions and object assignments  Enters in code (as in a new line) or semi-colons will separate statements    Working directories Your working directory is the folder on your computer in which you are currently working.</description>
+    </item>
+    
+    <item>
+      <title>JSON data</title>
+      <link>/en/importing_exporting/json/json-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/json/json-files/</guid>
+      <description>JSON stands for JavaScript Object Notation and is the data structure behind many website features like maps.
+Let’s say theoretically you were interested in compiling a list of all Sinclair Broadcast TV stations and their locations.
+You’d first visit their web site.
+ And then you might find they have a map!
+ Look at the developer tools in your browser and click over to Network you could sort by size and see there’s a json file being called by the map.</description>
+    </item>
+    
+    <item>
+      <title>More R Markdown</title>
+      <link>/en/publishing/more_rmarkdown/more-rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/more_rmarkdown/more-rmarkdown/</guid>
+      <description>Let’s create some R Markdown files.
+Make sure your working directory is set.
+If you’re not working with the learn-chapter-6-master folder you downloaded with usethis, download your files to a folder called data.
+If you get lost, the .Rmd files can be found in the lesson repo.
+We’ll start out by generating a report with Boston city payroll data.
+Datatables Create a new R Markdown file and call it Chunk 1.</description>
+    </item>
+    
+    <item>
+      <title>More charts</title>
+      <link>/en/visualizing/more_charts/fancy-charts/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/more_charts/fancy-charts/</guid>
+      <description>We’re going to go over some examples of visualizations created with packages that people have created to build on top of ggplot2. People love improving and building upon things. The latest version of ggplot2 was released recently and more than 300 people contributed– either by adding pieces from their add-on packages or by suggesting fixes.
+gghighlight The gghighlight package is a relatively new addition. In the previous section, I showed a way to surface important data while keeping the background data for context.</description>
+    </item>
+    
+    <item>
+      <title>Murders case study</title>
+      <link>/en/wrangling/case_study/murders-case-study/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/case_study/murders-case-study/</guid>
+      <description>The FBI has tracked more than 750,000 murders in 40 years across the country. And that’s not counting the police departments that refuse to send them their homicide statistics.
+Thomas Hargrove was a national correspondent for the Scripps Howard News Service, where he developed an algorithm that uses FBI homicide data to identify areas of murders that had an elevated probability of containing serial killings.</description>
+    </item>
+    
+    <item>
+      <title>R basics, help, mistakes</title>
+      <link>/en/how_to_use_r/syntax/r-syntax/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/syntax/r-syntax/</guid>
+      <description>Some R code basics  &amp;lt;- is known as an “assignment operator” – it means “Make the object named to the left equal to the output of the code to the right” &amp;amp; means AND, in Boolean logic | means OR, in Boolean logic ! means NOT, in Boolean logic When referring to values entered as text, or to dates, put them in quote marks like this: &amp;quot;United States&amp;quot;, or &amp;quot;2016-07-26&amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/en/publishing/rmarkdown/rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/rmarkdown/rmarkdown/</guid>
+      <description>By now you’ve inadvertently witnessed the different content that R Markdown can help generate:
+ HTML documents that are in each chapter sub folder Notebooks in which you’ve run code chunks individually PDFs that you can print out to follow along physically with the course This entire learn.r-journalism.com website  R Markdown is R code + Markdown.</description>
+    </item>
+    
+    <item>
+      <title>RStudio guide</title>
+      <link>/en/how_to_use_r/tour_rstudio/rstudio-tour/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/tour_rstudio/rstudio-tour/</guid>
+      <description>RStudio tour When you first open RStudio, the app is divided into three sections.
+Most sections have tabs for even more additional ways to view different sorts of things.
+These sections can be customized and placed wherever you want through the RStudio menu options. Preferences &amp;gt; Pane Layout
+  The tall section on the left is the console and that’s where you can type in R code to execute.</description>
+    </item>
+    
+    <item>
+      <title>SPSS data</title>
+      <link>/en/importing_exporting/spss/spss-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/spss/spss-files/</guid>
+      <description>SPSS is similar to Excel in that it’s proprietary software that stores data in a very specific format and provides a graphical interface useful for even deeper analysis.
+It stands for Statistical Package for the Social Sciences and is owned by IBM. It’s also very expensive and usually only large businesses or organizations own licenses.
+But it’s possible to bring in data saved from SPSS into R.
+In this example, we’ll be working with case-level data from the FBI’s Supplementary Homicide Report.</description>
+    </item>
+    
+    <item>
+      <title>Setting up an R workflow</title>
+      <link>/en/publishing/workflow/r-projects/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/workflow/r-projects/</guid>
+      <description>Workflow Why a clear data analysis workflow?
+ Check analysis and track errors Share results with colleagues for stories or editing Send methodology to sources for bullet-proofing To easily adjust when presented with new data Easily switch between work environments (desktop and laptop) Scavenge and repurpose code in future projects  Constraints  Workflow has to be platform agnostic Easy to deploy for yourself and others Free open source software Input has to be real raw data in whatever format it is (and wherever it is) But have a backup for when internet is not accessible Output has to work – whether html, PDF, or web app IDE agnostic (be able to run it from a command line without RStudio)   Four components Software  R RStudio Git for version control  Clear file organization One R script to pull it all together Hosting the html output internally or publicly with GitHub pages   Thanks These are all things I picked up from browsing other presentations and repos.</description>
+    </item>
+    
+    <item>
+      <title>Setting up for this class</title>
+      <link>/en/how_to_use_r/project_for_class/class-project/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/how_to_use_r/project_for_class/class-project/</guid>
+      <description>How to a) get the files needed for each chapter in class and b) how to follow along with each chapter/code through.
+Getting files and folders The files for this class will include the raw data, the scripts, and r markdown files.
+There are a few options to download them:
+1) Install the package I’ve created for this class Each chapter has a prompt to download the files associated with each one.</description>
+    </item>
+    
+    <item>
+      <title>Static maps</title>
+      <link>/en/mapping/static_maps/static-maps/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/static_maps/static-maps/</guid>
+      <description>In this section we’re going to go over the basics of spatial data, shape files, and various ways to map Census data.
+Spatial data can be difficult to wrap your head around at first.
+I’ll describe it briefly as best I can before we move on to how journalists use it in their work process. But I hope you’ll look up more details later on as you come to appreciate it more.</description>
+    </item>
+    
+    <item>
+      <title>Tidying and joining data</title>
+      <link>/en/wrangling/tidyr_joins/tidyr-joins/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/tidyr_joins/tidyr-joins/</guid>
+      <description>We’re going to learn a couple new concepts while digging through this murders database: tidyr and joins. I’ve mentioned tidy data before briefly, and we’re going to get into it in this section.
+Do you still have the murders data frame in the environment?
+If not, run the command below:
+source(&amp;quot;import_murders.R&amp;quot;) tidyr Data can be messy but there’s an ideal structure for how to stack your data.</description>
+    </item>
+    
+    <item>
+      <title>Traffic stops case study</title>
+      <link>/en/mapping/case_study/traffic-stops/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/case_study/traffic-stops/</guid>
+      <description>We’re going to take what we’ve learned so far and do some spatial analysis of traffic stops.
+Goal: We’ll figure out which town and census tract each stop occurred in and then pull in demographic data from the Census to determine what types of neighborhoods police tend to pull people over more often.
+You could conduct this analysis using software like ArcGIS or QGIS, but we’re going to be doing it all in R.</description>
+    </item>
+    
+    <item>
+      <title>Transforming and analyzing data</title>
+      <link>/en/wrangling/dplyr/dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/dplyr/</guid>
+      <description>Why use dplyr?
+ Designed to work with data frames, which is what journalists are used to Great for data exploration and transformation Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes  Five basic verbs  filter() select() arrange() mutate() summarize() plus group_by()   Our data We’re going to be wrangling some pretty big data– murders over decades across the country.</description>
+    </item>
+    
+    <item>
+      <title>What is R</title>
+      <link>/en/introduction/what_is_r/what-is-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/what_is_r/what-is-r/</guid>
+      <description>What is R?  A language and environment for statistical computing and graphics Based on “S” Language developed at Bell Labs R was created by Ross Ihaka and Robert Gentleman at the Univ. of Aukland in 1993   R has  Exploded in popularity over the past 10 years Used by data analysts across many fields Been behind many journalism projects from quick to complex   Why use R?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,124 @@
+---
+title: "Delimited Text"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "delimited text"]
+weight: 3
+slug: delimited-text
+---
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/qGL-wio4cZU?t=4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+Sometimes you'll encounter data with values that are delimited (separated) by characters other than commas. For example, I once received a spreadsheet delimited with emojis.
+
+Why does this happen? This means the data was exported from a database and the user chose this option. Not all data can be the way we ideally want it but as far as this data structure goes, at least we're dealing with PDFs (which is possible but we won't be going over that process in this course)
+
+If opened in a spreadsheet app, the delimited file would be interpreted like any other spreadsheet.
+
+But this is how a pipe-delimited file looks like internally.
+
+![](/importing_exporting/delimited_text/images/pipe-delimited.png?classes=shadow)
+
+And this is how a tab-delimited file looks.
+
+![](/importing_exporting/delimited_text/images/tab-delimited.png?classes=shadow)
+
+In base R, the way to import these files is to use the `read.table()` function.
+
+You pass it the location of the file (in this case, it's in the sub directory "data") and whether it has a header row or not and what separator symbol to look for
+
+```{r pipe}
+# read.table(file,  header=logical_value, sep="delimiter")
+df1 <- read.table("data/Employee_Payroll_Pipe.txt", header=TRUE, sep="|")
+```
+
+```
+View(df1)
+```
+
+```{r tab}
+# a \t indicates a tab (and a \n indicates a line break, like pressing enter in a document)
+df2 <- read.table("data/Employee_Payroll_Tab.txt",  header=TRUE, sep="\t")
+```
+
+```
+View(df2)
+```
+
+![](/importing_exporting/delimited_text/images/df1_success.png?classes=shadow)
+
+## read_delim()
+
+The downsides of using the base `read.table()` function are the same as using base `read.csv()` 
+
+* Naming schemes aren't consistent
+* Slow loading
+* Turns strings into Factors automatically
+
+To read in delimited pipe files use `read_delim()` from **readr**
+
+```{r readr_pipe}
+## If you don't have readr installed yet, uncomment and run the line below
+# install.packages("readr")
+library(readr)
+df1 <- read_delim("data/Employee_Payroll_Pipe.txt", delim="|")
+df1
+```
+
+## read_tsv()
+To read in tab delimited pipe files use `read_tsv()` from **readr**
+
+```{r readr_tsv}
+df2 <- read_tsv("data/Employee_Payroll_Tab.txt")
+df2
+```
+
+## Fixed width files
+
+Sometimes you'll get data with fixed width columns.
+
+It'll look like this.
+
+![](/importing_exporting/delimited_text/images/fixed_width.png?classes=shadow)
+
+
+Just use the [`read_fwf()`](https://readr.tidyverse.org/reference/read_fwf.html) function from the **readr** package.
+
+This is what it needs-- pulled from typing `?read_fwf` in the console:
+
+```
+read_fwf(file, col_positions, col_types = NULL, locale = default_locale(),
+  na = c("", "NA"), comment = "", trim_ws = TRUE, skip = 0,
+  n_max = Inf, guess_max = min(n_max, 1000), progress = show_progress())
+```
+
+A couple of important things you need for this to work:
+
+* Pass the widths of each column to the variable
+* The names of those columns 
+
+There are many methods for this, so be sure to check out [the documentation](https://readr.tidyverse.org/reference/read_fwf.html).
+
+
+```{r fixed_width, warning=F, message=F}
+
+# After looking at the raw data, the header starts on line 7. So be sure to pass that information to the function with "skip"
+
+data_location <- "data/fixed_width_example.txt"
+
+fixed_example <- read_fwf(data_location, skip=9, fwf_widths(c(8, 2, 12, 12, 29, 3,6, 9, 5, 18, 20, 8), c("entry", "per", "post_date", "gl_account", "description", "source", "cflow", "ref", "post", "debit", "credit", "alloc")))
+
+head(fixed_example)
+```
+
+So the example above took a lot of work-- I had to manually count the spaces of each column and then pass on the column names for each one. Sometimes there's a data dictionary that includes all this, which makes it way easier.
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

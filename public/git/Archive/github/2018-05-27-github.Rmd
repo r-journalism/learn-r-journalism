@@ -1,0 +1,52 @@
+---
+title: "Setting up, using GitHub"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["git"]
+tags: ["git", "github"]
+weight: 2
+slug: github
+---
+
+
+**[Zip of files referred to in this walkthrough](http://andrewbatran.com/nicar/workflow.zip)**
+
+
+# Setting up Github
+
+A walkthrough explaining how to get connected later:
+
+## [http://happygitwithr.com/](http://happygitwithr.com/)
+
+**Options**
+
+- [Github](http://www.github.com)
+- [BitBucket](https://bitbucket.org/)
+- [GitLab](https://about.gitlab.com/)
+
+# Markdown and Rmarkdown
+
+Github loves Markdown. Even Rmarkdown.
+
+Renders it as HTML.
+
+<img src="/git/github/images/gh_pages.png" height="600">
+
+
+# .gitignore large files
+
+- Don't include files larger than 100 mb
+- Don't include your keys or passwords
+- Try to exclude any extraneous files like r history
+
+You can borrow [this one](https://github.com/wpinvestigative/kushner_eb5_census/blob/master/.gitignore)
+
+# Include readmes and data dictionaries
+
+- [Buzzfeed](https://github.com/BuzzFeedNews/everything) is a good model for how they index their story links and repos as a table
+
+<img src="/git/github/images/index.png">
+
+# Please don't create monster data repos
+
+<img src="/git/github/images/fivethirtyeight.png">

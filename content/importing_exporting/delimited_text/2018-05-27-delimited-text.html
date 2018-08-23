@@ -1,0 +1,151 @@
+---
+title: "Delimited Text"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "importing", "delimited text"]
+weight: 3
+slug: delimited-text
+---
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/qGL-wio4cZU?t=4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Sometimes you’ll encounter data with values that are delimited (separated) by characters other than commas. For example, I once received a spreadsheet delimited with emojis.</p>
+<p>Why does this happen? This means the data was exported from a database and the user chose this option. Not all data can be the way we ideally want it but as far as this data structure goes, at least we’re dealing with PDFs (which is possible but we won’t be going over that process in this course)</p>
+<p>If opened in a spreadsheet app, the delimited file would be interpreted like any other spreadsheet.</p>
+<p>But this is how a pipe-delimited file looks like internally.</p>
+<div class="figure">
+<img src="/importing_exporting/delimited_text/images/pipe-delimited.png?classes=shadow" />
+
+</div>
+<p>And this is how a tab-delimited file looks.</p>
+<div class="figure">
+<img src="/importing_exporting/delimited_text/images/tab-delimited.png?classes=shadow" />
+
+</div>
+<p>In base R, the way to import these files is to use the <code>read.table()</code> function.</p>
+<p>You pass it the location of the file (in this case, it’s in the sub directory “data”) and whether it has a header row or not and what separator symbol to look for</p>
+<pre class="r"><code># read.table(file,  header=logical_value, sep=&quot;delimiter&quot;)
+df1 &lt;- read.table(&quot;data/Employee_Payroll_Pipe.txt&quot;, header=TRUE, sep=&quot;|&quot;)</code></pre>
+<pre><code>View(df1)</code></pre>
+<pre class="r"><code># a \t indicates a tab (and a \n indicates a line break, like pressing enter in a document)
+df2 &lt;- read.table(&quot;data/Employee_Payroll_Tab.txt&quot;,  header=TRUE, sep=&quot;\t&quot;)</code></pre>
+<pre><code>View(df2)</code></pre>
+<div class="figure">
+<img src="/importing_exporting/delimited_text/images/df1_success.png?classes=shadow" />
+
+</div>
+<div id="read_delim" class="section level2">
+<h2>read_delim()</h2>
+<p>The downsides of using the base <code>read.table()</code> function are the same as using base <code>read.csv()</code></p>
+<ul>
+<li>Naming schemes aren’t consistent</li>
+<li>Slow loading</li>
+<li>Turns strings into Factors automatically</li>
+</ul>
+<p>To read in delimited pipe files use <code>read_delim()</code> from <strong>readr</strong></p>
+<pre class="r"><code>## If you don&#39;t have readr installed yet, uncomment and run the line below
+# install.packages(&quot;readr&quot;)
+library(readr)
+df1 &lt;- read_delim(&quot;data/Employee_Payroll_Pipe.txt&quot;, delim=&quot;|&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   `Office Name` = col_character(),
+##   `Job Code` = col_integer(),
+##   `Job Title` = col_character(),
+##   `Base Pay` = col_character(),
+##   `Position ID` = col_integer(),
+##   `Employee Identifier` = col_character(),
+##   `Original Hire Date` = col_character()
+## )</code></pre>
+<pre class="r"><code>df1</code></pre>
+<pre><code>## # A tibble: 23 x 7
+##    `Office Name`  `Job Code` `Job Title`         `Base Pay`  `Position ID`
+##    &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;               &lt;chr&gt;               &lt;int&gt;
+##  1 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $20,088.…       9510200
+##  2 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $23,436.…       9510200
+##  3 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $20,422.…       9510200
+##  4 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $23,904.…       9510200
+##  5 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $20,745.…       9510200
+##  6 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $24,473.…       9510200
+##  7 STATES ATTORN…       1172 Assistant State&#39;s … &quot; $21,217.…       9510200
+##  8 COUNTY ASSESS…       5049 Residential Model … &quot; $17,770.…       9500731
+##  9 COUNTY ASSESS…       5049 Residential Model … &quot; $20,800.…       9500731
+## 10 COUNTY ASSESS…       5049 Residential Model … &quot; $17,873.…       9500731
+## # ... with 13 more rows, and 2 more variables: `Employee
+## #   Identifier` &lt;chr&gt;, `Original Hire Date` &lt;chr&gt;</code></pre>
+</div>
+<div id="read_tsv" class="section level2">
+<h2>read_tsv()</h2>
+<p>To read in tab delimited pipe files use <code>read_tsv()</code> from <strong>readr</strong></p>
+<pre class="r"><code>df2 &lt;- read_tsv(&quot;data/Employee_Payroll_Tab.txt&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   `Office Name` = col_character(),
+##   `Job Code` = col_integer(),
+##   `Job Title` = col_character(),
+##   `Base Pay` = col_character(),
+##   `Position ID` = col_integer(),
+##   `Employee Identifier` = col_character(),
+##   `Original Hire Date` = col_character()
+## )</code></pre>
+<pre class="r"><code>df2</code></pre>
+<pre><code>## # A tibble: 23 x 7
+##    `Office Name`  `Job Code` `Job Title`          `Base Pay` `Position ID`
+##    &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;                &lt;chr&gt;              &lt;int&gt;
+##  1 STATES ATTORN…       1172 Assistant State&#39;s A… $20,088.00       9510200
+##  2 STATES ATTORN…       1172 Assistant State&#39;s A… $23,436.00       9510200
+##  3 STATES ATTORN…       1172 Assistant State&#39;s A… $20,422.82       9510200
+##  4 STATES ATTORN…       1172 Assistant State&#39;s A… $23,904.80       9510200
+##  5 STATES ATTORN…       1172 Assistant State&#39;s A… $20,745.80       9510200
+##  6 STATES ATTORN…       1172 Assistant State&#39;s A… $24,473.38       9510200
+##  7 STATES ATTORN…       1172 Assistant State&#39;s A… $21,217.35       9510200
+##  8 COUNTY ASSESS…       5049 Residential Model S… $17,770.86       9500731
+##  9 COUNTY ASSESS…       5049 Residential Model S… $20,800.67       9500731
+## 10 COUNTY ASSESS…       5049 Residential Model S… $17,873.76       9500731
+## # ... with 13 more rows, and 2 more variables: `Employee
+## #   Identifier` &lt;chr&gt;, `Original Hire Date` &lt;chr&gt;</code></pre>
+</div>
+<div id="fixed-width-files" class="section level2">
+<h2>Fixed width files</h2>
+<p>Sometimes you’ll get data with fixed width columns.</p>
+<p>It’ll look like this.</p>
+<div class="figure">
+<img src="/importing_exporting/delimited_text/images/fixed_width.png?classes=shadow" />
+
+</div>
+<p>Just use the <a href="https://readr.tidyverse.org/reference/read_fwf.html"><code>read_fwf()</code></a> function from the <strong>readr</strong> package.</p>
+<p>This is what it needs– pulled from typing <code>?read_fwf</code> in the console:</p>
+<pre><code>read_fwf(file, col_positions, col_types = NULL, locale = default_locale(),
+  na = c(&quot;&quot;, &quot;NA&quot;), comment = &quot;&quot;, trim_ws = TRUE, skip = 0,
+  n_max = Inf, guess_max = min(n_max, 1000), progress = show_progress())</code></pre>
+<p>A couple of important things you need for this to work:</p>
+<ul>
+<li>Pass the widths of each column to the variable</li>
+<li>The names of those columns</li>
+</ul>
+<p>There are many methods for this, so be sure to check out <a href="https://readr.tidyverse.org/reference/read_fwf.html">the documentation</a>.</p>
+<pre class="r"><code># After looking at the raw data, the header starts on line 7. So be sure to pass that information to the function with &quot;skip&quot;
+
+data_location &lt;- &quot;data/fixed_width_example.txt&quot;
+
+fixed_example &lt;- read_fwf(data_location, skip=9, fwf_widths(c(8, 2, 12, 12, 29, 3,6, 9, 5, 18, 20, 8), c(&quot;entry&quot;, &quot;per&quot;, &quot;post_date&quot;, &quot;gl_account&quot;, &quot;description&quot;, &quot;source&quot;, &quot;cflow&quot;, &quot;ref&quot;, &quot;post&quot;, &quot;debit&quot;, &quot;credit&quot;, &quot;alloc&quot;)))
+
+head(fixed_example)</code></pre>
+<pre><code>## # A tibble: 6 x 12
+##    entry per   post_date  gl_account description  source cflow ref   post 
+##    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1  16524 01    10/17/2012 3930621977 TXNPUES      S1     Yes   RHMX… Yes  
+## 2 191675 01    01/14/2013 2368183100 OUNHQEX XUF… S1     No    &lt;NA&gt;  Yes  
+## 3 191667 01    01/14/2013 3714468136 GHAKASC QHJ… S1     Yes   &lt;NA&gt;  Yes  
+## 4 191673 01    01/14/2013 2632703881 PAHFSAP LUV… S1     No    &lt;NA&gt;  Yes  
+## 5  80495 01    11/21/2012 2766389794 XDZANTV      S1     Yes   TGZG… Yes  
+## 6  80507 01    11/21/2012 4609266335 BWWYEZL      S1     Yes   USUK… Yes  
+## # ... with 3 more variables: debit &lt;dbl&gt;, credit &lt;dbl&gt;, alloc &lt;chr&gt;</code></pre>
+<p>So the example above took a lot of work– I had to manually count the spaces of each column and then pass on the column names for each one. Sometimes there’s a data dictionary that includes all this, which makes it way easier.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>

@@ -1,0 +1,258 @@
+---
+title: "Initial data exploration"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "projects", "workflow"]
+weight: 4
+slug: data-structures
+---
+
+## Vectors
+
+A **vector** is a sequence of data elements of the same basic type. The parts that consist of a vecctor are called **components** or **elements**.
+
+```{r vectors1}
+vec1 <- c(1,4,6,8,10)
+vec1
+```
+
+A vector `vec` is explicity constructed by the concatenation function `c()`.
+
+```{r vectors2}
+vec1[5]
+```
+
+Elements in vectors can be addressed by standard `[i]` indexing
+
+```{r vectors3}
+vec1[3] <- 12
+vec1
+```
+
+One of the elements in the array is replaced with a new number. 
+
+```{r vectors4}
+vec2 <- seq(from=0, to=1, by=0.25)
+vec2
+```
+
+This shows another useful way of creating a vector: the `seq()` or sequence function.
+
+```{r vectors5}
+sum(vec1)
+```
+
+Some calculations. 
+```{r vectors6}
+vec1 + vec2
+```
+
+If you add up two vectors of the same length, the first elements of both vectors are summed, and the second elements, etc., leading to a new vector length of 5.
+
+## Matrices
+
+**Matrices** are two-dimensional vectors.
+
+It looks like this
+
+```{r matrix}
+mat <- matrix(data=c(9,2,3,4,5,6), ncol=3)
+mat
+```
+
+The argument `data` specifies which numbers should be in the matrix.
+
+Use either `ncol` to specify the number of columns or `nrow` to specify the number of rows.
+
+Matrix-operations are similar to vector operations
+
+```{r matrix2}
+mat[1,2]
+```
+
+Elements of a matrix can be addressed in the usual way
+
+```{r matrix3}
+mat[2,1]
+```
+
+When you want to select a whole row, you leave the spot for the column number empty and vice versa for columns.
+
+```{r matrix4}
+mean(mat)
+```
+
+This is how a function would work with a matrix as an argument.
+
+## Data frames
+
+If you're used to working with spreadsheets, then *data frames* will make the most sense to you in R.
+
+It's a matrix with names above the columns for headers. 
+
+This means you can call and use one of the columns without knowing in which position it is.
+
+```{r df1}
+t <- data.frame(x=c(11,12,14), y=c(19,20,21), z=c(10,9,7))
+t
+```
+
+A typical data frame built from arrays. The columns have the names `x`, `y`, and `z`.
+
+```{r df2}
+mean(t$z)
+```
+
+Instead of using `mean(t[,3])` like you would with a matrix, you can select the column `z` from the `t` data frame with the `$` sign.
+
+
+```{r df3}
+mean(t[["z"]])
+```
+
+Here's an alternative way to refer to the `z` column of the `t` data frame. But you will rarely use this method.
+
+## Lists
+
+Another basic structure in R is a *list*. 
+
+The main advantage of lists is that the "columns" they're not really ordered in columns any more, but are more of a collectoin of vectors) don't have to be of the same length, unlike matrices and data frames.
+
+Kind of like json files are structured.
+
+```{r list1}
+L <- list(one=1, two=c(1,2), five=seq(0,1, length=5))
+L
+```
+
+This is how a list would appear in the workspace
+
+```{r list2}
+names(L)
+```
+
+How to find out what's in the list
+
+```{r list3}
+L$five + 10
+```
+
+How to refer to and use the numbers in the example list
+
+Functions for working with objects
+
+
+	length(x)
+	dim(x)
+	ncol(x)
+	nrow(x)
+	str(x)
+	summary(x)
+	View(x)
+	rm(x)
+	save(x, file="myfilename.rdata")
+	load(file="myfilename.rdata")
+
+
+Data structures
+
+scalar / array / matrix / array / dataframe / list
+
+Vectors
+
+One dimensional arrays
+
+a <- c(1, 2, 5, 3, 6, -2, 4)
+b <- c("one", "two", "three")
+c <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)
+
+Vectors(2)
+
+Identifying elements
+
+a <- c(1, 2, 5, 3, 6, -2, 4)
+a[3]
+[1] 5
+a[c(1, 3, 5)]
+[1] 1 5 6
+a[2:6] 
+[1] 2  5  3  6 -2
+
+Data frame
+
+	Rectangular array of data
+	More general than a matrix - different columns can contain different modes of data (numeric, character, etc.)
+	Similar to datasets in SAS, SPSS, and Stata
+
+mydata <- data.frame( col1, col2, …, coln)
+
+Creating a data frame
+
+patientID <- c(111, 208, 113, 408)
+age <- c(25, 34, 28, 52)
+sex <- c(1,2,1,1)
+diabetes <- c("Type1", "Type2", "Type1", "Type1")
+status <- c(1,2,3,1)
+
+patientdata <- data.frame(patientID, age, sex, diabetes, status)
+
+patientdata
+
+Specifying elements of a data frame
+
+patientdata[1:2]
+
+patientdata[c(diabetes", "status")]
+
+patientdata$age
+
+patientdata[1:2]
+
+patientdata[c(1,3),1:2]
+
+patientdata[2:3, 1:2]
+
+Factors
+
+	Data structure specifying categorical (nominal) or ordered categorical (ordinal) variables
+
+	Tells R how to handle that variable in analyses
+
+
+	Very important and misunderstood
+Any variable that is categorical or ordinal should usually be stored as a factor.
+
+patientdata$sex <- factor(patient$sex, levels=c(1, 2),
+labels=c("Male", "Female"))
+
+associates 1=Male, 2=Female
+Treats sex as a categorical variable in all analyses What happens to sex=5?
+
+patientdata$status <- factor(status, 
+ordered=TRUE,
+levels=c(1, 2, 3),
+labels=c("Poor", "Improved", "Excellent"))
+
+associates 1=Poor, 2=Improved, 3=Excellent Treats status as an ordinal variable in all analyses
+
+WHEN DO FACTORS MATTER?
+important for statistical analysis
+Well, it determines order of categories in charts
+
+List example
+
+g <- "My First List"
+h <- c(25, 26, 18, 39)
+j <- matrix(1:10, nrow = 5) k <- c("one", "two", "three")
+mylist <- list(title = g, ages = h, j, 
+k)   
+
+mylist[[2]] 
+[1] 25 26 18 39
+mylist[["ages"]][[1] 25 26 18 39
+
+Formats for R
+
+
+

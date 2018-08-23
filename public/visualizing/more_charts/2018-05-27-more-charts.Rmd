@@ -1,0 +1,344 @@
+---
+title: "More charts"
+description: "Playing around with ggplot2 extensions"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "ggplot2", "charts", "visualization"]
+weight: 3
+slug: fancy-charts
+---
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/MPhbIVyYm5I?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+We're going to go over some examples of visualizations created with packages that people have created to build on top of **ggplot2**. People love improving and building upon things. The latest version of **ggplot2** was released recently and more than [300 people contributed](https://twitter.com/hadleywickham/status/1014514026208989185)-- either by adding pieces from their add-on packages or by suggesting fixes.
+
+## gghighlight
+
+The **gghighlight** package is a relatively new addition. In the previous section, I showed a way to surface important data while keeping the background data for context. This package simplifies it. Learn more on [their site](https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html).
+
+We'll use historical monthly average temperature data from the [National Centers for Environmental Information](https://www.ncdc.noaa.gov/cag/national/time-series/110/tavg/all/5/1895-2018?base_prd=true&firstbaseyear=1901&lastbaseyear=2000&trend=true&trend_base=10&firsttrendyear=1895&lasttrendyear=2018).
+
+This is the image they have on their site illustrating their data:
+
+![](/visualizing/more_charts/images/monthly_temps.png)
+
+We can do better.
+
+Start with importing and transforming the data below:
+
+```{r import_highlight, warning=F, message=F}
+# If you don't have readr installed yet, uncomment and run the line below
+# install.packages("readr")
+
+library(readr)
+
+temps <- read_csv("data/110-tavg-all-5-1895-2018.csv", skip=4)
+head(temps)
+
+# If you don't have readr installed yet, uncomment and run the line below
+# install.packages("lubridate")
+
+# If you don't have lubridate installed yet uncomment the line below and run it
+#install.packages("lubridate")
+
+# NOTE: IF YOU GET AN ERROR ABOUT NOT HAVING A PACKAGE CALLED stringi
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE
+
+#install.packages("glue", type="win.binary")
+#install.packages("stringi", type="win.binary")
+#install.packages("stringr", type="win.binary")
+#install.packages("lubridate", type="win.binary")
+
+# UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A MAC MACHINE
+
+#install.packages("glue", type="mac.binary")
+#install.packages("stringi", type="mac.binary")
+#install.packages("stringr", type="mac.binary")
+#install.packages("lubridate", type="mac.binary")
+
+library(lubridate)
+
+# Converting the date into a date format R recognizes
+# This requires using paste0() to add a day to the date, so 189501 turns into 18950101
+
+temps$Date <- ymd(paste0(temps$Date, "01"))
+
+# Extracting the year
+temps$Year <- year(temps$Date)
+  
+# Extracting the month
+temps$month <- month(temps$Date)
+temps$month <- as.numeric(temps$month)
+temps$month_label <- month(temps$Date, label=T)
+
+# Creating a column with rounded numbers
+temps$rounded_value <- round(temps$Value, digits=0)
+
+# Turning the year into a factor so it'll chart easier
+temps$Year <- as.factor(as.character(temps$Year))
+
+
+head(temps)
+```
+
+Now we have some tidy data to visualize.
+
+```{r gghighlight_intro, fig.width=9, fig.height=5, warning=F, message=F}
+# If you don't have readr installed yet, uncomment and run the line below
+# install.packages("ggplot2")
+
+library(ggplot2)
+
+ggplot(temps, aes(x=month, y=Value, group=Year)) +
+  geom_line() +
+  scale_x_continuous(breaks=seq(1,12,1), limits=c(1,12)) +
+  theme_minimal() +
+  labs(y="average temperature", title="Monthly temperature since 1895", caption="Source: NOAA")
+  
+```
+
+Let's use the **gghighlight** package to make this clearer to readers. 
+
+
+{{% notice note %}}
+If you get an error about `ggplot_add` then try [this link](https://github.com/thomasp85/patchwork/issues/31) which suggests you run devtools::install_github("r-lib/rlang", build_vignettes = TRUE) before rerunning install.packages("gghighlight")
+{{% /notice %}}
+
+```{r gghighlight}
+# If you don't have readr installed yet, uncomment and run the line below
+# install.packages("gghighlight")
+
+library(gghighlight)
+
+# adding some alpha to the line so there's some transparency
+ggplot(temps, aes(x=month, y=Value, color=Year)) +
+  geom_line(alpha=.08) +
+  scale_x_continuous(breaks=seq(1,12,1), limits=c(1,12)) +
+  theme_minimal() +
+  labs(y="average temperature", title="Monthly temperature since 1895", caption="Source: NOAA") +
+  # NEW CODE BELOW
+  gghighlight(max(as.numeric(Year)), max_highlight = 4L)
+  
+
+```
+
+## ggrepel
+
+Did you like those labels for years on the chart?
+
+That comes from the [**ggrepel**](https://cran.r-project.org/web/packages/ggrepel/vignettes/ggrepel.html) package. The `geom_label_repel()` lets you add those button labels to charts and, as the name implies, it makes sure the labels do not collide or stack on top of each other.
+
+Let's take a look at the dataframe from the first ggplot section.
+
+We'll make a labeled chart with **ggplot2** as is.
+
+```{r importing_ages, warning=F, message=F}
+ages <- read_csv("data/ages.csv")
+
+# We'll focus on the movies from the Toms
+
+# If you don't have dplyr or stringr installed yet, uncomment and run the lines below
+#install.packages("dplyr")
+#install.packages("stringr")
+
+library(dplyr)
+library(stringr)
+
+toms <- ages %>% 
+  filter(str_detect(actor, "Tom"))
+
+ggplot(data=toms,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           label=Movie)) +
+      geom_point() +
+      theme_minimal() +
+      labs(y="Actress age", x="Actor age", title="Tom Hanks versus Tom Cruise ages", caption="Source; Vulture.com, IMDB") +
+      geom_text() 
+```
+
+This is one of the main criticisms of making charts programmatically. These labels look horrible. That creating charts via scripts requires exporting as an SVG file and refining in Adobe Illustrator to make sure the labels look *just right*.
+
+And I'm not saying you shouldn't use whatever tool you want to make charts look perfect.
+
+It's just that the community understand these issues and are working together to come up with creative ways to handle it.
+
+Let's try the same code above with the new function `geom_text_repel()` from the **ggrepel** package.
+
+
+```{r ggrepel, warning=F, message=F}
+# if you don't have the ggrepel package installed yet, uncomment and run the line below
+#install.packages("ggrepel")
+
+library(ggrepel)
+
+ggplot(data=toms,
+       aes(x=actor_age,
+           y=actress_age,
+           color=actor,
+           label=Movie)) +
+      geom_point() +
+      theme_minimal() +
+      labs(y="Actress age", x="Actor age", title="Tom Hanks versus Tom Cruise ages", caption="Source; Vulture.com, IMDB") +
+      geom_text_repel()
+```
+
+Not bad for one line of code.
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/SC1rfc8-XB4?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+## ridgeplot
+
+```{r ridge1, warning=F, message=F}
+# If you don't have ggridges or viridis installed yet, uncomment and run the lines below
+#install.packages("ggridges")
+#install.packages("viridis")
+
+library(ggridges)
+library(viridis)
+
+ggplot(temps, aes(x=rounded_value, y=month_label, fill = ..x..)) +
+  geom_density_ridges_gradient(scale=3, rel_min_height = 0.01) +
+  scale_fill_viridis(name="Temp. [F]", option="C") +
+  labs(title="Average temperatures since 1895", y="", x="Temperature", caption="Source: NOAA") +
+  theme_minimal()
+```
+
+Neat. Let's try it with the actor ages database.
+
+
+```{r ridge2}
+ggplot(ages, aes(x=actress_age, y=actor, fill = ..x..)) +
+  geom_density_ridges_gradient(scale=2, rel_min_height = 0.01) +
+  scale_fill_viridis(name="Actress age", option="C") +
+  labs(title="Distribution of actress ages for each actor", y="", x="Actress age", caption="Source: Vulture.com, IMDB") +
+  theme_minimal()
+```
+
+## heatmap
+
+You can make some interesting charts with `geom_tile()` and it's already part of **ggplot2**, no extension needed. Let's use [Global Land and Ocean Temperature Anomalies](https://www.ncdc.noaa.gov/cag/global/time-series) with respect to the 20th century average since 1880.
+
+```{r import_highlight2, warning=F, message=F}
+anom <- read_csv("data/1880-2018.csv", skip=4)
+head(anom)
+
+anom$Date <- ymd(paste0(anom$Year, "01"))
+
+# Extracting the year
+anom$Year <- year(anom$Date)
+  
+# Extracting the month
+anom$month <- month(anom$Date)
+anom$month <- as.numeric(anom$month)
+anom$month_label <- month(anom$Date, label=T)
+
+# Turning the year into a factor so it'll chart easier
+anom$Year <- as.factor(as.character(anom$Year))
+
+library(forcats)
+
+anom <- anom %>% 
+  mutate(Year=fct_rev(factor(Year)))
+```
+
+```{r heatmap, fig.width=5, fig.height=15, warning=F, message=F}
+ggplot(anom, aes(y=Year, x=month_label, fill=Value)) +
+  geom_tile(color="white", width=.9, height=1.1) +
+  theme_minimal() +
+  scale_fill_gradient2(midpoint=0, low="blue", high="red", limits=c(-1.3, 1.3)) +
+  labs(title="Global Land and Ocean Temperature Anomalies", x="", y="", caption="Source: NOAA", fill="Anomaly") +
+  scale_x_discrete(position = "top") +
+  theme(legend.position="top")
+```
+
+## Mr. Rogers
+
+Did you know that someone sat down and identified the colors of [every single sweater](https://web.archive.org/web/20110525014454/http://neighborhoodarchive.blogspot.com/2011/05/sweater-colors.html) that Mr. Rogers wore?
+
+Well, Owen Phillips scraped it with R and created and visualized it using **ggplot2**.
+
+Check out his [well-documented code](https://github.com/Henryjean/Rogers-Cardigans/blob/master/MrRogers.R) that is hosted on GitHub.
+
+In the meantime, you can recreate the chart by importing the csv below and then running the **ggplot2** functions.
+
+```{r owen, fig.width=9, fig.height=5, warning=F, message=F}
+# This code is pretty much from Owen Phillips
+
+rogers <- read_csv("data/mrrogers.csv")
+rogers$episodenumbers <- as.factor(rogers$episodenumbers)
+rogers$colorcodes <- as.factor(rogers$colorcodes)
+
+cn <- levels(rogers$colorcodes)
+
+
+na.omit(rogers) %>% ggplot(aes(x=episodenumbers)) + geom_bar(aes(fill = factor(colorcodes))) + 
+  scale_fill_manual(values = cn) + theme_minimal() + 
+  labs(fill = "", x= "", 
+       title = "Mister Rogers' Cardigans of Many Colors", 
+       subtitle = " ", 
+       caption = "") +
+  guides(fill=guide_legend(ncol=2)) + 
+  scale_x_discrete(breaks = c(1466, 1761),
+                   labels = c("1979", "2001")) + 
+  theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) + 
+  theme(legend.position = "none") + ylim(0,1)
+```
+
+## Time is a flat circle
+
+This visualization is by John Muyskens of the Washington Post. He created this [exploratory graphic](https://gist.github.com/jmuyskens/80b277db4c0606c9d4c4a9b8db730975) using school shootings data before refining it in D3 and [publishing it](https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/). It should be noted that the final chart uses methodology to estimate attendance based on enrollment figures that differs from what is shown here.
+
+
+```{r john_data_code, fig.width=8, fig.height=8, warning=F, message=F}
+# uncomment and run the lines below to install the right packages
+
+#install.packages("ggbeeswarm")
+#devtools::install_github("AliciaSchep/gglabeller") 
+#install.packages("scales")
+#install.packages("readr")
+
+library(ggbeeswarm)
+library(gglabeller)
+library(scales)
+
+library(readr)
+
+data <- read_csv("https://github.com/washingtonpost/data-school-shootings/raw/master/school-shootings-data.csv", 
+  col_types = cols(date = col_date(format = "%m/%d/%Y")))
+
+theeeeme <- theme_minimal() + theme(
+  axis.text.y=element_blank(), 
+  axis.ticks=element_blank(), 
+  axis.line.y=element_blank(),
+  panel.grid=element_blank())
+
+ggplot(data, aes(date, 0, size=enrollment)) +
+  geom_beeswarm(method = "frowney", groupOnX=FALSE, dodge.width=0.5, alpha=0.5) +
+  scale_size_area(max_size = 8) +
+  scale_x_date(date_breaks="1 year", labels=date_format("%Y"), limits=as.Date(c('1998-04-01', '2023-04-01'))) +
+  scale_y_continuous(limits=c(-20, 10)) +
+  coord_polar(direction = -1) +
+  theeeeme
+
+```
+
+The final [published version]((https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/?utm_term=.2974624f1071)):
+
+![](/visualizing/more_charts/images/shootings.png)
+
+
+
+-----
+
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>
+

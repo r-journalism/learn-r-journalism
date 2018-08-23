@@ -1,0 +1,18 @@
+---
+title: test post 2
+author: ~
+date: '2018-05-22'
+slug: test-post-2
+categories: []
+tags: []
+weight: 5
+---
+
+Lorem Ipsum.
+
+```{r }
+i <- 2
+u <- 4
+print(i+4)
+
+```

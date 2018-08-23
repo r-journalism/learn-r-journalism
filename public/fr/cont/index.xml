@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contenu on Documentation du thème Hugo Learn</title>
+    <link>/fr/cont/</link>
+    <description>Recent content in Contenu on Documentation du thème Hugo Learn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="/fr/cont/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Archétypes</title>
+      <link>/fr/cont/archetypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fr/cont/archetypes/</guid>
+      <description>En utilisant la commande: hugo new [chemin vers nouveau contenu], vous pouvez créer un nouveau fichier avec la date et le title automatiquement initialisé. Même si c&amp;rsquo;est une fonctionnalité intéressante, elle reste limitée pour les auteurs actifs qui ont besoin de mieux : les archetypes.
+Les archétypes sont des squelettes de pages préconfigurées avec un Front Matter par défaut. Merci de vous référer à la documentation pour connaitre les différents types de page.</description>
+    </item>
+    
+    <item>
+      <title>Syntaxe Markdown</title>
+      <link>/fr/cont/markdown/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>/fr/cont/markdown/</guid>
+      <description>Cette page est une copie de la doc de Grav. La seule différence porte sur la personalisation des images (taille, ajout de classes CSS&amp;hellip;) Pour des raisons évidentes, cette page n&amp;rsquo;a pas été traduites en français 😁
+ Let&amp;rsquo;s face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
+Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.</description>
+    </item>
+    
+    <item>
+      <title>Raccourcis du menu</title>
+      <link>/fr/cont/menushortcuts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>/fr/cont/menushortcuts/</guid>
+      <description>Vous pouvez définir des entrées ou raccourcis supplémentaires dans le menu sans avoir besoin d&amp;rsquo;être lié à un contenu du site.
+Configuration simple Editez le fichier de configuration config.toml et ajoutez une entrée [[menu.shortcuts]] pour chaque lien que vous voulez ajouter.
+Exemple pour ce site:
+[[menu.shortcuts]] name = &amp;quot;&amp;lt;i class=&#39;fa fa-github&#39;&amp;gt;&amp;lt;/i&amp;gt; Github repo&amp;quot; identifier = &amp;quot;ds&amp;quot; url = &amp;quot;https://github.com/matcornic/hugo-theme-learn&amp;quot; weight = 10 [[menu.shortcuts]] name = &amp;quot;&amp;lt;i class=&#39;fa fa-camera&#39;&amp;gt;&amp;lt;/i&amp;gt; Showcases&amp;quot; url = &amp;quot;/showcase&amp;quot; weight = 11 [[menu.</description>
+    </item>
+    
+  </channel>
+</rss>
