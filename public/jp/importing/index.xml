@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Importing data on Journalism with R</title>
+    <link>/localhost:1313/test/en/importing/</link>
+    <description>Recent content in Importing data on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/localhost:1313/test/en/importing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>test post 2</title>
+      <link>/localhost:1313/test/en/importing/introduction/test-post-2/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/localhost:1313/test/en/importing/introduction/test-post-2/</guid>
+      <description>Lorem Ipsum.
+i &amp;lt;- 2 u &amp;lt;- 4 print(i+4) ## [1] 6 </description>
+    </item>
+    
+  </channel>
+</rss>

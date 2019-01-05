@@ -45,5 +45,14 @@ Datatables Create a new R Markdown file and call it Chunk 1.</description>
  Check analysis and track errors Share results with colleagues for stories or editing Send methodology to sources for bullet-proofing To easily adjust when presented with new data Easily switch between work environments (desktop and laptop) Scavenge and repurpose code in future projects  Constraints  Workflow has to be platform agnostic Easy to deploy for yourself and others Free open source software Input has to be real raw data in whatever format it is (and wherever it is) But have a backup for when internet is not accessible Output has to work – whether html, PDF, or web app IDE agnostic (be able to run it from a command line without RStudio)   Four components Software  R RStudio Git for version control  Clear file organization One R script to pull it all together Hosting the html output internally or publicly with GitHub pages   Thanks These are all things I picked up from browsing other presentations and repos.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/publishing/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/publishing/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

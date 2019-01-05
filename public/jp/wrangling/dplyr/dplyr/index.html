@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Learn and implement data wrangling verbs">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Transforming and analyzing data :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1541338754" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1541338754" rel="stylesheet">
+    <link href="/css/hybrid.css?1541338754" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541338754" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541338754" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541338754" rel="stylesheet">
+    <link href="/css/theme.css?1541338754" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541338754" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1541338754" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1541338754"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/wrangling/dplyr/dplyr/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/from_excel/from-excel-to-r/" title="Evolve from Excel to R" class="dd-item ">
+        <a href="/en/introduction/from_excel/from-excel-to-r/">
+        Evolve from Excel to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item ">
+        <a href="/en/how_to_use_r/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Data structures in R" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Data structures in R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="R basics, help, mistakes" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        R basics, help, mistakes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/copying-pasting/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/copying-pasting/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/folder_of_files/bulk-files/" title="Folder of files" class="dd-item ">
+        <a href="/en/importing_exporting/folder_of_files/bulk-files/">
+        Folder of files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr/dplyr/" title="Transforming and analyzing data" class="dd-item active">
+        <a href="/en/wrangling/dplyr/dplyr/">
+        Transforming and analyzing data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" class="dd-item ">
+        <a href="/en/wrangling/tidyr_joins/tidyr-joins/">
+        Tidying and joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/case_study/murders-case-study/" title="Murders case study" class="dd-item ">
+        <a href="/en/wrangling/case_study/murders-case-study/">
+        Murders case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/ggplot2/" title="Charts with ggplot2" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/ggplot2/">
+        Charts with ggplot2
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/customizing-exporting-ggplot2/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/fancy-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/fancy-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/static_maps/static-maps/" title="Static maps" class="dd-item ">
+        <a href="/en/mapping/static_maps/static-maps/">
+        Static maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/geolocating/geolocating/" title="Geolocating data" class="dd-item ">
+        <a href="/en/mapping/geolocating/geolocating/">
+        Geolocating data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/case_study/traffic-stops/" title="Traffic stops case study" class="dd-item ">
+        <a href="/en/mapping/case_study/traffic-stops/">
+        Traffic stops case study
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/census-maps/" title="Interactive choropleth maps" class="dd-item ">
+        <a href="/en/mapping/census_maps/census-maps/">
+        Interactive choropleth maps
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More R Markdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More R Markdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/publishing/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/installing_git/installing-git/" title="Installing git" class="dd-item ">
+        <a href="/en/git/installing_git/installing-git/">
+        Installing git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Connecting to GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Connecting to GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Best practices for GitHub" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Best practices for GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          FAQ
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/r-journalism/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://learn.r-journalism.com/en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/r-journalism/learn-r-journalism/edit/master/content/wrangling/dplyr/2018-05-27-pipes-dplyr.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/wrangling/'>Wrangling data</a> > Transforming and analyzing data
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Transforming and analyzing data</h1>
+          
+
+        
+
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/LhPSyL9CK7w?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+<p>Why use <strong>dplyr</strong>?</p>
+<ul>
+<li>Designed to work with data frames, which is what journalists are used to</li>
+<li>Great for data exploration and transformation</li>
+<li>Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes</li>
+</ul>
+<div id="five-basic-verbs" class="section level2">
+<h2>Five basic verbs</h2>
+<ul>
+<li><code>filter()</code></li>
+<li><code>select()</code></li>
+<li><code>arrange()</code></li>
+<li><code>mutate()</code></li>
+<li><code>summarize()</code> plus <code>group_by()</code></li>
+</ul>
+</div>
+<div id="our-data" class="section level2">
+<h2>Our data</h2>
+<p>We’re going to be wrangling some pretty big data– murders over decades across the country.</p>
+<p>This case-level data was acquired by the <a href="http://www.murderdata.org/p/data-docs.html">Murder Accountability Project</a> from the Justice Department.</p>
+<p>We’re going to use the basics of <strong>dplyr</strong> verb functions to analyze the data and see if there are any stories there might be worth pursuing.</p>
+<p>Remember that huge SPSS data set we imported in the previous chapter?</p>
+<p>I saved all that code we wrote to import it, renaming columns, and joining values and labels into an R script: <em>import_murders.R</em>. This is reproducibility in action.</p>
+<p>Check out <a href="https://github.com/r-journalism/learn-chapter-3/blob/master/dplyr/import_murders.R">what it looks like</a>– it’s about 100 lines of code long but only one line is required to run the script below.</p>
+<div class="notices warning" ><p>Before running the command, make sure the script is in the working directory folder and that the <strong>SHR76_16.sav.zip</strong> file is in the <em>data</em> sub folder. For example, on my computer, the <em>import_murders.R</em> script is in the <em>dplyr</em> folder and <strong>SHR76_16.sav.zip</strong> file is in the <em>dplyr/data</em> folder.</p>
+</div>
+
+<p><strong>This is going to take a few minutes to run.</strong></p>
+<pre class="r"><code>source(&quot;import_murders.R&quot;)</code></pre>
+<p>Alright, the <strong>import_murders.R</strong> script unzipped data, imported it, and transformed it into a workable dataframe and saved it to our environment as the object <strong>murders</strong> for us to analyze. You probably got some warnings in the console but that’s okay.</p>
+<pre><code>View(murders)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/murders.png?classes=shadow" />
+
+</div>
+<p>Here’s the <a href="https://www.dropbox.com/s/lo6tgo8nnbpqeru/MAPdefinitionsSHR.pdf?dl=1">data dictionary</a>.</p>
+<p>What are we dealing with here?</p>
+</div>
+<div id="number-of-rows-cases" class="section level2">
+<h2>Number of rows (cases)?</h2>
+<pre class="r"><code>nrow(murders)</code></pre>
+<pre><code>## [1] 752313</code></pre>
+</div>
+<div id="how-many-municipalities" class="section level2">
+<h2>How many municipalities?</h2>
+<p>We’ll use a couple base R functions: <code>unique()</code> and <code>length()</code>.</p>
+<pre class="r"><code># Make a list of cities based on the unique() function
+how_many &lt;- unique(murders$MSA_label)
+
+# Count up how many are in the list
+length(how_many)</code></pre>
+<pre><code>## [1] 409</code></pre>
+<p>Whew, let’s not overwhelm ourselves with all this data as we’re getting started out.</p>
+<p>When I get a new data set I like to see what it’s made of. So I can begin to get a sense of how to summarize it or take it apart.</p>
+<p>Start with the <code>glimpse()</code> function from <strong>dplyr</strong>– it will give a brief look at the variables in the data set and the data type.</p>
+<pre class="r"><code>glimpse(murders)</code></pre>
+<pre><code>## Observations: 752,313
+## Variables: 47
+## $ ID                 &lt;fct&gt; 197601001AKASP00, 197601001AL00102, 1976010...
+## $ CNTYFIPS           &lt;fct&gt; 02110          , 01073          , 01073    ...
+## $ Ori                &lt;fct&gt; AKASP00, AL00102, AL00104, AL00106, AL00201...
+## $ State              &lt;fct&gt; Alaska, Alabama, Alabama, Alabama, Alabama,...
+## $ Agency             &lt;fct&gt; State Troopers                             ...
+## $ AGENCY_A           &lt;fct&gt;                                            ...
+## $ Agentype_label     &lt;fct&gt; Primary state LE, Municipal police, Municip...
+## $ Agentype_value     &lt;dbl&gt; 5, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 3...
+## $ Source_label       &lt;fct&gt; FBI, FBI, FBI, FBI, FBI, FBI, FBI, FBI, FBI...
+## $ Source_value       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ Solved_label       &lt;fct&gt; Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes...
+## $ Solved_value       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ Year               &lt;dbl&gt; 1976, 1976, 1976, 1976, 1976, 1976, 1976, 1...
+## $ Month_label        &lt;fct&gt; January, January, January, January, January...
+## $ Month_value        &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ Incident           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ ActionType         &lt;fct&gt; Normal update, Normal update, Normal update...
+## $ Homicide_label     &lt;fct&gt; Murder and non-negligent manslaughter, Murd...
+## $ Homicide_value     &lt;fct&gt; A, A, A, A, A, A, A, A, A, A, A, A, A, A, A...
+## $ Situation_label    &lt;fct&gt; Single victim/single offender, Single victi...
+## $ Situation_value    &lt;fct&gt; A, A, A, A, A, C, A, A, A, A, A, A, A, A, A...
+## $ VicAge             &lt;dbl&gt; 48, 65, 45, 43, 35, 25, 27, 42, 41, 50, 51,...
+## $ VicSex_label       &lt;fct&gt; Male, Male, Female, Male, Male, Male, Femal...
+## $ VicSex_value       &lt;fct&gt; M, M, F, M, M, M, F, F, M, M, M, M, M, M, M...
+## $ VicRace_label      &lt;fct&gt; American Indian or Alaskan Native, Black, B...
+## $ VicRace_value      &lt;fct&gt; I, B, B, B, W, B, B, B, W, W, W, B, W, W, B...
+## $ VicEthnic          &lt;fct&gt; Unknown or not reported, Unknown or not rep...
+## $ OffAge             &lt;dbl&gt; 55, 67, 53, 35, 25, 26, 29, 19, 30, 42, 43,...
+## $ OffSex_label       &lt;fct&gt; Female, Male, Male, Female, Female, Male, M...
+## $ OffSex_value       &lt;fct&gt; F, M, M, F, F, M, M, M, F, M, M, M, M, M, M...
+## $ OffRace_label      &lt;fct&gt; American Indian or Alaskan Native, Black, B...
+## $ OffRace_value      &lt;fct&gt; I, B, B, B, W, B, B, B, W, W, W, B, W, W, B...
+## $ OffEthnic          &lt;fct&gt; Unknown or not reported, Unknown or not rep...
+## $ Weapon_label       &lt;fct&gt; Knife or cutting instrument, Shotgun, Shotg...
+## $ Weapon_value       &lt;dbl&gt; 20, 14, 14, 20, 80, 13, 12, 20, 14, 12, 13,...
+## $ Relationship_label &lt;fct&gt; Husband, Acquaintance, Wife, Brother, Acqua...
+## $ Relationship_value &lt;fct&gt; HU, AQ, WI, BR, AQ, FR, WI, UN, HU, BR, ST,...
+## $ Circumstance_label &lt;fct&gt; Other arguments, Felon killed by private ci...
+## $ Circumstance_value &lt;dbl&gt; 45, 80, 60, 45, 99, 45, 45, 99, 45, 45, 45,...
+## $ Subcircum          &lt;fct&gt; NA, Felon killed in commission of a crime, ...
+## $ VicCount           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...
+## $ OffCount           &lt;dbl&gt; 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0...
+## $ FileDate           &lt;fct&gt; 030180, 030180, 030180, 030180, 030180, 030...
+## $ fstate_label       &lt;fct&gt; Alaska, Alabama, Alabama, Alabama, Alabama,...
+## $ fstate_value       &lt;fct&gt; 02    , 01    , 01    , 01    , 01    , 01 ...
+## $ MSA_label          &lt;fct&gt; Rural Alaska, Birmingham-Hoover, AL, Birmin...
+## $ MSA_value          &lt;dbl&gt; 99902, 13820, 13820, 13820, 33660, 33660, 3...</code></pre>
+<p>Then, I’ll go through the variables that interest me to see how many types there are. The more variables (columns) you have in a data set that are categorical, the deeper you can dive in analyzing it.</p>
+<p>For example, if you had a data set with a list of salaries (1 variable) you could:</p>
+<ul>
+<li>Figure out the median salary</li>
+<li>Calculate the difference between the highest and the lowest salaries</li>
+</ul>
+<p>If you had a data set with salaries and gender of worker (2 variables) you could additionally:</p>
+<ul>
+<li>Figure out median salary for men and women</li>
+<li>Calculate the differences in those medians</li>
+</ul>
+<p>If you had a data set with salaries and gender of worker and state where they live (3 variables) you could additionally:</p>
+<ul>
+<li>Find out median salary per state</li>
+<li>Figure out median salary for men and women per state</li>
+<li>Determine which state had the biggest disparity</li>
+<li>See which state women get paid more than men</li>
+</ul>
+<p>This is what we’ll do with this particular data set:</p>
+<p>Let’s narrow down our scope by using the <code>filter()</code> function.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/filter.png" />
+
+</div>
+<p>Filter works by extracting rows that meet a criteria you set.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/filter_specifics.png" />
+
+</div>
+<p>You pass the dataframe as a variable to <code>filter()</code> first and then you add any logical tests.</p>
+<div class="notices warning" ><p>One <code>=</code> in R is the same as <code>&lt;-</code> in that it assigns a value. Logical tests requires two, so <code>==</code> which tests for equal.</p>
+</div>
+
+<pre class="r"><code>df1 &lt;- filter(murders, Relationship_label==&quot;Husband&quot;, VicAge &gt; 60, Year==2016)
+
+df2 &lt;- filter(murders, Relationship_label==&quot;Husband&quot; &amp; VicAge &gt; 60 &amp; Year==2016) # same as the line above
+
+df3 &lt;- filter(murders, Relationship_label %in% c(&quot;Husband&quot;, &quot;Boyfriend&quot;) | Circumstance_label==&quot;Lovers triangle&quot;)</code></pre>
+<p>Check out the new objects in the Environment window of RStudio.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/3dfs.png?classes=shadow?width=20pc" />
+
+</div>
+<p>Data frames df1 and df2 are exactly the same (Looking for cases in which Husbands were involved, the victim was older than 60, and occurred in 2016)– only 25 were found. Meanwhile d3 has nearly 32,000 cases in which a Husband or Boyfriend were involved or it was labeled by investigators as a lover’s triangle.</p>
+</div>
+<div id="logical-operators" class="section level2">
+<h2>Logical Operators</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>Less than</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>Less than or equal to</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Exactly equal to</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>Not equal to</td>
+</tr>
+<tr class="odd">
+<td><code>!x</code></td>
+<td>Not x</td>
+</tr>
+<tr class="even">
+<td><code>x | y</code></td>
+<td>x or y</td>
+</tr>
+<tr class="odd">
+<td><code>x &amp; y</code></td>
+<td>x and y</td>
+</tr>
+<tr class="even">
+<td><code>%in%</code></td>
+<td>Group membership</td>
+</tr>
+<tr class="odd">
+<td><code>isTRUE(x)</code></td>
+<td>Test if x is TRUE</td>
+</tr>
+<tr class="even">
+<td><code>is.na(x)</code></td>
+<td>Test if x is NA</td>
+</tr>
+<tr class="odd">
+<td><code>!is.na(x)</code></td>
+<td>Test if x is not NA</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Test yourself</strong></p>
+<p>Can you use the logical operators and <code>filter()</code> to create <strong>df4</strong> which has all the data for murders:</p>
+<ol style="list-style-type: decimal">
+<li>in the District of Columbia</li>
+<li>That were solved in 2015 that involved Black victims</li>
+<li>in which Handgun - pistol, revolver, etc was victims between the ages of 18 and 21</li>
+</ol>
+<hr />
+<p><strong>Common mistakes</strong></p>
+<ol style="list-style-type: decimal">
+<li>Using <code>=</code> instead of <code>==</code></li>
+</ol>
+<pre><code># WRONG
+filter(murders, fstate_label=&quot;District of Columbia&quot;)
+
+# RIGHT
+filter(murders, fstate_label==&quot;District of Columbia&quot;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Forgetting quotes</li>
+</ol>
+<pre><code># WRONG
+filter(murders, fstate_label=District of Columbia)
+
+# RIGHT
+filter(murders, fstate_label=&quot;District of Columbia&quot;)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Collapsing multiple tests into one</li>
+</ol>
+<pre><code># WRONG
+filter(murders, 1980 &lt; year &lt; 1990)
+
+# RIGHT
+filter(murders, 1980 &lt; year, year &lt; 1990)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Stringing together many tests instead of using %in%</li>
+</ol>
+<pre><code># Not WRONG but INEFFICIENT to type out
+filter(murders, VicRace_label==&quot;Black&quot; | VicRace_label=&quot;Unknown&quot; | VicRace_label==&quot;Asian or Pacific Islander&quot;)
+
+# RIGHT
+filter(murders, VicRace_label %in% c(&quot;Black&quot;, &quot;Unknown&quot;, &quot;Asian or Pacific Islander&quot;))</code></pre>
+<p>Alright, we’ve got new data frames narrowed down from 750,000 total to about 25 specific incidents of husbands murdering their partners who were older than 60 in 2016 and about 32,000 cases where either the husband or boyfriend was involved or the victim was involved in a love triangle.</p>
+<p>We have 47 variables (aka columns) and we don’t need all of them for this basic analysis. Let’s narrow that down.</p>
+<hr />
+</div>
+<div id="select" class="section level2">
+<h2>select()</h2>
+<div class="figure">
+<img src="/wrangling/dplyr/images/select.png?classes=shadow" />
+
+</div>
+<p>You simply list the column names after the data frame you want to extract from.</p>
+<pre class="r"><code>df1_narrow &lt;- select(df1, State, Agency, Solved_label, Year)</code></pre>
+<pre><code>View(df1_narrow)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/df1.png?classes=shadow" />
+
+</div>
+<p>You can use a colon between column names if you want all the columns between.</p>
+<pre class="r"><code>df2_narrow &lt;- select(df1, State, OffAge:OffRace_value, Weapon_label)</code></pre>
+<pre><code>View(df2_narrow)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/df2.png?classes=shadow" />
+
+</div>
+<p>Use a <code>-</code> next to a column name to drop it (You can drop more than one column at a time, too).</p>
+<pre class="r"><code># modifying the data frame created above
+df3_narrow &lt;- select(df2_narrow, -Weapon_label)</code></pre>
+<pre><code>View(df3_narrow)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/df3.png?classes=shadow" />
+
+</div>
+<p>There are so many other functions you can use with <code>select()</code> to help make your life easier.</p>
+<pre><code># This extracts all variables with names that contain &quot;_label&quot;
+
+labels_only_columns &lt;- select(murders, contains(&quot;_label&quot;))
+str(labels_only_columns)</code></pre>
+<p>Check out all the neat <code>select()</code> options <a href="https://dplyr.tidyverse.org/reference/select_helpers.html">here</a>.</p>
+<p>Great, let’s move on to the next verb.</p>
+<hr />
+</div>
+<div id="arrange" class="section level2">
+<h2>arrange()</h2>
+<div class="figure">
+<img src="/wrangling/dplyr/images/arrange.png" />
+
+</div>
+<p>You can include more than one variable (column)– the first one will take priority but subsequent variables will serve as tie breakers.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/arrange_syntax.png" />
+
+</div>
+<pre class="r"><code>age_df1 &lt;- arrange(murders, VicAge)
+
+age_df2 &lt;- arrange(murders, VicAge, OffAge)
+
+age_df3 &lt;- arrange(murders, VicAge, desc(OffAge))
+
+# Same result as above
+age_df3b &lt;- arrange(murders, VicAge, -OffAge)</code></pre>
+<p>This will be very useful. Let’s move on to the next verb.</p>
+<hr />
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/awZQR_j7CTI?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="mutate" class="section level2">
+<h2>mutate()</h2>
+<div class="figure">
+<img src="/wrangling/dplyr/images/mutate.png" />
+
+</div>
+<p>We can create new variables (new columns) with the <code>mutate()</code> function.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/mutate_syntax.png" />
+
+</div>
+<pre class="r"><code>murders_ver2 &lt;- mutate(murders,
+                       age_difference=OffAge-VicAge)</code></pre>
+<pre><code>View(murders_ver2)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/mutate1.png?classes=shadow" />
+
+</div>
+</div>
+<div id="arithmetic-operators" class="section level2">
+<h2>Arithmetic Operators</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Addition</td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>Subtraction</td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Multiplication</td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>Division</td>
+</tr>
+<tr class="odd">
+<td><code>^</code></td>
+<td>Exponentiation</td>
+</tr>
+</tbody>
+</table>
+<p>You can do more than just math in the context of <code>mutate()</code>.</p>
+<p>You can use <code>case_when()</code> in <code>mutate()</code> to create new values based on other values, kind of like an if_else statement.</p>
+<pre class="r"><code># creates an age_difference column
+# and creates a vic_category column that is populated with values depending on the VicRace_label column
+
+murders_ver3 &lt;- mutate(murders,
+                       age_difference=OffAge-VicAge,
+                       vic_category=case_when(
+                         VicRace_label == &quot;White&quot; ~ &quot;White&quot;,
+                         VicRace_label != &quot;White&quot; ~ &quot;Non-White&quot;
+                       ))</code></pre>
+<div class="notices tip" ><p>This is the first of a few times you’ll see the <code>~</code> (tilde) operator. It means it’s a one-sided formula, usually in statistical model formulas. It can be described as “<a href="https://stackoverflow.com/questions/14976331/use-of-tilde-in-r-programming-language">depends on</a>” You don’t need to really to understand why a tilde is necessary– only that this is how this particular function needs to be set up to work successfully.</p>
+</div>
+
+<p>There are two variables being created in the <code>mutate()</code> function separated by commas.</p>
+<ul>
+<li>one is <strong>age_difference</strong> which just subtracts the values in <strong>OffAge</strong> and <strong>VicAge</strong>.</li>
+<li>the other is <strong>vic_category</strong> that is either assigned “White” or “Non-White” depending on if the value of the column <strong>VicRace_label</strong> is “White” or <em>not</em> “White”.</li>
+</ul>
+<pre><code>View(murders_ver3)</code></pre>
+<div class="figure">
+<img src="/wrangling/dplyr/images/white.png?classes=shadow" />
+
+</div>
+<p>This is an example of a vectorized function in action. There are some really great ones like <code>lag()</code> and <code>lead()</code> and <code>rank()</code> and we might get into them later. In the meantime, here’s a <a href="https://dplyr.tidyverse.org/reference/mutate.html#useful-functions">neat list</a>.</p>
+</div>
+<div id="rename" class="section level2">
+<h2>Rename</h2>
+<p>You can rename variables (columns) easily with the function <code>rename()</code></p>
+<pre class="r"><code>colnames(df3_narrow)</code></pre>
+<pre><code>## [1] &quot;State&quot;         &quot;OffAge&quot;        &quot;OffSex_label&quot;  &quot;OffSex_value&quot; 
+## [5] &quot;OffRace_label&quot; &quot;OffRace_value&quot;</code></pre>
+<pre class="r"><code># OK, you see the column names above-- let&#39;s change a couple of them
+
+df3_renamed &lt;- rename(df3_narrow, 
+                      offender_gender=OffSex_label,
+                      offender_age=OffAge)
+colnames(df3_renamed)</code></pre>
+<pre><code>## [1] &quot;State&quot;           &quot;offender_age&quot;    &quot;offender_gender&quot; &quot;OffSex_value&quot;   
+## [5] &quot;OffRace_label&quot;   &quot;OffRace_value&quot;</code></pre>
+<p>You can also rename variables (columns) with the <code>select()</code> function. This is just a way to cut down on extra lines of code</p>
+<pre class="r"><code>colnames(df3_narrow)</code></pre>
+<pre><code>## [1] &quot;State&quot;         &quot;OffAge&quot;        &quot;OffSex_label&quot;  &quot;OffSex_value&quot; 
+## [5] &quot;OffRace_label&quot; &quot;OffRace_value&quot;</code></pre>
+<pre class="r"><code># Keeping only the State and offender gender and age columns but renaming the OffSex_label and OffAge columns
+
+df4_renamed &lt;- select(df3_narrow,
+                      State,
+                      offender_gender=OffSex_label,
+                      offender_age=OffAge)
+
+df4_renamed</code></pre>
+<pre><code>##             State offender_gender offender_age
+## 1         Alabama         Unknown          999
+## 2         Florida          Female           61
+## 3         Florida          Female           79
+## 4         Arizona          Female           55
+## 5         Arizona          Female           57
+## 6         Arizona          Female           46
+## 7         Arizona          Female           72
+## 8      California          Female           61
+## 9      California          Female           76
+## 10     California          Female           57
+## 11     California          Female           75
+## 12        Georgia          Female           58
+## 13       Kentucky          Female           77
+## 14       Kentucky          Female           67
+## 15       Michigan          Female           72
+## 16       Michigan          Female           72
+## 17    Mississippi          Female           46
+## 18     New Mexico            Male           83
+## 19       Oklahoma          Female           58
+## 20   Pennsylvania          Female           57
+## 21  Rhodes Island          Female           57
+## 22 South Carolina          Female           72
+## 23 South Carolina          Female           76
+## 24      Tennessee          Female           63
+## 25          Texas          Female           71</code></pre>
+<hr />
+</div>
+<div id="summarize" class="section level2">
+<h2>summarize()</h2>
+<div class="figure">
+<img src="/wrangling/dplyr/images/summarize.png" />
+
+</div>
+<p>This is the equivalent of creating a pivot table in Excel.</p>
+<p>You’re aggregating the whole table into something simplified.</p>
+<pre class="r"><code>summarize(murders, average_victim_age=mean(VicAge))</code></pre>
+<pre><code>##   average_victim_age
+## 1           47.96203</code></pre>
+<p>You can create a table of summaries.</p>
+<pre class="r"><code>summarize(murders, 
+          average_victim_age=mean(VicAge), 
+          average_offender_age=mean(OffAge))</code></pre>
+<pre><code>##   average_victim_age average_offender_age
+## 1           47.96203             352.7295</code></pre>
+<div class="notices warning" ><p>There’s something wrong with the average_offender_age value. Can you figure out what happened?</p>
+</div>
+
+<p>Summarize the data frame <strong>murders</strong></p>
+<pre class="r"><code>summarize(murders, 
+          first=min(Year), 
+          last=max(Year),
+          metro_areas=n_distinct(MSA_label),
+          cases=n())</code></pre>
+<pre><code>##   first last metro_areas  cases
+## 1  1976 2016         409 752313</code></pre>
+<hr />
+</div>
+<div id="group_by" class="section level2">
+<h2>group_by()</h2>
+<p>You can aggregate data by groups before summarizing.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/groupby.png" />
+
+</div>
+<pre class="r"><code># This is the same process as before but we&#39;re telling R to group up the metro areas before summarizing the data
+
+murders &lt;- group_by(murders, MSA_label)
+
+summarize(murders, 
+          first=min(Year), 
+          last=max(Year),
+          cases=n())</code></pre>
+<pre><code>## # A tibble: 409 x 4
+##    MSA_label                         first  last cases
+##    &lt;fct&gt;                             &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+##  1 Abilene, TX                        1976  2016   366
+##  2 Akron, OH                          1976  2016  1080
+##  3 Albany, GA                         1976  2016   633
+##  4 Albany-Schenectady-Troy, NY        1976  2016   829
+##  5 Albuquerque, NM                    1976  2016  2374
+##  6 Alexandria, LA                     1976  2016   576
+##  7 Allentown-Bethlehem-Easton, PA-NJ  1976  2016   882
+##  8 Altoona, PA                        1976  2016   120
+##  9 Amarillo, TX                       1976  2016   724
+## 10 Ames, IA                           1978  2016    26
+## # ... with 399 more rows</code></pre>
+<p>This might be a tough concept to fully understand at first, but we’ll go over a few more examples soon so it will hopefully make more sense.</p>
+<p>Also, I want to point out that the opposite of <code>group_by()</code> is <code>ungroup()</code> which you might need later on as you progress.</p>
+<p>But let’s get over some very useful functionality that comes with the <strong>dplyr</strong> package.</p>
+<hr />
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<p><iframe src="//www.youtube.com/embed/cOaXB4JfyXw?t=3s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; encrypted-media" allowfullscreen title="YouTube Video"></iframe></p>
+</div>
+</div>
+<div id="pipe" class="section level2">
+<h2>pipe %&gt;%</h2>
+<p>Data analyses will most often involve more than one step.</p>
+<p>We’re going to over some <strong>options</strong> on how to approach multi-step processes with this data set and then we’ll go over the <em>best</em> way to deal with them.</p>
+<p>Description of theoretical process to run on the <strong>murders</strong> data frame:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Extract rows</strong> for cases that happened in Washington DC, then</li>
+<li><strong>Group</strong> case by year and then</li>
+<li><strong>Count</strong> the number of cases</li>
+<li><strong>Arrange</strong> the by decreasing cases</li>
+</ol>
+<p><strong>Option 1</strong></p>
+<p>Build out a new dataframe for each step.</p>
+<pre class="r"><code>dc_annual_murders1 &lt;- filter(murders, State==&quot;District of Columbia&quot;)
+dc_annual_murders2 &lt;- group_by(dc_annual_murders1, Year)
+dc_annual_murders3 &lt;- summarize(dc_annual_murders2, total=n())
+dc_annual_murders4 &lt;- arrange(dc_annual_murders3, desc(total))
+
+# looking at the first 6 rows of data
+
+head(dc_annual_murders4)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##    Year total
+##   &lt;dbl&gt; &lt;int&gt;
+## 1  1991   489
+## 2  1990   481
+## 3  1992   450
+## 4  1989   439
+## 5  1993   423
+## 6  1994   417</code></pre>
+<p><strong>Option 2</strong></p>
+<p>Do it all in one line by nesting functions.</p>
+<pre class="r"><code>dc_annual_murders &lt;- arrange(summarize(group_by(filter(murders, State==&quot;District of Columbia&quot;), Year), total=n()), desc(total))
+
+# looking at the first 6 rows of data
+
+head(dc_annual_murders)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##    Year total
+##   &lt;dbl&gt; &lt;int&gt;
+## 1  1991   489
+## 2  1990   481
+## 3  1992   450
+## 4  1989   439
+## 5  1993   423
+## 6  1994   417</code></pre>
+<p>These options aren’t great because the first one involves just way too much typing, even if it’s pretty clear to an outside reader what’s happening to the data frame. The second one is no good because, while it’s efficient with coding, it’s way too difficult to follow what’s happening to the data.</p>
+<p>Let’s talk about the pipe operator <code>%&gt;%</code></p>
+<p>You might have noticed that all the functions from <strong>dplyr</strong> all structured similarly: <em>The first argument is always the data frame.</em></p>
+<p>It takes in a data frame and spits out a data frame.</p>
+<p>This function structure is what allows for something like the <code>%&gt;%</code> to work.</p>
+<div class="figure">
+<img src="/wrangling/dplyr/images/pipe.png" />
+
+</div>
+<p>These commands do the same thing. Give it a try.</p>
+<pre class="r"><code>filter(murders, OffAge==2)</code></pre>
+<pre><code>## # A tibble: 3 x 47
+## # Groups:   MSA_label [3]
+##   ID    CNTYFIPS Ori   State Agency AGENCY_A Agentype_label Agentype_value
+##   &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;                   &lt;dbl&gt;
+## 1 1977… &quot;13121 … GA06… Geor… &quot;East… &quot;      … Municipal pol…              3
+## 2 1979… &quot;36061 … NY03… New … &quot;New … &quot;      … Municipal pol…              3
+## 3 2015… &quot;18089 … IN04… Indi… &quot;Gary… &quot;      … Municipal pol…              3
+## # ... with 39 more variables: Source_label &lt;fct&gt;, Source_value &lt;dbl&gt;,
+## #   Solved_label &lt;fct&gt;, Solved_value &lt;dbl&gt;, Year &lt;dbl&gt;, Month_label &lt;fct&gt;,
+## #   Month_value &lt;dbl&gt;, Incident &lt;dbl&gt;, ActionType &lt;fct&gt;,
+## #   Homicide_label &lt;fct&gt;, Homicide_value &lt;fct&gt;, Situation_label &lt;fct&gt;,
+## #   Situation_value &lt;fct&gt;, VicAge &lt;dbl&gt;, VicSex_label &lt;fct&gt;,
+## #   VicSex_value &lt;fct&gt;, VicRace_label &lt;fct&gt;, VicRace_value &lt;fct&gt;,
+## #   VicEthnic &lt;fct&gt;, OffAge &lt;dbl&gt;, OffSex_label &lt;fct&gt;, OffSex_value &lt;fct&gt;,
+## #   OffRace_label &lt;fct&gt;, OffRace_value &lt;fct&gt;, OffEthnic &lt;fct&gt;,
+## #   Weapon_label &lt;fct&gt;, Weapon_value &lt;dbl&gt;, Relationship_label &lt;fct&gt;,
+## #   Relationship_value &lt;fct&gt;, Circumstance_label &lt;fct&gt;,
+## #   Circumstance_value &lt;dbl&gt;, Subcircum &lt;fct&gt;, VicCount &lt;dbl&gt;,
+## #   OffCount &lt;dbl&gt;, FileDate &lt;fct&gt;, fstate_label &lt;fct&gt;,
+## #   fstate_value &lt;fct&gt;, MSA_label &lt;fct&gt;, MSA_value &lt;dbl&gt;</code></pre>
+<pre class="r"><code>murders %&gt;% filter(OffAge==2)</code></pre>
+<pre><code>## # A tibble: 3 x 47
+## # Groups:   MSA_label [3]
+##   ID    CNTYFIPS Ori   State Agency AGENCY_A Agentype_label Agentype_value
+##   &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;                   &lt;dbl&gt;
+## 1 1977… &quot;13121 … GA06… Geor… &quot;East… &quot;      … Municipal pol…              3
+## 2 1979… &quot;36061 … NY03… New … &quot;New … &quot;      … Municipal pol…              3
+## 3 2015… &quot;18089 … IN04… Indi… &quot;Gary… &quot;      … Municipal pol…              3
+## # ... with 39 more variables: Source_label &lt;fct&gt;, Source_value &lt;dbl&gt;,
+## #   Solved_label &lt;fct&gt;, Solved_value &lt;dbl&gt;, Year &lt;dbl&gt;, Month_label &lt;fct&gt;,
+## #   Month_value &lt;dbl&gt;, Incident &lt;dbl&gt;, ActionType &lt;fct&gt;,
+## #   Homicide_label &lt;fct&gt;, Homicide_value &lt;fct&gt;, Situation_label &lt;fct&gt;,
+## #   Situation_value &lt;fct&gt;, VicAge &lt;dbl&gt;, VicSex_label &lt;fct&gt;,
+## #   VicSex_value &lt;fct&gt;, VicRace_label &lt;fct&gt;, VicRace_value &lt;fct&gt;,
+## #   VicEthnic &lt;fct&gt;, OffAge &lt;dbl&gt;, OffSex_label &lt;fct&gt;, OffSex_value &lt;fct&gt;,
+## #   OffRace_label &lt;fct&gt;, OffRace_value &lt;fct&gt;, OffEthnic &lt;fct&gt;,
+## #   Weapon_label &lt;fct&gt;, Weapon_value &lt;dbl&gt;, Relationship_label &lt;fct&gt;,
+## #   Relationship_value &lt;fct&gt;, Circumstance_label &lt;fct&gt;,
+## #   Circumstance_value &lt;dbl&gt;, Subcircum &lt;fct&gt;, VicCount &lt;dbl&gt;,
+## #   OffCount &lt;dbl&gt;, FileDate &lt;fct&gt;, fstate_label &lt;fct&gt;,
+## #   fstate_value &lt;fct&gt;, MSA_label &lt;fct&gt;, MSA_value &lt;dbl&gt;</code></pre>
+<p>In essence, a <code>%&gt;%</code> is the grammatical equivalent of <em>and then…</em>.</p>
+<p>Again, a description of the theoretical process:</p>
+<ul>
+<li><strong>Extract rows</strong> for cases that happened in Washington DC, then</li>
+<li><strong>Group</strong> case by year and then</li>
+<li><strong>Count</strong> the number of cases</li>
+<li><strong>Arrange</strong> the by decreasing cases</li>
+</ul>
+<p><strong>Option 3</strong></p>
+<p>Use the <code>%&gt;%</code> pipe</p>
+<pre class="r"><code>filter(murders, State==&quot;District of Columbia&quot;) %&gt;% 
+  group_by(Year) %&gt;% 
+  summarize(total=n()) %&gt;%    
+  arrange(desc(total)) %&gt;% 
+  head()</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##    Year total
+##   &lt;dbl&gt; &lt;int&gt;
+## 1  1991   489
+## 2  1990   481
+## 3  1992   450
+## 4  1989   439
+## 5  1993   423
+## 6  1994   417</code></pre>
+<p>So readable and simple, right?</p>
+<p>Here’s the shortcut to type <code>%&gt;%</code> in RStudio:</p>
+<ul>
+<li>Mac: Cmd + Shift + M</li>
+<li>Windows: Ctrl + Shift + M</li>
+</ul>
+<p>Why “M”? I think it’s because the pipe was first introduced in the <a href="https://cran.r-project.org/web/packages/magrittr/README.html"><strong>magrittr</strong> package</a> by Stefan Milton Bache.</p>
+</div>
+<div id="mutate-again" class="section level2">
+<h2>Mutate again</h2>
+<p>There are a lot of <a href="https://dplyr.tidyverse.org/reference/mutate.html#useful-functions">interesting things</a> you can do with <code>mutate()</code>.</p>
+<p>Let’s try out <code>lag()</code> within <code>mutate()</code> – it lets you do math based on the previous row of a vector.</p>
+<p>For example, in the data frame above we’ve got the number of murders in DC. With <code>lag()</code> and some math, we can calculate the difference in the number of murders year over year.</p>
+<pre class="r"><code># We can keep the code from before but now we add a new mutate line
+filter(murders, State==&quot;District of Columbia&quot;) %&gt;% 
+  group_by(Year) %&gt;% 
+  summarize(total=n()) %&gt;%
+  mutate(previous_year=lag(total)) %&gt;% 
+  mutate(change=total-previous_year)</code></pre>
+<pre><code>## # A tibble: 35 x 4
+##     Year total previous_year change
+##    &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;  &lt;int&gt;
+##  1  1976   203            NA     NA
+##  2  1977   202           203     -1
+##  3  1978   196           202     -6
+##  4  1979   171           196    -25
+##  5  1980   180           171      9
+##  6  1981   232           180     52
+##  7  1982   204           232    -28
+##  8  1983   188           204    -16
+##  9  1984   175           188    -13
+## 10  1985   149           175    -26
+## # ... with 25 more rows</code></pre>
+<p>So <code>mutate()</code> returns a vector the same length as the input.</p>
+<p>We summarized the code and then we mutated a new column based on <code>lag()</code> and then we mutated a second column based on the new column and the old column.</p>
+<p>You can use mutate more than once</p>
+<pre class="r"><code># Here&#39;s an example of the same code above but with mutate called just once
+# previous_year was able to be referenced a second time because it was created in first
+years &lt;- filter(murders, State==&quot;District of Columbia&quot;) %&gt;% 
+  group_by(Year) %&gt;% 
+  summarize(total=n()) %&gt;%
+  mutate(previous_year=lag(total), change=previous_year-total) 
+
+years</code></pre>
+<pre><code>## # A tibble: 35 x 4
+##     Year total previous_year change
+##    &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;  &lt;int&gt;
+##  1  1976   203            NA     NA
+##  2  1977   202           203      1
+##  3  1978   196           202      6
+##  4  1979   171           196     25
+##  5  1980   180           171     -9
+##  6  1981   232           180    -52
+##  7  1982   204           232     28
+##  8  1983   188           204     16
+##  9  1984   175           188     13
+## 10  1985   149           175     26
+## # ... with 25 more rows</code></pre>
+<p>So <code>mutate()</code> works when the formula you pass it returns a vectorized output. For example, if a vector has 10 instances in it, then the formula needs to output 10 instances, too.</p>
+<p>Passing it a formula like <code>sum()</code> would confuse it.</p>
+<pre class="r"><code>years %&gt;% mutate(all_murders=sum(total))</code></pre>
+<pre><code>## # A tibble: 35 x 5
+##     Year total previous_year change all_murders
+##    &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;  &lt;int&gt;       &lt;int&gt;
+##  1  1976   203            NA     NA        8209
+##  2  1977   202           203      1        8209
+##  3  1978   196           202      6        8209
+##  4  1979   171           196     25        8209
+##  5  1980   180           171     -9        8209
+##  6  1981   232           180    -52        8209
+##  7  1982   204           232     28        8209
+##  8  1983   188           204     16        8209
+##  9  1984   175           188     13        8209
+## 10  1985   149           175     26        8209
+## # ... with 25 more rows</code></pre>
+<p>This is what differentiates <code>mutate()</code> from <code>summarize()</code>.</p>
+</div>
+<div id="summary-functions" class="section level2">
+<h2>Summary functions</h2>
+<p>What <code>summarize()</code> does is it takes a vector as an input, and returns a single value as output. Like <code>sum()</code> did in the previous example.</p>
+<p>Here are some examples of summary functions:</p>
+<table style="width:44%;">
+<colgroup>
+<col width="9%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mean(x)</code></td>
+<td>Mean (average). <code>mean(c(1,10,100,1000))</code> returns 277.75</td>
+</tr>
+<tr class="even">
+<td><code>median(x)</code></td>
+<td>Median. <code>median(c(1,10,100,1000))</code> returns 55</td>
+</tr>
+<tr class="odd">
+<td><code>sd(x)</code></td>
+<td>Standard deviation. <code>sd(c(1,10,100,1000))</code> returns 483.57</td>
+</tr>
+<tr class="even">
+<td><code>quantile(x, probs)</code></td>
+<td>Where x is the numeric vector whose quantiles are desired and probs is a numeric vector with probabilities</td>
+</tr>
+<tr class="odd">
+<td><code>range(x)</code></td>
+<td>Range. <code>range(c(1,10,100,1000))</code> returns c(1, 1000) and <code>diff(range(c(1,10,100,1000)))</code> returns 999</td>
+</tr>
+<tr class="even">
+<td><code>sum(x)</code></td>
+<td>Sum. <code>sum(c(1,10,100,1000))</code> returns 1111</td>
+</tr>
+<tr class="odd">
+<td><code>min(x)</code></td>
+<td>Minimum. <code>min(c(1,10,100,1000))</code> returns 1</td>
+</tr>
+<tr class="even">
+<td><code>max(x)</code></td>
+<td>Maximum. <code>max(c(1,10,100,1000))</code> returns 1000</td>
+</tr>
+<tr class="odd">
+<td><code>abs(x)</code></td>
+<td>Absolute value. <code>abs(-8)</code> returns 8</td>
+</tr>
+</tbody>
+</table>
+<p>Here are some examples of summary functions specific to <strong>dplyr</strong> and <code>summarize()</code> – Learn about <a href="https://dplyr.tidyverse.org/reference/summarise.html#useful-functions">the others</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>n()</code></td>
+<td>returns the number of values/rows</td>
+</tr>
+<tr class="even">
+<td><code>n_distinct()</code></td>
+<td>returns number of uniques</td>
+</tr>
+<tr class="odd">
+<td><code>first()</code></td>
+<td>Only returns the first value within an arranged group</td>
+</tr>
+<tr class="even">
+<td><code>last()</code></td>
+<td>Only returns the last value within an arranged group</td>
+</tr>
+<tr class="odd">
+<td><code>nth()</code></td>
+<td>Only returns the nth location of a vector</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="group_by-again" class="section level2">
+<h2>group_by() again</h2>
+<p>Let’s put together everything we’ve learned by calculating percentages.</p>
+<p>You can use <code>group_by()</code> on more than one variable (column).</p>
+<p>Let’s go over the difference, really quick.</p>
+<p>We can summarize the data by how many men were murdered versus women by</p>
+<pre class="r"><code>murders %&gt;% 
+  group_by(VicSex_label) %&gt;% 
+  summarize(total=n())</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   VicSex_label  total
+##   &lt;fct&gt;         &lt;int&gt;
+## 1 Female       169028
+## 2 Male         582092
+## 3 Unknown        1193</code></pre>
+<p>By grouping <em>VicSex_label</em> we got the counts (<code>n()</code>) for all the instances available in that variable.</p>
+<p>We can add another variable (column) name into the <code>group_by()</code> to drill deeper. Watch what happens when we add <em>State</em>.</p>
+<pre class="r"><code>murders %&gt;% 
+  group_by(State, VicSex_label) %&gt;% 
+  summarize(total=n())</code></pre>
+<pre><code>## # A tibble: 147 x 3
+## # Groups:   State [?]
+##    State    VicSex_label total
+##    &lt;fct&gt;    &lt;fct&gt;        &lt;int&gt;
+##  1 Alaska   Female         565
+##  2 Alaska   Male          1385
+##  3 Alaska   Unknown          2
+##  4 Alabama  Female        3586
+##  5 Alabama  Male         11955
+##  6 Alabama  Unknown        146
+##  7 Arkansas Female        2019
+##  8 Arkansas Male          6049
+##  9 Arkansas Unknown         28
+## 10 Arizona  Female        3252
+## # ... with 137 more rows</code></pre>
+<p>Interesting, right? The structure for the data here might be foreign to you. As it stands, this data is considered tidy. Each variable is a column and each observation (or case) is a row. This makes it easier to analyze the data in R and create charts.</p>
+<p>But you’re probably used to data that looks like</p>
+<pre><code>## # A tibble: 51 x 4
+## # Groups:   State [51]
+##    State                Female  Male Unknown
+##    &lt;fct&gt;                 &lt;int&gt; &lt;int&gt;   &lt;int&gt;
+##  1 Alaska                  565  1385       2
+##  2 Alabama                3586 11955     146
+##  3 Arkansas               2019  6049      28
+##  4 Arizona                3252 11203      29
+##  5 California            21826 92756      38
+##  6 Colorado               2233  5476       5
+##  7 Connecticut            1394  4139       5
+##  8 District of Columbia   1041  7155      13
+##  9 Delaware                399  1048      NA
+## 10 Florida               10699 32632     128
+## # ... with 41 more rows</code></pre>
+<p>And that’s fine, too, for presentation. We’ll get into how to do this later in the next chapter or so.</p>
+<p>The prior tidy structure makes it easier to run calculations such as percentages, however.</p>
+</div>
+<div id="percents" class="section level2">
+<h2>Percents</h2>
+<p>Now we get a chance to chain together all the verbs we’ve used</p>
+<pre class="r"><code>percent_murders &lt;- murders %&gt;% 
+  group_by(State, VicSex_label) %&gt;% 
+  summarize(total=n()) %&gt;% 
+  # okay, we&#39;ve got the total, now we can do some math with mutate
+  mutate(percent=total/sum(total, na.rm=T)*100) 
+  # did you notice the na.rm=T added to the sum function? This removes NAs
+  # That&#39;s necessary because if you have a single NA then it will not sum correctly (thanks, statisticians!)
+
+percent_murders</code></pre>
+<pre><code>## # A tibble: 147 x 4
+## # Groups:   State [51]
+##    State    VicSex_label total percent
+##    &lt;fct&gt;    &lt;fct&gt;        &lt;int&gt;   &lt;dbl&gt;
+##  1 Alaska   Female         565  28.9  
+##  2 Alaska   Male          1385  71.0  
+##  3 Alaska   Unknown          2   0.102
+##  4 Alabama  Female        3586  22.9  
+##  5 Alabama  Male         11955  76.2  
+##  6 Alabama  Unknown        146   0.931
+##  7 Arkansas Female        2019  24.9  
+##  8 Arkansas Male          6049  74.7  
+##  9 Arkansas Unknown         28   0.346
+## 10 Arizona  Female        3252  22.5  
+## # ... with 137 more rows</code></pre>
+<p>Interesting. We can use more <code>dplyr()</code> verbs to find something of interest. Like, which states have a higher percent of women murdered?</p>
+<pre class="r"><code>percent_murders_women &lt;- murders %&gt;% 
+  group_by(State, VicSex_label) %&gt;% 
+  summarize(total=n()) %&gt;% 
+  mutate(percent=total/sum(total, na.rm=T)*100) %&gt;% 
+  filter(VicSex_label==&quot;Female&quot;) %&gt;% 
+  arrange(-percent)
+
+# Using the DT (DataTables) library that lets us create searchable tables with the plug-in for jQuery 
+# If you don&#39;t have DT installed yet, uncomment the line below and run it
+#install.packages(&quot;DT&quot;)
+
+library(DT)
+datatable(percent_murders_women)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51"],["Maine","Vermont","New Hampshire","North Dakota","South Dakota","Iowa","Montana","Utah","Idaho","Wyoming","Oregon","Hawaii","Nebraska","Kansas","Minnesota","Washington","Colorado","Alaska","Wisconsin","Delaware","West Virginia","Rhodes Island","Oklahoma","Nevada","South Carolina","Virginia","Kentucky","Connecticut","Ohio","Arkansas","Indiana","Florida","North Carolina","Massachusetts","New Jersey","Georgia","Alabama","New Mexico","Mississippi","Arizona","Pennsylvania","Michigan","Missouri","Tennessee","Texas","Louisiana","Maryland","California","New York","Illinois","District of Columbia"],["Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female"],[428,189,301,137,196,782,272,792,480,252,1564,525,516,1172,1397,2672,2233,565,2049,399,1017,381,2766,1686,3609,4708,2154,1394,5829,2019,3331,10699,5834,1715,4013,5932,3586,1117,1739,3252,6416,7427,3922,3838,15647,4545,3842,21826,10917,5905,1041],[41.0748560460653,40.2985074626866,39.2438070404172,36.9272237196765,36.4990689013035,36.3720930232558,33.9152119700748,33.7021276595745,33.5664335664336,32.4324324324324,32.2474226804124,31.664656212304,31.6176470588235,30.7288935500787,30.1532484351392,30.0528624451693,28.9473684210526,28.9446721311475,28.072338676531,27.5742916378715,27.5609756097561,27.2727272727273,26.758247073619,26.4969354078265,25.8228391528334,25.6706652126499,25.4099327592309,25.1715420729505,24.9411664028069,24.9382411067194,24.7125157652645,24.6186060424768,24.3509474914434,24.2780294450736,24.1543276754544,24.0961897798359,22.8596927392108,22.7680391357521,22.6284970722186,22.4523612261806,22.4210232038021,22.2132495887543,22.0448541397336,21.9867094408799,21.5722498724718,19.5871401482503,19.426606664307,19.0420519979061,18.8832961444658,18.0387963952956,12.6812035570715]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>State<\/th>\n      <th>VicSex_label<\/th>\n      <th>total<\/th>\n      <th>percent<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Congratulations, we’ve gone through a bunch of ways to analyze data.</p>
+<p>Now that we’ve got the tools, let’s interrogate the data further using a couple other methods involving tidying and joining data.</p>
+<hr />
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your turn</h2>
+<p>Challenge yourself with <a href="http://code.r-journalism.com/chapter-3/#section-transforming-and-analyzing-data">these exercises</a> so you’ll retain the knowledge of this section.</p>
+<p>Instructions on how to run the exercise app are on the <a href="https://learn.r-journalism.com/en/wrangling/">intro page</a> to this section.</p>
+<hr />
+<p><span style="color:gray">© Copyright 2018, Andrew Ba Tran</span></p>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/wrangling/" title="Wrangling data"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/wrangling/tidyr_joins/tidyr-joins/" title="Tidying and joining data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1541338754"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541338754"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541338754"></script>
+    <script src="/js/jquery.sticky.js?1541338754"></script>
+    <script src="/js/featherlight.min.js?1541338754"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541338754"></script>
+    <script src="/js/highlight.pack.js?1541338754"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1541338754"></script>
+    <script src="/js/learn.js?1541338754"></script>
+    <script src="/js/hugo-learn.js?1541338754"></script>
+
+    <link href="/mermaid/mermaid.css?1541338754" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541338754"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <p>© Copyright 2018, Andrew Tran</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

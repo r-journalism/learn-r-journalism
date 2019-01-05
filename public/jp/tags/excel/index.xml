@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Journalism with R</title>
+    <link>/en/tags/excel/</link>
+    <description>Recent content in Excel on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excel files</title>
+      <link>/en/importing_exporting/excel/excel-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/excel/excel-files/</guid>
+      <description>Excel spreadsheets are unique in that they can contain multiple spreadsheets as a workbook.
+What an Excel file looks like Excel file names end with a .xls or .xlsx
+  What an Excel file looks like on the inside Weird, right? Definitely difficult to parse.
+ What I do sometimes (often) is save a sheet from Excel as a .csv file.
+That’s a short cut. But if you want to be transparent and really deal with the raw data then:</description>
+    </item>
+    
+  </channel>
+</rss>

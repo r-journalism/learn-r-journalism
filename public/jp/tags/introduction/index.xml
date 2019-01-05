@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Documentation of theme Hugo Learn (Japanese)</title>
+    <link>/jp/tags/introduction/</link>
+    <description>Recent content in Introduction on Documentation of theme Hugo Learn (Japanese)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/jp/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rとは何か</title>
+      <link>/jp/introduction/what_is_r/what-is-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/jp/introduction/what_is_r/what-is-r/</guid>
+      <description>Rとは何でしょうか?  コンピュータを用いた統計とグラフィックのためのプログラミング言語と、その開発実行環境です ベル研究所が開発した“S”言語に基づいています Rはオークランド大のRoss Ihaka　と Robert Gentleman によって1993年に開発されました ## Rは 過去10年間で人気を博してきました 分野の枠を超えた多くのデータアナリストが使っています 手軽なものから、複雑なものまで多くの報道を支えてきました ## なぜRを使うべきなのでしょうか? 無料 オープンソース 最先端のグラフィックスとデータ分析 Windows, Linux, Mac OS Xで動作します 巨大なユーザーベースとコミュニティがあります ## 調査報道の事例 Gun Deaths in America More than 215,000 students have experienced gun violence at school since Columbine Spies in the Skies ## Rでプログラミングするためのインターフェース Rそのもの (以下の全てにおいてBase Rが必要) RStudio (私たちはこのコースで、これを優先的に使います) その他  Eclipse StatET Microsoft Visual Studio R Commander Rattle © Copyright 2018, Andrew Ba Tran    </description>
+    </item>
+    
+  </channel>
+</rss>

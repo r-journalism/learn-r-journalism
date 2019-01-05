@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Census on Journalism with R</title>
+    <link>/en/tags/census/</link>
+    <description>Recent content in Census on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/census/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interactive choropleth maps</title>
+      <link>/en/mapping/census_maps/census-maps/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/census_maps/census-maps/</guid>
+      <description>Sometimes there are just too many dots on a map. If the point of your map is to know the location of every single data point because of its significance, then fine. Dots can also demonstrate the distribution of data geographically very effectively.
+Choropleth or thematic maps are an effective and popular way to show geographic data.
+And if it’s interactive, it’s useful for exploratory purposes because it can surface information that can’t be expressed visually easily (Interactive maps for reader purposes need carefully considered, though, because readers will usually not click around).</description>
+    </item>
+    
+  </channel>
+</rss>

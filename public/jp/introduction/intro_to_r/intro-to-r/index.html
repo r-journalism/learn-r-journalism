@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="description" content="Learn R Journalism">
+<meta name="author" content="Andrew Ba Tran">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Introduction to R :: Journalism with R</title>
+    
+    
+    <link href="/css/nucleus.css?1529288801" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529288801" rel="stylesheet">
+    <link href="/css/hybrid.css?1529288801" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529288801" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529288801" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529288801" rel="stylesheet">
+    <link href="/css/theme.css?1529288801" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529288801" rel="stylesheet">
+    
+      <link href="/css/theme-red.css?1529288801" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1529288801"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/introduction/intro_to_r/intro-to-r/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div style="max-width:150px; margin-left:auto; margin-right:auto;"><a id="logo" href="https://learn.r-journalism.com"> 
+  <img src="/images/badge.png">
+</a>
+</div>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/introduction/" title="Getting started" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/introduction/">
+          Getting started
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/what_is_r/what-is-r/" title="What is R" class="dd-item ">
+        <a href="/en/introduction/what_is_r/what-is-r/">
+        What is R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_r/installing-r/" title="Installing R" class="dd-item ">
+        <a href="/en/introduction/installing_r/installing-r/">
+        Installing R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio" class="dd-item ">
+        <a href="/en/introduction/installing_rstudio/installing-rstudio/">
+        Installing RStudio
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/introduction/intro_to_r/intro-to-r/" title="Introduction to R" class="dd-item active">
+        <a href="/en/introduction/intro_to_r/intro-to-r/">
+        Introduction to R
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/how_to_use_r/" title="How to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/how_to_use_r/">
+          <b>1. </b>How to use R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/tour_rstudio/rstudio-tour/" title="RStudio guide" class="dd-item ">
+        <a href="/en/how_to_use_r/tour_rstudio/rstudio-tour/">
+        RStudio guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/syntax/r-syntax/" title="Syntax behind R programming" class="dd-item ">
+        <a href="/en/how_to_use_r/syntax/r-syntax/">
+        Syntax behind R programming
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/workflow/r-projects/" title="Setting up an R workflow" class="dd-item ">
+        <a href="/en/how_to_use_r/workflow/r-projects/">
+        Setting up an R workflow
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/initial_exploration/data-structures/" title="Initial data exploration" class="dd-item ">
+        <a href="/en/how_to_use_r/initial_exploration/data-structures/">
+        Initial data exploration
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/how_to_use_r/project_for_class/class-project/" title="Setting up a project folder for this class" class="dd-item ">
+        <a href="/en/how_to_use_r/project_for_class/class-project/">
+        Setting up a project folder for this class
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/importing_exporting/" title="Importing/Exporting data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/importing_exporting/">
+          <b>2. </b>Importing/Exporting data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/csv/csv-files/" title="CSV files" class="dd-item ">
+        <a href="/en/importing_exporting/csv/csv-files/">
+        CSV files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/excel/excel-files/" title="Excel files" class="dd-item ">
+        <a href="/en/importing_exporting/excel/excel-files/">
+        Excel files
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/json/json-files/" title="JSON data" class="dd-item ">
+        <a href="/en/importing_exporting/json/json-files/">
+        JSON data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/copying_pasting/datapasta/" title="Copying and pasting data" class="dd-item ">
+        <a href="/en/importing_exporting/copying_pasting/datapasta/">
+        Copying and pasting data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/spss/spss-files/" title="SPSS data" class="dd-item ">
+        <a href="/en/importing_exporting/spss/spss-files/">
+        SPSS data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/delimited_text/delimited-text/" title="Delimited Text" class="dd-item ">
+        <a href="/en/importing_exporting/delimited_text/delimited-text/">
+        Delimited Text
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/importing_exporting/xml/2018-05-27-importing-xml/" title="XML" class="dd-item ">
+        <a href="/en/importing_exporting/xml/2018-05-27-importing-xml/">
+        XML
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrangling/" title="Wrangling data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/wrangling/">
+          <b>3. </b>Wrangling data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dates/2018-05-27-dealing-with-dates/" title="Dealing with dates" class="dd-item ">
+        <a href="/en/wrangling/dates/2018-05-27-dealing-with-dates/">
+        Dealing with dates
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/strings/2018-05-27-dealing-with-strings/" title="Handling strings" class="dd-item ">
+        <a href="/en/wrangling/strings/2018-05-27-dealing-with-strings/">
+        Handling strings
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/joining/2018-05-27-joining-data/" title="Joining data" class="dd-item ">
+        <a href="/en/wrangling/joining/2018-05-27-joining-data/">
+        Joining data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/transforming/2018-05-27-transfomring-data/" title="Transforming data" class="dd-item ">
+        <a href="/en/wrangling/transforming/2018-05-27-transfomring-data/">
+        Transforming data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/wrangling/dplyr_pipes/2018-05-27-pipes-dplyr/" title="dplyr and pipes" class="dd-item ">
+        <a href="/en/wrangling/dplyr_pipes/2018-05-27-pipes-dplyr/">
+        dplyr and pipes
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualizing/" title="Visualizing data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/visualizing/">
+          <b>4. </b>Visualizing data
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/customizing_charts/2018-05-27-customizing_charts/" title="Customizing charts" class="dd-item ">
+        <a href="/en/visualizing/customizing_charts/2018-05-27-customizing_charts/">
+        Customizing charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/charts_with_ggplot/2018-05-27-ggplot/" title="Dealing with dats" class="dd-item ">
+        <a href="/en/visualizing/charts_with_ggplot/2018-05-27-ggplot/">
+        Dealing with dats
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/exporting_charts/2018-05-27-exporting-charts/" title="Exporting charts" class="dd-item ">
+        <a href="/en/visualizing/exporting_charts/2018-05-27-exporting-charts/">
+        Exporting charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/visualizing/more_charts/2018-05-27-more-charts/" title="More charts" class="dd-item ">
+        <a href="/en/visualizing/more_charts/2018-05-27-more-charts/">
+        More charts
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/mapping/" title="Spatial analysis with R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/mapping/">
+          <b>5. </b>Spatial analysis with R
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/leaflet_maps/leaflet/" title="Interactive maps with Leaflet" class="dd-item ">
+        <a href="/en/mapping/leaflet_maps/leaflet/">
+        Interactive maps with Leaflet
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/ggplot_maps/mapping-census/" title="Mapping Census data" class="dd-item ">
+        <a href="/en/mapping/ggplot_maps/mapping-census/">
+        Mapping Census data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/census_maps/2018-05-27-census_maps/" title="Mapping with census data" class="dd-item ">
+        <a href="/en/mapping/census_maps/2018-05-27-census_maps/">
+        Mapping with census data
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/mapping/setting_up/2018-05-27-setting-up/" title="Setting up for mapping" class="dd-item ">
+        <a href="/en/mapping/setting_up/2018-05-27-setting-up/">
+        Setting up for mapping
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/publishing/" title="Publishing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/publishing/">
+          <b>6. </b>Publishing
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/rmarkdown/rmarkdown/" title="RMarkdown" class="dd-item ">
+        <a href="/en/publishing/rmarkdown/rmarkdown/">
+        RMarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/publishing/more_rmarkdown/more-rmarkdown/" title="More Rmarkdown" class="dd-item ">
+        <a href="/en/publishing/more_rmarkdown/more-rmarkdown/">
+        More Rmarkdown
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/git/">
+          <b>7. </b>Git
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/git/git/" title="Setting up, using Git" class="dd-item ">
+        <a href="/en/git/git/git/">
+        Setting up, using Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github/github/" title="Setting up, using GitHub" class="dd-item ">
+        <a href="/en/git/github/github/">
+        Setting up, using GitHub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/git/github_pages/github-pages/" title="Publishing on Github Pages" class="dd-item ">
+        <a href="/en/git/github_pages/github-pages/">
+        Publishing on Github Pages
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/faq/" title="Faqs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/faq/">
+          Faqs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/faq/common-issues/" title="Common issues" class="dd-item ">
+        <a href="/en/faq/common-issues/">
+        Common issues
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://r-journalism.com"><i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/andrewbtran/learn-r-journalism"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="en/about"><i class='fa fa-fw fa-bullhorn'></i> About</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/en/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+          
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/andrewbtran/learn-r-journalism/edit/master/content/introduction/intro_to_r/2018-05-27-intro-to-r.html" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>R for Journalists</a> > <a href='/en/introduction/'>Getting started</a> > Introduction to R
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Introduction to R</h1>
+          
+
+        
+
+
+<div id="working-directories" class="section level2">
+<h2>Working directories</h2>
+<p>Your <em>working directory</em> is the folder on your computer in which you are currently working. When you ask R to open a certain file, it will look in the working directory for this file, and when you tell R to save a data file or figure, it will save it in the working directory.</p>
+<p>Before you start working, please set your working directory tow here all your data and script files are or should be stored.</p>
+<p>Type in the command window:</p>
+<pre class="r"><code># On a mac, it&#39;d look like this
+setwd(&quot;~/projects/learn-r-journalism&quot;)
+
+# On a pc, it might look like this
+setwd(&quot;C:/Documents/learn-r-journalism&quot;)</code></pre>
+<div class="notices note" ><p>Make sure that slashes are forward slashes and that you don’t forget the quotation marks. R is also case sensitive, so make sure you write cpitals where necessary</p>
+</div>
+
+<p>Within RStudio, you can also set the working directory via the menu <em>Tools &gt; Set Working Directory</em></p>
+<p><img src="/introduction/intro_to_r/images/setwd.png" alt="Set working directory", class="shadow", style="width:70%"></p>
+</div>
+<div id="libraries" class="section level2">
+<h2>Libraries</h2>
+<p>R can do many statistical and data analyses.</p>
+<p>They are organized in so-called <em>packages</em> or <em>libraries</em>. With the standard installation (known as <strong>base</strong>), most common packages are installed.</p>
+<p>To get a list of all installed packages, go to the packages window or type <code>library()</code> in the console window. If the box in front of the package name is ticked, the package is loaded (activated) and can be used.</p>
+<p>There are many more packages available on the R website. If you want to install and use a package (for example, the packaged called “geometry”) you should:</p>
+<ul>
+<li>Install the package: click <code>install packages</code> in the packages window and type <code>geometry</code> or type <code>install.packages(&quot;geometry&quot;)</code> in the command window.</li>
+<li>Load the package: Check box in front of <code>gemoetry</code> or type <code>library(&quot;geometry&quot;)</code> in the command window.</li>
+</ul>
+</div>
+<div id="examples-of-r-commands" class="section level1">
+<h1>Examples of R commands</h1>
+<div id="calculator" class="section level2">
+<h2>Calculator</h2>
+<p>R can be used as a calculator.</p>
+<p>Just type an equation in the command window after the <code>&gt;</code></p>
+<pre class="r"><code>10^2 + 26</code></pre>
+<pre><code>## [1] 126</code></pre>
+</div>
+<div id="workspace" class="section level2">
+<h2>Workspace</h2>
+<p>You can give numbers a name.</p>
+<p>By doing so, they become so-called variables which can be used later.</p>
+<pre class="r"><code>a &lt;- 4
+a</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>You can do calculations with <code>a</code> now.</p>
+<pre class="r"><code>a*5</code></pre>
+<pre><code>## [1] 20</code></pre>
+<p>If you specify <code>a</code> again, it will forget what value you had before because you did not assign it to anything.</p>
+<pre class="r"><code>a</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>You can also assign a value to <code>a</code> using the old one</p>
+<pre class="r"><code>a &lt;- a + 10
+a</code></pre>
+<pre><code>## [1] 14</code></pre>
+<p>To remove all variables from R’s memory, type</p>
+<pre class="r"><code>rm(list=ls())</code></pre>
+<p>or click the “clear all” broom button in the workspace window.</p>
+<p><img src="/introduction/intro_to_r/images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%"></p>
+</div>
+<div id="scalars-vectors-and-matrices" class="section level2">
+<h2>Scalars, vectors, and matrices</h2>
+<p>Like in many other programs, R organizes numbers in <em>scalars</em> (a single number 0-dimensional), <em>vectors</em> (a row of numbers, also called arrays - `-dimensional) and <em>matrices</em> (like a table - 2-dimensional).</p>
+<p>The <code>a</code> you defined was scalar.</p>
+<p>To define a vector with the numbers 3,4, and 5, you need the function <code>c()</code> which is short for concatenate (or paste together).</p>
+<pre class="r"><code>b=c(3,4,5)
+b</code></pre>
+<pre><code>## [1] 3 4 5</code></pre>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<p>If you would like to compute the mean of all the elements in the vector <code>b</code> from the example above, you could type</p>
+<pre class="r"><code>(3+4+5)/3</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>But when the vector is very long, this is very boring and time-consuming work.</p>
+<p>Thi is why things you do often are automated in so-called <em>functions</em>. Some functions are standard in R or in one of the pakages. You can also program your own functions.</p>
+<p>When you use a function to compute a mean, you’ll type</p>
+<pre class="r"><code>mean(x=b)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Whithin the brackets you specify the <em>arguments</em>.</p>
+<p>Arguments give extra information to the function. In this case, the argument <em>x</em> says of which set of numbers (vector) the mean should computed (namely of b).</p>
+<p>Sometimes the name of the argument is not necessary:</p>
+<pre class="r"><code>mean(b)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Also works.</p>
+</div>
+<div id="plots" class="section level2">
+<h2>Plots</h2>
+<p>R can make simple graphics right away.</p>
+<pre class="r"><code># rnorm() is a base function that creates random samples from a random distribution
+
+x &lt;- rnorm(100)
+
+# plot() is a base function that charts
+
+plot(x)</code></pre>
+<p><img src="/introduction/intro_to_r/2018-05-27-intro-to-r_files/figure-html/norm_graph-1.png" width="672" /></p>
+<ul>
+<li>In the first line, 100 random numbers are assigned to the variable x, which becomes a vector by this operation.</li>
+<li>In the second line, all these values are plotted in the plot window.</li>
+</ul>
+</div>
+<div id="scripts" class="section level2">
+<h2>Scripts</h2>
+<p>R is an interpreter that uses a command line based environment.</p>
+<p>This means that you have to type commands, rather than use the mouse and menus.</p>
+<p>This has the advantage that you do not always have to retype commands.</p>
+<p>You can store yoru commands in files, the so-called <em>scripts</em>. These scripts have typically file names with the extension <strong>.R</strong> as in <strong>script.R</strong>.</p>
+<p>You can open an editor window to edit these files by clicking <em>File &gt; New</em> or <em>File &gt; Open file…</em></p>
+<p>You can run (send to the console window) part of the code by selecting lines and pressing <strong>CTRL+ENTER</strong> or <strong>CMD+ENTER</strong> or click the <em>Run</em> button at the top of the script editor window. If you do not select anything, R will run the line your cursor is on.</p>
+<p>You can always run the whole script with the function <code>source()</code></p>
+<p>For example, to run the entire saved <strong>script.R</strong> if it’s in the root directory of the working directory, type</p>
+<pre class="r"><code>source(&quot;script.R&quot;)</code></pre>
+<p>You can also click <em>Run all</em> in the editor window or type <strong>CTRL+SHIFT+S</strong> or <em>CMD+SHIFT+S</em></p>
+</div>
+<div id="not-available-data" class="section level2">
+<h2>Not available data</h2>
+<p>When you work with real data, you will encounter missing values because instrumentation failed or because you didn’t want to measure in the weekend.</p>
+<p>When a data is <em>not available</em>, you write <code>NA</code> instead of a number.</p>
+<pre class="r"><code>j &lt;- c(1,2,NA)</code></pre>
+<p>Computing statistics of incomplete data sets is strictly not possible.</p>
+<p>maybe the largest value occured during the weekend when you didn’t measure. Therefore, R will say that it doesn’t know what the largest value of <code>j</code> is</p>
+<pre class="r"><code>max(j)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>If you don’t mind about the missing data and want to compute the statistics anyway, you can add the argument <code>na.rm=TRUE</code> (Should I remove the <code>NA</code>s? Yes)</p>
+<pre class="r"><code>max(j, na.rm=T)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<div class="notices warning" ><p><code>NA</code>s will also affect any sort of math if you’re not careful</p>
+</div>
+
+<pre class="r"><code>sum(j)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code># compared to
+sum(j, na.rm=T)</code></pre>
+<pre><code>## [1] 3</code></pre>
+</div>
+</div>
+<div id="classes" class="section level1">
+<h1>Classes</h1>
+<p>We’ve been working so far with numbers.</p>
+<p>But sometimes data we work with can be specified as something else, like characters and strings or boolean values like <strong>TRUE</strong> or <strong>FALSE</strong> or dates.</p>
+<div id="characters" class="section level2">
+<h2>Characters</h2>
+<pre class="r"><code>m &lt;- &quot;apples&quot;
+m</code></pre>
+<pre><code>## [1] &quot;apples&quot;</code></pre>
+<p>To tell R that something is a character string, you should type the text between apostrophes, otherwise R will start looking for a defined veriable with the same name.</p>
+<pre class="r"><code>n &lt;- pears</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;pears&#39; not found</code></pre>
+<p>You can’t do math with characters.</p>
+<pre class="r"><code>m + 2</code></pre>
+<pre><code>## Error in m + 2: non-numeric argument to binary operator</code></pre>
+</div>
+<div id="dates" class="section level2">
+<h2>Dates</h2>
+<p>Dates and times are complicated.</p>
+<p>R has to know that 3 o’clock comes after 2:59 and that February has 29 days in some years.</p>
+<p>The base way to tell R that something is a date-time combination is with the function <code>strptime()</code></p>
+<pre class="r"><code>date1 &lt;- strptime(c(&quot;20100225230000&quot;, &quot;20100226000000&quot;, &quot;20100226010000&quot;), format=&quot;%Y%m%d%H%M%S&quot;)
+date1</code></pre>
+<pre><code>## [1] &quot;2010-02-25 23:00:00 EST&quot; &quot;2010-02-26 00:00:00 EST&quot;
+## [3] &quot;2010-02-26 01:00:00 EST&quot;</code></pre>
+<p>A vector is created with <code>c()</code> and the numbers between the quotation marks are strings, because that’s what the <code>strptim()</code> function requires.</p>
+<p>That’s followed by the argument <strong>format</strong> that defines how the chracter string should be read. In this instance, the year is denoted first (%Y), then the month (%M) and second (%S). You don’t have to specify all of them, as long as the format corresponds to the character string.</p>
+<p>In this course, we’ll be using a less messy way to deal with dates using the package <strong>lubridate</strong>.</p>
+<pre class="r"><code># If you don&#39;t currently have the lubridate package installed, uncomment the line below and run it
+
+# install.packages(&quot;lubridate&quot;)
+
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>date1 &lt;- ymd_hms(c(&quot;20100225230000&quot;, &quot;20100226000000&quot;, &quot;20100226010000&quot;))</code></pre>
+</div>
+<div id="factors" class="section level2">
+<h2>Factors</h2>
+<p>Complicated.</p>
+<p>They’re categorical variables that are useful for statisticians with plots and regression analysis.</p>
+<p>For example, Race might be input as “White”, “Black”, and “Hispanic”</p>
+<p>When importing that data in from a spreadsheet, R will most often interpret it as a <strong>Factor</strong>.</p>
+<p><img src="/introduction/intro_to_r/images/sample_df.png" alt="Set working directory", class="shadow", style="width:40%"></p>
+<p>Let’s take a look at the structure behind a dataframe I’ve included, called <code>sample_df</code></p>
+<pre class="r"><code>str(sample_df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  4 variables:
+##  $ id  : Factor w/ 4 levels &quot;1001&quot;,&quot;1002&quot;,..: 1 2 3 4
+##  $ name: chr  &quot;Steve&quot; &quot;Pam&quot; &quot;Jim&quot; &quot;Dwight&quot;
+##  $ age : num  26 65 15 7
+##  $ race: Factor w/ 3 levels &quot;Black&quot;,&quot;Hispanic&quot;,..: 3 1 3 2</code></pre>
+<p>R sees that the <strong>Race</strong> column is a factor variable with three levels.</p>
+<pre class="r"><code>levels(sample_df$race)</code></pre>
+<pre><code>## [1] &quot;Black&quot;    &quot;Hispanic&quot; &quot;White&quot;</code></pre>
+<p>This means that R groups statistics by these levels.</p>
+<pre class="r"><code>summary(sample_df$race)</code></pre>
+<pre><code>##    Black Hispanic    White 
+##        1        1        2</code></pre>
+<p>Internally, R stores the integer values 1, 2, and 3, and maps the character strings in alphabetical order to these values. 1=Black, 2=Hispanic, and 3=White.</p>
+<p>Why is this important to know?</p>
+<p>Journalists are less concerned by factors and will often find themselves converting factors to strings and characters. But when you reach the point that you are wanting to create models and linear regressions then you’ll be happy that it’s an option.</p>
+<div class="notices important" ><p>Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained.</p>
+</div>
+
+</div>
+<div id="integers-numbers" class="section level2">
+<h2>Integers &amp; Numbers</h2>
+<p>Self-explanatory. Saves as whole numbers or nummbers.</p>
+</div>
+<div id="converting-between-the-different-types" class="section level2">
+<h2>Converting between the different types</h2>
+<p>Here’s a warning.</p>
+<ul>
+<li>You can convert factors into strings.</li>
+</ul>
+<pre class="r"><code>sample_df$race</code></pre>
+<pre><code>## [1] White    Black    White    Hispanic
+## Levels: Black Hispanic White</code></pre>
+<pre class="r"><code>as.character(sample_df$race)</code></pre>
+<pre><code>## [1] &quot;White&quot;    &quot;Black&quot;    &quot;White&quot;    &quot;Hispanic&quot;</code></pre>
+<ul>
+<li>You can convert strings into factors</li>
+</ul>
+<pre class="r"><code>sample_df$name</code></pre>
+<pre><code>## [1] &quot;Steve&quot;  &quot;Pam&quot;    &quot;Jim&quot;    &quot;Dwight&quot;</code></pre>
+<pre class="r"><code>factor(sample_df$name)</code></pre>
+<pre><code>## [1] Steve  Pam    Jim    Dwight
+## Levels: Dwight Jim Pam Steve</code></pre>
+<ul>
+<li>You <strong>cannot</strong> convert factors into numbers.</li>
+</ul>
+<pre class="r"><code>sample_df$id</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004
+## Levels: 1001 1002 1003 1004</code></pre>
+<pre class="r"><code>as.numeric(sample_df$id)</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<p>Because R stores <strong>Factors</strong> as <strong>Integer</strong> values.</p>
+<p>You must convert factors into characters first <em>before</em> converting it to numbers.</p>
+<p>So you can nest it.</p>
+<pre class="r"><code>sample_df$id</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004
+## Levels: 1001 1002 1003 1004</code></pre>
+<pre class="r"><code>as.numeric(as.character(sample_df$id))</code></pre>
+<pre><code>## [1] 1001 1002 1003 1004</code></pre>
+</div>
+</div>
+<div id="functions-1" class="section level1">
+<h1>Functions</h1>
+<p>You can also save code you’ve written that simplifies your process into a function.</p>
+<pre class="r"><code>percent_change &lt;- function(first_number, second_number) {
+  pc &lt;- (second_number-first_number)/first_number*100
+  return(pc)
+}
+
+percent_change(100,150)</code></pre>
+<pre><code>## [1] 50</code></pre>
+<p>This is what’s happening in the code above:</p>
+<ul>
+<li><strong>percent_change</strong> is the name of the function, and assigned to it is the function <code>function()</code></li>
+<li>Two variables are necessary to be passed to this function, <strong>first_number</strong> and <strong>second_number</strong></li>
+<li>A new object <code>pc</code> is created using some math calculating percent change from the two variables passed to it</li>
+<li>the function <code>return()</code> assigns the result of the math to <code>percent_change</code> from the first line</li>
+</ul>
+<p>Build enough functions and you can save them as <a href="https://github.com/andrewbtran/muckrakr">your own package</a>.</p>
+<p><strong>The important thing about functions</strong> is that they’re programmed by humans.</p>
+<p>I constructed this function because that’s how I know that I’ll only include two inputs and that each one will be numeric and that they’ll be in order of first then second.</p>
+<p>If you’re working in R and a function you’re using is giving an error, it most likely means there’s something wrong with one or more of the variables you’re passing to the function.</p>
+<p>Here’s what happens when I pass a string to my <code>percent_change()</code> function.</p>
+<pre class="r"><code>percent_change(&quot;what&quot;, &quot;happens&quot;)</code></pre>
+<pre><code>## Error in second_number - first_number: non-numeric argument to binary operator</code></pre>
+<p>Sometimes really great R programmers will anticipate errors and catch bad inputs and try to output helpful suggestions instead of a generic error.</p>
+<p>This particular error isn’t very explicit. It needs to be interpreted but <strong>you</strong> know that the function needs numbers to work correctly.</p>
+<p>New users might not know that intuitively.</p>
+<p>And that’s how you’re going to feel when functions you run don’t work.</p>
+<p>You’ll have to Google the error or peek into code to see if you can see what it expects and how it might break down thanks to what you’ve passed it.</p>
+<p>And it won’t be entirely your fault.</p>
+<p>When we’re coding and sharing it for others we can’t anticipate all the ways in which others might want to use it in the future.</p>
+<p>Shoot the function writer a message or if you wrote the package, welcome feedback from others.</p>
+<p>This is what makes participating in the R community so great. We just want to do better.</p>
+</div>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/en/introduction/installing_rstudio/installing-rstudio/" title="Installing RStudio"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/en/how_to_use_r/" title="How to use R" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529288801"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529288801"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529288801"></script>
+    <script src="/js/jquery.sticky.js?1529288801"></script>
+    <script src="/js/featherlight.min.js?1529288801"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529288801"></script>
+    <script src="/js/highlight.pack.js?1529288801"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529288801"></script>
+    <script src="/js/learn.js?1529288801"></script>
+    <script src="/js/hugo-learn.js?1529288801"></script>
+
+    <link href="/mermaid/mermaid.css?1529288801" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529288801"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120594722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

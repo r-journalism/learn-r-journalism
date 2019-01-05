@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rmarkdown on Journalism with R</title>
+    <link>/en/tags/rmarkdown/</link>
+    <description>Recent content in Rmarkdown on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>More R Markdown</title>
+      <link>/en/publishing/more_rmarkdown/more-rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/more_rmarkdown/more-rmarkdown/</guid>
+      <description>Let’s create some R Markdown files.
+Make sure your working directory is set.
+If you’re not working with the learn-chapter-6-master folder you downloaded with usethis, download your files to a folder called data.
+If you get lost, the .Rmd files can be found in the lesson repo.
+We’ll start out by generating a report with Boston city payroll data.
+Datatables Create a new R Markdown file and call it Chunk 1.</description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/en/publishing/rmarkdown/rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/rmarkdown/rmarkdown/</guid>
+      <description>By now you’ve inadvertently witnessed the different content that R Markdown can help generate:
+ HTML documents that are in each chapter sub folder Notebooks in which you’ve run code chunks individually PDFs that you can print out to follow along physically with the course This entire learn.r-journalism.com website  R Markdown is R code + Markdown.</description>
+    </item>
+    
+  </channel>
+</rss>

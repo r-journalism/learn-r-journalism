@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leaflet on Journalism with R</title>
+    <link>/en/tags/leaflet/</link>
+    <description>Recent content in Leaflet on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/leaflet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interactive maps with Leaflet</title>
+      <link>/en/mapping/leaflet_maps/leaflet/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/leaflet_maps/leaflet/</guid>
+      <description>Let’s create a locator map like you would when searching for an address on Google Maps.
+Sometimes it’s necessary to zoom in or pan around a map for greater comprehension while exploring data spatially.
+The Leaflet R package was created by the folks behind RStudio to integrate with the popular opensource JavaScript library.
+It’s great for journalists who have little knowledge of JavaScript who want to make interesting interactives using R.</description>
+    </item>
+    
+  </channel>
+</rss>

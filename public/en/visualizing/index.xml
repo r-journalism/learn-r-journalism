@@ -46,5 +46,14 @@ The easiest way to do this is with the package forcats, which (surprise!) is als
 gghighlight The gghighlight package is a relatively new addition. In the previous section, I showed a way to surface important data while keeping the background data for context.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/visualizing/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/visualizing/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

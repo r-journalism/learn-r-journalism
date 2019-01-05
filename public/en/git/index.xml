@@ -65,5 +65,14 @@ Remember that there are different types of audiences for your data and methodolo
 Provide summarized data While it’s excellent to include the scripts that detail the cleaning and wrangling process it took to turn raw data into the polished set you’ve published, there is a large audience of people who just want to download and play with the finalized data.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/git/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/git/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

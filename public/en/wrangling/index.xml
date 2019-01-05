@@ -69,5 +69,14 @@ some_date &amp;lt;- &amp;quot;12-31-1999&amp;quot; Convert that date into a date
 # If you don&amp;#39;t have lubridate installed yet uncomment the line below and run it #install.packages(&amp;quot;lubridate&amp;quot;) # NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi # UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE #install.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/wrangling/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/wrangling/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

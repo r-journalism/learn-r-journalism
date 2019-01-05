@@ -11,6 +11,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="jp"
+                href="/jp/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="fr"
                 href="/fr/faq/"
                 />
@@ -138,6 +143,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="jp"
+                href="/jp/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="fr"
                 href="/fr/categories/"
                 />
@@ -149,6 +159,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/about/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -166,6 +181,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="jp"
+                href="/jp/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="fr"
                 href="/fr/"
                 />
@@ -178,6 +198,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/tags/"
                 />
     <xhtml:link
                 rel="alternate"

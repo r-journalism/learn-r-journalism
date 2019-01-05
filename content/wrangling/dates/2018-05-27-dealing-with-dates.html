@@ -175,9 +175,9 @@ data</code></pre>
 ## 2       Lucy van Pelt     2/4/2007 2007-02-04 2007   Feb   4    Sunday
 ## 3 Peppermint    Patty June 1, 2005 2005-06-01 2005   Jun   1 Wednesday
 ##             age
-## 1 4314.591 days
-## 2 4218.591 days
-## 3 4831.591 days</code></pre>
+## 1 4449.774 days
+## 2 4353.774 days
+## 3 4966.774 days</code></pre>
 <p>And how does that translate into years?</p>
 <p>With some math. We’ll have to turn the column into a number, first.</p>
 <pre class="r"><code>data$age_years &lt;- as.numeric(data$age) / 365.25 #.25 because of leap years
@@ -188,9 +188,9 @@ data</code></pre>
 ## 2       Lucy van Pelt     2/4/2007 2007-02-04 2007   Feb   4    Sunday
 ## 3 Peppermint    Patty June 1, 2005 2005-06-01 2005   Jun   1 Wednesday
 ##             age age_years
-## 1 4314.591 days  11.81271
-## 2 4218.591 days  11.54987
-## 3 4831.591 days  13.22818</code></pre>
+## 1 4449.774 days  12.18282
+## 2 4353.774 days  11.91998
+## 3 4966.774 days  13.59829</code></pre>
 <p>That’s a pretty good start for now. To see more functions and examples, check out <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">the vignette</a> for <strong>lubridate</strong>.</p>
 <hr />
 </div>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualizing data on Journalism with R</title>
+    <link>/en/visualizing/</link>
+    <description>Recent content in Visualizing data on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/visualizing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Charts with ggplot2</title>
+      <link>/en/visualizing/charts_with_ggplot/ggplot2/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/charts_with_ggplot/ggplot2/</guid>
+      <description>Let’s load some data, create a chart, and break down the layers.
+We’ll some data from Vulture.com comparing ages of leading men in movies compared to their love interests.
+library(readr) ages &amp;lt;- read_csv(&amp;quot;data/ages.csv&amp;quot;) head(ages) ## # A tibble: 6 x 7 ## Movie Genre actor actor_age actress actress_age budget ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Mo&amp;#39; Better Blues drama Denzel … 35 Joie Lee 28 10 ## 2 Malcolm X drama Denzel … 37 Angela … 34 34 ## 3 The Preacher&amp;#39;s Wife drama Denzel … 41 Whitney… 33 40 ## 4 He Got Game drama Denzel … 43 Milla J… 22 25 ## 5 Remember the Titans drama Denzel … 45 Micole … 29 30 ## 6 Training Day drama Denzel … 46 Eva Men… 27 45 This is the data we’re working with.</description>
+    </item>
+    
+    <item>
+      <title>Customizing charts</title>
+      <link>/en/visualizing/customizing_charts/customizing-exporting-ggplot2/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/customizing_charts/customizing-exporting-ggplot2/</guid>
+      <description>Let’s bring that data back in again.
+library(readr) ages &amp;lt;- read_csv(&amp;quot;data/ages.csv&amp;quot;) Remember that Dot Plot we made before?
+library(ggplot2) ggplot(ages, aes(x=actress_age, y=Movie)) + geom_point() It’s not that great, right? It’s in reverse alphabetical order.
+Let’s reorder it based on age.
+Reordering chart labels This means we need to transform the data.
+The easiest way to do this is with the package forcats, which (surprise!) is also part of the tidyverse universe.</description>
+    </item>
+    
+    <item>
+      <title>More charts</title>
+      <link>/en/visualizing/more_charts/fancy-charts/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/more_charts/fancy-charts/</guid>
+      <description>We’re going to go over some examples of visualizations created with packages that people have created to build on top of ggplot2. People love improving and building upon things. The latest version of ggplot2 was released recently and more than 300 people contributed– either by adding pieces from their add-on packages or by suggesting fixes.
+gghighlight The gghighlight package is a relatively new addition. In the previous section, I showed a way to surface important data while keeping the background data for context.</description>
+    </item>
+    
+  </channel>
+</rss>

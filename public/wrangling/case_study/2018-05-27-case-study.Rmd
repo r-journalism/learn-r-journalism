@@ -95,7 +95,7 @@ murders  <- murders %>%
 View(murders)
 ```
 
-![](/wrangling/case_-_study/images/counties.png?classes=shadow)
+![](/wrangling/case_study/images/counties.png?classes=shadow)
 
 {{% notice tip %}}
 This is where I'd put in sirens if I could. Really wrap your head around how this worked because joins are so very essential to expanding the capabilities of data analysis. 
@@ -122,7 +122,7 @@ greenway1 <- murders %>%
 View(greenway1)
 ```
 
-![](/wrangling/case_-_study/images/510.png?classes=shadow)
+![](/wrangling/case_study/images/510.png?classes=shadow)
 
 Alright, we've narrowed it down to 510 cases by filtering with "king" county and "Washington" state.
 We set it between 1982 and 2001 and looked for female victims.
@@ -149,7 +149,7 @@ greenway2 <- greenway1 %>%
 View(greenway2)
 ```
 
-![](/wrangling/case_-_study/images/116.png?classes=shadow)
+![](/wrangling/case_study/images/116.png?classes=shadow)
 
 Well, that narrowed it down.
 
@@ -220,7 +220,7 @@ msagrp <- murders %>%
 View(msagrp)
 ```
 
-![](/wrangling/case_-_study/images/msagrp.png?classes=shadow)
+![](/wrangling/case_study/images/msagrp.png?classes=shadow)
 
 Alright, we have more than 10,000 clusters.
 

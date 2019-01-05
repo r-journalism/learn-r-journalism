@@ -66,5 +66,14 @@ There are a few options to download them:
       <description>Some R code basics  &amp;lt;- is known as an “assignment operator” – it means “Make the object named to the left equal to the output of the code to the right” &amp;amp; means AND, in Boolean logic | means OR, in Boolean logic ! means NOT, in Boolean logic When referring to values entered as text, or to dates, put them in quote marks like this: &amp;quot;United States&amp;quot;, or &amp;quot;2016-07-26&amp;quot;.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/how_to_use_r/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/how_to_use_r/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

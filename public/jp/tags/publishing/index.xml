@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publishing on Journalism with R</title>
+    <link>/en/tags/publishing/</link>
+    <description>Recent content in Publishing on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/publishing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best practices for GitHub</title>
+      <link>/en/git/github_pages/github-pages/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github_pages/github-pages/</guid>
+      <description>Just some suggestions on how to keep clean GitHub repositories.
+Remember that there are different types of audiences for your data and methodology.
+Provide summarized data While it’s excellent to include the scripts that detail the cleaning and wrangling process it took to turn raw data into the polished set you’ve published, there is a large audience of people who just want to download and play with the finalized data.</description>
+    </item>
+    
+    <item>
+      <title>More R Markdown</title>
+      <link>/en/publishing/more_rmarkdown/more-rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/more_rmarkdown/more-rmarkdown/</guid>
+      <description>Let’s create some R Markdown files.
+Make sure your working directory is set.
+If you’re not working with the learn-chapter-6-master folder you downloaded with usethis, download your files to a folder called data.
+If you get lost, the .Rmd files can be found in the lesson repo.
+We’ll start out by generating a report with Boston city payroll data.
+Datatables Create a new R Markdown file and call it Chunk 1.</description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/en/publishing/rmarkdown/rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/rmarkdown/rmarkdown/</guid>
+      <description>By now you’ve inadvertently witnessed the different content that R Markdown can help generate:
+ HTML documents that are in each chapter sub folder Notebooks in which you’ve run code chunks individually PDFs that you can print out to follow along physically with the course This entire learn.r-journalism.com website  R Markdown is R code + Markdown.</description>
+    </item>
+    
+  </channel>
+</rss>

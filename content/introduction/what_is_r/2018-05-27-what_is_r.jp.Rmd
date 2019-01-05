@@ -1,0 +1,40 @@
+---
+title: "Rとは何か"
+description: "What dReams are made of"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "introduction"]
+weight: 2
+slug: what-is-r
+---
+
+## Rとは何でしょうか?
+
+* コンピュータを用いた統計とグラフィックのためのプログラミング言語と、その開発実行環境です
+* ベル研究所が開発した"S"言語に基づいています
+* Rはオークランド大の**R**oss Ihaka　と **R**obert Gentleman によって1993年に開発されました
+## Rは
+* 過去10年間で人気を博してきました
+* 分野の枠を超えた多くのデータアナリストが使っています
+* 手軽なものから、複雑なものまで多くの報道を支えてきました
+## なぜRを使うべきなのでしょうか?
+* 無料
+* オープンソース
+* 最先端のグラフィックスとデータ分析
+* Windows, Linux, Mac OS Xで動作します
+* 巨大なユーザーベースとコミュニティがあります
+## 調査報道の事例
+* [Gun Deaths in America](https://fivethirtyeight.com/features/gun-deaths/)
+* [More than 215,000 students have experienced gun violence at school since Columbine](https://www.washingtonpost.com/graphics/2018/local/school-shootings-database/?utm_term=.6bdb501a1e81)
+* [Spies in the Skies](https://www.buzzfeed.com/peteraldhous/spies-in-the-skies?utm_term=.ufYW814Den#.iyOnAg13qy)
+## Rでプログラミングするためのインターフェース
+* Rそのもの (以下の全てにおいてBase Rが必要)
+* RStudio (私たちはこのコースで、これを優先的に使います)
+* その他
+	* Eclipse StatET
+	* Microsoft Visual Studio
+	* R Commander
+	* Rattle
+-----
+<span style="color:gray">© Copyright 2018, Andrew Ba Tran</span>

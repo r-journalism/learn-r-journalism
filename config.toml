@@ -14,7 +14,7 @@ defaultContentLanguageInSubdir= true
   author = "Andrew Ba Tran"
   showVisitedLinks = true
   themeVariant = "mine"
-  disableLanguageSwitchingButton = true
+  disableLanguageSwitchingButton = false
   disableSearch = true
 
 
@@ -43,32 +43,32 @@ url = "https://github.com/r-journalism/learn-r-journalism"
 weight = 20
 
 
-
-
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fa fa-fw fa-bullhorn'></i> About"
 url = "https://learn.r-journalism.com/en/about"
 weight = 30
 
-[Languages.fr]
-title = "Documentation du thème Hugo Learn"
-weight = 2
-languageName = "Français"
 
-[[Languages.fr.menu.shortcuts]]
+
+[Languages.jp]
+title = "Documentation of theme Hugo Learn (Japanese)"
+weight = 2
+languageName = "Japanese"
+
+[[Languages.jp.menu.shortcuts]]
 name = "<i class='fa fa-fw fa-github'></i> Repo Github"
 identifier = "ds"
 url = "https://github.com/r-journalism/learn-r-journalism"
 weight = 20
 
-[[Languages.fr.menu.shortcuts]]
+[[Languages.jp.menu.shortcuts]]
 name = "<i class='fa fa-fw fa-bookmark'></i> R Journalism Case Studies"
 identifier = "hugodoc"
 url = "https://r-journalism.com"
 weight = 10
 
-[[Languages.fr.menu.shortcuts]]
+[[Languages.jp.menu.shortcuts]]
 name = "<i class='fa fa-fw fa-bullhorn'></i> About"
-url = "https://learn.r-journalism.com/en/about"
+url = "https://learn.r-journalism.com/jp/about"
 weight = 30
 

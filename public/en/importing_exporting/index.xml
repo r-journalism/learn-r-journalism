@@ -97,5 +97,14 @@ You have to download my muckrakr package off of GitHub with the devtools package
 # If you don&amp;#39;t have devtools installed yet, uncomment and run the line below #install.</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/importing_exporting/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/importing_exporting/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

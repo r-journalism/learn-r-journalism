@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github Pages on Journalism with R</title>
+    <link>/en/tags/github-pages/</link>
+    <description>Recent content in Github Pages on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best practices for GitHub</title>
+      <link>/en/git/github_pages/github-pages/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github_pages/github-pages/</guid>
+      <description>Just some suggestions on how to keep clean GitHub repositories.
+Remember that there are different types of audiences for your data and methodology.
+Provide summarized data While it’s excellent to include the scripts that detail the cleaning and wrangling process it took to turn raw data into the polished set you’ve published, there is a large audience of people who just want to download and play with the finalized data.</description>
+    </item>
+    
+  </channel>
+</rss>

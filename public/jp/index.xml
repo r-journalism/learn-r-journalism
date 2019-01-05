@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R for Journalists on Journalism with R</title>
+    <link>/en/</link>
+    <description>Recent content in R for Journalists on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSV files</title>
+      <link>/en/importing_exporting/csv/csv-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/csv/csv-files/</guid>
+      <description>The first big hurdle  Getting data from your computer into R so you can analyze it.
+ Types of data that R can read  csv files (comma separated values) Excel spreadsheets XML JSON SQL SPSS   What a csv file looks like file name ends with a .csv
+ What a csv file looks like on the inside file name ends with a .csv
+ What an Excel file looks like file name ends with a .</description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/en/publishing/rmarkdown/rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/rmarkdown/rmarkdown/</guid>
+      <description>Why R + Markdown? Markdown Super simple way to add formating to plain text
+ headers bold bullet lists links  Created by John Gruber (of Daring Fireball) as a simple way for non-programming types to write in an easy-to-read format that could be converted directly into HTML.
+ R code boston_payroll %&amp;gt;% group_by(TITLE) %&amp;gt;% summarise_each(funs(mean), REGULAR, OVERTIME)  .</description>
+    </item>
+    
+    <item>
+      <title>RStudio guide</title>
+      <link>/en/workflow/tour_rstudio/rstudio-tour/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/tour_rstudio/rstudio-tour/</guid>
+      <description>RStudio tour When you first open RStudio, the app is divided into three sections.
+Most sections have tabs for even more additional ways to view different sorts of things.
+These sections can be customized and placed wherever you want through the RStudio menu options. Preferences &amp;gt; Pane Layout
+  The tall section on the left is the console and thta’s where you can type in R code to execute.</description>
+    </item>
+    
+    <item>
+      <title>Setting up, using Git</title>
+      <link>/en/git/git/git/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/git/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What is R</title>
+      <link>/en/introduction/what_is_r/what-is-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/what_is_r/what-is-r/</guid>
+      <description>What is R?  A language and environment for statistical computing and graphics Based on “S” Language developed at Bell Labs R was created by Ross Ihaka and Robert Gentleman at the Univ. of Aukland in 1993   R has  Exploded in popularity over the past 10 years Used by data analysts across many fields Been behind many journalism projects from quick to complex   Why use R?</description>
+    </item>
+    
+    <item>
+      <title>Installing R</title>
+      <link>/en/introduction/installing_r/installing-r/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_r/installing-r/</guid>
+      <description>Downloading R  R homepage - http://www.r-project.org CRAN Mirrors - http://cran.r-project.org   Default R Console This is what the default R app looks like.
+It’s very simple but things have advanced to the point that we don’t need to settle for this.
+Now that we have the basic code installed, we can move on to a much better interface for working with R.
+ </description>
+    </item>
+    
+    <item>
+      <title>Interactive maps with Leaflet</title>
+      <link>/en/mapping/leaflet_maps/leaflet/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/leaflet_maps/leaflet/</guid>
+      <description>This tutorial is an introduction to analyzing spatial data in R, specifically through making interactive locator and choropleth maps using the Leaflet package. You’ll be introduced to the basics of using R as a fast and powerful command-line Geographical Information System (GIS).
+No prior knowledge is necessary to follow along, but an understanding of how pipes (%&amp;gt;%) and dplyr works will help.</description>
+    </item>
+    
+    <item>
+      <title>More Rmarkdown</title>
+      <link>/en/publishing/more_rmarkdown/more-rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/more_rmarkdown/more-rmarkdown/</guid>
+      <description>Datatables You need to load libraries just like you would a normal script.
+Let’s look at the data in R Markdown with a new package called DT that uses the Datatables jquery library.
+Example from Part 1 in the chunks.MD file.
+Open and knit chunks/01-chunk.Rmd
+ Specific features Hide warnings, messages Adding warning=F and message=F hid the little messages.
+Example from Part 2 in the chunks.MD file.
+Open and knit chunks/02-chunk.</description>
+    </item>
+    
+    <item>
+      <title>Setting up, using GitHub</title>
+      <link>/en/git/github/github/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github/github/</guid>
+      <description>Zip of files referred to in this walkthrough
+Setting up Github A walkthrough explaining how to get connected later:
+http://happygitwithr.com/ Options
+ Github BitBucket GitLab    Markdown and Rmarkdown Github loves Markdown. Even Rmarkdown.
+Renders it as HTML.
+ .gitignore large files  Don’t include files larger than 100 mb Don’t include your keys or passwords Try to exclude any extraneous files like r history  You can borrow this one</description>
+    </item>
+    
+    <item>
+      <title>Syntax behind R programming</title>
+      <link>/en/workflow/syntax/r-syntax/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/syntax/r-syntax/</guid>
+      <description>Working with R R can be tricky to wrap your head around at first.
+You must follow pretty specific syntax rules for it to work. It won’t guess for you.
+ Case-sensitive interpreted language Enter commands at prompt &amp;gt; or in batch Statements consist of functions and assignments Comments are preceded by # semi-colons separate statements on a line   Some R code basics  &amp;lt;- is known as an “assignment operator” – it means “Make the object named to the left equal to the output of the code to the right” &amp;amp; means AND, in Boolean logic | means OR, in Boolean logic !</description>
+    </item>
+    
+    <item>
+      <title>Good habits with R projects</title>
+      <link>/en/workflow/workflow/r-projects/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/workflow/r-projects/</guid>
+      <description>Comment your code Anything that appears on a line after # will be treated as a comment. That means it will be ignored when the code in the script is executed.
+Use this to explain what the code does.
+Get into this habit early. Future readers of the code will be grateful for the clear documentation you leave behind– including yourself months from now.
+ Use projects to organize Do not dump your scripts into a folder  One folder per project  RStudio project Git repo Can run parallel projects    Use portable file paths DO NOT USE setwd()</description>
+    </item>
+    
+    <item>
+      <title>Installing RStudio</title>
+      <link>/en/introduction/installing_rstudio/installing-rstudio/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_rstudio/installing-rstudio/</guid>
+      <description>Downloading RStudio  RStudio Desktop - http://www.rstudio.com   RStudio IDE  RStudio is an integrated development environment that consolidates everything you need to write R code and work with data in a single app.
+ </description>
+    </item>
+    
+    <item>
+      <title>Mapping Census data</title>
+      <link>/en/mapping/ggplot_maps/mapping-census/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/ggplot_maps/mapping-census/</guid>
+      <description>This tutorial is an introduction to analyzing spatial data in R, specifically through map-making with R’s ‘base’ graphics and ggplot2 for static maps. You’ll be introduced to the basics of using R as a fast and powerful command-line Geographical Information System (GIS). We’ll also use the really fun Census API package. Seriously, it is a life-changer.
+No prior knowledge is necessary to follow along, but an understanding of how pipes (%&amp;gt;%) and dplyr works will help.</description>
+    </item>
+    
+    <item>
+      <title>Publishing on Github Pages</title>
+      <link>/en/git/github_pages/github-pages/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/git/github_pages/github-pages/</guid>
+      <description>Hosting with Github Pages Turn http://github.com/username/reponame/index.html
+Into http://username.github.io/reponame/index.html
+ Setting up GH Pages After uploading your repo, click on Settings
+Change the Source from None to master branch or master branch\docs (depending on where you want your root to be)
+ </description>
+    </item>
+    
+    <item>
+      <title>Copying and pasting data</title>
+      <link>/en/importing_exporting/copying_pasting/datapasta/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/copying_pasting/datapasta/</guid>
+      <description>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.
+I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.
+Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</description>
+    </item>
+    
+    <item>
+      <title>Common issues</title>
+      <link>/en/faq/common-issues/</link>
+      <pubDate>Sat, 09 Jun 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/faq/common-issues/</guid>
+      <description>How to deal with some issues that may pop up
+Permission to install packages locally Mac users may need to alter their security preferences to allow apps authored by non-Apple developers to install. If you notice an error, try to change your system preferences.
+ Common Mistakes  Using the wrong case  help(), Help(), and HELP() are three different functions (and only the first one will work)  Forgetting to use quotation marks when they are needed  install.</description>
+    </item>
+    
+    <item>
+      <title>Customizing charts</title>
+      <link>/en/visualizing/customizing_charts/2018-05-27-customizing_charts/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/customizing_charts/2018-05-27-customizing_charts/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with dats</title>
+      <link>/en/visualizing/charts_with_ggplot/2018-05-27-ggplot/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/charts_with_ggplot/2018-05-27-ggplot/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with dats</title>
+      <link>/en/wrangling/dates/2018-05-27-dealing-with-dates/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dates/2018-05-27-dealing-with-dates/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Excel files</title>
+      <link>/en/importing_exporting/excel/2018-05-27-importing-excel/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/excel/2018-05-27-importing-excel/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Exporting charts</title>
+      <link>/en/visualizing/exporting_charts/2018-05-27-exporting-charts/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/exporting_charts/2018-05-27-exporting-charts/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Handling strings</title>
+      <link>/en/wrangling/strings/2018-05-27-dealing-with-strings/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/strings/2018-05-27-dealing-with-strings/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>JSON data</title>
+      <link>/en/importing_exporting/json/2018-05-27-importing-json/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/json/2018-05-27-importing-json/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Joining data</title>
+      <link>/en/wrangling/joining/2018-05-27-joining-data/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/joining/2018-05-27-joining-data/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Mapping with census data</title>
+      <link>/en/mapping/census_maps/2018-05-27-census_maps/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/census_maps/2018-05-27-census_maps/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>More charts</title>
+      <link>/en/visualizing/more_charts/2018-05-27-more-charts/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/visualizing/more_charts/2018-05-27-more-charts/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>SPSS data</title>
+      <link>/en/importing_exporting/spss/2018-05-27-importing-spss/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/spss/2018-05-27-importing-spss/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Setting up for mapping</title>
+      <link>/en/mapping/setting_up/2018-05-27-setting-up/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/mapping/setting_up/2018-05-27-setting-up/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Transforming data</title>
+      <link>/en/wrangling/transforming/2018-05-27-transfomring-data/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/transforming/2018-05-27-transfomring-data/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>XML</title>
+      <link>/en/importing_exporting/xml/2018-05-27-importing-xml/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/xml/2018-05-27-importing-xml/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>dplyr and pipes</title>
+      <link>/en/wrangling/dplyr_pipes/2018-05-27-pipes-dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr_pipes/2018-05-27-pipes-dplyr/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>mysql data</title>
+      <link>/en/importing_exporting/mysql/2018-05-27-importing-mysql/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/mysql/2018-05-27-importing-mysql/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/about/</guid>
+      <description>About This course is part of a five-week MOOC:
+Intro to R for Journalists: How to find Great Stories in Data
+Who Andrew Ba Tran is a data reporter on The Washington Post&amp;rsquo;s rapid response investigative team.
+He previously was a data editor at The Connecticut Mirror&amp;rsquo;s TrendCT.org, a non-profit news site that helped the public find and understand data and its potential impact on the community.
+Prior to that, Andrew was a data producer at The Boston Globe and he’s also worked in newsrooms at The Virginian-Pilot and the Sun-Sentinel.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delimited Text on Journalism with R</title>
+    <link>/en/tags/delimited-text/</link>
+    <description>Recent content in Delimited Text on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/delimited-text/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Delimited Text</title>
+      <link>/en/importing_exporting/delimited_text/delimited-text/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/delimited_text/delimited-text/</guid>
+      <description>Sometimes you’ll encounter data with values that are delimited (separated) by characters other than commas. For example, I once received a spreadsheet delimited with emojis.
+Why does this happen? This means the data was exported from a database and the user chose this option. Not all data can be the way we ideally want it but as far as this data structure goes, at least we’re dealing with PDFs (which is possible but we won’t be going over that process in this course)</description>
+    </item>
+    
+  </channel>
+</rss>

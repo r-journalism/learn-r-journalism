@@ -15,6 +15,16 @@
   <url>
     <loc>/en/introduction/from_excel/from-excel-to-r/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/introduction/from_excel/from-excel-to-r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/introduction/from_excel/from-excel-to-r/"
+                />
   </url>
   
   <url>
@@ -47,8 +57,8 @@
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/introduction/"
+                hreflang="jp"
+                href="/jp/introduction/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -95,21 +105,21 @@
   <url>
     <loc>/en/introduction/what_is_r/what-is-r/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/introduction/what_is_r/what-is-r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/introduction/what_is_r/what-is-r/"
+                />
   </url>
   
   <url>
     <loc>/en/how_to_use_r/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/how_to_use_r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/how_to_use_r/"
-                />
   </url>
   
   <url>
@@ -160,16 +170,6 @@
   <url>
     <loc>/en/importing_exporting/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/importing_exporting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/importing_exporting/"
-                />
   </url>
   
   <url>
@@ -205,16 +205,6 @@
   <url>
     <loc>/en/wrangling/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/wrangling/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/wrangling/"
-                />
   </url>
   
   <url>
@@ -240,31 +230,11 @@
   <url>
     <loc>/en/visualizing/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/visualizing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/visualizing/"
-                />
   </url>
   
   <url>
     <loc>/en/mapping/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/mapping/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/mapping/"
-                />
   </url>
   
   <url>
@@ -275,39 +245,19 @@
   <url>
     <loc>/en/publishing/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/publishing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/publishing/"
-                />
   </url>
   
   <url>
     <loc>/en/git/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/git/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/git/"
-                />
   </url>
   
   <url>
     <loc>/en/faq/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/faq/"
+                hreflang="jp"
+                href="/jp/faq/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -317,11 +267,47 @@
   </url>
   
   <url>
+    <loc>/en/faq/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/git/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/how_to_use_r/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/importing_exporting/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/introduction/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/mapping/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/publishing/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/visualizing/_index.fr/</loc>
+  </url>
+  
+  <url>
+    <loc>/en/wrangling/_index.fr/</loc>
+  </url>
+  
+  <url>
     <loc>/en/about/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/about/"
+                hreflang="jp"
+                href="/jp/about/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -347,8 +333,8 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/categories/"
+                hreflang="jp"
+                href="/jp/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -373,6 +359,10 @@
     <loc>/en/tags/copying/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/en/about.fr/</loc>
   </url>
   
   <url>
@@ -457,6 +447,16 @@
     <loc>/en/tags/introduction/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/tags/introduction/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/introduction/"
+                />
   </url>
   
   <url>
@@ -523,12 +523,32 @@
     <loc>/en/tags/r/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/tags/r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/r/"
+                />
   </url>
   
   <url>
     <loc>/en/categories/r/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/categories/r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/r/"
+                />
   </url>
   
   <url>
@@ -542,8 +562,8 @@
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/"
+                hreflang="jp"
+                href="/jp/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -568,6 +588,16 @@
     <loc>/en/tags/rstudio/</loc>
     <lastmod>2018-05-27T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/jp/tags/rstudio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/rstudio/"
+                />
   </url>
   
   <url>
@@ -588,8 +618,8 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/tags/"
+                hreflang="jp"
+                href="/jp/tags/"
                 />
     <xhtml:link
                 rel="alternate"

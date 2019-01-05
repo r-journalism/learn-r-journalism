@@ -68,5 +68,14 @@ Choropleth or thematic maps are an effective and popular way to show geographic 
 And if it’s interactive, it’s useful for exploratory purposes because it can surface information that can’t be expressed visually easily (Interactive maps for reader purposes need carefully considered, though, because readers will usually not click around).</description>
     </item>
     
+    <item>
+      <title>Démarrage</title>
+      <link>/en/mapping/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/mapping/_index.fr/</guid>
+      <description>Chapitre 1 Démarrage Découvrez comment utiliser ce thème Hugo et apprenez en les concepts</description>
+    </item>
+    
   </channel>
 </rss>

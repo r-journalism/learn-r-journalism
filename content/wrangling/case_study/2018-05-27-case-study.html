@@ -92,7 +92,7 @@ murders  &lt;- murders %&gt;%
   left_join(county.fips, by=c(&quot;CNTYFIPS&quot;=&quot;fips&quot;)) </code></pre>
 <pre class="r"><code>View(murders)</code></pre>
 <div class="figure">
-<img src="/wrangling/case_-_study/images/counties.png?classes=shadow" />
+<img src="/wrangling/case_study/images/counties.png?classes=shadow" />
 
 </div>
 <p>{{% notice tip %}} This is where I’d put in sirens if I could. Really wrap your head around how this worked because joins are so very essential to expanding the capabilities of data analysis. {{% /notice %}}</p>
@@ -110,7 +110,7 @@ murders  &lt;- murders %&gt;%
   filter(VicSex_label==&quot;Female&quot;) </code></pre>
 <pre class="r"><code>View(greenway1)</code></pre>
 <div class="figure">
-<img src="/wrangling/case_-_study/images/510.png?classes=shadow" />
+<img src="/wrangling/case_study/images/510.png?classes=shadow" />
 
 </div>
 <p>Alright, we’ve narrowed it down to 510 cases by filtering with “king” county and “Washington” state. We set it between 1982 and 2001 and looked for female victims.</p>
@@ -143,7 +143,7 @@ murders  &lt;- murders %&gt;%
            Weapon_label==&quot;Other or type unknown&quot;)</code></pre>
 <pre class="r"><code>View(greenway2)</code></pre>
 <div class="figure">
-<img src="/wrangling/case_-_study/images/116.png?classes=shadow" />
+<img src="/wrangling/case_study/images/116.png?classes=shadow" />
 
 </div>
 <p>Well, that narrowed it down.</p>
@@ -223,7 +223,7 @@ murders  &lt;- murders %&gt;%
   mutate(clearance=round(solved/cases*100,2))</code></pre>
 <pre class="r"><code>View(msagrp)</code></pre>
 <div class="figure">
-<img src="/wrangling/case_-_study/images/msagrp.png?classes=shadow" />
+<img src="/wrangling/case_study/images/msagrp.png?classes=shadow" />
 
 </div>
 <p>Alright, we have more than 10,000 clusters.</p>

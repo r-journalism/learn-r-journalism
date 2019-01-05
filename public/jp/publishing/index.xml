@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publishing on Journalism with R</title>
+    <link>/en/publishing/</link>
+    <description>Recent content in Publishing on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/publishing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/en/publishing/rmarkdown/rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/rmarkdown/rmarkdown/</guid>
+      <description>By now you’ve inadvertently witnessed the different content that R Markdown can help generate:
+ HTML documents that are in each chapter sub folder Notebooks in which you’ve run code chunks individually PDFs that you can print out to follow along physically with the course This entire learn.r-journalism.com website  R Markdown is R code + Markdown.</description>
+    </item>
+    
+    <item>
+      <title>More R Markdown</title>
+      <link>/en/publishing/more_rmarkdown/more-rmarkdown/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/more_rmarkdown/more-rmarkdown/</guid>
+      <description>Let’s create some R Markdown files.
+Make sure your working directory is set.
+If you’re not working with the learn-chapter-6-master folder you downloaded with usethis, download your files to a folder called data.
+If you get lost, the .Rmd files can be found in the lesson repo.
+We’ll start out by generating a report with Boston city payroll data.
+Datatables Create a new R Markdown file and call it Chunk 1.</description>
+    </item>
+    
+    <item>
+      <title>Setting up an R workflow</title>
+      <link>/en/publishing/workflow/r-projects/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/publishing/workflow/r-projects/</guid>
+      <description>Workflow Why a clear data analysis workflow?
+ Check analysis and track errors Share results with colleagues for stories or editing Send methodology to sources for bullet-proofing To easily adjust when presented with new data Easily switch between work environments (desktop and laptop) Scavenge and repurpose code in future projects  Constraints  Workflow has to be platform agnostic Easy to deploy for yourself and others Free open source software Input has to be real raw data in whatever format it is (and wherever it is) But have a backup for when internet is not accessible Output has to work – whether html, PDF, or web app IDE agnostic (be able to run it from a command line without RStudio)   Four components Software  R RStudio Git for version control  Clear file organization One R script to pull it all together Hosting the html output internally or publicly with GitHub pages   Thanks These are all things I picked up from browsing other presentations and repos.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrangling on Journalism with R</title>
+    <link>/en/tags/wrangling/</link>
+    <description>Recent content in Wrangling on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/wrangling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dealing with dates</title>
+      <link>/en/wrangling/dates/dates/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dates/dates/</guid>
+      <description>Dates come in as characters, most of the time.
+You’ll need to convert them into a date variable
+We’ll be using the lubridate package.
+Here’s an example of a character variable that might be in a data frame.
+some_date &amp;lt;- &amp;quot;12-31-1999&amp;quot; Convert that date into a date variable with the function mdy()
+# If you don&amp;#39;t have lubridate installed yet uncomment the line below and run it #install.packages(&amp;quot;lubridate&amp;quot;) # NOTE: IF YOU GET AN ERROR ABOUTZ NOT HAVING A PACKAGE CALLED stringi # UNCOMMENT AND RUN THE LINES BELOW IF YOU HAVE A WINDOWS MACHINE #install.</description>
+    </item>
+    
+    <item>
+      <title>Handling strings</title>
+      <link>/en/wrangling/strings/strings/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/strings/strings/</guid>
+      <description>We’re going to use the stringr package to manipulate text.
+#install.packages(&amp;quot;stringr&amp;quot;) library(stringr) library(dplyr) Each function starts with str_
+Let’s load this data in:
+messy &amp;lt;- data.frame(name=c(&amp;quot;Bill Smith&amp;quot;, &amp;quot;jane doe&amp;quot;, &amp;quot;John Forest-William&amp;quot;), email=c(&amp;quot;bsmith@themail.com&amp;quot;, &amp;quot;jdoe@themail.com&amp;quot;, &amp;quot;jfwilliams$geemail.com&amp;quot;), income=c(&amp;quot;$90,000&amp;quot;, &amp;quot;$140,000&amp;quot;, &amp;quot;E8500&amp;quot;), phone=c(&amp;quot;(203) 847-334&amp;quot;, &amp;quot;207-999-1122&amp;quot;, &amp;quot;2128487345&amp;quot;), activites=c(&amp;quot;fishing, sailing, planting flowers&amp;quot;, &amp;quot;reading, raising flowers, biking&amp;quot;, &amp;quot;hiking, fishing&amp;quot;)) messy ## name email income phone ## 1 Bill Smith bsmith@themail.com $90,000 (203) 847-334 ## 2 jane doe jdoe@themail.</description>
+    </item>
+    
+    <item>
+      <title>Murders case study</title>
+      <link>/en/wrangling/case_study/murders-case-study/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/case_study/murders-case-study/</guid>
+      <description>The FBI has tracked more than 750,000 murders in 40 years across the country. And that’s not counting the police departments that refuse to send them their homicide statistics.
+Thomas Hargrove was a national correspondent for the Scripps Howard News Service, where he developed an algorithm that uses FBI homicide data to identify areas of murders that had an elevated probability of containing serial killings.</description>
+    </item>
+    
+    <item>
+      <title>Tidying and joining data</title>
+      <link>/en/wrangling/tidyr_joins/tidyr-joins/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/tidyr_joins/tidyr-joins/</guid>
+      <description>We’re going to learn a couple new concepts while digging through this murders database: tidyr and joins. I’ve mentioned tidy data before briefly, and we’re going to get into it in this section.
+Do you still have the murders data frame in the environment?
+If not, run the command below:
+source(&amp;quot;import_murders.R&amp;quot;) tidyr Data can be messy but there’s an ideal structure for how to stack your data.</description>
+    </item>
+    
+    <item>
+      <title>Transforming and analyzing data</title>
+      <link>/en/wrangling/dplyr/dplyr/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/wrangling/dplyr/dplyr/</guid>
+      <description>Why use dplyr?
+ Designed to work with data frames, which is what journalists are used to Great for data exploration and transformation Intuitive to write and easy to read, especially when using the “chaining” syntax of pipes  Five basic verbs  filter() select() arrange() mutate() summarize() plus group_by()   Our data We’re going to be wrangling some pretty big data– murders over decades across the country.</description>
+    </item>
+    
+  </channel>
+</rss>

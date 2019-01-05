@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Markdown on Journalism with R</title>
+    <link>/en/tags/r-markdown/</link>
+    <description>Recent content in R Markdown on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing RStudio</title>
+      <link>/en/introduction/installing_rstudio/installing-rstudio/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/introduction/installing_rstudio/installing-rstudio/</guid>
+      <description>Downloading RStudio  RStudio Desktop - http://www.rstudio.com   RStudio Integrated Development Environment (IDE)  RStudio is an IDE that consolidates everything you need to write R code and work with data in a single app.
+It allows you to browse help files, plots, and keep track of objects in your environment easily.
+© Copyright 2018, Andrew Ba Tran
+ </description>
+    </item>
+    
+  </channel>
+</rss>

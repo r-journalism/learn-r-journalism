@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spss on Journalism with R</title>
+    <link>/en/tags/spss/</link>
+    <description>Recent content in Spss on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/spss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SPSS data</title>
+      <link>/en/importing_exporting/spss/spss-files/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/spss/spss-files/</guid>
+      <description>SPSS is similar to Excel in that it’s proprietary software that stores data in a very specific format and provides a graphical interface useful for even deeper analysis.
+It stands for Statistical Package for the Social Sciences and is owned by IBM. It’s also very expensive and usually only large businesses or organizations own licenses.
+But it’s possible to bring in data saved from SPSS into R.
+In this example, we’ll be working with case-level data from the FBI’s Supplementary Homicide Report.</description>
+    </item>
+    
+  </channel>
+</rss>

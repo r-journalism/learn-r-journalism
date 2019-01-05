@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How to use R on Journalism with R</title>
+    <link>/en/workflow/</link>
+    <description>Recent content in How to use R on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RStudio guide</title>
+      <link>/en/workflow/tour_rstudio/rstudio-tour/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/tour_rstudio/rstudio-tour/</guid>
+      <description>RStudio tour When you first open RStudio, the app is divided into three sections.
+Most sections have tabs for even more additional ways to view different sorts of things.
+These sections can be customized and placed wherever you want through the RStudio menu options. Preferences &amp;gt; Pane Layout
+  The tall section on the left is the console and thta’s where you can type in R code to execute.</description>
+    </item>
+    
+    <item>
+      <title>Syntax behind R programming</title>
+      <link>/en/workflow/syntax/r-syntax/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/syntax/r-syntax/</guid>
+      <description>Working with R R can be tricky to wrap your head around at first.
+You must follow pretty specific syntax rules for it to work. It won’t guess for you.
+ Case-sensitive interpreted language Enter commands at prompt &amp;gt; or in batch Statements consist of functions and assignments Comments are preceded by # semi-colons separate statements on a line   Some R code basics  &amp;lt;- is known as an “assignment operator” – it means “Make the object named to the left equal to the output of the code to the right” &amp;amp; means AND, in Boolean logic | means OR, in Boolean logic !</description>
+    </item>
+    
+    <item>
+      <title>Setting up an R workflow</title>
+      <link>/en/workflow/workflow/r-projects/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/workflow/r-projects/</guid>
+      <description>Workflow Why a clear data analysis workflow?
+ Check analysis and track errors Share results with colleagues for stories or editing Send methodology to sources for bullet-proofing To easily adjust when presented with new data Easily switch between work environments (desktop and laptop) Scavenge and repurpose code in future projects  Constraints  Workflow has to be platform agnostic Easy to deploy for yourself and others Free open source software Input has to be real raw data in whatever format it is (and wherever it is) But have a backup for when internet is not accessible Output has to work – whether html, PDF, or web app IDE agnostic (be able to run it from a command line without Rstudio)   Four components Software  R Rstudio Git for version control  Clear file organization One R script to pull it all together Hosting the html output internally or publicly with Github pages   Thanks These are all things I picked up from browsing other presentations and repos.</description>
+    </item>
+    
+    <item>
+      <title>Initial data exploration</title>
+      <link>/en/workflow/initial_exploration/data-structures/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/initial_exploration/data-structures/</guid>
+      <description>Vectors A vector is a sequence of data elements of the same basic type. The parts that consist of a vecctor are called components or elements.
+vec1 &amp;lt;- c(1,4,6,8,10) vec1 ## [1] 1 4 6 8 10 A vector vec is explicity constructed by the concatenation function c().
+vec1[5] ## [1] 10 Elements in vectors can be addressed by standard [i] indexing
+vec1[3] &amp;lt;- 12 vec1 ## [1] 1 4 12 8 10 One of the elements in the array is replaced with a new number.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a project folder for this class</title>
+      <link>/en/workflow/project_for_class/class-project/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/workflow/project_for_class/class-project/</guid>
+      <description>A couple options for this class. We’re going to operate out of one folder.
+So you can create a folder now.
+Or download the files from HERE.
+Ideally, you’ll create the files yourself in the correct folder structure. THen you’ll type the code in yourself manually.
+This is the best way to learn and train yourself by doing this process manually.
+That being said, if you get stuck, all the scripts and code and proper folder structure is available to download.</description>
+    </item>
+    
+  </channel>
+</rss>

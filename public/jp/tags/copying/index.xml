@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Copying on Journalism with R</title>
+    <link>/en/tags/copying/</link>
+    <description>Recent content in Copying on Journalism with R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 27 May 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/en/tags/copying/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Copying and pasting data</title>
+      <link>/en/importing_exporting/copying_pasting/copying-pasting/</link>
+      <pubDate>Sun, 27 May 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/en/importing_exporting/copying_pasting/copying-pasting/</guid>
+      <description>Getting data into R can be quite difficult if it doesn’t come in a pre-made format.
+I’m talking specifically about data in tables on websites, but this also applies to Excel spreadsheets with odd formatting structures or on PDFs.
+Being a disciplined documenter of the process requires that all the steps taken to scrape data from a website or to import data from Excel or a PDF be clearly listed step by step, as well as what it took to transform the data workable dataframe.</description>
+    </item>
+    
+  </channel>
+</rss>
