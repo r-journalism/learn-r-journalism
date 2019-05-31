@@ -83,7 +83,7 @@ slug: static-maps
 <li>Use <strong>tidycensus</strong> to download Census data and the shape file all at once</li>
 </ol>
 <p>Let’s use the <strong>sf</strong> package in conjunction with <strong>ggplot2</strong> to visualize the data.</p>
-<p>{{% notice important %}} There are performance issues when creating maps with the <strong>sf</strong> package <strong>if you’re using a Mac</strong>. To fix, download and install <a href="https://www.xquartz.org/">XQuartz</a>. Restart and then run these commands: options(device = “X11”) and then X11.options(type = “cairo”) {{% /notice %}}</p>
+<p>{{% notice important %}} There are performance issues when creating maps with the <strong>sf</strong> package <strong>if you’re using a Mac</strong>. To fix, download and install <a href="https://www.xquartz.org/">XQuartz</a>. Restart and then run these commands: options(device = "X11") and then X11.options(type = "cairo") {{% /notice %}}</p>
 <div id="mapping-a-simple-shape-file" class="section level3">
 <h3>Mapping a simple shape file</h3>
 <p>We’ll start by reading in a shape file of state boundaries from the <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">Census</a>.</p>
