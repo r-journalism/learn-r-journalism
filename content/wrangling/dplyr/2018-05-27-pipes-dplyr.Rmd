@@ -46,7 +46,7 @@ I saved all that code we wrote to import it, renaming columns, and joining value
 Check out [what it looks like](https://github.com/r-journalism/learn-chapter-3/blob/master/dplyr/import_murders.R)-- it's about 100 lines of code long but only one line is required to run the script below.
 
 {{% notice warning %}}
-Before running the command, make sure the script is in the working directory folder and that the **SHR76_16.sav.zip** file is in the *data* sub folder. For example, on my computer, the *import_murders.R* script is in the *dplyr* folder and **SHR76_16.sav.zip** file is in the *dplyr/data* folder.
+Before running the command, make sure the script is in the working directory folder (which should be the *case_study* subfolder of the (*learn-chapter-3-master* folder) and that the **SHR76_16.sav.zip** file is in the *data* sub folder. 
 {{% /notice %}}
 
 **This is going to take a few minutes to run.** 
@@ -169,8 +169,10 @@ Data frames df1 and df2 are exactly the same (Looking for cases in which Husband
 Can you use the logical operators and `filter()` to create **df4** which has all the data for murders: 
 
 1. in the District of Columbia
-2. That were solved in 2015 that involved Black victims
-3. in which Handgun - pistol, revolver, etc was victims between the ages of 18 and 21
+2. that were solved in 2015
+3. that involved Black victims
+4. in which "Handgun - pistol, revolver, etc" was weapon used
+5. in which the victim was between the ages of 18 and 21
 
 ----
 
